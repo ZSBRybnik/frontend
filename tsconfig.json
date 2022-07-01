@@ -16,7 +16,7 @@
     "strict": true,
     "sourceMap": true,
     "alwaysStrict": true,
-    "module": "NodeNext",
+    "module": "esnext",
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "strictNullChecks": true,
