@@ -7,7 +7,10 @@ const setupConfig = (): Configuration[] => {
   return [
     {
       entry: "./source/renderer/index.tsx",
-      output: { path: join(process.cwd(), "dist"), filename: "index.js" },
+      output: {
+        path: join(process.cwd(), "destination"),
+        filename: "index.js",
+      },
       target: "web",
       optimization: { usedExports: true },
       resolve: {
@@ -35,7 +38,7 @@ const setupConfig = (): Configuration[] => {
             "notStatic",
             `indexWeb.pug`
           ),
-          filename: join(process.cwd(), "dist", "index.html"),
+          filename: join(process.cwd(), "destination", "index.html"),
           scriptLoading: "blocking",
           minify: true,
           inject: true,
