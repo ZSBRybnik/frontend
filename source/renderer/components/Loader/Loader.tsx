@@ -1,7 +1,6 @@
 import {
   StyledLoader,
   AnimatedLoader,
-  StyledLogo,
 } from "~renderer/components/Loader/Loader.styles";
 import { useSpring } from "react-spring";
 
@@ -13,13 +12,13 @@ const Loader = (): JSX.Element => {
     to: {
       transform: "rotate(360deg)",
     },
-    config: { mass: 5, tension: 100 },
+    config: { mass: 5, tension: 300 },
     loop: true,
   });
 
   return (
     <StyledLoader>
-      <StyledLogo src="./images/logo_light.webp" />
+      {/* <StyledLogo src="https://zsbrybnik.pl/wp-content/uploads/2017/09/logo_zsb_small.png" /> */}
       <AnimatedLoader style={animatedLoader} />
     </StyledLoader>
   );

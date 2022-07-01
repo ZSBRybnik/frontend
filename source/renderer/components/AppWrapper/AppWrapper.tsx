@@ -1,5 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 import { FunctionComponent, lazy, LazyExoticComponent, Suspense } from "react";
+import GlobalStyle from "~renderer/components/GlobalStyles/GlobalStyles";
 import Loader from "~renderer/components/Loader/Loader";
 
 const Homepage: LazyExoticComponent<FunctionComponent> = lazy(
@@ -14,12 +15,15 @@ const Homepage: LazyExoticComponent<FunctionComponent> = lazy(
 
 const AppWrapper: FunctionComponent = () => {
   return (
-    <Suspense fallback={<Loader />}>
-      <Routes>
-        <Route path="/" element={<Homepage />} />
-        <Route path="*" element={<>404</>} />
-      </Routes>
-    </Suspense>
+    <>
+      <GlobalStyle />
+      <Suspense fallback={<Loader />}>
+        <Routes>
+          <Route path="/" element={<Homepage />} />
+          <Route path="*" element={<>404</>} />
+        </Routes>
+      </Suspense>
+    </>
   );
 };
 
