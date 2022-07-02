@@ -1,0 +1,7 @@
+destination/
+android/
+coverage/
+ios/
+node_modules/
+target/
+yarn.lock
