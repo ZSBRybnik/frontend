@@ -17,7 +17,7 @@ type MoveFiles = (extension: string) => Promise<void>;
 
 const moveFiles: MoveFiles = async (extension: string): Promise<void> => {
   const brotliFiles: string[] = await sync(
-    `./${destination}/src/modern/${extension}/**.*.${extension}`,
+    `./${destination}/source/modern/${extension}/**.*.${extension}`,
   );
   brotliFiles.forEach(async (file: string): Promise<void> => {
     const filename: string = basename(file);

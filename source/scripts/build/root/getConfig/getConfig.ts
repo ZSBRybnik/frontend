@@ -42,7 +42,7 @@ const getConfig: GetConfig = ({
       mode,
       extendedMode,
     }),
-    resolve: getResolve({ sourceFolder: "src" }),
+    resolve: getResolve({ sourceFolder: "source" }),
     output: getOutput({ targetToModern, extendedMode }),
     experiments: getExperiments({ targetToModern }),
     devServer: getDevelopmentServer({ targetToModern, extendedMode }),

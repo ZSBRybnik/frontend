@@ -20,7 +20,7 @@ const getHtmlWebpackPlugin = ({
     return new HtmlWebpackPlugin({
       template: join(
         process.cwd(),
-        "src",
+        "source",
         "public",
         "notStatic",
         `index${

@@ -3,8 +3,8 @@ import {
   dependencies as rootDependencies,
   devDependencies as rootDevelopmentDependencies,
 } from "~root/package.json";
-import { peerDependencies as nativeAddonGolangPeerDependencies } from "~root/src/native-addon-go/package.json";
-import { devDependencies as nativeAddonRustDevelopmentDependencies } from "~root/src/native-addon-rust/package.json";
+import { peerDependencies as nativeAddonGolangPeerDependencies } from "~root/source/native-addon-go/package.json";
+import { devDependencies as nativeAddonRustDevelopmentDependencies } from "~root/source/native-addon-rust/package.json";
 
 type ProjectsDependenciesVersions = {
   [key in

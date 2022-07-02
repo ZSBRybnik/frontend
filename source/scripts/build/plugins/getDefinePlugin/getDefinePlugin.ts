@@ -9,7 +9,7 @@ type GetLocalizedLanguages = () => string[];
 
 const getLocalizedLanguages: GetLocalizedLanguages = (): string[] => {
   const files: string[] = sync(
-    join(process.cwd(), "src", "public", "static", "locales", "**/??.json"),
+    join(process.cwd(), "source", "public", "static", "locales", "**/??.json"),
   );
   return files.map((file: string): string => file.split(".")[0].slice(-2));
 };

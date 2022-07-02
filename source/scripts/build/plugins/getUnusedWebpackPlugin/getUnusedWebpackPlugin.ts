@@ -23,7 +23,7 @@ const getUnusedWebpackPlugin = ({
 }: GetUnusedWebpackPluginArguments) => {
   const extraNotGenericPaths = notGericUnsuablePluginPaths[extendedMode];
   return new UnusedWebpackPlugin({
-    directories: [join(process.cwd(), "src")],
+    directories: [join(process.cwd(), "source")],
     exclude: [
       "*.test.ts",
       "*.test.ts.snap",

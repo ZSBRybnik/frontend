@@ -3,7 +3,7 @@ destination
 tsconfig.tsbuildinfo
 .env
 coverage
-src/native-addon/native/target
+source/native-addon/native/target
 yarn-error.log
 .husky
 tsconfig.tsbuildinfo

@@ -21,16 +21,16 @@ const getOutputPublicPath = ({
   targetToModernFolder,
 }: GetOutputPublicPathArguments) => {
   if (extendedMode === ExtendedMode.Web) {
-    return `/src/${targetToModernFolder}/`;
+    return `/source/${targetToModernFolder}/`;
   } else if (
     extendedMode === ExtendedMode.Renderer ||
     extendedMode === ExtendedMode.Main ||
     extendedMode === ExtendedMode.Preload
   ) {
     const ex = upperFirst(extendedMode);
-    return `/src/${AdditionalPath[ex as never]}/`;
+    return `/source/${AdditionalPath[ex as never]}/`;
   } else {
-    return "/src/";
+    return "/source/";
   }
 };
 
@@ -44,7 +44,7 @@ const getOutput = ({ targetToModern, extendedMode }: GetOutputArguments) => {
     path: join(
       process.cwd(),
       destination,
-      "src",
+      "source",
       extendedModeFolder,
       targetToModernFolder,
     ),
