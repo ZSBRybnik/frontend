@@ -8,8 +8,8 @@ type CapacitorConfig = CapacitorConfigToFixed & {
 };
 
 const config: CapacitorConfig = {
-  appId: "io.ionic.tecogyinit",
-  appName: "Tecogy Init",
+  appId: "io.ionic.zsbrybnik",
+  appName: "ZSB Rybnik",
   webDir: "destination",
   server:
     process.env.DEVELOPMENT === "true"

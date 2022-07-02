@@ -1,80 +1,29 @@
-import "dotenv/config";
+import { config } from "dotenv";
 import { Configuration } from "webpack";
-import HtmlWebpackPlugin from "html-webpack-plugin";
-import { join } from "path";
+import getConfigs from "~scripts/build/root/getConfigs/getConfigs";
+import Mode from "~scripts/build/types/mode/mode";
+import { TargetType } from "~shared/utils/target/target";
 
-const setupConfig = (): Configuration[] => {
-  return [
-    {
-      entry: "./source/renderer/index.tsx",
-      output: {
-        path: join(process.cwd(), "destination"),
-        filename: "index.js",
-      },
-      target: "web",
-      optimization: { usedExports: true },
-      resolve: {
-        extensions: [".js", ".ts", ".tsx", ".jsx", ".mjs", ".wasm", ".json"],
-        alias: {
-          "~root": join(process.cwd(), "source"),
-          "~preload": join(process.cwd(), "source", "preload"),
-          "~main": join(process.cwd(), "source", "main"),
-          "~renderer": join(process.cwd(), "source", "renderer"),
-          "~shared": join(process.cwd(), "source", "shared"),
-          "~public": join(process.cwd(), "source", "public"),
-        },
-      },
-      experiments: {
-        topLevelAwait: true,
-      },
-      mode: "production",
-      devtool: "source-map",
-      plugins: [
-        new HtmlWebpackPlugin({
-          template: join(
-            process.cwd(),
-            "source",
-            "public",
-            "notStatic",
-            `indexWeb.pug`
-          ),
-          filename: join(process.cwd(), "destination", "index.html"),
-          scriptLoading: "blocking",
-          minify: true,
-          inject: true,
-        }),
-      ],
-      module: {
-        rules: [
-          {
-            test: /\.pug$/,
-            use: ["html-loader", "pug-html-loader"],
-          },
-          {
-            test: /\.(js|ts|jsx|tsx)$/,
-            include: join(process.cwd(), "source"),
-            exclude: /(node_modules)/,
-            use: [
-              {
-                loader: "babel-loader",
-                options: {
-                  presets: [
-                    "@babel/preset-typescript",
-                    [
-                      "@babel/preset-react",
-                      {
-                        runtime: "automatic",
-                      },
-                    ],
-                  ],
-                },
-              },
-            ],
-          },
-        ],
-      },
-    },
-  ];
+interface EnvironmentArguments {
+  target: TargetType;
+}
+
+interface WebpackArguments {
+  mode: Mode;
+}
+
+type SetupConfig = (
+  environmentArguments: EnvironmentArguments,
+  webpackArguments: WebpackArguments,
+) => Configuration[];
+
+const setupConfig: SetupConfig = (
+  { target }: EnvironmentArguments,
+  { mode }: WebpackArguments,
+): // eslint-disable-next-line max-params
+Configuration[] => {
+  config();
+  return getConfigs({ targetType: target, mode });
 };
 
 export default setupConfig;

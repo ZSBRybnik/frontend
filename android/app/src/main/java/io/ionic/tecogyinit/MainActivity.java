@@ -1,4 +1,4 @@
-package io.ionic.tecogyinit;
+package io.ionic.zsbrybnik;
 
 import com.getcapacitor.BridgeActivity;
 

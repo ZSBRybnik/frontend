@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
 <resources>
-    <string name="app_name">Tecogy Init</string>
-    <string name="title_activity_main">Tecogy Init</string>
-    <string name="package_name">io.ionic.tecogyinit</string>
-    <string name="custom_url_scheme">io.ionic.tecogyinit</string>
+    <string name="app_name">ZSB Rybnik</string>
+    <string name="title_activity_main">ZSB Rybnik</string>
+    <string name="package_name">io.ionic.zsbrybnik</string>
+    <string name="custom_url_scheme">io.ionic.zsbrybnik</string>
 </resources>
