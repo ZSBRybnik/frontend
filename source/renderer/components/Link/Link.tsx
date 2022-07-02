@@ -1,7 +1,7 @@
 import { Link as LinkBase } from "react-router-dom";
 import LinkProperties, {
-  LinkPropertiesInternal,
   LinkPropertiesExternal,
+  LinkPropertiesInternal,
 } from "~renderer/components/Link/Link.types";
 
 const Link = ({

@@ -2,7 +2,7 @@ import { config } from "dotenv";
 import { Configuration } from "webpack";
 import getConfigs from "~scripts/build/root/getConfigs/getConfigs";
 import Mode from "~scripts/build/types/mode/mode";
-import { TargetType } from "~shared/utils/target/target";
+import { TargetType } from "~shared/constants/target/target";
 
 interface EnvironmentArguments {
   target: TargetType;

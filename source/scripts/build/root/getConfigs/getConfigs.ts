@@ -2,7 +2,7 @@ import { Configuration } from "webpack";
 import getConfig from "~scripts/build/root/getConfig/getConfig";
 import ExtendedMode from "~scripts/build/types/extendedMode/extendedMode";
 import Mode from "~scripts/build/types/mode/mode";
-import { TargetType } from "~shared/utils/target/target";
+import { TargetType } from "~shared/constants/target/target";
 
 export type ConfigsMapper = {
   [key in TargetType]: Configuration[];

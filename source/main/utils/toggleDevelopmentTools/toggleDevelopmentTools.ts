@@ -3,7 +3,7 @@ import { BrowserWindow } from "electron";
 export type ToggleDevelopmentTools = (window: BrowserWindow) => void;
 
 const toggleDevelopmentTools: ToggleDevelopmentTools = (
-  window: BrowserWindow
+  window: BrowserWindow,
 ): void => {
   window.webContents.toggleDevTools();
 };

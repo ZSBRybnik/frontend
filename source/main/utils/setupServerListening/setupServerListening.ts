@@ -6,7 +6,7 @@ type SetupServerListeningArguments = {
 };
 
 export type SetupServerListening = (
-  argument: SetupServerListeningArguments
+  argument: SetupServerListeningArguments,
 ) => void;
 
 const setupServerListening: SetupServerListening = ({

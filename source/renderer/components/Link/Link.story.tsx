@@ -23,7 +23,7 @@ LinkExample.args = {
 };
 
 export const InsecureLinkExample: ComponentStory<typeof Link> = Template.bind(
-  {}
+  {},
 );
 
 InsecureLinkExample.args = {

@@ -1,8 +1,8 @@
-import {
-  StyledLoader,
-  AnimatedLoader,
-} from "~renderer/components/Loader/Loader.styles";
 import { useSpring } from "react-spring";
+import {
+  AnimatedLoader,
+  StyledLoader,
+} from "~renderer/components/Loader/Loader.styles";
 
 const Loader = (): JSX.Element => {
   const animatedLoader = useSpring({
