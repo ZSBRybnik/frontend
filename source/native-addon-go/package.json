@@ -4,10 +4,10 @@
   "license": "MIT",
   "main": "./destination/index.dll",
   "scripts": {
-    "build": "cross-env TS_NODE_PROJECT=../../tsconfig.node.json ts-node ./source/scripts/runner/commands/build/build.ts",
+    "build": "cross-env TS_NODE_PROJECT=tsconfig.node.json ts-node ./source/scripts/runner/commands/build/build.ts",
     "install": "yarn run build"
   },
-  "peerDependencies": {
+  "devDependencies": {
     "@types/node": "^17.0.8",
     "cross-env": "^7.0.3",
     "prettier": "^2.5.1",

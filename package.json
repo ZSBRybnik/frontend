@@ -64,6 +64,8 @@
     "immutable": "^4.1.0",
     "is-electron": "^2.2.1",
     "lodash": "^4.17.21",
+    "native-addon-go": "file:./source/native-addon-go",
+    "native-addon-rust": "file:./source/native-addon-rust",
     "process": "^0.11.10",
     "push.js": "^1.0.12",
     "react": "^18.2.0",
