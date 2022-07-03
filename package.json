@@ -194,6 +194,7 @@
     "interpolate-html-plugin": "^4.0.0",
     "ip": "^1.1.8",
     "jest": "^28.1.2",
+    "jest-environment-jsdom": "^28.1.2",
     "jest-extended": "^2.0.0",
     "jest-puppeteer": "^6.1.0",
     "jsdoc": "^3.6.10",
