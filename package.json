@@ -1,7 +1,7 @@
 {
   "name": "frontend",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "./destination/source/main/index.js",
   "private": true,
   "repository": "https://github.com/ZSBRybnik/frontend.git",
   "author": "KrzysztofZawisla <zawislakrzysztof.zk@gmail.com>, MateuszPerczak <mateusz.perczak.mp@gmail.com>",
