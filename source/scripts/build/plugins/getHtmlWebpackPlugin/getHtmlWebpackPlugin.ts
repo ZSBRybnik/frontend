@@ -16,7 +16,12 @@ const getHtmlWebpackPlugin = ({
   extendedMode,
   targetToModern,
 }: GetHtmlWebpackPluginArguments) => {
-  if (targetToModern) {
+  if (
+    targetToModern &&
+    (extendedMode === ExtendedMode.Web ||
+      extendedMode === ExtendedMode.Mobile ||
+      extendedMode === ExtendedMode.Renderer)
+  ) {
     return new HtmlWebpackPlugin({
       template: join(
         process.cwd(),
