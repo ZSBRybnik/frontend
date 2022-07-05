@@ -1,10 +1,11 @@
+import { FunctionComponent } from "react";
 import { useSpring } from "react-spring";
 import {
   AnimatedLoader,
   StyledLoader,
 } from "~renderer/components/Loader/Loader.styles";
 
-const Loader = (): JSX.Element => {
+const Loader: FunctionComponent = (): JSX.Element => {
   const animatedLoader = useSpring({
     from: {
       transform: "rotate(0deg)",
@@ -12,7 +13,7 @@ const Loader = (): JSX.Element => {
     to: {
       transform: "rotate(360deg)",
     },
-    config: { mass: 5, tension: 300 },
+    config: { mass: 2, tension: 150 },
     loop: true,
   });
 
