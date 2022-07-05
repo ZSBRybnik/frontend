@@ -1,4 +1,5 @@
-import { FunctionComponent, lazy, LazyExoticComponent, Suspense } from "react";
+import type { FunctionComponent, LazyExoticComponent } from "react";
+import { lazy, Suspense } from "react";
 import { Route, Routes } from "react-router-dom";
 import GlobalStyle from "~renderer/components/GlobalStyles/GlobalStyles";
 import Loader from "~renderer/components/Loader/Loader";

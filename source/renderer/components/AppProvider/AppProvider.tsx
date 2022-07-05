@@ -1,9 +1,11 @@
 import { ThemeProvider } from "@emotion/react";
-import { FunctionComponent, PropsWithChildren } from "react";
+import type { FunctionComponent, PropsWithChildren } from "react";
 import { HelmetProvider } from "react-helmet-async";
 import { BrowserRouter } from "react-router-dom";
 
-const AppProvider: FunctionComponent<PropsWithChildren> = ({ children }) => {
+const AppProvider: FunctionComponent<PropsWithChildren> = ({
+  children,
+}: PropsWithChildren) => {
   return (
     <ThemeProvider theme={{}}>
       <HelmetProvider>

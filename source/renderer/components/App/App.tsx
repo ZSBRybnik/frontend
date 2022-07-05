@@ -1,4 +1,4 @@
-import { FunctionComponent } from "react";
+import type { FunctionComponent } from "react";
 import AppProvider from "~renderer/components/AppProvider/AppProvider";
 import AppWrapper from "~renderer/components/AppWrapper/AppWrapper";
 

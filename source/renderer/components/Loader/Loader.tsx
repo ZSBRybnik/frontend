@@ -1,10 +1,11 @@
+import type { FunctionComponent } from "react";
 import { useSpring } from "react-spring";
 import {
   AnimatedLoader,
   StyledLoader,
 } from "~renderer/components/Loader/Loader.styles";
 
-const Loader = (): JSX.Element => {
+const Loader: FunctionComponent = (): JSX.Element => {
   const animatedLoader = useSpring({
     from: {
       transform: "rotate(0deg)",

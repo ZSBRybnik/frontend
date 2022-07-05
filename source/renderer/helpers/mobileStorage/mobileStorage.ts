@@ -1,18 +1,18 @@
-import { Storage } from "@ionic/storage";
+import type { Storage } from "@ionic/storage";
 import target, { TargetType } from "~shared/constants/target/target";
 
-type MobileStorage = Storage | undefined;
+type MobileStorage = Storage | null;
 
-const getMobileStorage = async () => {
+const getMobileStorage = async (): Promise<MobileStorage> => {
   if (target === TargetType.Mobile) {
     const { Storage } = await import(
       /* webpackChunkName: "mobile" */ "@ionic/storage"
     );
-    const mobileStorage = new Storage();
+    const mobileStorage: Storage = new Storage();
     await mobileStorage.create();
     return mobileStorage;
   } else {
-    return;
+    return null;
   }
 };
 

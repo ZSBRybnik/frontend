@@ -1,17 +1,19 @@
+import type { FunctionComponent } from "react";
 import { Link as LinkBase } from "react-router-dom";
-import LinkProperties, {
+import type LinkProperties from "~renderer/components/Link/Link.types";
+import type {
   LinkPropertiesExternal,
   LinkPropertiesInternal,
 } from "~renderer/components/Link/Link.types";
 
-const Link = ({
+const Link: FunctionComponent<LinkProperties> = ({
   external,
   children,
   href,
   rel,
   insecure,
   ...rest
-}: LinkProperties) => {
+}: LinkProperties): JSX.Element => {
   const relWithSpace: string = `${rel} `;
   const fixedRel: string = `${rel ? relWithSpace : ""}${
     !insecure || "noopener norefferer"
