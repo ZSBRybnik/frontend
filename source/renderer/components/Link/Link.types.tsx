@@ -1,10 +1,10 @@
-import {
+import type {
   AnchorHTMLAttributes,
   DetailedHTMLProps,
   PropsWithChildren,
   RefAttributes,
 } from "react";
-import { LinkProps } from "react-router-dom";
+import type { LinkProps } from "react-router-dom";
 
 export type LinkPropertiesInternalBase = LinkProps &
   RefAttributes<HTMLAnchorElement>;

@@ -1,5 +1,6 @@
 import { css, Global } from "@emotion/react";
-import { FunctionComponent, memo } from "react";
+import type { FunctionComponent } from "react";
+import { memo } from "react";
 
 const GlobalStyle: FunctionComponent = (): JSX.Element => {
   return (

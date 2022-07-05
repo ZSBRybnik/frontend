@@ -33,5 +33,6 @@ app.on(AppEvents.Ready, (): void => {
     });
     ipcMain.on(IpcEvents.HardReload, hardReload);
     content?.show();
+    toggleDevelopmentTools(content);
   });
 });
