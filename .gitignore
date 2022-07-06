@@ -6,7 +6,6 @@ coverage
 source/native-addon/native/target
 yarn-error.log
 .husky
-tsconfig.tsbuildinfo
 .gradle
 local.properties
 *.iml
