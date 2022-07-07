@@ -10,7 +10,7 @@
     "install": "yarn run build",
     "test": "cargo test"
   },
-  "devDependencies": {
+  "dependencies": {
     "cargo-cp-artifact": "^0.1",
     "yarn": "^1.22.19"
   }
