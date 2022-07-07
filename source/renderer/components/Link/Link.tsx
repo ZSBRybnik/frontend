@@ -16,7 +16,7 @@ const Link: FunctionComponent<LinkProperties> = ({
 }: LinkProperties): JSX.Element => {
   const relWithSpace: string = `${rel} `;
   const fixedRel: string = `${rel ? relWithSpace : ""}${
-    !insecure || "noopener norefferer"
+    !insecure || "noopener noreferrer"
   }`;
   return external ? (
     <a
