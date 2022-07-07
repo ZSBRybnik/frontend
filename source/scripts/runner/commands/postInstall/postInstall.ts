@@ -6,7 +6,10 @@ import handlePostInstallWindows from "~scripts/runner/utils/handlePostInstall/ha
 
 (async () => {
   const os: NodeJS.Platform = platform();
-
+  if (os === "win32") {
+    $.shell = "cmd";
+    $.prefix = "";
+  }
   await $`ionic config set -g npmClient yarn && husky install`;
 
   if (os === "win32") {
