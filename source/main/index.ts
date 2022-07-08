@@ -27,13 +27,13 @@ app.on(AppEvents.Ready, (): void => {
     () => {
       const { content }: ExtendedBrowserWindowWithContent =
         mainWindow as ExtendedBrowserWindowWithContent;
-      ipcMain.on(IpcEvents.ToggleDevelopmentTools, (): void => {
+      fromEvent(ipcMain, IpcEvents.ToggleDevelopmentTools).subscribe(() => {
         toggleDevelopmentTools(content);
       });
-      ipcMain.on(IpcEvents.Reload, (): void => {
+      fromEvent(ipcMain, IpcEvents.Reload).subscribe(() => {
         reload(content);
       });
-      ipcMain.on(IpcEvents.HardReload, hardReload);
+      fromEvent(ipcMain, IpcEvents.HardReload).subscribe(hardReload);
       content?.show();
       toggleDevelopmentTools(content);
     },
