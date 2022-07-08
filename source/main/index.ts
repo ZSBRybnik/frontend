@@ -1,6 +1,7 @@
 import { app, BrowserWindow, ipcMain, Menu } from "electron";
 import express, { Express } from "express";
 import { join } from "path";
+import { fromEvent } from "rxjs";
 import "source-map-support/register";
 import "v8-compile-cache";
 import AppEvents from "~main/types/appEvents/appEvents";
@@ -22,17 +23,19 @@ app.on(AppEvents.Ready, (): void => {
   Menu.setApplicationMenu(null);
   mainWindow.content = new BrowserWindow(mainWindow.settings);
   mainWindow.content.loadURL(`http://localhost:${port}`);
-  mainWindow.content.on(BrowserWindowEvent.ReadyToShow, () => {
-    const { content }: ExtendedBrowserWindowWithContent =
-      mainWindow as ExtendedBrowserWindowWithContent;
-    ipcMain.on(IpcEvents.ToggleDevelopmentTools, (): void => {
+  fromEvent(mainWindow.content, BrowserWindowEvent.ReadyToShow).subscribe(
+    () => {
+      const { content }: ExtendedBrowserWindowWithContent =
+        mainWindow as ExtendedBrowserWindowWithContent;
+      ipcMain.on(IpcEvents.ToggleDevelopmentTools, (): void => {
+        toggleDevelopmentTools(content);
+      });
+      ipcMain.on(IpcEvents.Reload, (): void => {
+        reload(content);
+      });
+      ipcMain.on(IpcEvents.HardReload, hardReload);
+      content?.show();
       toggleDevelopmentTools(content);
-    });
-    ipcMain.on(IpcEvents.Reload, (): void => {
-      reload(content);
-    });
-    ipcMain.on(IpcEvents.HardReload, hardReload);
-    content?.show();
-    toggleDevelopmentTools(content);
-  });
+    },
+  );
 });
