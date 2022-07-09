@@ -1,4 +1,4 @@
-import { config } from "dotenv";
+import "dotenv/config";
 import { Configuration } from "webpack";
 import getConfigs from "~scripts/build/root/getConfigs/getConfigs";
 import Mode from "~scripts/build/types/mode/mode";
@@ -22,7 +22,6 @@ const setupConfig: SetupConfig = (
   { mode }: WebpackArguments,
 ): // eslint-disable-next-line max-params
 Configuration[] => {
-  config();
   return getConfigs({ targetType: target, mode });
 };
 
