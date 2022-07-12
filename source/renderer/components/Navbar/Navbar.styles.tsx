@@ -7,7 +7,9 @@ export const StyledNavbarComponent = styled.nav`
   gap: 5px;
   padding: 5px;
   height: 50px;
-  background-color: #e05415;
+  background-color: #e05415ee;
+  backdrop-filter: blur(4px) saturate(180%);
+  z-index: 1;
 `;
 
 export const NavbarElements = styled.div`
@@ -29,4 +31,5 @@ export const NavbarMenu = styled(animated.div)`
   z-index: 2;
   overflow: hidden;
   margin-top: 50px;
+  border-right: 1px solid #333;
 `;

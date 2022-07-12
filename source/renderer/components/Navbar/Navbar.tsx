@@ -19,10 +19,13 @@ const Navbar: FC<PropsWithChildren> = ({ children }): JSX.Element => {
   return (
     <>
       <StyledNavbarComponent>
-        <NavbarButton icon="&#xE700;" onClick={() => setIsOpen(!isOpen)} />
+        <NavbarButton
+          icon={isOpen ? "\uE00E" : "\uE00F"}
+          onClick={() => setIsOpen(!isOpen)}
+        />
         <NavbarElements>{children}</NavbarElements>
       </StyledNavbarComponent>
-      <NavbarMenu style={animatedMenu} onMouseLeave={() => setIsOpen(false)}>
+      <NavbarMenu style={animatedMenu}>
         <span>Menu</span>
       </NavbarMenu>
     </>
