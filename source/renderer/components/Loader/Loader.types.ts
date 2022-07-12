@@ -17,11 +17,4 @@ export type LoaderWrapperComponent = StyledComponent<
   DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>,
   Record<string, unknown>
 >;
-export type StyledLoaderComponent = StyledComponent<
-  {
-    theme?: Theme;
-    as?: ElementType;
-  },
-  DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>,
-  Record<string, unknown>
->;
+export type StyledLoaderComponent = LoaderWrapperComponent;
