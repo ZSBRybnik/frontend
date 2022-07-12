@@ -19,9 +19,14 @@ export const NavbarElements = styled.div`
 
 export const NavbarMenu = styled(animated.div)`
   position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   top: 0;
   left: 0;
-  height: 100%;
+  height: calc(100% - 50px);
   background-color: #e05415;
   z-index: 2;
+  overflow: hidden;
+  margin-top: 50px;
 `;
