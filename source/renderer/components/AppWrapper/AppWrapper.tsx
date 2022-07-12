@@ -7,9 +7,7 @@ import Loader from "~renderer/components/Loader/Loader";
 const Homepage: LazyExoticComponent<FunctionComponent> = lazy(
   (): Promise<typeof import("~renderer/pages/Homepage")> => {
     return new Promise((resolve) => {
-      setTimeout(() => {
-        resolve(import("~renderer/pages/Homepage"));
-      }, 100000);
+      resolve(import("~renderer/pages/Homepage"));
     });
   },
 );
