@@ -24,12 +24,13 @@ export const NavbarMenu = styled(animated.div)`
   display: flex;
   flex-direction: column;
   align-items: center;
-  top: 0;
+  top: 50px;
   left: 0;
   height: calc(100% - 50px);
+  width: 280px;
   background-color: #e05415;
+  padding: 10px;
   z-index: 2;
   overflow: hidden;
-  margin-top: 50px;
   border-right: 1px solid #333;
 `;

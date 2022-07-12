@@ -13,7 +13,7 @@ const Navbar: FC<PropsWithChildren> = ({ children }): JSX.Element => {
   const [isOpen, setIsOpen] = useState(false);
 
   const animatedMenu = useSpring({
-    width: isOpen ? "250px" : "0px",
+    transform: isOpen ? "translateX(0%)" : "translateX(-100%)",
   });
 
   return (
