@@ -17,11 +17,7 @@ const AppWrapper: FunctionComponent = () => {
   return (
     <>
       <GlobalStyle />
-      <Nav>
-        <span>1</span>
-        <span>2</span>
-        <span>3</span>
-      </Nav>
+      <Nav></Nav>
       <Suspense fallback={<Loader />}>
         <Routes>
           <Route path="/" element={<Homepage />} />

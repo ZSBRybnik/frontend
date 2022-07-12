@@ -1,8 +1,8 @@
 import type { FC, PropsWithChildren } from "react";
-import { StyledNav } from "./Nav.styles";
+import { StyledNavComponent } from "./Nav.styles";
 
 const Nav: FC<PropsWithChildren> = ({ children }): JSX.Element => {
-  return <StyledNav>{children}</StyledNav>;
+  return <StyledNavComponent>{children}</StyledNavComponent>;
 };
 
 export default Nav;

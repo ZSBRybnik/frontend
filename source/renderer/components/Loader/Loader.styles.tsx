@@ -1,18 +1,12 @@
-import { Theme } from "@emotion/react";
-import styled, { StyledComponent } from "@emotion/styled";
-import { DetailedHTMLProps, ElementType, HTMLAttributes } from "react";
-import { animated, AnimatedProps } from "react-spring";
+import styled from "@emotion/styled";
+import { animated } from "react-spring";
+import {
+  AnimatedLoaderComponent,
+  LoaderWrapperComponent,
+  StyledLoaderComponent,
+} from "./Loader.types";
 
-type LoaderDivElement = StyledComponent<
-  {
-    theme?: Theme;
-    as?: ElementType;
-  },
-  DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>,
-  Record<string, unknown>
->;
-
-export const StyledLoader: LoaderDivElement = styled.div`
+export const StyledLoader: StyledLoaderComponent = styled.div`
   position: relative;
   display: grid;
   place-items: center;
@@ -21,19 +15,13 @@ export const StyledLoader: LoaderDivElement = styled.div`
   outline: 1px solid red;
 `;
 
-export const LoaderWrapper: LoaderDivElement = styled.div`
+export const LoaderWrapper: LoaderWrapperComponent = styled.div`
   width: min(30%, 150px);
   height: 0.6rem;
   background-color: #ccc;
   border-radius: 1rem;
   overflow: hidden;
 `;
-
-type AnimatedLoaderComponent = StyledComponent<
-  AnimatedProps<
-    DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>
-  >
->;
 
 export const AnimatedLoader: AnimatedLoaderComponent = styled(animated.div)`
   height: 100%;

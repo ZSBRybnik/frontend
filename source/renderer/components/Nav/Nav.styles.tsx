@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 
-export const StyledNav = styled.nav`
+export const StyledNavComponent = styled.nav`
   display: flex;
   align-items: center;
   gap: 5px;
