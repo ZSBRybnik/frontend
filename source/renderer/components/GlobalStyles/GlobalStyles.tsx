@@ -18,6 +18,8 @@ const GlobalStyle: FunctionComponent = (): JSX.Element => {
           -moz-osx-font-smoothing: grayscale;
         }
         #root {
+          display: flex;
+          flex-direction: column;
           min-height: 100vh;
         }
       `}
