@@ -9,7 +9,7 @@ const Homepage: LazyExoticComponent<FunctionComponent> = lazy(
     return new Promise((resolve) => {
       setTimeout(() => {
         resolve(import("~renderer/pages/Homepage"));
-      }, 5000);
+      }, 100000);
     });
   },
 );
