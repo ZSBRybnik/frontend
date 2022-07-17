@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import { animated } from "react-spring";
+import { motion } from "framer-motion";
 import {
   AnimatedLoaderComponent,
   LoaderWrapperComponent,
@@ -7,12 +7,10 @@ import {
 } from "./Loader.types";
 
 export const StyledLoader: StyledLoaderComponent = styled.div`
-  position: relative;
   display: grid;
   place-items: center;
   width: 100%;
   height: 100vh;
-  outline: 1px solid red;
 `;
 
 export const LoaderWrapper: LoaderWrapperComponent = styled.div`
@@ -23,7 +21,7 @@ export const LoaderWrapper: LoaderWrapperComponent = styled.div`
   overflow: hidden;
 `;
 
-export const AnimatedLoader: AnimatedLoaderComponent = styled(animated.div)`
+export const AnimatedLoader: AnimatedLoaderComponent = styled(motion.div)`
   height: 100%;
   border-radius: 1rem;
   background-color: #e05415;
