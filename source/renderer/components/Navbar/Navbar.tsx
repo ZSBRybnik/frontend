@@ -1,6 +1,5 @@
+import { useState } from "@hookstate/core";
 import type { FC, PropsWithChildren } from "react";
-// eslint-disable-next-line no-restricted-imports
-import { useState } from "react";
 import { useSpring } from "react-spring";
 import NavbarButton from "~renderer/components/NavBarButton/NavbarButton";
 import {
@@ -10,18 +9,18 @@ import {
 } from "./Navbar.styles";
 
 const Navbar: FC<PropsWithChildren> = ({ children }): JSX.Element => {
-  const [isOpen, setIsOpen] = useState(false);
+  const isOpenState = useState(false);
 
   const animatedMenu = useSpring({
-    transform: isOpen ? "translateX(0%)" : "translateX(-100%)",
+    transform: isOpenState.get() ? "translateX(0%)" : "translateX(-100%)",
   });
 
   return (
     <>
       <StyledNavbarComponent>
         <NavbarButton
-          icon={isOpen ? "\uE00E" : "\uE00F"}
-          onClick={() => setIsOpen(!isOpen)}
+          icon={isOpenState.get() ? "\uE00E" : "\uE00F"}
+          onClick={() => isOpenState.set(!isOpenState.get())}
         />
         <NavbarElements>{children}</NavbarElements>
       </StyledNavbarComponent>

@@ -1,8 +1,12 @@
-import { FC } from "react";
+import { DetailedHTMLProps, FC, HTMLAttributes } from "react";
 import Icon from "~renderer/components/Icon/Icon";
+
 import StyledNavbarButton from "./NavbarButton.styles";
 
-type NavbarButtonProps = {
+type NavbarButtonProps = DetailedHTMLProps<
+  HTMLAttributes<HTMLDivElement>,
+  HTMLDivElement
+> & {
   icon: string;
 };
 
