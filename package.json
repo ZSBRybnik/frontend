@@ -43,6 +43,7 @@
     "@capacitor/status-bar": "^1.0.8",
     "@emotion/react": "^11.9.3",
     "@emotion/styled": "^11.9.3",
+    "@fluentui/svg-icons": "^1.1.176",
     "@hookstate/core": "^4.0.0-rc11",
     "@ionic/storage": "^3.0.6",
     "@mdi/js": "^6.9.96",

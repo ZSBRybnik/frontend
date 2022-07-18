@@ -10,13 +10,14 @@ export const StyledLoader: StyledLoaderComponent = styled.div`
   display: grid;
   place-items: center;
   width: 100%;
-  height: 100vh;
+  height: 100%;
+  flex: 1;
 `;
 
 export const LoaderWrapper: LoaderWrapperComponent = styled.div`
   width: min(30%, 150px);
   height: 0.6rem;
-  background-color: #ccc;
+  background-color: ${({ theme: { loader } }) => loader};
   border-radius: 1rem;
   overflow: hidden;
 `;
@@ -24,5 +25,5 @@ export const LoaderWrapper: LoaderWrapperComponent = styled.div`
 export const AnimatedLoader: AnimatedLoaderComponent = styled(motion.div)`
   height: 100%;
   border-radius: 1rem;
-  background-color: #e05415;
+  background-color: ${({ theme: { accent } }) => accent};
 ` as AnimatedLoaderComponent;
