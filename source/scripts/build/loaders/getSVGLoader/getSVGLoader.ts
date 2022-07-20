@@ -1,8 +1,12 @@
 const getSVGLoader = () => {
   return {
     test: /\.svg$/,
-    use: ["@svgr/webpack"],
-    options: { babel: false },
+    use: [
+      {
+        loader: "@svgr/webpack",
+        options: { babel: false, typescript: true, ext: "tsx" },
+      },
+    ],
   };
 };
 
