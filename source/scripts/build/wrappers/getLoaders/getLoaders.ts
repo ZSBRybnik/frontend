@@ -4,6 +4,7 @@ import getJavaScriptModuleLoader from "~scripts/build/loaders/getJavaScriptModul
 import getNodeLoader from "~scripts/build/loaders/getNodeLoader/getNodeLoader";
 import getPugLoader from "~scripts/build/loaders/getPugLoader/getPugLoader";
 import getSourceMapLoader from "~scripts/build/loaders/getSourceMapLoader/getSourceMapLoader";
+import getSVGLoader from "~scripts/build/loaders/getSVGLoader/getSVGLoader";
 import getTypeScriptLoader from "~scripts/build/loaders/getTypeScriptLoader/getTypeScriptLoader";
 import Mode from "~scripts/build/types/mode/mode";
 
@@ -25,6 +26,7 @@ const getLoaders: GetLoader = ({
     getNodeLoader(),
     getJavaScriptModuleLoader(),
     getCssLoader(),
+    getSVGLoader(),
   ];
 };
 
