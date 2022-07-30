@@ -9,7 +9,7 @@ const AppProvider: FunctionComponent<PropsWithChildren> = ({
   children,
 }: PropsWithChildren): JSX.Element => {
   return (
-    <ThemeProvider theme={themes["dark"]}>
+    <ThemeProvider theme={themes["light"]}>
       <HelmetProvider>
         <MotionProvider>
           <BrowserRouter>{children}</BrowserRouter>

@@ -1,16 +1,12 @@
-import AddIcon from "@fluentui/svg-icons/icons/add_20_filled.svg";
-import type { FunctionComponent, PropsWithChildren } from "react";
+import type { FunctionComponent } from "react";
 import StyledNavbarButton from "./NavbarButton.styles";
+import type NavBarButtonProps from "./NavbarButton.types";
 
-const NavbarButton: FunctionComponent<PropsWithChildren> = ({
+const NavbarButton: FunctionComponent<NavBarButtonProps> = ({
   children,
+  ...rest
 }): JSX.Element => {
-  return (
-    <StyledNavbarButton>
-      {children}
-      <AddIcon />
-    </StyledNavbarButton>
-  );
+  return <StyledNavbarButton {...rest}>{children}</StyledNavbarButton>;
 };
 
 export default NavbarButton;

@@ -2,7 +2,7 @@ import { css, Global, Theme, useTheme } from "@emotion/react";
 import type { FunctionComponent } from "react";
 import { memo } from "react";
 
-const GlobalStyle: FunctionComponent = (): JSX.Element => {
+const GlobalStyles: FunctionComponent = (): JSX.Element => {
   const theme: Theme = useTheme();
 
   return (
@@ -26,7 +26,6 @@ const GlobalStyle: FunctionComponent = (): JSX.Element => {
           @media (max-width: 768px) {
             flex-direction: column-reverse;
           }
-
           flex-direction: column;
           min-height: 100vh;
           overflow: hidden;
@@ -36,4 +35,4 @@ const GlobalStyle: FunctionComponent = (): JSX.Element => {
   );
 };
 
-export default memo(GlobalStyle);
+export default memo(GlobalStyles);

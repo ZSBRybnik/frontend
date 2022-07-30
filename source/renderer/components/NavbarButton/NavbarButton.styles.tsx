@@ -7,13 +7,13 @@ const StyledNavbarButton = styled.div`
   aspect-ratio: 1;
   border-radius: 10px;
   user-select: none;
-  font-size: 18px;
+  color: #fff;
   transition: background-color 200ms;
   &:hover {
-    background-color: ${({ theme: { hover } }) => hover};
+    background-color: #ffffff22;
   }
   &:active {
-    background-color: ${({ theme: { active } }) => active};
+    background-color: #ffffff11;
   }
 `;
 

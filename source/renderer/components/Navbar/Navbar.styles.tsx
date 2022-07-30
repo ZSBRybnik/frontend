@@ -1,10 +1,10 @@
 import styled from "@emotion/styled";
-import { motion } from "framer-motion";
 
-const StyledNavbar = styled(motion.nav)`
+const StyledNavbar = styled.nav`
   display: flex;
   align-items: center;
   justify-content: flex-start;
+  gap: 5px;
   padding: 5px;
   height: 50px;
   width: 100%;
