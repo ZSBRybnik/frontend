@@ -39,6 +39,7 @@ const getTypeScriptLoader = ({
             ],
           ],
           plugins: [
+            "inline-react-svg",
             "@emotion",
             targetToModern &&
               mode === "development" &&

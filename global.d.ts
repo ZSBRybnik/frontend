@@ -8,3 +8,4 @@ declare module "interpolate-html-plugin";
 declare module "native-addon-rust";
 declare module "robotstxt-webpack-plugin";
 declare module "@vue/preload-webpack-plugin";
+declare module "*.svg";
