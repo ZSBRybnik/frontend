@@ -6,17 +6,20 @@ import { HelmetProvider } from "react-helmet-async";
 import { QueryClient, QueryClientProvider } from "react-query";
 import { BrowserRouter } from "react-router-dom";
 import MotionProvider from "~renderer/components/MotionProvider/MotionProvider";
-import themes from "~renderer/constans/themes/themes";
-import mdxComponentsMapper from "../../constans/mdxComponentsMapper/mdxComponentsMapper";
+import mdxComponentsMapper from "~renderer/constants/mdxComponentsMapper/mdxComponentsMapper";
+import themes from "~renderer/constants/themes/themes";
+import { AppRouter } from "../../../../../backend/source/server/rest/middlewares/getTrpcMiddleware/getTrpcMiddleware";
 
 export const {
   Provider: TRPCProvider,
   createClient,
   useMutation,
   useQuery,
-} = createReactQueryHooks();
+} = createReactQueryHooks<AppRouter>();
 const queryClient = new QueryClient();
-const trpcClient = createClient({ url: "http://localhost:3000/trpc" });
+const trpcClient = createClient({
+  url: "http://localhost:3000/trpc",
+});
 
 const AppProvider: FunctionComponent<PropsWithChildren> = ({
   children,

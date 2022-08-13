@@ -1,0 +1,11 @@
+{
+  "short_name": "ZSB Rybnik",
+  "name": "ZSB Rybnik",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "theme_color": "#e05415",
+  "background_color": "#fff",
+  "orientation": "portrait-primary",
+  "description": ""
+}

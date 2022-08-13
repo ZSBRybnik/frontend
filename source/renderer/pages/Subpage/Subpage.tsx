@@ -4,7 +4,7 @@ import { useMDXComponents } from "@mdx-js/react";
 // eslint-disable-next-line no-restricted-imports
 import { FunctionComponent, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import * as runtime from "react/jsx-runtime.js";
+import runtime from "react/jsx-runtime.js";
 import { useQuery } from "../../components/AppProvider/AppProvider";
 import Page from "../../components/Page/Page";
 

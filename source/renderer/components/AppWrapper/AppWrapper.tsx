@@ -23,6 +23,14 @@ const Subpage: LazyExoticComponent<FunctionComponent> = lazy(
   },
 );
 
+const Post: LazyExoticComponent<FunctionComponent> = lazy(
+  (): Promise<typeof import("~renderer/pages/Post")> => {
+    return new Promise((resolve) => {
+      resolve(import("~renderer/pages/Post"));
+    });
+  },
+);
+
 const AppWrapper: FunctionComponent = () => {
   useCopy();
   useNetwork();
@@ -33,6 +41,7 @@ const AppWrapper: FunctionComponent = () => {
       <Suspense fallback={<Loader />}>
         <Routes>
           <Route path="/" element={<Homepage />} />
+          <Route path="/post/:id" element={<Post />} />
           <Route path="/:name" element={<Subpage />} />
           <Route path="*" element={<>404</>} />
         </Routes>
