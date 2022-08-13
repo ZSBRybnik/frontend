@@ -13,6 +13,14 @@ const Homepage: LazyExoticComponent<FunctionComponent> = lazy(
   },
 );
 
+const Subpage: LazyExoticComponent<FunctionComponent> = lazy(
+  (): Promise<typeof import("~renderer/pages/Subpage")> => {
+    return new Promise((resolve) => {
+      resolve(import("~renderer/pages/Subpage"));
+    });
+  },
+);
+
 const AppWrapper: FunctionComponent = () => {
   return (
     <>
@@ -21,6 +29,7 @@ const AppWrapper: FunctionComponent = () => {
       <Suspense fallback={<Loader />}>
         <Routes>
           <Route path="/" element={<Homepage />} />
+          <Route path="/:name" element={<Subpage />} />
           <Route path="*" element={<>404</>} />
         </Routes>
       </Suspense>
