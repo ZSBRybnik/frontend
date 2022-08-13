@@ -1626,10 +1626,15 @@
   dependencies:
     "@hapi/hoek" "^9.0.0"
 
-"@hookstate/core@^4.0.0-rc11":
-  version "4.0.0-rc11"
-  resolved "https://registry.yarnpkg.com/@hookstate/core/-/core-4.0.0-rc11.tgz#e122f1b47cc2b99d5a4c64d3d956fe3b957f0651"
-  integrity sha512-XpVE0jmXGO73rkoTlqAAA7SupZJY/CN2NoL0jazHK1AjwpO48EEx+jUMfm2RRVSZ8NmJYS1hBGeRHuzMQ5D88Q==
+"@hookstate/clonable@^4.0.0-rc21":
+  version "4.0.0-rc21"
+  resolved "https://registry.yarnpkg.com/@hookstate/clonable/-/clonable-4.0.0-rc21.tgz#171558f2c65029c6f05733b8b4c2fe0d183368c8"
+  integrity sha512-Odmxhw1xdkQv6Qb6+5BTcdp29FzO8ShZAIrjkcuvN8PQ6qlpqNaJB/IeWNPaSFZYW7w27/FR/RercdAMJiDWsg==
+
+"@hookstate/core@3.0.13":
+  version "3.0.13"
+  resolved "https://registry.yarnpkg.com/@hookstate/core/-/core-3.0.13.tgz#827c92166399cd4ae227d3c7ae76445e388ce3e8"
+  integrity sha512-dzx6Rz1M5/c/F1zPEspnONMUvkJD1BzepuuGkqoh+KDNhgWrklGW9OVQAuK+DZFyamCTb3/1GW2Vu4IDhXMexA==
 
 "@hookstate/devtools@^3.0.2":
   version "3.0.2"

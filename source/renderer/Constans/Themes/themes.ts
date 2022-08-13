@@ -1,4 +1,4 @@
-import Themes from "./themes.types";
+import Themes from "~renderer/constans/themes/themes.types";
 
 const themes: Themes = {
   light: {

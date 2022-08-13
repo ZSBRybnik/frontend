@@ -14,6 +14,16 @@ const GlobalStyles: FunctionComponent = (): JSX.Element => {
           box-sizing: border-box;
           margin: 0;
         }
+        ::-webkit-scrollbar {
+          width: 10px;
+          height: 10px;
+        }
+        ::-webkit-scrollbar-track {
+          background: #fff;
+        }
+        ::-webkit-scrollbar-thumb {
+          background: #e05415;
+        }
         body {
           font-family: "Roboto", sans-serif;
           -webkit-font-smoothing: antialiased;
@@ -23,9 +33,6 @@ const GlobalStyles: FunctionComponent = (): JSX.Element => {
         }
         #root {
           display: flex;
-          @media (max-width: 768px) {
-            flex-direction: column-reverse;
-          }
           flex-direction: column;
           min-height: 100vh;
           overflow: hidden;

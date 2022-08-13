@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 const StyledNavbarMenu = styled(motion.div)`
   position: absolute;
-  left: 0;
+  left: -300px;
   top: 50px;
   padding: 10px;
   height: calc(100% - 50px);

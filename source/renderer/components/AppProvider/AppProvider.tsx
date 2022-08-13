@@ -6,7 +6,8 @@ import { HelmetProvider } from "react-helmet-async";
 import { QueryClient, QueryClientProvider } from "react-query";
 import { BrowserRouter } from "react-router-dom";
 import MotionProvider from "~renderer/components/MotionProvider/MotionProvider";
-import themes from "~renderer/Constans/Themes/themes";
+import themes from "~renderer/constans/themes/themes";
+import mdxComponentsMapper from "../../constans/mdxComponentsMapper/mdxComponentsMapper";
 
 export const {
   Provider: TRPCProvider,
@@ -21,7 +22,7 @@ const AppProvider: FunctionComponent<PropsWithChildren> = ({
   children,
 }: PropsWithChildren): JSX.Element => {
   return (
-    <MDXProvider>
+    <MDXProvider components={mdxComponentsMapper}>
       <TRPCProvider client={trpcClient} queryClient={queryClient}>
         <QueryClientProvider client={queryClient}>
           <ThemeProvider theme={themes["light"]}>
