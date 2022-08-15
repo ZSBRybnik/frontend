@@ -9,8 +9,8 @@ import { useQuery } from "../../components/AppProvider/AppProvider";
 import Page from "../../components/Page/Page";
 
 const Subpage: FunctionComponent = () => {
-  const { name } = useParams();
-  const { data } = useQuery(["page", { name }]);
+  const { name = "" } = useParams();
+  const { data } = useQuery(["getPage", { name }]);
   const { content, title }: { content: string; title: string } = Object(data);
   const [contentState, setContentState] = useState(<></>);
   const mdxComponents = useMDXComponents();
