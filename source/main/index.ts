@@ -33,6 +33,19 @@ app.on(AppEvents.Ready, (): void => {
       fromEvent(ipcMain, IpcEvents.Reload).subscribe(() => {
         reload(content);
       });
+      fromEvent(ipcMain, IpcEvents.Close).subscribe(() => {
+        app.quit();
+      });
+      fromEvent(ipcMain, IpcEvents.Minimize).subscribe(() => {
+        mainWindow.content?.minimize();
+      });
+      fromEvent(ipcMain, IpcEvents.ToggleMaximize).subscribe(() => {
+        if (mainWindow.content?.isMaximized()) {
+          mainWindow.content?.unmaximize();
+        } else {
+          mainWindow.content?.maximize();
+        }
+      });
       fromEvent(ipcMain, IpcEvents.HardReload).subscribe(hardReload);
       content?.show();
       toggleDevelopmentTools(content);
