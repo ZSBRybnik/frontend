@@ -14,6 +14,43 @@ const getResolve = ({ sourceFolder }: GetResolveArguments) => {
         "@babel",
         "runtime",
       ),
+      acorn: resolve(process.cwd(), "node_modules", "acorn"),
+      "character-entities-legacy": resolve(
+        process.cwd(),
+        "node_modules",
+        "character-entities-legacy",
+      ),
+      "character-reference-invalid": resolve(
+        process.cwd(),
+        "node_modules",
+        "character-reference-invalid",
+      ),
+      "comma-separated-tokens": resolve(
+        process.cwd(),
+        "node_modules",
+        "comma-separated-tokens",
+      ),
+      "is-alphanumerical": resolve(
+        process.cwd(),
+        "node_modules",
+        "is-alphanumerical",
+      ),
+      "is-decimal": resolve(process.cwd(), "node_modules", "is-decimal"),
+      "is-hexadecimal": resolve(
+        process.cwd(),
+        "node_modules",
+        "is-hexadecimal",
+      ),
+      "parse-entities": resolve(
+        process.cwd(),
+        "node_modules",
+        "parse-entities",
+      ),
+      "space-separated-tokens": resolve(
+        process.cwd(),
+        "node_modules",
+        "space-separated-tokens",
+      ),
       punycode: resolve(process.cwd(), "node_modules", "punycode"),
       querystring: resolve(process.cwd(), "node_modules", "querystring"),
       "bn.js": resolve(process.cwd(), "node_modules", "bn.js"),
