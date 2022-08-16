@@ -3,8 +3,8 @@ import { useQuery } from "~renderer/components/AppProvider/AppProvider";
 import Page from "../../components/Page/Page";
 
 const Post = () => {
-  const { name } = useParams();
-  const { data, isLoading } = useQuery(["page", { name }]);
+  const { id = "0" } = useParams();
+  const { data, isLoading } = useQuery(["getPost", { id: parseInt(id) }]);
   const {
     content,
     title,

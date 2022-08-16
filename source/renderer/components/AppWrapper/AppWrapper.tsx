@@ -6,6 +6,8 @@ import Loader from "~renderer/components/Loader/Loader";
 import NavBar from "~renderer/components/Navbar/Navbar";
 import useCopy from "../../hooks/useCopy/useCopy";
 import useNetwork from "../../hooks/useNetwork/useNetwork";
+import Presentation from "../Presentation/Presentation";
+import { MainSection, MainSectionContent } from "./AppWrapper.styles";
 
 const Homepage: LazyExoticComponent<FunctionComponent> = lazy(
   (): Promise<typeof import("~renderer/pages/Homepage")> => {
@@ -39,12 +41,17 @@ const AppWrapper: FunctionComponent = () => {
       <GlobalStyle />
       <NavBar />
       <Suspense fallback={<Loader />}>
-        <Routes>
-          <Route path="/" element={<Homepage />} />
-          <Route path="/post/:id" element={<Post />} />
-          <Route path="/:name" element={<Subpage />} />
-          <Route path="*" element={<>404</>} />
-        </Routes>
+        <MainSection>
+          <MainSectionContent>
+            <Routes>
+              <Route path="/" element={<Homepage />} />
+              <Route path="/post/:id" element={<Post />} />
+              <Route path="/:name" element={<Subpage />} />
+              <Route path="*" element={<>404</>} />
+            </Routes>
+            <Presentation />
+          </MainSectionContent>
+        </MainSection>
       </Suspense>
     </>
   );
