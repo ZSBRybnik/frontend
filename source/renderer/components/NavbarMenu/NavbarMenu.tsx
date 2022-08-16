@@ -2,10 +2,7 @@ import type { FunctionComponent } from "react";
 import StyledNavbarMenu from "./NavbarMenu.style";
 import type NavbarMenuProps from "./NavbarMenu.types";
 
-const NavbarMenu: FunctionComponent<NavbarMenuProps> = ({
-  isOpen,
-}): JSX.Element => {
-  console.log(isOpen);
+const NavbarMenu: FunctionComponent<NavbarMenuProps> = (): JSX.Element => {
   return (
     <StyledNavbarMenu
     //animate={{ left: isOpen ? "-300px" : "0", opacity: isOpen ? 0 : 1 }}

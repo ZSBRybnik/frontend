@@ -21,7 +21,6 @@ const Homepage: FunctionComponent = () => {
       lastId && lastIdState.set(lastId + 1);
     }
   }, [data]);
-  console.log(data);
   return (
     <div>
       {postsState.map((post, index) => {
@@ -30,7 +29,6 @@ const Homepage: FunctionComponent = () => {
       <VisibilitySensor
         onChange={(isVisible: boolean) => {
           shouldFetchState.set(isVisible);
-          console.log(isVisible);
         }}
       >
         <div>123</div>
