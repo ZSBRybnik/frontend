@@ -3,6 +3,7 @@ import { join } from "path";
 import { DefinePlugin } from "webpack";
 import projectDependencies from "~scripts/build/constants/projectDependencies/projectDependencies";
 import projectsDependenciesVersions from "~scripts/build/constants/projectsDependenciesVersions/projectsDependenciesVersions";
+import ExtendedMode from "~scripts/build/types/extendedMode/extendedMode";
 import Mode from "~scripts/build/types/mode/mode";
 
 type GetLocalizedLanguages = () => string[];
@@ -17,6 +18,7 @@ const getLocalizedLanguages: GetLocalizedLanguages = (): string[] => {
 type GetDefinePluginArguments = {
   mode: Mode;
   targetToModern: boolean;
+  extendedMode: ExtendedMode;
   publicURL: string;
 };
 
@@ -26,10 +28,14 @@ const getDefinePlugin: GetDefinePlugin = ({
   mode,
   targetToModern,
   publicURL,
+  extendedMode,
 }: GetDefinePluginArguments): DefinePlugin => {
   return new DefinePlugin({
     "process.env.DEVELOPMENT": JSON.stringify(mode === Mode.Development),
     "process.env.MODERN": JSON.stringify(targetToModern),
+    "process.env.TARGET": JSON.stringify(
+      extendedMode === ExtendedMode.Renderer ? "desktop" : "web",
+    ),
     "process.env.PUBLIC_URL": JSON.stringify(publicURL),
     "process.env.WEBSOCKET_URL": JSON.stringify(process.env.WEBSOCKET_URL),
     "process.env.LOCALIZED_LANGUAGES": JSON.stringify(getLocalizedLanguages()),

@@ -44,6 +44,7 @@ const getPlugins = ({
       publicURL: "public",
       targetToModern,
       mode,
+      extendedMode,
     }),
     getReactRefreshWebpackPlugin({ mode, targetToModern }),
     getCleanWebpackPlugin(),
