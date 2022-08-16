@@ -14,8 +14,10 @@ const getTypeScriptLoader = ({
 }: GetTypeScriptLoaderArguments) => {
   return {
     test: /\.(ts|tsx|js|jsx)$/,
-    include: join(process.cwd(), source),
-    exclude: /(node_modules)/,
+    include: [
+      join(process.cwd(), source),
+      join(process.cwd(), "node_modules", "backend"),
+    ],
     use: [
       {
         loader: "babel-loader",

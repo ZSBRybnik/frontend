@@ -4,20 +4,15 @@ import getTypeScriptLoader from "~scripts/build/loaders/getTypeScriptLoader/getT
 import Mode from "~scripts/build/types/mode/mode";
 
 describe("getTypeScriptLoader", () => {
-  it("should exclude node_modules", () => {
-    const { exclude } = getTypeScriptLoader({
-      targetToModern: true,
-      mode: Mode.Production,
-    });
-    expect(exclude).toStrictEqual(/(node_modules)/);
-  });
   it("should inlucde codebase", () => {
     const { include } = getTypeScriptLoader({
       targetToModern: true,
       mode: Mode.Production,
     });
-    const lastFolder: string | undefined = include.split(sep).pop();
-    expect(lastFolder).toStrictEqual(source);
+    const lastFolders: (string | undefined)[] = include.map((folder) => {
+      return folder.split(sep).pop();
+    });
+    expect(lastFolders).arrayContaing([source, "backend"]);
   });
   it("should match TypeScript", () => {
     const { test } = getTypeScriptLoader({

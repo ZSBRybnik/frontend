@@ -1,6 +1,7 @@
 import { evaluate } from "@mdx-js/mdx";
 import * as provider from "@mdx-js/react";
 import { useMDXComponents } from "@mdx-js/react";
+import Routes from "backend/source/server/trpc/constants/routes/routes";
 // eslint-disable-next-line no-restricted-imports
 import { FunctionComponent, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
@@ -10,7 +11,7 @@ import Page from "../../components/Page/Page";
 
 const Subpage: FunctionComponent = () => {
   const { name = "" } = useParams();
-  const { data } = useQuery(["getPage", { name }]);
+  const { data } = useQuery([Routes.GetPage, { name }]);
   const { content, title }: { content: string; title: string } = Object(data);
   const [contentState, setContentState] = useState(<></>);
   const mdxComponents = useMDXComponents();
