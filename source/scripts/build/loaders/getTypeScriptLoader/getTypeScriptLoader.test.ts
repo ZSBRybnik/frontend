@@ -12,7 +12,7 @@ describe("getTypeScriptLoader", () => {
     const lastFolders: (string | undefined)[] = include.map((folder) => {
       return folder.split(sep).pop();
     });
-    expect(lastFolders).arrayContaing([source, "backend"]);
+    expect(lastFolders).toEqual(expect.arrayContaining([source, "backend"]));
   });
   it("should match TypeScript", () => {
     const { test } = getTypeScriptLoader({
