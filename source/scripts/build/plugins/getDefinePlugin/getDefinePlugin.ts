@@ -1,6 +1,7 @@
 import { sync } from "glob";
 import { join } from "path";
 import { DefinePlugin } from "webpack";
+import { TargetType } from "~root/source/shared/constants/target/target";
 import projectDependencies from "~scripts/build/constants/projectDependencies/projectDependencies";
 import projectsDependenciesVersions from "~scripts/build/constants/projectsDependenciesVersions/projectsDependenciesVersions";
 import ExtendedMode from "~scripts/build/types/extendedMode/extendedMode";
@@ -34,7 +35,13 @@ const getDefinePlugin: GetDefinePlugin = ({
     "process.env.DEVELOPMENT": JSON.stringify(mode === Mode.Development),
     "process.env.MODERN": JSON.stringify(targetToModern),
     "process.env.TARGET": JSON.stringify(
-      extendedMode === ExtendedMode.Renderer ? "desktop" : "web",
+      [ExtendedMode.Renderer, ExtendedMode.Preload, ExtendedMode.Main].includes(
+        extendedMode,
+      )
+        ? TargetType.Desktop
+        : extendedMode === ExtendedMode.Mobile
+        ? TargetType.Mobile
+        : TargetType.Web,
     ),
     "process.env.PUBLIC_URL": JSON.stringify(publicURL),
     "process.env.WEBSOCKET_URL": JSON.stringify(process.env.WEBSOCKET_URL),
