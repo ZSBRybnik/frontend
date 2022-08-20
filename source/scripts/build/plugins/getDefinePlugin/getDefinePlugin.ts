@@ -31,6 +31,8 @@ const getDefinePlugin: GetDefinePlugin = ({
   publicURL,
   extendedMode,
 }: GetDefinePluginArguments): DefinePlugin => {
+  const mobileOrWebTarget =
+    extendedMode === ExtendedMode.Mobile ? TargetType.Mobile : TargetType.Web;
   return new DefinePlugin({
     "process.env.DEVELOPMENT": JSON.stringify(mode === Mode.Development),
     "process.env.MODERN": JSON.stringify(targetToModern),
@@ -39,9 +41,7 @@ const getDefinePlugin: GetDefinePlugin = ({
         extendedMode,
       )
         ? TargetType.Desktop
-        : extendedMode === ExtendedMode.Mobile
-        ? TargetType.Mobile
-        : TargetType.Web,
+        : mobileOrWebTarget,
     ),
     "process.env.PUBLIC_URL": JSON.stringify(publicURL),
     "process.env.WEBSOCKET_URL": JSON.stringify(process.env.WEBSOCKET_URL),
