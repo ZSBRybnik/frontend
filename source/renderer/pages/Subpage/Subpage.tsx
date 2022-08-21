@@ -3,7 +3,6 @@ import * as provider from "@mdx-js/react";
 import { useMDXComponents } from "@mdx-js/react";
 import { Page as PageType } from "backend/node_modules/@prisma/client";
 import Routes from "backend/source/server/trpc/constants/routes/routes";
-import Gun from "gun";
 import {
   FunctionComponent,
   useEffect,
@@ -13,22 +12,25 @@ import {
 } from "react";
 import { useParams } from "react-router-dom";
 import runtime from "react/jsx-runtime.js";
+import { gun } from "../..";
 import { useQuery } from "../../components/AppProvider/AppProvider";
 import Page from "../../components/Page/Page";
-
-const gun = Gun("http://localhost:3000/gun");
 
 const Subpage: FunctionComponent = () => {
   const { name = "" } = useParams();
   const [gunPage, setGunPage] = useState<PageType | null>(null);
-  const { title: gunTitle }: PageType = Object(gunPage);
+  const [content, setContent] = useState(<></>);
+  const { title: gunTitle }: Partial<PageType> = Object(gunPage);
   const [gunHasChecked, setGunHasChecked] = useState(false);
   const { data } = useQuery([Routes.GetPage, { name }], {
     enabled: gunHasChecked && !gunPage,
   });
-  const { content: trpcContent, title: trpcTitle }: PageType = Object(data);
-  const [content, setContent] = useState(<></>);
+  const { content: trpcContent, title: trpcTitle }: Partial<PageType> =
+    Object(data);
   const mdxComponents = useMDXComponents();
+  const title = useMemo(() => {
+    return gunTitle || trpcTitle;
+  }, [gunTitle, trpcTitle]);
   useEffect(() => {
     (async () => {
       await gun
@@ -41,7 +43,7 @@ const Subpage: FunctionComponent = () => {
     })();
   }, []);
   useEffect(() => {
-    const { content: gunContent }: PageType = Object(gunPage);
+    const { content: gunContent }: Partial<PageType> = Object(gunPage);
     const validContent = gunContent || trpcContent;
     if (validContent)
       (async () => {
@@ -52,9 +54,6 @@ const Subpage: FunctionComponent = () => {
         setContent(<Component components={mdxComponents} />);
       })();
   }, [trpcContent, gunPage]);
-  const title = useMemo(() => {
-    return gunTitle || trpcTitle;
-  }, [gunTitle, trpcTitle]);
   return <Page title={title}>{content}</Page>;
 };
 

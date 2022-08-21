@@ -1,8 +1,11 @@
+import Gun from "gun";
 import type { Root } from "react-dom/client";
 import { createRoot } from "react-dom/client";
 import App from "~renderer/components/App/App";
 import target, { TargetType } from "~shared/constants/target/target";
 import ExtendedWindow from "~shared/types/extendedWindow/extendedWindow";
+
+export const gun = Gun("http://localhost:3000/gun");
 
 if (
   target === TargetType.Desktop
