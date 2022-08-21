@@ -20,7 +20,7 @@ const gun = Gun("http://localhost:3000/gun");
 
 const Subpage: FunctionComponent = () => {
   const { name = "" } = useParams();
-  const [gunPage, setGunPage] = useState<object | null>(null);
+  const [gunPage, setGunPage] = useState<PageType | null>(null);
   const { title: gunTitle }: PageType = Object(gunPage);
   const [gunHasChecked, setGunHasChecked] = useState(false);
   const { data } = useQuery([Routes.GetPage, { name }], {
@@ -34,7 +34,7 @@ const Subpage: FunctionComponent = () => {
       await gun
         .get("pages")
         .get(name)
-        .on((value: object) => {
+        .on((value: PageType) => {
           setGunPage(value);
         });
       setGunHasChecked(true);
