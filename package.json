@@ -4,7 +4,7 @@
   "private": true,
   "repository": "https://github.com/ZSBRybnik/frontend.git",
   "license": "MIT",
-  "author": "KrzysztofZawisla <zawislakrzysztof.zk@gmail.com>, MateuszPerczak <mateusz.perczak.mp@gmail.com>",
+  "author": "KrzysztofZawisla <zawislakrzysztof.zk@gmail.com>, MateuszPerczak <mateusz.perczak.mp@gmail.com>, borys-malinowski <borys.malinowski@interia.pl>",
   "main": "./destination/source/main/index.js",
   "scripts": {
     "audit-dependencies": "cross-env TS_NODE_PROJECT=tsconfig.node.json ts-node ./source/scripts/runner/commands/auditDependencies/auditDependencies.ts",
