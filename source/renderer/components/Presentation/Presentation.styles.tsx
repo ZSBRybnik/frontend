@@ -4,7 +4,7 @@ export const PresentationBlock = styled.div`
   margin-top: 15px;
   background: #eee;
   padding: 15px;
-  &:first-child {
+  &:first-of-type {
     margin-top: 0;
   }
 `;
