@@ -9,6 +9,7 @@ const StyledNavbarButton = styled.div`
   user-select: none;
   color: #fff;
   transition: background-color 200ms;
+  -webkit-app-region: no-drag;
   &:hover {
     background-color: #ffffff22;
   }

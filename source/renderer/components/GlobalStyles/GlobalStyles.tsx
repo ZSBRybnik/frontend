@@ -37,6 +37,11 @@ const GlobalStyles: FunctionComponent = (): JSX.Element => {
           min-height: 100vh;
           overflow: hidden;
         }
+        @font-face {
+          font-family: "Segoe Fluent Icons";
+          src: local("Segoe Fluent Icons") url("./fonts/Segoe Fluent Icons.ttf")
+            format("truetype");
+        }
       `}
     />
   );

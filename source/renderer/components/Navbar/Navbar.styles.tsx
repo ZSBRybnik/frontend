@@ -4,13 +4,41 @@ import target, { TargetType } from "~shared/constants/target/target";
 const StyledNavbar = styled.nav`
   display: flex;
   align-items: center;
-  justify-content: flex-start;
-  gap: 5px;
-  padding: 5px;
+  justify-content: space-evenly;
   height: 50px;
   width: 100%;
   background-color: ${({ theme: { accent } }) => accent};
   -webkit-app-region: ${target === TargetType.Desktop ? "drag" : "no-drag"};
+`;
+
+export const StyledNavbarLeft = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 5px;
+  flex: 1;
+  height: 100%;
+  padding: 5px;
+`;
+
+export const StyledNavbarRight = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 5px;
+  flex: 1;
+  height: 100%;
+  padding: 5px;
+`;
+
+export const StyledNavbarCenter = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  flex: 1;
+  height: 100%;
+  padding: 5px;
 `;
 
 export default StyledNavbar;
