@@ -49,7 +49,7 @@ const NavBar: FunctionComponent = (): JSX.Element => {
                 api?.close();
               }}
             >
-              <Icon>&#xE10A;</Icon>KURWA TERAZ
+              <Icon>&#xE10A;</Icon>
             </NavbarButton>
           </StyledNavbarRight>
         )}
