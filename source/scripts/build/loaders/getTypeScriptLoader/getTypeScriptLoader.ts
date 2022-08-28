@@ -16,7 +16,7 @@ const getTypeScriptLoader = ({
     test: /\.(ts|tsx|js|jsx)$/,
     include: [
       join(process.cwd(), source),
-      join(process.cwd(), "node_modules", "backend"),
+      join(process.cwd(), "..", "backend"),
     ],
     use: [
       {
