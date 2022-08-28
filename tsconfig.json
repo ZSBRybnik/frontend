@@ -48,10 +48,19 @@
       "~scripts/*": ["source/scripts/*"],
       "~public/*": ["source/public/*"]
     },
-    "plugins": [{
-      "transform": "typescript-transform-paths"
-    }]
+    "plugins": [
+      {
+        "transform": "typescript-transform-paths"
+      }
+    ]
   },
   "include": ["./**/*.ts", "./**/*.d.ts", "./**/*.js"],
-  "exclude": ["node_modules", "coverage", "android", "ios", "destination", "../backend"]
+  "exclude": [
+    "node_modules",
+    "coverage",
+    "android",
+    "ios",
+    "destination",
+    "../backend"
+  ]
 }
