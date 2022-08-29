@@ -69,6 +69,7 @@ const getResolve = ({ sourceFolder }: GetResolveArguments) => {
       ),
       "react/jsx-runtime.js": "react/jsx-runtime",
       "react/jsx-dev-runtime.js": "react/jsx-dev-runtime",
+      "~backend": join(process.cwd(), "..", "backend"),
       "~root": join(process.cwd(), sourceFolder),
       "~preload": join(process.cwd(), sourceFolder, "preload"),
       "~main": join(process.cwd(), sourceFolder, "main"),
