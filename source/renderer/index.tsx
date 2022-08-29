@@ -1,5 +1,4 @@
 import Gun from "gun";
-import "gun/lib/webrtc";
 import type { Root } from "react-dom/client";
 import { createRoot } from "react-dom/client";
 import App from "~renderer/components/App/App";
