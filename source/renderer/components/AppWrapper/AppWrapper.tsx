@@ -5,6 +5,7 @@ import GlobalStyle from "~renderer/components/GlobalStyles/GlobalStyles";
 import Loader from "~renderer/components/Loader/Loader";
 import NavBar from "~renderer/components/Navbar/Navbar";
 import useCopy from "../../hooks/useCopy/useCopy";
+import useIpfs from "../../hooks/useIpfs/useIpfs";
 import useNetwork from "../../hooks/useNetwork/useNetwork";
 import Presentation from "../Presentation/Presentation";
 import { MainSection, MainSectionContent } from "./AppWrapper.styles";
@@ -36,6 +37,7 @@ const Post: LazyExoticComponent<FunctionComponent> = lazy(
 const AppWrapper: FunctionComponent = () => {
   useCopy();
   useNetwork();
+  useIpfs();
   return (
     <>
       <GlobalStyle />

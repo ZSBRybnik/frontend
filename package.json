@@ -185,6 +185,7 @@
     "immutable": "^4.1.0",
     "interpolate-html-plugin": "^4.0.0",
     "ip": "^1.1.8",
+    "ipfs-core": "^0.15.4",
     "is-alphanumerical": "^2.0.1",
     "is-decimal": "^2.0.1",
     "is-electron": "^2.2.1",

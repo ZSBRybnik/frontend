@@ -36,17 +36,23 @@ const NavBar: FunctionComponent = (): JSX.Element => {
         </StyledNavbarCenter>
         {target === TargetType.Desktop && (
           <StyledNavbarRight>
-            <NavbarButton>
+            <NavbarButton
+              onClick={() => {
+                (window as ExtendedWindow).api?.minimize();
+              }}
+            >
               <Icon>&#xE16A;</Icon>
             </NavbarButton>
-            <NavbarButton>
+            <NavbarButton
+              onClick={() => {
+                (window as ExtendedWindow).api?.toggleMaximize();
+              }}
+            >
               <Icon>&#xE158;</Icon>
             </NavbarButton>
             <NavbarButton
               onClick={() => {
-                const api = (window as ExtendedWindow).api;
-                console.log(api);
-                api?.close();
+                (window as ExtendedWindow).api?.close();
               }}
             >
               <Icon>&#xE10A;</Icon>

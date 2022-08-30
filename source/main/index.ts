@@ -13,6 +13,7 @@ import setupServerListening from "~main/utils/setupServerListening/setupServerLi
 import toggleDevelopmentTools from "~main/utils/toggleDevelopmentTools/toggleDevelopmentTools";
 import mainWindow from "~main/windows/mainWindow/mainWindow";
 import IpcEvents from "~shared/types/ipcEvents/ipcEvents";
+import getTray from "./utils/getTray/getTray";
 
 const server: Express = express();
 server.use(express.static(join(__dirname, "..", "..")));
@@ -49,6 +50,7 @@ app.on(AppEvents.Ready, (): void => {
       fromEvent(ipcMain, IpcEvents.HardReload).subscribe(hardReload);
       content?.show();
       toggleDevelopmentTools(content);
+      getTray();
     },
   );
 });
