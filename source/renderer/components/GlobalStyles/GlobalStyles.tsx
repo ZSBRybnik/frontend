@@ -4,7 +4,6 @@ import { memo } from "react";
 
 const GlobalStyles: FunctionComponent = (): JSX.Element => {
   const theme: Theme = useTheme();
-
   return (
     <Global
       styles={css`
@@ -28,14 +27,16 @@ const GlobalStyles: FunctionComponent = (): JSX.Element => {
           font-family: "Roboto", sans-serif;
           -webkit-font-smoothing: antialiased;
           -moz-osx-font-smoothing: grayscale;
-          background-color: ${theme.background};
+          background: #fffff00;
           color: ${theme.color};
         }
         #root {
+          background: ${theme.background};
           display: flex;
           flex-direction: column;
           min-height: 100vh;
           overflow: hidden;
+          border-radius: 15px; /* tylko na windows 11 i macos */
         }
         @font-face {
           font-family: "Segoe Fluent Icons";

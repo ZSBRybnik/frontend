@@ -8,7 +8,8 @@ const mainWindow: ExtendedBrowserWindow = {
     height: 600,
     show: false,
     frame: false,
-    resizable: false,
+    transparent: true,
+    resizable: true,
     webPreferences: {
       contextIsolation: true,
       preload: join(__dirname, "..", "preload", "index.js"),
