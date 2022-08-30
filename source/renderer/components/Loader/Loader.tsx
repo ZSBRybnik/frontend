@@ -4,7 +4,7 @@ import {
   AnimatedLoader,
   LoaderWrapper,
   StyledLoader,
-} from "~renderer/components/Loader/Loader.styles";
+} from "~frontend/source/renderer/components/Loader/Loader.styles";
 
 const Loader: FunctionComponent = (): JSX.Element => {
   return (

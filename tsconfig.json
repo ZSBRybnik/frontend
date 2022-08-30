@@ -40,20 +40,13 @@
     "forceConsistentCasingInFileNames": true,
     "baseUrl": ".",
     "paths": {
-      "~root/*": ["*"],
-      "~renderer/*": ["source/renderer/*"],
-      "~main/*": ["source/main/*"],
-      "~preload/*": ["source/preload/*"],
-      "~shared/*": ["source/shared/*"],
-      "~scripts/*": ["source/scripts/*"],
-      "~public/*": ["source/public/*"]
+      "~frontend/*": ["*"],
+      "~backend/*": ["../backend/*"],
     },
-    "plugins": [
-      {
-        "transform": "typescript-transform-paths"
-      }
-    ]
+    "plugins": [{
+      "transform": "typescript-transform-paths"
+    }]
   },
-  "include": ["."],
-  "exclude": ["node_modules", "coverage", "android", "ios", "destination"]
+  "include": [".", "../backend"],
+  "exclude": ["node_modules", "coverage", "android", "ios", "destination", "../backend/destination", "../backend/coverage", "../backend/node_modules"]
 }

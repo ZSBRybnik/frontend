@@ -1,8 +1,6 @@
 import { evaluate } from "@mdx-js/mdx";
 import * as provider from "@mdx-js/react";
 import { useMDXComponents } from "@mdx-js/react";
-import { Page as PageType } from "backend/node_modules/@prisma/client";
-import Routes from "backend/source/server/trpc/constants/routes/routes";
 import {
   FunctionComponent,
   useEffect,
@@ -12,6 +10,8 @@ import {
 } from "react";
 import { useParams } from "react-router-dom";
 import runtime from "react/jsx-runtime.js";
+import { Page as PageType } from "~backend/node_modules/@prisma/client";
+import Routes from "~backend/source/server/trpc/constants/routes/routes";
 import { gun } from "../..";
 import { useQuery } from "../../components/AppProvider/AppProvider";
 import Page from "../../components/Page/Page";

@@ -1,3 +1,3 @@
-import Subpage from "~renderer/pages/Subpage/Subpage";
+import Subpage from "~frontend/source/renderer/pages/Subpage/Subpage";
 
 export default Subpage;

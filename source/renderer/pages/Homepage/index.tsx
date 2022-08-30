@@ -1,3 +1,3 @@
-import Homepage from "~renderer/pages/Homepage/Homepage";
+import Homepage from "~frontend/source/renderer/pages/Homepage/Homepage";
 
 export default Homepage;

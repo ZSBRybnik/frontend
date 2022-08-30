@@ -1,5 +1,5 @@
 import { GenerateSW } from "workbox-webpack-plugin";
-import getTargetVersion from "~scripts/build/utils/getTargetVersion/getTargetVersion";
+import getTargetVersion from "~frontend/source/scripts/build/utils/getTargetVersion/getTargetVersion";
 
 type GetServiceWorkerPluginArguments = {
   targetToModern: boolean;

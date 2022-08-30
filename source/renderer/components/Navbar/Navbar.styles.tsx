@@ -1,5 +1,7 @@
 import styled from "@emotion/styled";
-import target, { TargetType } from "~shared/constants/target/target";
+import target, {
+  TargetType,
+} from "~frontend/source/shared/constants/target/target";
 
 const StyledNavbar = styled.nav`
   display: flex;

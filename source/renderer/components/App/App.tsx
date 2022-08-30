@@ -1,6 +1,6 @@
 import type { FunctionComponent } from "react";
-import AppProvider from "~renderer/components/AppProvider/AppProvider";
-import AppWrapper from "~renderer/components/AppWrapper/AppWrapper";
+import AppProvider from "~frontend/source/renderer/components/AppProvider/AppProvider";
+import AppWrapper from "~frontend/source/renderer/components/AppWrapper/AppWrapper";
 
 const App: FunctionComponent = (): JSX.Element => {
   return (

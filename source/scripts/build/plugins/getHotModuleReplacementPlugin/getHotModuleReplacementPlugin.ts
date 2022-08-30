@@ -1,5 +1,5 @@
 import { HotModuleReplacementPlugin } from "webpack";
-import Mode from "~scripts/build/types/mode/mode";
+import Mode from "~frontend/source/scripts/build/types/mode/mode";
 
 type GetHotModuleReplacementPluginArguments = {
   mode: Mode;

@@ -1,14 +1,14 @@
 import { ThemeProvider } from "@emotion/react";
 import { MDXProvider } from "@mdx-js/react";
 import { createReactQueryHooks } from "@trpc/react";
-import { AppRouter } from "backend/source/server/rest/middlewares/getTrpcMiddleware/getTrpcMiddleware";
 import type { FunctionComponent, PropsWithChildren } from "react";
 import { HelmetProvider } from "react-helmet-async";
 import { QueryClient, QueryClientProvider } from "react-query";
 import { BrowserRouter } from "react-router-dom";
-import MotionProvider from "~renderer/components/MotionProvider/MotionProvider";
-import mdxComponentsMapper from "~renderer/constants/mdxComponentsMapper/mdxComponentsMapper";
-import themes from "~renderer/constants/themes/themes";
+import { AppRouter } from "~backend/source/server/rest/middlewares/getTrpcMiddleware/getTrpcMiddleware";
+import MotionProvider from "~frontend/source/renderer/components/MotionProvider/MotionProvider";
+import mdxComponentsMapper from "~frontend/source/renderer/constants/mdxComponentsMapper/mdxComponentsMapper";
+import themes from "~frontend/source/renderer/constants/themes/themes";
 
 export const {
   Provider: TRPCProvider,

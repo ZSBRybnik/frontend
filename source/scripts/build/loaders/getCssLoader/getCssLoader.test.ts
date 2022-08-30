@@ -1,4 +1,4 @@
-import getCssLoader from "~scripts/build/loaders/getCssLoader/getCssLoader";
+import getCssLoader from "~frontend/source/scripts/build/loaders/getCssLoader/getCssLoader";
 
 describe("getCssLoader", () => {
   it("should match CSS", () => {

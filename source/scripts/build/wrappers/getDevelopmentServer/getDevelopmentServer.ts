@@ -1,8 +1,8 @@
 import { join } from "path";
 import { Configuration } from "webpack-dev-server";
-import destination from "~scripts/build/constants/destination/destination";
-import source from "~scripts/build/constants/source/source";
-import ExtendedMode from "~scripts/build/types/extendedMode/extendedMode";
+import destination from "~frontend/source/scripts/build/constants/destination/destination";
+import source from "~frontend/source/scripts/build/constants/source/source";
+import ExtendedMode from "~frontend/source/scripts/build/types/extendedMode/extendedMode";
 
 type GetDevelopmentServerArguments = {
   targetToModern: boolean;

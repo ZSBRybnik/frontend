@@ -1,4 +1,4 @@
-import { scripts } from "~root/package.json";
+import { scripts } from "~frontend/package.json";
 
 export type ScriptsKeys = {
   [key in keyof typeof scripts]: keyof typeof scripts;

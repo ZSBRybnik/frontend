@@ -1,4 +1,4 @@
-import getTargetVersion from "~scripts/build/utils/getTargetVersion/getTargetVersion";
+import getTargetVersion from "~frontend/source/scripts/build/utils/getTargetVersion/getTargetVersion";
 
 describe("getTargetVersion", () => {
   it("returns target to modern browsers", () => {

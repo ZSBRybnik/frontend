@@ -1,6 +1,8 @@
 import store2 from "store2";
-import mobileStorage from "~renderer/helpers/mobileStorage/mobileStorage";
-import target, { TargetType } from "~shared/constants/target/target";
+import mobileStorage from "~frontend/source/renderer/helpers/mobileStorage/mobileStorage";
+import target, {
+  TargetType,
+} from "~frontend/source/shared/constants/target/target";
 
 type GetDataFromStorage = (key: string) => Promise<string | null>;
 

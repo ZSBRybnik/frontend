@@ -1,7 +1,7 @@
 import { sep } from "path";
-import source from "~scripts/build/constants/source/source";
-import getTypeScriptLoader from "~scripts/build/loaders/getTypeScriptLoader/getTypeScriptLoader";
-import Mode from "~scripts/build/types/mode/mode";
+import source from "~frontend/source/scripts/build/constants/source/source";
+import getTypeScriptLoader from "~frontend/source/scripts/build/loaders/getTypeScriptLoader/getTypeScriptLoader";
+import Mode from "~frontend/source/scripts/build/types/mode/mode";
 
 describe("getTypeScriptLoader", () => {
   it("should inlucde codebase", () => {
