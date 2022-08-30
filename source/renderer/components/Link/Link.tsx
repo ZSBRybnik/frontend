@@ -1,10 +1,10 @@
 import type { FunctionComponent } from "react";
 import { Link as LinkBase } from "react-router-dom";
-import type LinkProperties from "~renderer/components/Link/Link.types";
+import type LinkProperties from "~frontend/source/renderer/components/Link/Link.types";
 import type {
   LinkPropertiesExternal,
   LinkPropertiesInternal,
-} from "~renderer/components/Link/Link.types";
+} from "~frontend/source/renderer/components/Link/Link.types";
 
 const Link: FunctionComponent<LinkProperties> = ({
   external,

@@ -1,5 +1,7 @@
 import type { Storage } from "@ionic/storage";
-import target, { TargetType } from "~shared/constants/target/target";
+import target, {
+  TargetType,
+} from "~frontend/source/shared/constants/target/target";
 
 type MobileStorage = Storage | null;
 

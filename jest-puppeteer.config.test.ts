@@ -1,5 +1,5 @@
-import config from "~root/jest-puppeteer.config";
-import { Launch } from "~scripts/runner/types/jestPuppeteerConfig/jestPuppeteerConfig";
+import config from "~frontend/jest-puppeteer.config";
+import { Launch } from "~frontend/source/scripts/runner/types/jestPuppeteerConfig/jestPuppeteerConfig";
 
 const { browserContext, launch } = config;
 const { dumpio, headless, args }: Launch = launch;

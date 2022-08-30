@@ -1,7 +1,7 @@
 import { platform } from "os";
 import { $ } from "zx";
-import scriptsKeys from "~scripts/build/constants/scriptsKeys/scriptsKeys";
-import Programs from "~scripts/runner/types/programs/programs";
+import scriptsKeys from "~frontend/source/scripts/build/constants/scriptsKeys/scriptsKeys";
+import Programs from "~frontend/source/scripts/runner/types/programs/programs";
 
 (async (): Promise<void> => {
   const os: NodeJS.Platform = platform();

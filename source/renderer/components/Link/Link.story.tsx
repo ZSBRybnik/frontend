@@ -1,7 +1,7 @@
 import type { ComponentMeta, ComponentStory } from "@storybook/react";
 import type { FunctionComponent } from "react";
-import Link from "~renderer/components/Link/Link";
-import type LinkProperties from "~renderer/components/Link/Link.types";
+import Link from "~frontend/source/renderer/components/Link/Link";
+import type LinkProperties from "~frontend/source/renderer/components/Link/Link.types";
 
 export default {
   title: "Link",

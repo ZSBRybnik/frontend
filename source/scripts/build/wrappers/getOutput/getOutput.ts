@@ -1,10 +1,10 @@
 import { upperFirst } from "lodash";
 import { join } from "path";
-import destination from "~scripts/build/constants/destination/destination";
-import ExtendedMode from "~scripts/build/types/extendedMode/extendedMode";
-import { AdditionalPath } from "~scripts/build/utils/getEntryPoint/getEntryPoint";
-import getExtendedModeFolder from "~scripts/build/utils/getExtendedModeFolder/getExtendedModeFolder";
-import getTargetToModernFolder from "~scripts/build/utils/getTargetToModernFolder/getTargetToModernFolder";
+import destination from "~frontend/source/scripts/build/constants/destination/destination";
+import ExtendedMode from "~frontend/source/scripts/build/types/extendedMode/extendedMode";
+import { AdditionalPath } from "~frontend/source/scripts/build/utils/getEntryPoint/getEntryPoint";
+import getExtendedModeFolder from "~frontend/source/scripts/build/utils/getExtendedModeFolder/getExtendedModeFolder";
+import getTargetToModernFolder from "~frontend/source/scripts/build/utils/getTargetToModernFolder/getTargetToModernFolder";
 
 type GetOutputArguments = {
   targetToModern: boolean;

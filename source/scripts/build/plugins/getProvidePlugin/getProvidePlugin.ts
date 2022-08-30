@@ -1,5 +1,5 @@
 import { ProvidePlugin } from "webpack";
-import ExtendedMode from "~scripts/build/types/extendedMode/extendedMode";
+import ExtendedMode from "~frontend/source/scripts/build/types/extendedMode/extendedMode";
 
 type GetProvidePluginArguemnts = {
   extendedMode: ExtendedMode;

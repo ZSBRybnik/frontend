@@ -3,11 +3,11 @@ import { sync } from "glob";
 import { platform } from "os";
 import { basename } from "path";
 import { $ } from "zx";
-import destination from "~scripts/build/constants/destination/destination";
-import scriptsKeys from "~scripts/build/constants/scriptsKeys/scriptsKeys";
-import source from "~scripts/build/constants/source/source";
-import ExtendedMode from "~scripts/build/types/extendedMode/extendedMode";
-import Programs from "~scripts/runner/types/programs/programs";
+import destination from "~frontend/source/scripts/build/constants/destination/destination";
+import scriptsKeys from "~frontend/source/scripts/build/constants/scriptsKeys/scriptsKeys";
+import source from "~frontend/source/scripts/build/constants/source/source";
+import ExtendedMode from "~frontend/source/scripts/build/types/extendedMode/extendedMode";
+import Programs from "~frontend/source/scripts/runner/types/programs/programs";
 
 type BuildFlagsOptions = {
   docker: string;

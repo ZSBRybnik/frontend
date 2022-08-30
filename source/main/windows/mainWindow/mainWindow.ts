@@ -1,5 +1,5 @@
 import { join } from "path";
-import ExtendedBrowserWindow from "~main/types/extendedBrowserWindow/extendedBrowserWindow";
+import ExtendedBrowserWindow from "~frontend/source/main/types/extendedBrowserWindow/extendedBrowserWindow";
 
 const mainWindow: ExtendedBrowserWindow = {
   content: null,

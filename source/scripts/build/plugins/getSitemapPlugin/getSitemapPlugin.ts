@@ -1,5 +1,5 @@
 import SitemapPlugin from "sitemap-webpack-plugin";
-import ExtendedMode from "~scripts/build/types/extendedMode/extendedMode";
+import ExtendedMode from "~frontend/source/scripts/build/types/extendedMode/extendedMode";
 
 type GetSitemapPluginArguments = {
   extendedMode: ExtendedMode;

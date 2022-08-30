@@ -1,7 +1,7 @@
 import { Command } from "commander";
 import { platform } from "os";
 import { $ } from "zx";
-import Programs from "~scripts/runner/types/programs/programs";
+import Programs from "~frontend/source/scripts/runner/types/programs/programs";
 
 type ProgramOptions = {
   target: string;

@@ -1,7 +1,7 @@
 import { upperFirst } from "lodash";
 import path from "path";
-import source from "~scripts/build/constants/source/source";
-import ExtendedMode from "~scripts/build/types/extendedMode/extendedMode";
+import source from "~frontend/source/scripts/build/constants/source/source";
+import ExtendedMode from "~frontend/source/scripts/build/types/extendedMode/extendedMode";
 
 type GetEntryPointArguments = {
   extendedMode: ExtendedMode;

@@ -2,7 +2,7 @@ import { access as accessWithCallback, mkdir as mkdirWithCallback } from "fs";
 import { join } from "path";
 import { promisify } from "util";
 import { $ } from "zx";
-import destination from "~scripts/build/constants/destination/destination";
+import destination from "~frontend/source/scripts/build/constants/destination/destination";
 
 const access = promisify(accessWithCallback);
 const mkdir = promisify(mkdirWithCallback);

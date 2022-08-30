@@ -1,6 +1,6 @@
 import { join } from "path";
 import UnusedWebpackPlugin from "unused-webpack-plugin";
-import ExtendedMode from "~scripts/build/types/extendedMode/extendedMode";
+import ExtendedMode from "~frontend/source/scripts/build/types/extendedMode/extendedMode";
 
 type GetUnusedWebpackPluginArguments = {
   extendedMode: ExtendedMode;

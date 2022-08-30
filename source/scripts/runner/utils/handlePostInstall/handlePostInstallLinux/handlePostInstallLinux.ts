@@ -1,6 +1,6 @@
 import commandExists from "command-exists";
 import { $ } from "zx";
-import Programs from "~scripts/runner/types/programs/programs";
+import Programs from "~frontend/source/scripts/runner/types/programs/programs";
 
 const handlePostInstallLinux = async () => {
   try {

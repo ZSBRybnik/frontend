@@ -1,9 +1,9 @@
 import HtmlWebpackPlugin from "html-webpack-plugin";
 import { upperFirst } from "lodash";
 import { join } from "path";
-import destination from "~scripts/build/constants/destination/destination";
-import ExtendedMode from "~scripts/build/types/extendedMode/extendedMode";
-import Mode from "~scripts/build/types/mode/mode";
+import destination from "~frontend/source/scripts/build/constants/destination/destination";
+import ExtendedMode from "~frontend/source/scripts/build/types/extendedMode/extendedMode";
+import Mode from "~frontend/source/scripts/build/types/mode/mode";
 
 type GetHtmWebpackPluginArguments = {
   mode: Mode;

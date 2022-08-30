@@ -6,7 +6,7 @@ import { useEffect, useMemo, useState } from "react";
 import { useParams } from "react-router-dom";
 import runtime from "react/jsx-runtime.js";
 import { Post as PostType } from "~backend/node_modules/@prisma/client";
-import { useQuery } from "~renderer/components/AppProvider/AppProvider";
+import { useQuery } from "~frontend/source/renderer/components/AppProvider/AppProvider";
 import { gun } from "../..";
 import Page from "../../components/Page/Page";
 

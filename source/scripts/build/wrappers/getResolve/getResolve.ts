@@ -1,10 +1,10 @@
 import { join, resolve } from "path";
 
-type GetResolveArguments = {
+/*type GetResolveArguments = {
   sourceFolder: string;
-};
+};*/
 
-const getResolve = ({ sourceFolder }: GetResolveArguments) => {
+const getResolve = () => {
   return {
     extensions: [".js", ".ts", ".tsx", ".jsx", ".mjs", ".wasm", ".json"],
     alias: {
@@ -70,12 +70,7 @@ const getResolve = ({ sourceFolder }: GetResolveArguments) => {
       "react/jsx-runtime.js": "react/jsx-runtime",
       "react/jsx-dev-runtime.js": "react/jsx-dev-runtime",
       "~backend": join(process.cwd(), "..", "backend"),
-      "~root": join(process.cwd(), sourceFolder),
-      "~preload": join(process.cwd(), sourceFolder, "preload"),
-      "~main": join(process.cwd(), sourceFolder, "main"),
-      "~renderer": join(process.cwd(), sourceFolder, "renderer"),
-      "~shared": join(process.cwd(), sourceFolder, "shared"),
-      "~public": join(process.cwd(), sourceFolder, "public"),
+      "~frontend": join(process.cwd()),
     },
   };
 };

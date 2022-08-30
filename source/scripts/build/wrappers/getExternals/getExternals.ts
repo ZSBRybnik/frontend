@@ -1,5 +1,5 @@
 import nodeExternals from "webpack-node-externals";
-import ExtendedMode from "~scripts/build/types/extendedMode/extendedMode";
+import ExtendedMode from "~frontend/source/scripts/build/types/extendedMode/extendedMode";
 
 type GetExternalsArguments = {
   extendedMode: ExtendedMode;

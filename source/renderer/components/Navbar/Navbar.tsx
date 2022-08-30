@@ -1,10 +1,12 @@
 import { useState } from "@hookstate/core";
 import { FunctionComponent } from "react";
-import Icon from "~renderer/components/Icon/Icon";
-import NavbarButton from "~renderer/components/NavbarButton/NavbarButton";
-import NavbarMenu from "~renderer/components/NavbarMenu/NavbarMenu";
-import ExtendedWindow from "~root/source/shared/types/extendedWindow/extendedWindow";
-import target, { TargetType } from "~shared/constants/target/target";
+import Icon from "~frontend/source/renderer/components/Icon/Icon";
+import NavbarButton from "~frontend/source/renderer/components/NavbarButton/NavbarButton";
+import NavbarMenu from "~frontend/source/renderer/components/NavbarMenu/NavbarMenu";
+import ExtendedWindow from "~frontend/source/shared/types/extendedWindow/extendedWindow";
+import target, {
+  TargetType,
+} from "~frontend/source/shared/constants/target/target";
 import StyledNavbar, {
   StyledNavbarCenter,
   StyledNavbarLeft,

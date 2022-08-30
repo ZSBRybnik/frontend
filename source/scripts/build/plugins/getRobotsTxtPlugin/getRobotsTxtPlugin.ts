@@ -1,5 +1,5 @@
 import RobotstxtPlugin from "robotstxt-webpack-plugin";
-import ExtendedMode from "~scripts/build/types/extendedMode/extendedMode";
+import ExtendedMode from "~frontend/source/scripts/build/types/extendedMode/extendedMode";
 
 type GetRobotTxtPluginArguments = {
   targetToModern: boolean;

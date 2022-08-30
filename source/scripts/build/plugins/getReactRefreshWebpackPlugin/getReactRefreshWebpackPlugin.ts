@@ -1,5 +1,5 @@
 import ReactRefreshWebpackPlugin from "@pmmmwh/react-refresh-webpack-plugin";
-import Mode from "~scripts/build/types/mode/mode";
+import Mode from "~frontend/source/scripts/build/types/mode/mode";
 
 type GetReactRefreshWebpackPluginArguments = {
   mode: Mode;

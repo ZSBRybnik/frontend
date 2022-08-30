@@ -1,8 +1,8 @@
 import { Configuration } from "webpack";
-import getConfig from "~scripts/build/root/getConfig/getConfig";
-import ExtendedMode from "~scripts/build/types/extendedMode/extendedMode";
-import Mode from "~scripts/build/types/mode/mode";
-import { TargetType } from "~shared/constants/target/target";
+import getConfig from "~frontend/source/scripts/build/root/getConfig/getConfig";
+import ExtendedMode from "~frontend/source/scripts/build/types/extendedMode/extendedMode";
+import Mode from "~frontend/source/scripts/build/types/mode/mode";
+import { TargetType } from "~frontend/source/shared/constants/target/target";
 
 export type ConfigsMapper = {
   [key in TargetType]: Configuration[];

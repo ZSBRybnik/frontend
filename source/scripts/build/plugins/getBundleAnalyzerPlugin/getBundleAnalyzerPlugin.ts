@@ -1,6 +1,6 @@
 import { BundleAnalyzerPlugin } from "webpack-bundle-analyzer";
-import ExtendedMode from "~scripts/build/types/extendedMode/extendedMode";
-import getTargetToModernFolder from "~scripts/build/utils/getTargetToModernFolder/getTargetToModernFolder";
+import ExtendedMode from "~frontend/source/scripts/build/types/extendedMode/extendedMode";
+import getTargetToModernFolder from "~frontend/source/scripts/build/utils/getTargetToModernFolder/getTargetToModernFolder";
 
 type GetBundleAnalyzerPluginArguments = {
   targetToModern: boolean;

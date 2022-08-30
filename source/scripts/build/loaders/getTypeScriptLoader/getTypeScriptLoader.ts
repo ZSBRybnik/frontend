@@ -1,7 +1,7 @@
 import { join } from "path";
-import source from "~scripts/build/constants/source/source";
-import Mode from "~scripts/build/types/mode/mode";
-import getTargetVersion from "~scripts/build/utils/getTargetVersion/getTargetVersion";
+import source from "~frontend/source/scripts/build/constants/source/source";
+import Mode from "~frontend/source/scripts/build/types/mode/mode";
+import getTargetVersion from "~frontend/source/scripts/build/utils/getTargetVersion/getTargetVersion";
 
 type GetTypeScriptLoaderArguments = {
   targetToModern: boolean;

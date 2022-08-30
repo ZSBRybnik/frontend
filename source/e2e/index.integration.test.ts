@@ -1,7 +1,7 @@
 import { exec, execSync } from "child_process";
-import destination from "~scripts/build/constants/destination/destination";
-import scriptsKeys from "~scripts/build/constants/scriptsKeys/scriptsKeys";
-import Programs from "~scripts/runner/types/programs/programs";
+import destination from "~frontend/source/scripts/build/constants/destination/destination";
+import scriptsKeys from "~frontend/source/scripts/build/constants/scriptsKeys/scriptsKeys";
+import Programs from "~frontend/source/scripts/runner/types/programs/programs";
 
 beforeAll((): Promise<void> => {
   return new Promise<void>((resolve): void => {
