@@ -1,5 +1,7 @@
+/* eslint-disable max-params */
 import { app, BrowserWindow, ipcMain, Menu } from "electron";
 import express, { Express } from "express";
+import Gun from "gun";
 import { join } from "path";
 import { fromEvent } from "rxjs";
 import "source-map-support/register";
@@ -13,16 +15,26 @@ import setupServerListening from "~frontend/source/main/utils/setupServerListeni
 import toggleDevelopmentTools from "~frontend/source/main/utils/toggleDevelopmentTools/toggleDevelopmentTools";
 import mainWindow from "~frontend/source/main/windows/mainWindow/mainWindow";
 import IpcEvents from "~frontend/source/shared/types/ipcEvents/ipcEvents";
+import getTray from "./utils/getTray/getTray";
 
 const server: Express = express();
+server.use((Gun as any).serve);
 server.use(express.static(join(__dirname, "..", "..")));
+server.use("*", (_request, response) => {
+  response.sendFile(join(__dirname, "..", "..", "index.html"));
+});
+
 const port: number = 10000;
 
 app.on(AppEvents.Ready, (): void => {
-  setupServerListening({ server, port });
+  const httpServer = setupServerListening({ server, port });
+  Gun({
+    file: "gun-database",
+    web: httpServer,
+  });
   Menu.setApplicationMenu(null);
   mainWindow.content = new BrowserWindow(mainWindow.settings);
-  mainWindow.content.loadURL(`http://localhost:${port}`);
+  mainWindow.content.loadURL(`http://localhost:${port}/cat`);
   fromEvent(mainWindow.content, BrowserWindowEvent.ReadyToShow).subscribe(
     () => {
       const { content }: ExtendedBrowserWindowWithContent =
@@ -49,6 +61,7 @@ app.on(AppEvents.Ready, (): void => {
       fromEvent(ipcMain, IpcEvents.HardReload).subscribe(hardReload);
       content?.show();
       toggleDevelopmentTools(content);
+      getTray();
     },
   );
 });
