@@ -1,4 +1,5 @@
 import { Express } from "express";
+import type { Server } from "http";
 
 type SetupServerListeningArguments = {
   server: Express;
@@ -7,13 +8,13 @@ type SetupServerListeningArguments = {
 
 export type SetupServerListening = (
   argument: SetupServerListeningArguments,
-) => void;
+) => Server;
 
 const setupServerListening: SetupServerListening = ({
   server,
   port,
-}: SetupServerListeningArguments): void => {
-  server.listen(port).on("error", (): void => {
+}: SetupServerListeningArguments): Server => {
+  return server.listen(port).on("error", (): void => {
     port++;
     setupServerListening({ server, port });
   });

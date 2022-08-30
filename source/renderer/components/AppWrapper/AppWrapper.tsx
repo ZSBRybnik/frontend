@@ -5,8 +5,8 @@ import GlobalStyle from "~frontend/source/renderer/components/GlobalStyles/Globa
 import Loader from "~frontend/source/renderer/components/Loader/Loader";
 import NavBar from "~frontend/source/renderer/components/Navbar/Navbar";
 import useCopy from "../../hooks/useCopy/useCopy";
-import useIpfs from "../../hooks/useIpfs/useIpfs";
 import useNetwork from "../../hooks/useNetwork/useNetwork";
+import useQuitShortcut from "../../hooks/useQuitShortcut/useQuitShortcut";
 import Presentation from "../Presentation/Presentation";
 import { MainSection, MainSectionContent } from "./AppWrapper.styles";
 
@@ -37,7 +37,8 @@ const Post: LazyExoticComponent<FunctionComponent> = lazy(
 const AppWrapper: FunctionComponent = () => {
   useCopy();
   useNetwork();
-  useIpfs();
+  useQuitShortcut();
+  // useIpfs();
   return (
     <>
       <GlobalStyle />

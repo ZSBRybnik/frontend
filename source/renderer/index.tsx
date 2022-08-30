@@ -7,7 +7,10 @@ import target, {
 } from "~frontend/source/shared/constants/target/target";
 import ExtendedWindow from "~frontend/source/shared/types/extendedWindow/extendedWindow";
 
-export const gun = Gun("http://localhost:3000/gun");
+export const gun = Gun([
+  "http://localhost:3000/gun",
+  "http://localhost:10000/gun",
+]);
 
 if (
   target === TargetType.Desktop
