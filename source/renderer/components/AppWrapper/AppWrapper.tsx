@@ -5,10 +5,13 @@ import GlobalStyle from "~frontend/source/renderer/components/GlobalStyles/Globa
 import Loader from "~frontend/source/renderer/components/Loader/Loader";
 import NavBar from "~frontend/source/renderer/components/Navbar/Navbar";
 import useCopy from "../../hooks/useCopy/useCopy";
+import useMinimizeShortcut from "../../hooks/useMinimizeShortcut/useMinimizeShortcut";
 import useNetwork from "../../hooks/useNetwork/useNetwork";
 import useQuitShortcut from "../../hooks/useQuitShortcut/useQuitShortcut";
 import Presentation from "../Presentation/Presentation";
 import { MainSection, MainSectionContent } from "./AppWrapper.styles";
+import useToggleFullscreenShortcut from "../../hooks/useToggleFullscreenShortcut/useToggleFullscreenShortcut";
+import useToggleMaximizeShortcut from "../../hooks/useToggleMaximizeShortcut/useToggleMaximizeShortcut";
 
 const Homepage: LazyExoticComponent<FunctionComponent> = lazy(
   (): Promise<typeof import("~frontend/source/renderer/pages/Homepage")> => {
@@ -38,6 +41,9 @@ const AppWrapper: FunctionComponent = () => {
   useCopy();
   useNetwork();
   useQuitShortcut();
+  useMinimizeShortcut();
+  useToggleMaximizeShortcut();
+  useToggleFullscreenShortcut();
   // useIpfs();
   return (
     <>

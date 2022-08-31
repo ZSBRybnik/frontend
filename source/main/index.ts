@@ -58,6 +58,11 @@ app.on(AppEvents.Ready, (): void => {
           mainWindow.content?.maximize();
         }
       });
+      fromEvent(ipcMain, IpcEvents.ToggleFullscreen).subscribe(() => {
+        mainWindow.content?.setFullScreen(
+          /*!mainWindow.content?.isFullScreen()*/ true,
+        );
+      });
       fromEvent(ipcMain, IpcEvents.HardReload).subscribe(hardReload);
       content?.show();
       toggleDevelopmentTools(content);

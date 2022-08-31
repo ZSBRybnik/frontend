@@ -5,6 +5,7 @@ type ExtendedWindow = Window &
       close: () => void;
       minimize: () => void;
       toggleMaximize: () => void;
+      toggleFullscreen: () => void;
     };
   };
 
