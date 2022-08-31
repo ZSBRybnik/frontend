@@ -41,12 +41,23 @@
     "baseUrl": ".",
     "paths": {
       "~frontend/*": ["*"],
-      "~backend/*": ["../backend/*"],
+      "~backend/*": ["../backend/*"]
     },
-    "plugins": [{
-      "transform": "typescript-transform-paths"
-    }]
+    "plugins": [
+      {
+        "transform": "typescript-transform-paths"
+      }
+    ]
   },
   "include": [".", "../backend"],
-  "exclude": ["node_modules", "coverage", "android", "ios", "destination", "../backend/destination", "../backend/coverage", "../backend/node_modules"]
+  "exclude": [
+    "node_modules",
+    "coverage",
+    "android",
+    "ios",
+    "destination",
+    "../backend/destination",
+    "../backend/coverage",
+    "../backend/node_modules"
+  ]
 }
