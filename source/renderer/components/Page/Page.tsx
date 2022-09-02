@@ -2,7 +2,11 @@ import { PropsWithChildren } from "react";
 import { Helmet } from "react-helmet-async";
 import { PageWrapper } from "./Page.styles";
 
-type PageProperties = PropsWithChildren<{ title?: string }>;
+export type PageProperties = PropsWithChildren<{
+  title?: string;
+  noBackground?: boolean;
+  noVerticalPadding?: boolean;
+}>;
 
 const Page = ({ title, ...rest }: PageProperties) => {
   const titleWithDash = ` - ${title}`;

@@ -12,6 +12,7 @@ import Presentation from "../Presentation/Presentation";
 import { MainSection, MainSectionContent } from "./AppWrapper.styles";
 import useToggleFullscreenShortcut from "../../hooks/useToggleFullscreenShortcut/useToggleFullscreenShortcut";
 import useToggleMaximizeShortcut from "../../hooks/useToggleMaximizeShortcut/useToggleMaximizeShortcut";
+import BottomNavbar from "../BottomNavbar/BottomNavbar";
 
 const Homepage: LazyExoticComponent<FunctionComponent> = lazy(
   (): Promise<typeof import("~frontend/source/renderer/pages/Homepage")> => {
@@ -48,8 +49,8 @@ const AppWrapper: FunctionComponent = () => {
   return (
     <>
       <GlobalStyle />
-      <NavBar />
       <Suspense fallback={<Loader />}>
+        <NavBar />
         <MainSection>
           <MainSectionContent>
             <Routes>
@@ -60,6 +61,7 @@ const AppWrapper: FunctionComponent = () => {
             </Routes>
             <Presentation />
           </MainSectionContent>
+          <BottomNavbar />
         </MainSection>
       </Suspense>
     </>

@@ -8,6 +8,7 @@ const FeedView = () => {
   const { data } = useQuery(["getFeed"], {
     enabled: shouldFetchState.get(),
   });
+  console.log(data);
   return (
     <div>
       {activitiesState.map((activity, index) => {

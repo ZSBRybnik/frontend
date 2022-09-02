@@ -3,7 +3,10 @@ import { PresentationBlock, PresentationWrapper } from "./Presentation.styles";
 const Presentation = () => {
   return (
     <PresentationWrapper>
-      <PresentationBlock>123</PresentationBlock>
+      <PresentationBlock>
+        Programiści: <div>Krzysztof Zawisła</div>
+        <div>Borys Malinowski</div>
+      </PresentationBlock>
     </PresentationWrapper>
   );
 };
