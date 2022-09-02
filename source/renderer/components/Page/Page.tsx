@@ -6,6 +6,7 @@ export type PageProperties = PropsWithChildren<{
   title?: string;
   noBackground?: boolean;
   noVerticalPadding?: boolean;
+  defaultChildrenVerticalMargin?: number;
 }>;
 
 const Page = ({ title, ...rest }: PageProperties) => {

@@ -2,13 +2,37 @@
 import { useHookstate } from "@hookstate/core";
 import { FunctionComponent } from "react";
 import FeedView from "../../components/FeedView/FeedView";
+import Page from "../../components/Page/Page";
 import PostsView from "../../components/PostsView/PostsView";
+import Switch from "../../components/Switch/Switch";
 
 const Homepage: FunctionComponent = () => {
   const viewPostsState = useHookstate(true);
   return (
-    <>
-      <div>
+    <Page noBackground noVerticalPadding defaultChildrenVerticalMargin={15}>
+      <Switch
+        options={[
+          {
+            value: "Posts",
+            onClick: () => {
+              viewPostsState.set(true);
+            },
+          },
+          {
+            value: "Feed",
+            onClick: () => {
+              viewPostsState.set(false);
+            },
+          },
+        ]}
+      />
+      {viewPostsState.get() ? <PostsView /> : <FeedView />}
+    </Page>
+  );
+};
+export default Homepage;
+
+/* <div>
         <div
           onClick={() => {
             viewPostsState.set(true);
@@ -33,10 +57,4 @@ const Homepage: FunctionComponent = () => {
         >
           FEED
         </div>
-      </div>
-      {viewPostsState.get() ? <PostsView /> : <FeedView />}
-    </>
-  );
-};
-
-export default Homepage;
+      </div> */

@@ -10,11 +10,11 @@ const FeedView = () => {
   });
   console.log(data);
   return (
-    <div>
+    <>
       {activitiesState.map((activity, index) => {
         return <div key={`activity-${index}`}>{activity.get().title}</div>;
       })}
-    </div>
+    </>
   );
 };
 export default FeedView;

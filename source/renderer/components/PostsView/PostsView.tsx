@@ -27,7 +27,7 @@ const PostsView: FunctionComponent = () => {
   }, [data]);
   ///{post.get().title}
   return (
-    <Page noBackground noVerticalPadding>
+    <>
       {postsState.map((post) => {
         console.log(post);
         return (
@@ -48,7 +48,7 @@ const PostsView: FunctionComponent = () => {
       >
         <div>123</div>
       </VisibilitySensor>
-    </Page>
+    </>
   );
 };
 export default PostsView;
