@@ -3,7 +3,6 @@ import { useHookstate } from "@hookstate/core";
 import { FunctionComponent, useEffect } from "react";
 import VisibilitySensor from "react-visibility-sensor";
 import { useQuery } from "../../components/AppProvider/AppProvider";
-import Page from "../Page/Page";
 import Post from "../Post/Post";
 
 const PostsView: FunctionComponent = () => {
