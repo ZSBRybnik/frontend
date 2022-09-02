@@ -29,7 +29,6 @@ const PostsView: FunctionComponent = () => {
   return (
     <>
       {postsState.map((post) => {
-        console.log(post);
         return (
           <Post
             title={post.get().title}
