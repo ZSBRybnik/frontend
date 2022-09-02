@@ -1,6 +1,9 @@
 import { css, Global, Theme, useTheme } from "@emotion/react";
 import type { FunctionComponent } from "react";
 import { memo } from "react";
+import target, {
+  TargetType,
+} from "~frontend/source/shared/constants/target/target";
 
 const GlobalStyles: FunctionComponent = (): JSX.Element => {
   const theme: Theme = useTheme();
@@ -27,7 +30,7 @@ const GlobalStyles: FunctionComponent = (): JSX.Element => {
           font-family: "Roboto", sans-serif;
           -webkit-font-smoothing: antialiased;
           -moz-osx-font-smoothing: grayscale;
-          background: #fffff00;
+          background: #ffffff00;
           color: ${theme.color};
         }
         #root {
@@ -36,7 +39,10 @@ const GlobalStyles: FunctionComponent = (): JSX.Element => {
           flex-direction: column;
           min-height: 100vh;
           overflow: hidden;
-          border-radius: 15px; /* tylko na windows 11 i macos */
+          ${target === TargetType.Desktop &&
+          css`
+            border-radius: 15px;
+          `};
         }
         @font-face {
           font-family: "Segoe Fluent Icons";
