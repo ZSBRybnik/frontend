@@ -8,12 +8,11 @@ import Post from "../Post/Post";
 
 const PostsView: FunctionComponent = () => {
   const shouldFetchState = useHookstate(true);
-  const lastIdState = useHookstate(18);
   const postsState = useHookstate(
     [] as { title: string; id: number; brief: string }[],
   );
   const { data } = useQuery(
-    ["getPosts", { range: 100, startId: lastIdState.get() }],
+    ["getPosts", { range: 10, skip: postsState.length }],
     {
       enabled: shouldFetchState.get(),
     },
@@ -21,11 +20,8 @@ const PostsView: FunctionComponent = () => {
   useEffect(() => {
     if (data) {
       postsState.merge(data);
-      const lastId = data.at(-1)?.id;
-      lastId && lastIdState.set(lastId + 1);
     }
   }, [data]);
-  ///{post.get().title}
   return (
     <>
       {postsState.map((post) => {
