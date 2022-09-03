@@ -14,6 +14,9 @@ const PostsView: FunctionComponent = () => {
     ["getPosts", { range: 10, skip: postsState.length }],
     {
       enabled: shouldFetchState.get(),
+      onSuccess: () => {
+        shouldFetchState.set(false);
+      },
     },
   );
   useEffect(() => {
@@ -23,8 +26,8 @@ const PostsView: FunctionComponent = () => {
   }, [data]);
   return (
     <>
-      {postsState.map((post) => {
-        return (
+      {postsState.map((post, index) => {
+        const PostElement = (
           <Post
             title={post.get().title}
             brief={post.get().brief}
@@ -34,14 +37,18 @@ const PostsView: FunctionComponent = () => {
             src="https://zsbrybnik.pl/wp-content/uploads/2017/09/logo_zsb_small.png"
           />
         );
+        return postsState.length - 1 === index ? (
+          <VisibilitySensor
+            onChange={(isVisible: boolean) => {
+              shouldFetchState.set(isVisible);
+            }}
+          >
+            {PostElement}
+          </VisibilitySensor>
+        ) : (
+          PostElement
+        );
       })}
-      <VisibilitySensor
-        onChange={(isVisible: boolean) => {
-          shouldFetchState.set(isVisible);
-        }}
-      >
-        <div>123</div>
-      </VisibilitySensor>
     </>
   );
 };
