@@ -13,6 +13,7 @@ import { MainSection, MainSectionContent } from "./AppWrapper.styles";
 import useToggleFullscreenShortcut from "../../hooks/useToggleFullscreenShortcut/useToggleFullscreenShortcut";
 import useToggleMaximizeShortcut from "../../hooks/useToggleMaximizeShortcut/useToggleMaximizeShortcut";
 import BottomNavbar from "../BottomNavbar/BottomNavbar";
+import BottomSpacer from "../BottomSpacer/BottomSpacer";
 
 const Homepage: LazyExoticComponent<FunctionComponent> = lazy(
   (): Promise<typeof import("~frontend/source/renderer/pages/Homepage")> => {
@@ -61,6 +62,7 @@ const AppWrapper: FunctionComponent = () => {
             </Routes>
             <Presentation />
           </MainSectionContent>
+          <BottomSpacer />
           <BottomNavbar />
         </MainSection>
       </Suspense>
