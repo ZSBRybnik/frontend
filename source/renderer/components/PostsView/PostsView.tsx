@@ -25,7 +25,7 @@ const PostsView: FunctionComponent = () => {
     }
   }, [data]);
   return (
-    <>
+    <div>
       {postsState.map((post, index) => {
         const PostElement = (
           <Post
@@ -49,7 +49,7 @@ const PostsView: FunctionComponent = () => {
           PostElement
         );
       })}
-    </>
+    </div>
   );
 };
 export default PostsView;
