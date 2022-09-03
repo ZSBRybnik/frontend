@@ -39,6 +39,26 @@ app.on(AppEvents.Ready, (): void => {
     () => {
       const { content }: ExtendedBrowserWindowWithContent =
         mainWindow as ExtendedBrowserWindowWithContent;
+      fromEvent(ipcMain, IpcEvents.ExtractToSeparateWindow).subscribe(
+        (argument) => {
+          const [, address] = argument as [unknown, string];
+          console.log(address);
+          if (typeof address === "string") {
+            const newWindow = new BrowserWindow({
+              width: 800,
+              height: 600,
+              frame: false,
+              transparent: true,
+              resizable: true,
+              webPreferences: {
+                contextIsolation: true,
+                preload: join(__dirname, "..", "preload", "index.js"),
+              },
+            });
+            newWindow.loadURL(address);
+          }
+        },
+      );
       fromEvent(ipcMain, IpcEvents.ToggleDevelopmentTools).subscribe(() => {
         toggleDevelopmentTools(content);
       });
