@@ -32,17 +32,20 @@ const GlobalStyles: FunctionComponent = (): JSX.Element => {
           -moz-osx-font-smoothing: grayscale;
           background: #ffffff00;
           color: ${theme.color};
-        }
-        #root {
-          background: ${theme.background};
-          display: flex;
-          flex-direction: column;
-          min-height: 100vh;
-          overflow: hidden;
-          ${target === TargetType.Desktop &&
-          css`
-            border-radius: 15px;
-          `};
+          #root {
+            background: ${theme.background};
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            overflow: hidden;
+            ${target === TargetType.Desktop &&
+            css`
+              border-radius: 15px;
+            `};
+            a {
+              text-decoration: none;
+            }
+          }
         }
         @font-face {
           font-family: "Segoe Fluent Icons";
