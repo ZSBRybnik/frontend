@@ -7,8 +7,8 @@ type PageWrapperProperties = Pick<
 >;
 
 export const PageWrapper = styled.div<PageWrapperProperties>`
-  margin: 0;
   height: fit-content;
+  word-break: break-all;
   background: ${({ noBackground }) => {
     return noBackground ? "inherit" : "#eee";
   }};
