@@ -31,3 +31,4 @@ artifacts.json
 bundle-analyzes
 storybook
 lefthook.yml
+.faunarc
