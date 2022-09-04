@@ -6,6 +6,7 @@ type ExtendedWindow = Window &
       minimize: () => void;
       toggleMaximize: () => void;
       toggleFullscreen: () => void;
+      extractToSeparateWindow: (address: string) => void;
     };
   };
 

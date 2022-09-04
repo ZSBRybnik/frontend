@@ -6,6 +6,7 @@ enum IpcEvents {
   Minimize = "minimize",
   ToggleMaximize = "toggleMaximize",
   ToggleFullscreen = "toggleFullscreen",
+  ExtractToSeparateWindow = "extractToSeparateWindow",
 }
 
 export default IpcEvents;
