@@ -56,6 +56,7 @@ const getDefinePlugin: GetDefinePlugin = ({
     "process.env.PROJECT_DEPENDENSIES_VERSIONS": JSON.stringify(
       projectsDependenciesVersions,
     ),
+    "process.env.FAUNADB_KEY": JSON.stringify(process.env.FAUNADB_KEY),
   });
 };
 

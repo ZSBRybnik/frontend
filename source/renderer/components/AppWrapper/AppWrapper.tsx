@@ -14,6 +14,7 @@ import useToggleFullscreenShortcut from "../../hooks/useToggleFullscreenShortcut
 import useToggleMaximizeShortcut from "../../hooks/useToggleMaximizeShortcut/useToggleMaximizeShortcut";
 import BottomNavbar from "../BottomNavbar/BottomNavbar";
 import BottomSpacer from "../BottomSpacer/BottomSpacer";
+import useIpfs from "../../hooks/useIpfs/useIpfs";
 
 const Homepage: LazyExoticComponent<FunctionComponent> = lazy(
   (): Promise<typeof import("~frontend/source/renderer/pages/Homepage")> => {
@@ -46,7 +47,7 @@ const AppWrapper: FunctionComponent = () => {
   useMinimizeShortcut();
   useToggleMaximizeShortcut();
   useToggleFullscreenShortcut();
-  // useIpfs();
+  useIpfs();
   return (
     <>
       <GlobalStyle />

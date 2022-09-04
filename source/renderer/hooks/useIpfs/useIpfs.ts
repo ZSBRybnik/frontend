@@ -1,21 +1,24 @@
 /* eslint-disable no-restricted-imports */
-import { create, IPFS } from "ipfs-core";
-import { useEffect, useState } from "react";
+import { create } from "ipfs-core";
+import { useHookstate, useHookstateEffect } from "@hookstate/core";
+import ipfsStore from "../../stores/ipfsStore/ipfsStore";
 
 const useIpfs = () => {
-  const [ipfs, setIpfs] = useState<IPFS | null>(null);
-  useEffect(() => {
-    (async () => {
-      if (ipfs) {
-        const { cid } = await ipfs.add("Hello world");
-        console.info(cid);
-      } else {
-        setIpfs(await create());
-      }
-    })();
-  }, [ipfs]);
+  const ipfsState = useHookstate(ipfsStore);
+  useHookstateEffect(() => {
+    if (!ipfsState.get()) {
+      (async () => {
+        try {
+          const connection = await create();
+          ipfsState.set(connection);
+        } catch {
+          console.info("Already created");
+        }
+      })();
+    }
+  }, []);
   return {
-    ipfs,
+    ipfsState,
   };
 };
 export default useIpfs;

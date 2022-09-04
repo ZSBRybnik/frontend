@@ -9,6 +9,10 @@ import { AppRouter } from "~backend/source/server/rest/middlewares/getTrpcMiddle
 import MotionProvider from "~frontend/source/renderer/components/MotionProvider/MotionProvider";
 import mdxComponentsMapper from "~frontend/source/renderer/constants/mdxComponentsMapper/mdxComponentsMapper";
 import themes from "~frontend/source/renderer/constants/themes/themes";
+import reactGA from "react-ga";
+
+reactGA.initialize(process.env.GOOGLE_ANALYTICS_ID || "");
+reactGA.pageview(window.location.href);
 
 export const {
   Provider: TRPCProvider,

@@ -42,6 +42,7 @@ const PostsView: FunctionComponent = () => {
             onChange={(isVisible: boolean) => {
               shouldFetchState.set(isVisible);
             }}
+            key={`posts-sensor-${post.get().id}`}
           >
             {PostElement}
           </VisibilitySensor>
