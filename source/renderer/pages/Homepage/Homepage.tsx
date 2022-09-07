@@ -31,30 +31,3 @@ const Homepage: FunctionComponent = () => {
   );
 };
 export default Homepage;
-
-/* <div>
-        <div
-          onClick={() => {
-            viewPostsState.set(true);
-          }}
-          onKeyDown={() => {
-            console.log("xd");
-          }}
-          role="button"
-          tabIndex={0}
-        >
-          POSTS
-        </div>
-        <div
-          onClick={() => {
-            viewPostsState.set(false);
-          }}
-          onKeyDown={() => {
-            console.log("xd");
-          }}
-          role="button"
-          tabIndex={0}
-        >
-          FEED
-        </div>
-      </div> */
