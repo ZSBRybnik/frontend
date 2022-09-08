@@ -1,27 +1,24 @@
-import { useHookstateEffect } from "@hookstate/core";
-import { evaluate } from "@mdx-js/mdx";
-import * as provider from "@mdx-js/react";
-import { useMDXComponents } from "@mdx-js/react";
 import {
   FunctionComponent,
   // eslint-disable-next-line no-restricted-imports
   useState,
-  //useMemo,
 } from "react";
-// import { Client, query } from "faunadb";
 import { useParams } from "react-router-dom";
-import runtime from "react/jsx-runtime.js";
 import { Page as PageType } from "~backend/node_modules/@prisma/client";
 import Routes from "~backend/source/server/trpc/constants/routes/routes";
-// import { gun } from "../..";
-// import { useQuery } from "../../components/AppProvider/AppProvider";
 import Page from "../../components/Page/Page";
-// import useIpfs from "../../hooks/useIpfs/useIpfs";
-import useCallAPI from "../../hooks/useCallAPI/useCallAPI";
+import useCallAPI, {
+  UseCallAPIReturn,
+} from "../../hooks/useCallAPI/useCallAPI";
+import useMDXEvaluate from "../../hooks/useMDXEvaluate/useMDXEvaluate";
 
 const Subpage: FunctionComponent = () => {
-  const { name = "" } = useParams();
-  const { data } = useCallAPI<PageType>({
+  const {
+    name = "",
+  }: Readonly<{
+    name?: string;
+  }> = useParams();
+  const { data }: UseCallAPIReturn<PageType> = useCallAPI<PageType>({
     indexName: "pages_by_name",
     indexValue: name,
     gunKey: "pages",
@@ -31,19 +28,13 @@ const Subpage: FunctionComponent = () => {
     },
   });
   const [content, setContent] = useState(<></>);
-  const { title }: Partial<PageType> = Object(data);
-  const mdxComponents = useMDXComponents();
-  useHookstateEffect(() => {
-    const { content }: Partial<PageType> = Object(data);
-    if (content)
-      (async () => {
-        const { default: Component } = await evaluate(content, {
-          ...provider,
-          ...runtime,
-        } as any);
-        setContent(<Component components={mdxComponents} />);
-      })();
-  }, [data]);
+  const { title, content: dataContent }: Partial<PageType> = Object(data);
+  useMDXEvaluate({
+    content: dataContent,
+    onEvaluate: ({ component: Component, mdxComponents }) => {
+      setContent(<Component mdxComponents={mdxComponents} />);
+    },
+  });
   return <Page title={title}>{content}</Page>;
 };
 

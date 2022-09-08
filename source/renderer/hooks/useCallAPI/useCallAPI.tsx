@@ -20,13 +20,17 @@ type UseCallAPIArguments = {
   trpcPayload: Record<string, unknown>;
 };
 
+export type UseCallAPIReturn<T> = {
+  data: T;
+};
+
 const useCallAPI = <T,>({
   indexName,
   indexValue,
   gunKey,
   trpcRoute,
   trpcPayload,
-}: UseCallAPIArguments): { data: T } => {
+}: UseCallAPIArguments): UseCallAPIReturn<T> => {
   const { ipfsState } = useIpfs();
   const requestCidState = useHookstate<null | string>(null);
   const ipfsResponseState = useHookstate<T | null>(null);
