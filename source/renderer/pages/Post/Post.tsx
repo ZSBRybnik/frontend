@@ -1,5 +1,5 @@
 /* eslint-disable no-restricted-imports */
-import { evaluate } from "@mdx-js/mdx";
+import { evaluate, EvaluateOptions } from "@mdx-js/mdx";
 import * as provider from "@mdx-js/react";
 import { useMDXComponents } from "@mdx-js/react";
 import { useEffect, useMemo, useState } from "react";
@@ -45,7 +45,7 @@ const Post = () => {
         const { default: Component } = await evaluate(validContent, {
           ...provider,
           ...runtime,
-        } as any);
+        } as unknown as EvaluateOptions);
         setContent(<Component components={mdxComponents} />);
       })();
   }, [trpcContent, gunPost]);
