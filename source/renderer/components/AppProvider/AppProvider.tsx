@@ -10,6 +10,15 @@ import MotionProvider from "~frontend/source/renderer/components/MotionProvider/
 import mdxComponentsMapper from "~frontend/source/renderer/constants/mdxComponentsMapper/mdxComponentsMapper";
 import themes from "~frontend/source/renderer/constants/themes/themes";
 import reactGA from "react-ga";
+import {
+  ConnectionProvider,
+  WalletProvider,
+} from "@solana/wallet-adapter-react";
+
+import { WalletAdapterNetwork } from "@solana/wallet-adapter-base";
+import { WalletModalProvider } from "@solana/wallet-adapter-react-ui";
+import "@solana/wallet-adapter-react-ui/styles.css";
+import useSolanaWallets from "../../hooks/useSolanaWallets/useSolanaWallets";
 
 reactGA.initialize(process.env.GOOGLE_ANALYTICS_ID || "");
 reactGA.pageview(window.location.href);
@@ -28,20 +37,27 @@ const trpcClient = createClient({
 const AppProvider: FunctionComponent<PropsWithChildren> = ({
   children,
 }: PropsWithChildren): JSX.Element => {
+  const { wallets } = useSolanaWallets();
   return (
-    <MDXProvider components={mdxComponentsMapper}>
-      <TRPCProvider client={trpcClient} queryClient={queryClient}>
-        <QueryClientProvider client={queryClient}>
-          <ThemeProvider theme={themes["light"]}>
-            <HelmetProvider>
-              <MotionProvider>
-                <BrowserRouter>{children}</BrowserRouter>
-              </MotionProvider>
-            </HelmetProvider>
-          </ThemeProvider>
-        </QueryClientProvider>
-      </TRPCProvider>
-    </MDXProvider>
+    <ConnectionProvider endpoint={WalletAdapterNetwork.Devnet}>
+      <WalletProvider wallets={wallets}>
+        <MDXProvider components={mdxComponentsMapper}>
+          <TRPCProvider client={trpcClient} queryClient={queryClient}>
+            <QueryClientProvider client={queryClient}>
+              <ThemeProvider theme={themes["light"]}>
+                <HelmetProvider>
+                  <MotionProvider>
+                    <WalletModalProvider>
+                      <BrowserRouter>{children}</BrowserRouter>
+                    </WalletModalProvider>
+                  </MotionProvider>
+                </HelmetProvider>
+              </ThemeProvider>
+            </QueryClientProvider>
+          </TRPCProvider>
+        </MDXProvider>
+      </WalletProvider>
+    </ConnectionProvider>
   );
 };
 
