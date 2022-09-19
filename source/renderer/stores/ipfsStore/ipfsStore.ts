@@ -1,6 +1,27 @@
-import { hookstate } from "@hookstate/core";
 import { IPFS } from "ipfs-core";
+import create, { StoreApi, UseBoundStore } from "zustand";
 
-const ipfsStore = hookstate<null | IPFS>(null);
+export type IpfsStoreState = {
+  value: null | IPFS;
+  setValue: (state: IPFS) => void;
+  clearValue: () => void;
+};
 
-export default ipfsStore;
+const useIpfsStore: UseBoundStore<StoreApi<IpfsStoreState>> =
+  create<IpfsStoreState>((set) => {
+    return {
+      value: null,
+      setValue: (value: IPFS) => {
+        set(() => {
+          return { value };
+        });
+      },
+      clearValue: () => {
+        set(() => {
+          return { value: null };
+        });
+      },
+    };
+  });
+
+export default useIpfsStore;

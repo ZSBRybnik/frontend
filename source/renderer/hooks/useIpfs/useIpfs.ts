@@ -1,24 +1,40 @@
 /* eslint-disable no-restricted-imports */
-import { create } from "ipfs-core";
-import { useHookstate, useHookstateEffect } from "@hookstate/core";
-import ipfsStore from "../../stores/ipfsStore/ipfsStore";
+import { create, IPFS } from "ipfs-core";
+import { useEffect, useCallback } from "react";
+import useIpfsStore, { IpfsStoreState } from "../../stores/ipfsStore/ipfsStore";
 
-const useIpfs = () => {
-  const ipfsState = useHookstate(ipfsStore);
-  useHookstateEffect(() => {
-    if (!ipfsState.get()) {
-      (async () => {
-        try {
-          const connection = await create();
-          ipfsState.set(connection);
-        } catch {
-          console.info("Already created");
-        }
-      })();
+const useIpfs: () => Pick<IpfsStoreState, "value"> = (): Pick<
+  IpfsStoreState,
+  "value"
+> => {
+  const { setValue, value }: Pick<IpfsStoreState, "value" | "setValue"> =
+    useIpfsStore(
+      ({
+        value,
+        setValue,
+      }: IpfsStoreState): Pick<IpfsStoreState, "value" | "setValue"> => {
+        return { setValue, value };
+      },
+    );
+  const createIpfsConnection: () => Promise<void> = useCallback(async () => {
+    if (!value) {
+      try {
+        const connection: IPFS = await create();
+        setValue(connection);
+      } catch {
+        setTimeout(async () => {
+          await createIpfsConnection();
+        }, 5_000);
+      }
     }
+  }, [value]);
+  useEffect((): void => {
+    (async (): Promise<void> => {
+      await createIpfsConnection();
+    })();
   }, []);
   return {
-    ipfsState,
+    value,
   };
 };
 export default useIpfs;

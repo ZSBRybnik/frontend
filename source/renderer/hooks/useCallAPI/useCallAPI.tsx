@@ -1,14 +1,11 @@
 /* eslint-disable sonarjs/cognitive-complexity */
-import {
-  useHookstate,
-  useHookstateEffect,
-  useHookstateMemo,
-} from "@hookstate/core";
+import { useHookstate, useHookstateMemo } from "@hookstate/core";
 import { Client, query } from "faunadb";
 import Routes from "~backend/source/server/trpc/constants/routes/routes";
 import { useQuery } from "../../components/AppProvider/AppProvider";
 import useIpfs from "../useIpfs/useIpfs";
 import { gun } from "../..";
+import { useEffect } from "react";
 
 const { Get, Match, Index } = query;
 
@@ -31,7 +28,7 @@ const useCallAPI = <T,>({
   trpcRoute,
   trpcPayload,
 }: UseCallAPIArguments): UseCallAPIReturn<T> => {
-  const { ipfsState } = useIpfs();
+  const { value: ipfs } = useIpfs();
   const requestCidState = useHookstate<null | string>(null);
   const ipfsResponseState = useHookstate<T | null>(null);
   const gunResponseState = useHookstate<T | null>(null);
@@ -42,7 +39,7 @@ const useCallAPI = <T,>({
       enabled: gunHasCheckedState.get() && !gunResponseState.get(),
     },
   );
-  useHookstateEffect(() => {
+  useEffect(() => {
     if (isError) {
       (async () => {
         const faunadbClient = new Client({
@@ -59,13 +56,12 @@ const useCallAPI = <T,>({
       })();
     }
   }, [isError, indexName]);
-  useHookstateEffect(() => {
+  useEffect(() => {
     if (isError) {
       (async () => {
-        const ipfs = ipfsState.get();
         const requestCid = requestCidState.get();
         if (ipfs && requestCid) {
-          const ipfsResponose = ipfsState.get()?.cat(requestCid);
+          const ipfsResponose = ipfs?.cat(requestCid);
           if (ipfs.isOnline() && ipfsResponose) {
             for await (const iterator of ipfsResponose) {
               ipfsResponseState.set(JSON.parse(iterator.toString()));
@@ -74,8 +70,8 @@ const useCallAPI = <T,>({
         }
       })();
     }
-  }, [ipfsState, requestCidState, isError, indexName]);
-  useHookstateEffect(() => {
+  }, [ipfs, requestCidState, isError, indexName]);
+  useEffect(() => {
     (async () => {
       await gun
         .get(gunKey)
