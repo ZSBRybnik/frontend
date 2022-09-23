@@ -15,6 +15,11 @@ import useToggleMaximizeShortcut from "../../hooks/useToggleMaximizeShortcut/use
 import BottomNavbar from "../BottomNavbar/BottomNavbar";
 import BottomSpacer from "../BottomSpacer/BottomSpacer";
 import useIpfs from "../../hooks/useIpfs/useIpfs";
+import PrivateRoute, {
+  PrivateRouteRedirectActions,
+} from "../PrivateRoute/PrivateRoute";
+import Buffet from "../../pages/Buffet/Buffet";
+import Roles from "~backend/source/server/constants/roles/Roles";
 
 const Homepage: LazyExoticComponent<FunctionComponent> = lazy(
   (): Promise<typeof import("~frontend/source/renderer/pages/Homepage")> => {
@@ -58,6 +63,18 @@ const AppWrapper: FunctionComponent = () => {
             <Routes>
               <Route path="/" element={<Homepage />} />
               <Route path="/post/:id" element={<Post />} />
+              <PrivateRoute
+                path="/buffet"
+                noAccessAction={PrivateRouteRedirectActions.RedirectToLoginPage}
+                whitelist={
+                  new Set([
+                    Roles.Administrator,
+                    Roles.BuffetOwner,
+                    Roles.Student,
+                  ])
+                }
+                element={<Buffet />}
+              />
               <Route path="/:name" element={<Subpage />} />
               <Route path="*" element={<>404</>} />
             </Routes>
