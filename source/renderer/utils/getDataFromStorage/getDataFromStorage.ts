@@ -4,11 +4,17 @@ import target, {
   TargetType,
 } from "~frontend/source/shared/constants/target/target";
 
-type GetDataFromStorage = (key: string) => Promise<string | null>;
+type GetDataFromStorageArguments = {
+  key: string;
+};
 
-const getDataFromStorage: GetDataFromStorage = async (
-  key: string,
-): Promise<string | null> => {
+type GetDataFromStorage = (
+  argument: GetDataFromStorageArguments,
+) => Promise<string | null>;
+
+const getDataFromStorage: GetDataFromStorage = async ({
+  key,
+}: GetDataFromStorageArguments): Promise<string | null> => {
   if (target === TargetType.Mobile) {
     return await mobileStorage?.get(key);
   } else {
