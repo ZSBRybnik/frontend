@@ -1,31 +1,33 @@
-import { useHookstate } from "@hookstate/core";
 import FeedView from "../../components/FeedView/FeedView";
 import Page from "../../components/Page/Page";
 import PostsView from "../../components/PostsView/PostsView";
 import Switch from "../../components/Switch/Switch";
+import useState from "../../hooks/useState/useState";
 import { HomepageComponent } from "./Homepage.types";
 
 const Homepage: HomepageComponent = () => {
-  const viewPostsState = useHookstate(true);
+  const { value: viewPosts, setValue: setViewPosts } = useState<{
+    value: boolean;
+  }>({ value: true });
   return (
     <Page noBackground noVerticalPadding defaultChildrenVerticalMargin={15}>
       <Switch
         options={[
           {
             value: "Posts",
-            onClick: () => {
-              viewPostsState.set(true);
+            onClick: (): void => {
+              setViewPosts(true);
             },
           },
           {
             value: "Feed",
-            onClick: () => {
-              viewPostsState.set(false);
+            onClick: (): void => {
+              setViewPosts(false);
             },
           },
         ]}
       />
-      {viewPostsState.get() ? <PostsView /> : <FeedView />}
+      {viewPosts ? <PostsView /> : <FeedView />}
     </Page>
   );
 };

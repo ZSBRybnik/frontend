@@ -6,8 +6,13 @@ type UseStateArguments<
   },
 > = {
   value: T["value"];
-  setValue: (value: T["value"]) => void;
 };
+
+type ZustandArguments<
+  T extends {
+    value: unknown;
+  },
+> = UseStateArguments<T> & { setValue: (newState: T["value"]) => void };
 
 const useState = <
   T extends {
@@ -16,9 +21,9 @@ const useState = <
 >({
   value,
 }: UseStateArguments<T>): UseStateArguments<T> => {
-  const useCommonState: UseBoundStore<StoreApi<UseStateArguments<T>>> = zustand<
-    UseStateArguments<T>
-  >((set): UseStateArguments<T> => {
+  const useCommonState: UseBoundStore<StoreApi<ZustandArguments<T>>> = zustand<
+    ZustandArguments<T>
+  >((set): ZustandArguments<T> => {
     return {
       value,
       setValue: (newValue: T["value"]): void => {
@@ -28,7 +33,9 @@ const useState = <
       },
     };
   });
-  return useCommonState((state: UseStateArguments<T>): UseStateArguments<T> => {
+  return useCommonState((state: ZustandArguments<T>): ZustandArguments<T> => {
     return state;
   });
 };
+
+export default useState;
