@@ -1,12 +1,11 @@
-/* eslint-disable max-params */
 import { useHookstate } from "@hookstate/core";
-import { FunctionComponent } from "react";
 import FeedView from "../../components/FeedView/FeedView";
 import Page from "../../components/Page/Page";
 import PostsView from "../../components/PostsView/PostsView";
 import Switch from "../../components/Switch/Switch";
+import { HomepageComponent } from "./Homepage.types";
 
-const Homepage: FunctionComponent = () => {
+const Homepage: HomepageComponent = () => {
   const viewPostsState = useHookstate(true);
   return (
     <Page noBackground noVerticalPadding defaultChildrenVerticalMargin={15}>

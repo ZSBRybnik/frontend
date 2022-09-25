@@ -1,7 +1,7 @@
 import Gun from "gun";
 import type { Root } from "react-dom/client";
 import { createRoot } from "react-dom/client";
-import App from "~frontend/source/renderer/components/App/App";
+import App from "~frontend/source/renderer/components/app/app";
 import target, {
   TargetType,
 } from "~frontend/source/shared/constants/target/target";

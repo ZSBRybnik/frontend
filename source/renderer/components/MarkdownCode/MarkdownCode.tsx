@@ -1,11 +1,11 @@
-import { FC } from "react";
+import { FunctionComponent } from "react";
 import Code, { CodeProperties } from "../Code/Code";
 
 type MarkdownCodeProperties = {
   className: string;
 } & Pick<CodeProperties, "children">;
 
-const MarkdownCode: FC<MarkdownCodeProperties> = ({
+const MarkdownCode: FunctionComponent<MarkdownCodeProperties> = ({
   className,
   ...rest
 }: MarkdownCodeProperties): JSX.Element => {
