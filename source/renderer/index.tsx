@@ -1,4 +1,3 @@
-import Gun from "gun";
 import type { Root } from "react-dom/client";
 import { createRoot } from "react-dom/client";
 import App from "~frontend/source/renderer/components/app/app";
@@ -6,19 +5,26 @@ import target, {
   TargetType,
 } from "~frontend/source/shared/constants/target/target";
 import ExtendedWindow from "~frontend/source/shared/types/extendedWindow/extendedWindow";
+import createGun from "./utils/createGun/createGun";
 
-export const gun = Gun(
-  [
-    "http://localhost:3000/gun",
-    target === TargetType.Desktop && "http://localhost:10000/gun",
-  ].filter(Boolean),
-);
+export const gun = createGun();
 
 if (
   target === TargetType.Desktop
     ? (window as ExtendedWindow).api?.isElectron()
     : true
 ) {
+  const whyDidYouRenderPromise = import(
+    "@welldone-software/why-did-you-render"
+  );
+  const reactLibraryPromise = import("react");
+  const [{ default: whyDidYouRender }, reactLibrary] = await Promise.all([
+    whyDidYouRenderPromise,
+    reactLibraryPromise,
+  ]);
+  whyDidYouRender(reactLibrary, {
+    trackAllPureComponents: true,
+  });
   // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
   const rootElement: HTMLDivElement = document.querySelector("#root")!;
   const root: Root = createRoot(rootElement);
