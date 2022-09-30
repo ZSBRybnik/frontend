@@ -5,6 +5,7 @@ import MotionProvider from "../../MotionProvider/MotionProvider";
 import MDXProvider from "../mdx-provider/mdx-provider";
 import QueryClientProvider from "../query-client-provider/query-client-provider";
 import SolanaProvider from "../solana-provider/solana-provider";
+import StripeProvider from "../stripe-provider/stripe-provider";
 import ThemeProvider from "../theme-provider/theme-provider";
 import TRPCProvider from "../trpc-provider/trpc-provider";
 import {
@@ -23,9 +24,11 @@ const AppProvider: AppProviderComponent = ({
             <ThemeProvider>
               <HelmetProvider>
                 <MotionProvider>
-                  <WalletModalProvider>
-                    <BrowserRouter>{children}</BrowserRouter>
-                  </WalletModalProvider>
+                  <StripeProvider>
+                    <WalletModalProvider>
+                      <BrowserRouter>{children}</BrowserRouter>
+                    </WalletModalProvider>
+                  </StripeProvider>
                 </MotionProvider>
               </HelmetProvider>
             </ThemeProvider>
