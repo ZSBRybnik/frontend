@@ -6,7 +6,10 @@ import { useMDXComponents } from "@mdx-js/react";
 import { useState } from "react";
 import { useParams } from "react-router-dom";
 import runtime from "react/jsx-runtime.js";
-import { Post as PostType } from "~backend/node_modules/@prisma/client";
+import {
+  Post as PostType,
+  User,
+} from "~backend/node_modules/@prisma/postgresql";
 import Routes from "~backend/source/server/trpc/constants/routes/routes";
 import Page from "../../components/Page/Page";
 import useCallAPI from "../../hooks/useCallAPI/useCallAPI";
@@ -24,7 +27,12 @@ const Post = () => {
     },
   });
   const mdxComponents = useMDXComponents();
-  const { title, author }: Partial<PostType> = Object(data);
+  const {
+    title,
+    author: { login: author },
+  }: PostType & {
+    author: Pick<User, "login">;
+  } = Object(data);
   useHookstateEffect(() => {
     const { content }: Partial<PostType> = Object(data);
     if (content)

@@ -2,10 +2,10 @@
 import { useHookstate, useHookstateMemo } from "@hookstate/core";
 import { Client, query } from "faunadb";
 import Routes from "~backend/source/server/trpc/constants/routes/routes";
-import { useQuery } from "../../components/AppProvider/AppProvider";
 import useIpfs from "../useIpfs/useIpfs";
 import { gun } from "../..";
 import { useEffect } from "react";
+import { useQuery } from "../../utils/trpc-utilities/trpc-utilities";
 
 const { Get, Match, Index } = query;
 

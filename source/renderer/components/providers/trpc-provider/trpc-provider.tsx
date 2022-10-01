@@ -1,24 +1,18 @@
-import { createReactQueryHooks } from "@trpc/react";
 import {
   TRPCProviderComponent,
   TRPCProviderProperties,
 } from "./trpc-provider.types";
-import { AppRouter } from "~backend/source/server/rest/middlewares/getTrpcMiddleware/getTrpcMiddleware";
-import { queryClient } from "../../AppProvider/AppProvider";
-
-export const { Provider, createClient, useMutation, useQuery } =
-  createReactQueryHooks<AppRouter>();
-const trpcClient = createClient({
-  url: "http://localhost:3000/trpc",
-});
+import TRPCProviderBase from "~frontend/source/renderer/utils/trpc-utilities/trpc-utilities";
+import trpcClient from "~frontend/source/renderer/clients/trpc-client/trpc-client";
+import queryClient from "~frontend/source/renderer/clients/query-client/query-client";
 
 const TRPCProvider: TRPCProviderComponent = ({
   children,
 }: TRPCProviderProperties): JSX.Element => {
   return (
-    <Provider client={trpcClient} queryClient={queryClient}>
+    <TRPCProviderBase client={trpcClient} queryClient={queryClient}>
       {children}
-    </Provider>
+    </TRPCProviderBase>
   );
 };
 

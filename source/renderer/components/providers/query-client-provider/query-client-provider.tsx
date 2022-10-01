@@ -1,5 +1,5 @@
 import { QueryClientProvider as QueryClientProviderBase } from "react-query";
-import { queryClient } from "../../AppProvider/AppProvider";
+import queryClient from "~frontend/source/renderer/clients/query-client/query-client";
 import {
   QueryClientProviderComponent,
   QueryClientProviderProperties,

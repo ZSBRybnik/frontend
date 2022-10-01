@@ -7,10 +7,10 @@ import {
   LayoutRouteProps,
   IndexRouteProps,
 } from "react-router-dom";
-import { useQuery } from "../AppProvider/AppProvider";
 import Routes from "~backend/source/server/trpc/constants/routes/routes";
 import getDataFromStorage from "../../utils/getDataFromStorage/getDataFromStorage";
 import { decode } from "jsonwebtoken";
+import { useQuery } from "../../utils/trpc-utilities/trpc-utilities";
 
 export enum PrivateRouteRedirectActions {
   NoAction,

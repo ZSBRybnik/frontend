@@ -4,7 +4,7 @@ import {
   useState,
 } from "react";
 import { useParams } from "react-router-dom";
-import { Page as PageType } from "~backend/node_modules/@prisma/client";
+import { Page as PageType } from "~backend/node_modules/@prisma/postgresql";
 import Routes from "~backend/source/server/trpc/constants/routes/routes";
 import Page from "../../components/Page/Page";
 import useCallAPI, {
