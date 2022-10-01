@@ -1,11 +1,6 @@
 import create from "zustand";
 import Roles from "~backend/source/server/constants/roles/Roles";
-import {
-  Navigate,
-  PathRouteProps,
-  LayoutRouteProps,
-  IndexRouteProps,
-} from "react-router-dom";
+import { Navigate } from "react-router-dom";
 import Routes from "~backend/source/server/trpc/constants/routes/routes";
 import getDataFromStorage from "../../utils/getDataFromStorage/getDataFromStorage";
 import { decode } from "jsonwebtoken";
@@ -17,11 +12,8 @@ export enum PrivateRouteRedirectActions {
   RedirectToPageNotFound,
 }
 
-type PrivateRouteProperties = (
-  | PathRouteProps
-  | LayoutRouteProps
-  | IndexRouteProps
-) & {
+type PrivateRouteProperties = {
+  element: JSX.Element;
   whitelist: Set<Roles>;
   noAccessAction: PrivateRouteRedirectActions;
 };
@@ -35,7 +27,6 @@ const PrivateRoute = ({
   whitelist,
   noAccessAction,
   element,
-  ...rest
 }: PrivateRouteProperties) => {
   const useRedirectActionState = create<RedirectActionState>((set) => {
     return {
