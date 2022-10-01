@@ -20,7 +20,7 @@ const useState = <
   },
 >({
   value,
-}: UseStateArguments<T>): UseStateArguments<T> => {
+}: UseStateArguments<T>): ZustandArguments<T> => {
   const useCommonState: UseBoundStore<StoreApi<ZustandArguments<T>>> = zustand<
     ZustandArguments<T>
   >((set): ZustandArguments<T> => {

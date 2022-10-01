@@ -6,7 +6,7 @@ import useState from "../../hooks/useState/useState";
 import { HomepageComponent } from "./Homepage.types";
 
 const Homepage: HomepageComponent = () => {
-  const { value: viewPosts, setValue: setViewPosts } = useState<{
+  const { setValue: setViewPosts, value: viewPosts } = useState<{
     value: boolean;
   }>({ value: true });
   return (
