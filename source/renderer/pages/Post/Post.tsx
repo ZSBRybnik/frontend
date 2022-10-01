@@ -29,10 +29,11 @@ const Post = () => {
   const mdxComponents = useMDXComponents();
   const {
     title,
-    author: { login: author },
+    author: authorObject,
   }: PostType & {
     author: Pick<User, "login">;
   } = Object(data);
+  const { login: author } = Object(authorObject);
   useHookstateEffect(() => {
     const { content }: Partial<PostType> = Object(data);
     if (content)

@@ -2,7 +2,6 @@ import create from "zustand";
 import Roles from "~backend/source/server/constants/roles/Roles";
 import {
   Navigate,
-  Route,
   PathRouteProps,
   LayoutRouteProps,
   IndexRouteProps,
@@ -35,6 +34,7 @@ type RedirectActionState = {
 const PrivateRoute = ({
   whitelist,
   noAccessAction,
+  element,
   ...rest
 }: PrivateRouteProperties) => {
   const useRedirectActionState = create<RedirectActionState>((set) => {
@@ -64,19 +64,17 @@ const PrivateRoute = ({
       );
     },
   });
-  const renderOutput =
-    redirectAction === PrivateRouteRedirectActions.NoAction ? (
-      <Route {...rest} />
-    ) : (
-      <Navigate
-        to={`/${
-          redirectAction === PrivateRouteRedirectActions.RedirectToLoginPage
-            ? "login"
-            : "page-not-found"
-        }`}
-        replace
-      />
-    );
-  return <>{redirectAction && renderOutput}</>;
+  return redirectAction === PrivateRouteRedirectActions.NoAction ? (
+    <>{element}</>
+  ) : (
+    <Navigate
+      to={`/${
+        redirectAction === PrivateRouteRedirectActions.RedirectToLoginPage
+          ? "login"
+          : "page-not-found"
+      }`}
+      replace
+    />
+  );
 };
 export default PrivateRoute;

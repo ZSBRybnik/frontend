@@ -1,3 +1,4 @@
+import Gun from "gun";
 import { IGunInstance } from "gun/types";
 import target, {
   TargetType,

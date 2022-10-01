@@ -14,19 +14,22 @@ if (
     ? (window as ExtendedWindow).api?.isElectron()
     : true
 ) {
-  const whyDidYouRenderPromise = import(
-    "@welldone-software/why-did-you-render"
-  );
-  const reactLibraryPromise = import("react");
-  const [{ default: whyDidYouRender }, reactLibrary] = await Promise.all([
-    whyDidYouRenderPromise,
-    reactLibraryPromise,
-  ]);
-  whyDidYouRender(reactLibrary, {
-    trackAllPureComponents: true,
-  });
-  // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-  const rootElement: HTMLDivElement = document.querySelector("#root")!;
-  const root: Root = createRoot(rootElement);
-  root.render(<App />);
+  if (process.env.DEVELOPMENT === "true") {
+    const whyDidYouRenderPromise = import(
+      "@welldone-software/why-did-you-render"
+    );
+    const reactLibraryPromise = import("react");
+    const [{ default: whyDidYouRender }, reactLibrary] = await Promise.all([
+      whyDidYouRenderPromise,
+      reactLibraryPromise,
+    ]);
+    whyDidYouRender(reactLibrary, {
+      trackAllPureComponents: true,
+    });
+  }
+  const rootElement: HTMLDivElement | null = document.querySelector("#root");
+  if (rootElement) {
+    const root: Root = createRoot(rootElement);
+    root.render(<App />);
+  }
 }

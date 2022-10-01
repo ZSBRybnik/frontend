@@ -61,9 +61,9 @@ const useCallAPI = <T,>({
       (async () => {
         const requestCid = requestCidState.get();
         if (ipfs && requestCid) {
-          const ipfsResponose = ipfs?.cat(requestCid);
-          if (ipfs.isOnline() && ipfsResponose) {
-            for await (const iterator of ipfsResponose) {
+          const ipfsResponse = ipfs?.cat(requestCid);
+          if (ipfs.isOnline() && ipfsResponse) {
+            for await (const iterator of ipfsResponse) {
               ipfsResponseState.set(JSON.parse(iterator.toString()));
             }
           }

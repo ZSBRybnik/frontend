@@ -17,7 +17,7 @@ import BottomSpacer from "../BottomSpacer/BottomSpacer";
 import useIpfs from "../../hooks/useIpfs/useIpfs";
 import PrivateRoute, {
   PrivateRouteRedirectActions,
-} from "../PrivateRoute/PrivateRoute";
+} from "../private-route/private-route";
 import Buffet from "../../pages/Buffet/Buffet";
 import Roles from "~backend/source/server/constants/roles/Roles";
 
@@ -63,17 +63,23 @@ const AppWrapper: FunctionComponent = () => {
             <Routes>
               <Route path="/" element={<Homepage />} />
               <Route path="/post/:id" element={<Post />} />
-              <PrivateRoute
+              <Route
                 path="/buffet"
-                noAccessAction={PrivateRouteRedirectActions.RedirectToLoginPage}
-                whitelist={
-                  new Set([
-                    Roles.Administrator,
-                    Roles.BuffetOwner,
-                    Roles.Student,
-                  ])
+                element={
+                  <PrivateRoute
+                    noAccessAction={
+                      PrivateRouteRedirectActions.RedirectToLoginPage
+                    }
+                    whitelist={
+                      new Set([
+                        Roles.Administrator,
+                        Roles.BuffetOwner,
+                        Roles.Student,
+                      ])
+                    }
+                    element={<Buffet />}
+                  />
                 }
-                element={<Buffet />}
               />
               <Route path="/:name" element={<Subpage />} />
               <Route path="*" element={<>404</>} />
