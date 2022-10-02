@@ -1,0 +1,12 @@
+FROM node:latest AS build
+ADD . /home/website
+WORKDIR /home/website
+RUN apt update
+RUN apt install -y golang-go rustc cargo build-essential libpcap-dev
+RUN yarn 
+RUN yarn run test
+RUN yarn run build-web
+FROM nginx:alpine
+COPY --from=build /home/website/destination /home/website
+EXPOSE 80 443
+CMD ["nginx", "-g", "daemon off;"]

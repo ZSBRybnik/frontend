@@ -1,0 +1,6 @@
+FROM node:latest
+ADD . /home/website
+WORKDIR /home/website
+RUN yarn 
+EXPOSE 5000
+CMD ["sh"]
