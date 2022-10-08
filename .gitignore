@@ -32,3 +32,4 @@ bundle-analyzes
 storybook
 lefthook.yml
 .faunarc
+zig-cache
