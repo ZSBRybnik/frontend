@@ -6,6 +6,7 @@ import getPugLoader from "~frontend/source/scripts/build/loaders/getPugLoader/ge
 import getSourceMapLoader from "~frontend/source/scripts/build/loaders/getSourceMapLoader/getSourceMapLoader";
 import getTypeScriptLoader from "~frontend/source/scripts/build/loaders/getTypeScriptLoader/getTypeScriptLoader";
 import Mode from "~frontend/source/scripts/build/types/mode/mode";
+import getPureScriptLoader from "~backend/source/scripts/build/loaders/getPureScriptLoader/getPureScriptLoader";
 
 type GetLoaderArguments = {
   targetToModern: boolean;
@@ -24,6 +25,7 @@ const getLoaders: GetLoader = ({
     getTypeScriptLoader({ targetToModern, mode }),
     getNodeLoader(),
     getJavaScriptModuleLoader(),
+    getPureScriptLoader(),
     getCssLoader(),
   ];
 };
