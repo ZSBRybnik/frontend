@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import { PageProperties } from "./Page";
+import { PageProperties } from "./Page.types";
 
 type PageWrapperProperties = Pick<
   PageProperties,

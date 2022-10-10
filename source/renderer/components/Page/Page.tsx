@@ -1,16 +1,16 @@
-import { PropsWithChildren } from "react";
 import { Helmet } from "react-helmet-async";
-import { PageWrapper } from "./Page.styles";
+import { PageWrapper } from "~frontend/source/renderer/components/Page/Page.styles";
+import propTypes from "prop-types";
+import {
+  PageProperties,
+  PageComponent,
+} from "~frontend/source/renderer/components/Page/Page.types";
 
-export type PageProperties = PropsWithChildren<{
-  title?: string;
-  noBackground?: boolean;
-  noVerticalPadding?: boolean;
-  defaultChildrenVerticalMargin?: number;
-}>;
-
-const Page = ({ title, ...rest }: PageProperties) => {
-  const titleWithDash = ` - ${title}`;
+const Page: PageComponent = ({
+  title,
+  ...rest
+}: PageProperties): JSX.Element => {
+  const titleWithDash: string = ` - ${title}`;
   const fixedTitle: string = `ZSB Rybnik${title ? titleWithDash : ""}`;
   return (
     <>
@@ -21,6 +21,17 @@ const Page = ({ title, ...rest }: PageProperties) => {
       <PageWrapper {...rest} />
     </>
   );
+};
+
+Page.propTypes = {
+  noBackground: propTypes.bool,
+  noVerticalPadding: propTypes.bool,
+  defaultChildrenVerticalMargin: propTypes.number,
+  title: propTypes.string,
+  children: propTypes.oneOfType([
+    propTypes.arrayOf(propTypes.node),
+    propTypes.node,
+  ]).isRequired,
 };
 
 export default Page;
