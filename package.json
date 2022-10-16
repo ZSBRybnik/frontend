@@ -106,7 +106,7 @@
     "@types/jest": "^28.1.4",
     "@types/jest-environment-puppeteer": "^5.0.2",
     "@types/jsonwebtoken": "^8.5.9",
-    "@types/lodash": "^4.14.182",
+    "@types/lodash": "^4.14.186",
     "@types/mousetrap": "^1.6.9",
     "@types/node": "^18.0.0",
     "@types/nodemon": "^1.19.1",
