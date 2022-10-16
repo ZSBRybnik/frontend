@@ -121,7 +121,7 @@
     "@types/terser-webpack-plugin": "^5.2.0",
     "@types/unused-webpack-plugin": "^2.4.2",
     "@types/webpack": "^5.28.0",
-    "@types/webpack-bundle-analyzer": "^4.4.1",
+    "@types/webpack-bundle-analyzer": "^4.6.0",
     "@types/webpack-dev-server": "^4.7.2",
     "@types/webpack-node-externals": "^2.5.3",
     "@types/workbox-webpack-plugin": "^5.1.8",
