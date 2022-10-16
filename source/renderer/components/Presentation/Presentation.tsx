@@ -4,8 +4,10 @@ const Presentation = () => {
   return (
     <PresentationWrapper>
       <PresentationBlock>
-        Programiści: <div>Krzysztof Zawisła</div>
-        <div>Borys Malinowski</div>
+        <span>Programiści:</span>
+        <span>Krzysztof Zawisła</span>
+        <span>Borys Malinowski</span>
+        <span>Mateusz Perczak</span>
       </PresentationBlock>
     </PresentationWrapper>
   );

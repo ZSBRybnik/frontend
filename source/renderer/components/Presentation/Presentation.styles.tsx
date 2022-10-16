@@ -1,20 +1,20 @@
 import styled from "@emotion/styled";
 
 export const PresentationBlock = styled.div`
-  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
   background: #eee;
   padding: 15px;
-  &:first-of-type {
-    margin-top: 0;
-  }
 `;
 
 export const PresentationWrapper = styled.div`
   display: none;
   word-wrap: break-word;
   @media all and (min-width: 768px) {
+    display: flex;
+    flex-direction: column;
     text-align: center;
-    display: block !important;
+    gap: 15px;
     width: calc(25% - 30px);
     margin: 15px 15px auto auto;
   }

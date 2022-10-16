@@ -1,18 +1,24 @@
 /* eslint-disable max-params */
-import { useHookstate } from "@hookstate/core";
+import useState from "~frontend/source/renderer/hooks/useState/useState";
 import { useQuery } from "react-query";
 
+type Activities = {
+  title: string;
+};
+
 const FeedView = () => {
-  const shouldFetchState = useHookstate(true);
-  const activitiesState = useHookstate([] as { title: string }[]);
+  const { value: shouldFetch } = useState<{ value: boolean }>({ value: true });
+  const { value: activities } = useState<{ value: Activities[] }>({
+    value: [],
+  });
   const { data } = useQuery(["getFeed"], {
-    enabled: shouldFetchState.get(),
+    enabled: shouldFetch,
   });
   console.log(data);
   return (
     <>
-      {activitiesState.map((activity, index) => {
-        return <div key={`activity-${index}`}>{activity.get().title}</div>;
+      {activities.map((activity, index) => {
+        return <div key={`activity-${index}`}>{activity.title}</div>;
       })}
     </>
   );
