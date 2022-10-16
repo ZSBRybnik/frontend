@@ -70,7 +70,7 @@
     "@nativescript/types": "^8.2.0",
     "@pmmmwh/react-refresh-webpack-plugin": "^0.5.7",
     "@prettier/plugin-pug": "^2.1.1",
-    "@prisma/client": "^4.0.0",
+    "@prisma/client": "^4.4.0",
     "@solana/wallet-adapter-base": "^0.9.16",
     "@solana/wallet-adapter-react": "^0.15.18",
     "@solana/wallet-adapter-react-ui": "^0.9.16",
