@@ -1,11 +1,13 @@
 /* eslint-disable sonarjs/cognitive-complexity */
-import { useHookstate, useHookstateMemo } from "@hookstate/core";
+import { useHookstateMemo } from "@hookstate/core";
 import { Client, query } from "faunadb";
 import Routes from "~backend/source/server/trpc/constants/routes/routes";
 import useIpfs from "../useIpfs/useIpfs";
 import { gun } from "../..";
 import { useEffect } from "react";
 import { useQuery } from "../../utils/trpc-utilities/trpc-utilities";
+
+import useState from "~frontend/source/renderer/hooks/useState/useState";
 
 const { Get, Match, Index } = query;
 
@@ -29,14 +31,22 @@ const useCallAPI = <T,>({
   trpcPayload,
 }: UseCallAPIArguments): UseCallAPIReturn<T> => {
   const { value: ipfs } = useIpfs();
-  const requestCidState = useHookstate<null | string>(null);
-  const ipfsResponseState = useHookstate<T | null>(null);
-  const gunResponseState = useHookstate<T | null>(null);
-  const gunHasCheckedState = useHookstate(false);
+  const { value: requestCid, setValue: setRequestCid } = useState<{
+    value: null | string;
+  }>({ value: null });
+  const { value: ipfsResponse, setValue: setIpfsResponse } = useState<{
+    value: T | null;
+  }>({ value: null });
+  const { value: gunResponse, setValue: setGunResponse } = useState<{
+    value: T | null;
+  }>({ value: null });
+  const { value: gunHasChecked, setValue: setGunHasChecked } = useState<{
+    value: boolean;
+  }>({ value: false });
   const { data: trpcData, isError } = useQuery(
     [trpcRoute as any, trpcPayload],
     {
-      enabled: gunHasCheckedState.get() && !gunResponseState.get(),
+      enabled: gunHasChecked && !gunResponse,
     },
   );
   useEffect(() => {
@@ -52,39 +62,38 @@ const useCallAPI = <T,>({
         } = await faunadbClient.query<{
           data: { cid: string; name: string };
         }>(Get(Match(Index(indexName), indexValue)));
-        requestCidState.set(cid);
+        setRequestCid(cid);
       })();
     }
   }, [isError, indexName]);
   useEffect(() => {
     if (isError) {
       (async () => {
-        const requestCid = requestCidState.get();
         if (ipfs && requestCid) {
           const ipfsResponse = ipfs?.cat(requestCid);
           if (ipfs.isOnline() && ipfsResponse) {
             for await (const iterator of ipfsResponse) {
-              ipfsResponseState.set(JSON.parse(iterator.toString()));
+              setIpfsResponse(JSON.parse(iterator.toString()));
             }
           }
         }
       })();
     }
-  }, [ipfs, requestCidState, isError, indexName]);
+  }, [ipfs, requestCid, isError, indexName]);
   useEffect(() => {
     (async () => {
       await gun
         .get(gunKey)
         .get(`${indexValue}`)
         .on<T>((value: unknown) => {
-          gunResponseState.set(value as T);
+          setGunResponse(value as T);
         });
-      gunHasCheckedState.set(true);
+      setGunHasChecked(true);
     })();
   }, []);
   const data: T = useHookstateMemo(() => {
-    return gunResponseState.get() || trpcData || ipfsResponseState.get();
-  }, [gunResponseState, ipfsResponseState]);
+    return gunResponse || trpcData || ipfsResponse;
+  }, [gunResponse, ipfsResponse]);
   return {
     data,
   };

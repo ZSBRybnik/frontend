@@ -1,5 +1,6 @@
 import { FunctionComponent } from "react";
-import Code, { CodeProperties } from "../Code/Code";
+import Code from "../Code/Code";
+import { CodeProperties } from "../Code/Code.types";
 
 type MarkdownCodeProperties = {
   className: string;
