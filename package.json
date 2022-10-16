@@ -215,7 +215,7 @@
     "lighthouse": "^9.6.3",
     "lodash": "^4.17.21",
     "lookpath": "^1.2.2",
-    "memlab": "^1.1.28",
+    "memlab": "^1.1.30",
     "mousetrap": "^1.6.5",
     "move-file-cli": "^3.0.0",
     "neon-cli": "^0.10.1",
