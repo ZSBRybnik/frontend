@@ -184,7 +184,7 @@
     "frontend-native-addon-rust": "file:./source/native-addon-rust",
     "fslightbox-react": "^1.6.2-2",
     "glob": "^8.0.3",
-    "graphql-config": "^4.3.1",
+    "graphql-config": "^4.3.6",
     "gun": "0.2020.1238",
     "hastscript": "^7.0.2",
     "haxe-loader": "^0.10.0",
