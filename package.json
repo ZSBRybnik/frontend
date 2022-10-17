@@ -72,7 +72,7 @@
     "@prettier/plugin-pug": "^2.1.1",
     "@prisma/client": "^4.0.0",
     "@solana/wallet-adapter-base": "^0.9.16",
-    "@solana/wallet-adapter-react": "^0.15.18",
+    "@solana/wallet-adapter-react": "^0.15.20",
     "@solana/wallet-adapter-react-ui": "^0.9.16",
     "@solana/wallet-adapter-wallets": "^0.18.7",
     "@solana/web3.js": "^1.62.0",
