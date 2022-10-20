@@ -30,7 +30,8 @@
     "run-web": "cross-env TS_NODE_PROJECT=tsconfig.node.json ts-node ./source/scripts/runner/commands/run/run.ts --target web",
     "setup-husky": "cross-env TS_NODE_PROJECT=tsconfig.node.json ts-node ./source/scripts/runner/commands/setupHusky/setupHusky.ts",
     "test": "cross-env TS_NODE_PROJECT=tsconfig.node.json ts-node ./source/scripts/runner/commands/runTests/runTests.ts",
-    "update-dependencies": "cross-env TS_NODE_PROJECT=tsconfig.node.json ts-node ./source/scripts/runner/commands/updateDependencies/updateDependencies.ts"
+    "update-dependencies": "cross-env TS_NODE_PROJECT=tsconfig.node.json ts-node ./source/scripts/runner/commands/updateDependencies/updateDependencies.ts",
+    "storybook": "start-storybook -p 6006"
   },
   "dependencies": {
     "@babel/core": "^7.18.6",
