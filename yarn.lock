@@ -23875,10 +23875,10 @@ snapdragon@^0.8.1:
     source-map-resolve "^0.5.0"
     use "^3.1.0"
 
-snyk@^1.961.0:
-  version "1.993.0"
-  resolved "https://registry.yarnpkg.com/snyk/-/snyk-1.993.0.tgz#9c3c4741f8f478be5df6747106469a3f2e812662"
-  integrity sha512-+uzow9NlGjDCADDhFyftXKJuUZ6agKg+9jP0IYe/wPiBel3dqF9baoKj93wxZSlKEjHLDDAeSgZESwZbvdq1kw==
+snyk@^1.1038.0:
+  version "1.1038.0"
+  resolved "https://registry.yarnpkg.com/snyk/-/snyk-1.1038.0.tgz#27a447f7948a5a58aa995d08f13a7b0116e929fe"
+  integrity sha512-V6nCwwqxa0lmjYNesZ5srjk5/0u3mSzhC7Ekt6uChLi0snpWTJzO2b49g5OePWU257SptHt27UwDeZU1SdbFWQ==
 
 socket.io-client@*, socket.io-client@^4.1.2, socket.io-client@^4.5.1:
   version "4.5.1"
