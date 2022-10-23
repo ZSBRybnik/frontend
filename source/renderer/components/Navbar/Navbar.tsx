@@ -1,4 +1,3 @@
-import { useState } from "@hookstate/core";
 import { FunctionComponent } from "react";
 import Icon from "~frontend/source/renderer/components/Icon/Icon";
 import NavbarButton from "~frontend/source/renderer/components/NavbarButton/NavbarButton";
@@ -12,12 +11,15 @@ import StyledNavbar, {
   StyledNavbarLeft,
   StyledNavbarRight,
 } from "./Navbar.styles";
+import useState from "~frontend/source/renderer/hooks/useState/useState";
 
 const NavBar: FunctionComponent = (): JSX.Element => {
-  const isOpenState = useState(false);
+  const { value: isOpen, setValue: setIsOpen } = useState<{
+    value: boolean;
+  }>({ value: false });
 
   const toggleIsOpen = () => {
-    isOpenState.set(!isOpenState.get());
+    setIsOpen(!isOpen);
   };
 
   return (

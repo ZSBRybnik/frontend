@@ -1,12 +1,10 @@
 /* eslint-disable sonarjs/cognitive-complexity */
-import { useHookstateMemo } from "@hookstate/core";
 import { Client, query } from "faunadb";
 import Routes from "~backend/source/server/trpc/constants/routes/routes";
 import useIpfs from "../useIpfs/useIpfs";
 import { gun } from "../..";
-import { useEffect } from "react";
+import { useEffect, useMemo } from "react";
 import { useQuery } from "../../utils/trpc-utilities/trpc-utilities";
-
 import useState from "~frontend/source/renderer/hooks/useState/useState";
 
 const { Get, Match, Index } = query;
@@ -91,7 +89,7 @@ const useCallAPI = <T,>({
       setGunHasChecked(true);
     })();
   }, []);
-  const data: T = useHookstateMemo(() => {
+  const data: T = useMemo(() => {
     return gunResponse || trpcData || ipfsResponse;
   }, [gunResponse, ipfsResponse]);
   return {

@@ -1,9 +1,6 @@
-/* eslint-disable no-restricted-imports */
-import { useHookstateEffect } from "@hookstate/core";
 import { evaluate, EvaluateOptions } from "@mdx-js/mdx";
 import * as provider from "@mdx-js/react";
 import { useMDXComponents } from "@mdx-js/react";
-import { useState } from "react";
 import { useParams } from "react-router-dom";
 import runtime from "react/jsx-runtime.js";
 import {
@@ -13,10 +10,13 @@ import {
 import Routes from "~backend/source/server/trpc/constants/routes/routes";
 import Page from "../../components/Page/Page";
 import useCallAPI from "../../hooks/useCallAPI/useCallAPI";
+import useState from "~frontend/source/renderer/hooks/useState/useState";
 
 const Post = () => {
   const { id = "0" } = useParams();
-  const [content, setContent] = useState(<></>);
+  const { value: content, setValue: setContent } = useState<{
+    value: JSX.Element;
+  }>({ value: <></> });
   const { data } = useCallAPI<PostType>({
     indexName: "posts_by_id",
     indexValue: parseInt(id),
@@ -34,7 +34,7 @@ const Post = () => {
     author: Pick<User, "login">;
   } = Object(data);
   const { login: author } = Object(authorObject);
-  useHookstateEffect(() => {
+  useEffect(() => {
     const { content }: Partial<PostType> = Object(data);
     if (content)
       (async () => {
