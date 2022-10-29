@@ -11,6 +11,7 @@ import Routes from "~backend/source/server/trpc/constants/routes/routes";
 import Page from "../../components/Page/Page";
 import useCallAPI from "../../hooks/useCallAPI/useCallAPI";
 import useState from "~frontend/source/renderer/hooks/useState/useState";
+import { useEffect } from "react";
 
 const Post = () => {
   const { id = "0" } = useParams();

@@ -64,7 +64,7 @@ const NavBar: FunctionComponent = (): JSX.Element => {
           </StyledNavbarRight>
         )}
       </StyledNavbar>
-      <NavbarMenu isOpen={isOpenState.get()} />
+      <NavbarMenu isOpen={isOpen} />
     </>
   );
 };
