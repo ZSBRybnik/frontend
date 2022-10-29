@@ -37,6 +37,11 @@ const getTypeScriptLoader = ({
               "@babel/preset-react",
               {
                 runtime: "automatic",
+                development: mode === Mode.Development,
+                importSource:
+                  mode === Mode.Development
+                    ? "@welldone-software/why-did-you-render"
+                    : undefined,
               },
             ],
           ],

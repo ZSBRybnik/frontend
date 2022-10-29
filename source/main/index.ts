@@ -16,7 +16,7 @@ import toggleDevelopmentTools from "~frontend/source/main/utils/toggleDevelopmen
 import mainWindow from "~frontend/source/main/windows/mainWindow/mainWindow";
 import IpcEvents from "~frontend/source/shared/types/ipcEvents/ipcEvents";
 import getTray from "./utils/getTray/getTray";
-import RateLimit from "express-rate-limit";
+import rateLimit, { RateLimitRequestHandler } from "express-rate-limit";
 import { Command } from "commander";
 
 const program: Command = new Command();
@@ -26,7 +26,7 @@ program.parse(process.argv);
 
 const { remoteRequestsLimit } = program.opts();
 
-const limiter = new RateLimit({
+const limiter: RateLimitRequestHandler = rateLimit({
   windowMs: 60_000,
   max: remoteRequestsLimit || Number.MAX_SAFE_INTEGER,
 });

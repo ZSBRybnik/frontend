@@ -55,6 +55,5 @@ import packager from "electron-packager";
     prune: true,
     out: "release-builds",
     asar: true,
-    prebuiltAsar: false,
   });
 })();
