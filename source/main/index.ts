@@ -16,8 +16,23 @@ import toggleDevelopmentTools from "~frontend/source/main/utils/toggleDevelopmen
 import mainWindow from "~frontend/source/main/windows/mainWindow/mainWindow";
 import IpcEvents from "~frontend/source/shared/types/ipcEvents/ipcEvents";
 import getTray from "./utils/getTray/getTray";
+import RateLimit from "express-rate-limit";
+import { Command } from "commander";
+
+const program: Command = new Command();
+
+program.option("-rql, --remoteRequestsLimit <time in ms>", "Target device");
+program.parse(process.argv);
+
+const { remoteRequestsLimit } = program.opts();
+
+const limiter = new RateLimit({
+  windowMs: 60_000,
+  max: remoteRequestsLimit || Number.MAX_SAFE_INTEGER,
+});
 
 const server: Express = express();
+server.use(limiter);
 server.use((Gun as any).serve);
 server.use(express.static(join(__dirname, "..", "..")));
 server.use("*", (_request, response) => {
