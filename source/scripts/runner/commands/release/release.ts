@@ -10,6 +10,8 @@ type BuildFlagsOptions = {
   architecture: string;
 };
 
+const appName = "ZSB Rybnik";
+
 const ignoredPaths = new Set([
   ".prettierrc.json",
   "node_modules",
@@ -57,11 +59,11 @@ const ignoredPaths = new Set([
   "nginx.conf",
 ]);
 
-const transformedIgnoredPaths = [...ignoredPaths.values()].map((value) => {
-  const regex = SuperExpressive().startOfInput.string(`/${value}`).toRegex();
-  console.log(regex);
-  return regex;
-});
+const transformedIgnoredPaths: RegExp[] = [...ignoredPaths.values()].map(
+  (value) => {
+    return SuperExpressive().startOfInput.string(`/${value}`).toRegex();
+  },
+);
 
 (async (): Promise<void> => {
   const program: Command = new Command();
@@ -90,6 +92,14 @@ const transformedIgnoredPaths = [...ignoredPaths.values()].map((value) => {
     prune: true,
     out: "release-builds",
     asar: true,
-    name: "ZSB Rybnik",
+    name: appName,
+    appCopyright: appName,
+    junk: true,
+    protocols: [
+      {
+        name: appName,
+        schemes: ["zsbrybnik"],
+      },
+    ],
   });
 })();
