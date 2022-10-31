@@ -18,6 +18,7 @@ import IpcEvents from "~frontend/source/shared/types/ipcEvents/ipcEvents";
 import getTray from "./utils/getTray/getTray";
 import rateLimit, { RateLimitRequestHandler } from "express-rate-limit";
 import { Command } from "commander";
+import SuperExpressive from "super-expressive";
 
 const program: Command = new Command();
 
@@ -57,8 +58,10 @@ app.on(AppEvents.Ready, (): void => {
       fromEvent(ipcMain, IpcEvents.ExtractToSeparateWindow).subscribe(
         (argument) => {
           const [, address] = argument as [unknown, string];
-          console.log(address);
-          if (typeof address === "string") {
+          if (
+            typeof address === "string" &&
+            SuperExpressive().string("localhost").toRegex().test(address)
+          ) {
             const newWindow = new BrowserWindow({
               width: 800,
               height: 600,
@@ -74,26 +77,28 @@ app.on(AppEvents.Ready, (): void => {
           }
         },
       );
-      fromEvent(ipcMain, IpcEvents.ToggleDevelopmentTools).subscribe(() => {
-        toggleDevelopmentTools(content);
-      });
-      fromEvent(ipcMain, IpcEvents.Reload).subscribe(() => {
+      fromEvent(ipcMain, IpcEvents.ToggleDevelopmentTools).subscribe(
+        (): void => {
+          toggleDevelopmentTools(content);
+        },
+      );
+      fromEvent(ipcMain, IpcEvents.Reload).subscribe((): void => {
         reload(content);
       });
-      fromEvent(ipcMain, IpcEvents.Close).subscribe(() => {
+      fromEvent(ipcMain, IpcEvents.Close).subscribe((): void => {
         app.quit();
       });
-      fromEvent(ipcMain, IpcEvents.Minimize).subscribe(() => {
+      fromEvent(ipcMain, IpcEvents.Minimize).subscribe((): void => {
         mainWindow.content?.minimize();
       });
-      fromEvent(ipcMain, IpcEvents.ToggleMaximize).subscribe(() => {
+      fromEvent(ipcMain, IpcEvents.ToggleMaximize).subscribe((): void => {
         if (mainWindow.content?.isMaximized()) {
           mainWindow.content?.unmaximize();
         } else {
           mainWindow.content?.maximize();
         }
       });
-      fromEvent(ipcMain, IpcEvents.ToggleFullscreen).subscribe(() => {
+      fromEvent(ipcMain, IpcEvents.ToggleFullscreen).subscribe((): void => {
         mainWindow.content?.setFullScreen(
           /*!mainWindow.content?.isFullScreen()*/ true,
         );
