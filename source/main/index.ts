@@ -60,7 +60,10 @@ app.on(AppEvents.Ready, (): void => {
           const [, address] = argument as [unknown, string];
           if (
             typeof address === "string" &&
-            SuperExpressive().string("localhost").toRegex().test(address)
+            SuperExpressive()
+              .string(`localhost:${port}`)
+              .toRegex()
+              .test(address)
           ) {
             const newWindow = new BrowserWindow({
               width: 800,
