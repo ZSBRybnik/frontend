@@ -1,4 +1,4 @@
-import { join } from "path";
+import { join, resolve } from "path";
 import source from "~frontend/source/scripts/build/constants/source/source";
 import Mode from "~frontend/source/scripts/build/types/mode/mode";
 import getTargetVersion from "~frontend/source/scripts/build/utils/getTargetVersion/getTargetVersion";
@@ -19,6 +19,12 @@ const getTypeScriptLoader = ({
       join(process.cwd(), "..", "backend"),
     ],
     use: [
+      {
+        loader: "cache-loader",
+        options: {
+          cacheDirectory: resolve(".webpackCache"),
+        },
+      },
       {
         loader: "babel-loader",
         options: {
