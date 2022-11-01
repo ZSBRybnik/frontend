@@ -23228,13 +23228,12 @@ robots-parser@^3.0.0:
   resolved "https://registry.yarnpkg.com/robots-parser/-/robots-parser-3.0.0.tgz#66af89306302ecd004455f2f24298310d0966631"
   integrity sha512-6xkze3WRdneibICBAzMKcXyTKQw5shA3GbwoEJy7RSvxpZNGF0GMuYKE1T0VMP4fwx/fQs0n0mtriOqRtk5L1w==
 
-robotstxt-webpack-plugin@^7.0.0:
-  version "7.0.0"
-  resolved "https://registry.yarnpkg.com/robotstxt-webpack-plugin/-/robotstxt-webpack-plugin-7.0.0.tgz#04b26c9e1cd2ad8ebc5e20918aeeb6ed5d56835e"
-  integrity sha512-Rk0moeHvqc3to6oE2z5lKW9GTJyQC/ysogNy465N2CT2Xvp2/DMPkix8idnpmBLfExrQjml18B8Z/HoAC/yPlg==
+robotstxt-webpack-plugin@^8.0.0:
+  version "8.0.0"
+  resolved "https://registry.yarnpkg.com/robotstxt-webpack-plugin/-/robotstxt-webpack-plugin-8.0.0.tgz#2125beee46ee653a3664be2985b7cfe29ba198b9"
+  integrity sha512-VCNYWk+dWx5C1A5yJuPSfEuctAABxk+W4tPn2OAISS1ZtlF8cOOTljmXcNSCxOr0EFAb4T0U9VjKfhXNLU2lsg==
   dependencies:
     generate-robotstxt "^8.0.0"
-    webpack-sources "^1.4.3"
 
 rollup-plugin-terser@^7.0.0:
   version "7.0.2"
