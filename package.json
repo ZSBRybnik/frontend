@@ -54,7 +54,7 @@
     "@capacitor/keyboard": "^1.2.3",
     "@capacitor/splash-screen": "^1.2.2",
     "@capacitor/status-bar": "^1.0.8",
-    "@electron-forge/cli": "^6.0.0-beta.70",
+    "@electron-forge/cli": "^6.0.0-beta.74",
     "@electron-forge/maker-dmg": "^6.0.0-beta.70",
     "@electron-forge/maker-squirrel": "^6.0.0-beta.70",
     "@electron-forge/maker-zip": "^6.0.0-beta.70",
