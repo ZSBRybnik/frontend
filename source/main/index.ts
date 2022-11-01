@@ -19,6 +19,7 @@ import getTray from "./utils/getTray/getTray";
 import rateLimit, { RateLimitRequestHandler } from "express-rate-limit";
 import { Command } from "commander";
 import SuperExpressive from "super-expressive";
+import mainPort from "./rest/constants/ports/ports";
 
 const program: Command = new Command();
 
@@ -40,17 +41,15 @@ server.use("*", (_request, response) => {
   response.sendFile(join(__dirname, "..", "..", "index.html"));
 });
 
-const port: number = 10000;
-
 app.on(AppEvents.Ready, (): void => {
-  const httpServer = setupServerListening({ server, port });
+  const httpServer = setupServerListening({ server, port: mainPort });
   Gun({
     file: "gun-database",
     web: httpServer,
   });
   Menu.setApplicationMenu(null);
   mainWindow.content = new BrowserWindow(mainWindow.settings);
-  mainWindow.content.loadURL(`http://localhost:${port}/cat`);
+  mainWindow.content.loadURL(`http://localhost:${mainPort}/cat`);
   fromEvent(mainWindow.content, BrowserWindowEvent.ReadyToShow).subscribe(
     () => {
       const { content }: ExtendedBrowserWindowWithContent =
@@ -61,7 +60,7 @@ app.on(AppEvents.Ready, (): void => {
           if (
             typeof address === "string" &&
             SuperExpressive()
-              .string(`localhost:${port}`)
+              .string(`localhost:${mainPort}`)
               .toRegex()
               .test(address)
           ) {
