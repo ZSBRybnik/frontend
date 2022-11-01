@@ -59,7 +59,7 @@
           {
             "name": "react",
             "importNames": ["useState"],
-            "message": "Please import 'useState' from '@hookstate/core' instead."
+            "message": "Please import 'useState' from hooks folder instead."
           }
         ]
       }
