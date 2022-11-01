@@ -168,7 +168,7 @@
     "electron-build-env": "^0.2.0",
     "electron-is-dev": "^2.0.0",
     "electron-log": "^4.4.8",
-    "electron-packager": "^17.0.0",
+    "electron-packager": "^17.1.0",
     "eslint": "^8.18.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-jest": "^26.5.3",
