@@ -4,6 +4,7 @@ import getJsonRedisClientMiddleware from "../../middlewares/getJsonRedisClientMi
 import getRedisClientMiddleware from "../../middlewares/getRedisClientMiddleware/getRedisClientMiddleware";
 import getSendWithValidFormatMiddleware from "../../middlewares/getSendWithValidFormatMiddleware/getSendWithValidFormatMiddleware";*/
 import getSQLiteClientMiddleware from "~frontend/source/main/rest/middlewares/getSQLiteClientMiddleware/getSQLiteClientMiddleware";
+import { Handlers } from "@sentry/node";
 
 import type {
   ApplyMiddlewares,
@@ -14,6 +15,8 @@ const applyMiddlewares: ApplyMiddlewares = ({
   instance,
 }: ApplyMiddlewaresArguments): void => {
   instance.use(getSQLiteClientMiddleware());
+  instance.use(Handlers.requestHandler());
+  instance.use(Handlers.tracingHandler());
   /*instance.use(getJsonBodyParserMiddleware());
   instance.use(getRedisClientMiddleware());
   instance.use(getJsonRedisClientMiddleware());
