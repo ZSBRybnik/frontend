@@ -8,10 +8,18 @@ import SolanaProvider from "../solana-provider/solana-provider";
 import StripeProvider from "../stripe-provider/stripe-provider";
 import ThemeProvider from "../theme-provider/theme-provider";
 import TRPCProvider from "../trpc-provider/trpc-provider";
+import * as Sentry from "@sentry/browser";
+import { BrowserTracing } from "@sentry/tracing";
 import {
   AppProviderComponent,
   AppProviderProperties,
 } from "./app-provider.types";
+
+Sentry.init({
+  dsn: "https://46b3ca414ef642a09aa604e4878d3396@o4504091405910016.ingest.sentry.io/4504091410563075",
+  integrations: [new BrowserTracing()],
+  tracesSampleRate: 1.0,
+});
 
 const AppProvider: AppProviderComponent = ({
   children,

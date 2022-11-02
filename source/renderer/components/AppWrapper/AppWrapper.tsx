@@ -18,6 +18,7 @@ import useIpfs from "../../hooks/useIpfs/useIpfs";
 import PrivateRoute, {
   PrivateRouteRedirectActions,
 } from "../private-route/private-route";
+import useErrorBoundary from "use-error-boundary";
 import Buffet from "../../pages/Buffet/Buffet";
 import Roles from "~backend/source/server/constants/roles/Roles";
 
@@ -46,6 +47,7 @@ const Post: LazyExoticComponent<FunctionComponent> = lazy(
 );
 
 const AppWrapper: FunctionComponent = () => {
+  const { ErrorBoundary } = useErrorBoundary();
   useCopy();
   useNetwork();
   useQuitShortcut();
@@ -54,7 +56,7 @@ const AppWrapper: FunctionComponent = () => {
   useToggleFullscreenShortcut();
   useIpfs();
   return (
-    <>
+    <ErrorBoundary>
       <GlobalStyle />
       <Suspense fallback={<Loader />}>
         <NavBar />
@@ -90,7 +92,7 @@ const AppWrapper: FunctionComponent = () => {
           <BottomNavbar />
         </MainSection>
       </Suspense>
-    </>
+    </ErrorBoundary>
   );
 };
 
