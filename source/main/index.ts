@@ -1,7 +1,6 @@
 /* eslint-disable max-params */
-import { app, BrowserWindow, ipcMain, Menu } from "electron";
+import { app, BrowserWindow, ipcMain, Menu, IpcMainEvent } from "electron";
 import express, { Express } from "express";
-import Gun from "gun";
 import { join } from "path";
 import { fromEvent } from "rxjs";
 import "source-map-support/register";
@@ -11,7 +10,6 @@ import BrowserWindowEvent from "~frontend/source/main/types/browserWindowEvent/b
 import { ExtendedBrowserWindowWithContent } from "~frontend/source/main/types/extendedBrowserWindow/extendedBrowserWindow";
 import hardReload from "~frontend/source/main/utils/hardReload/hardReload";
 import reload from "~frontend/source/main/utils/reload/reload";
-import setupServerListening from "~frontend/source/main/utils/setupServerListening/setupServerListening";
 import toggleDevelopmentTools from "~frontend/source/main/utils/toggleDevelopmentTools/toggleDevelopmentTools";
 import mainWindow from "~frontend/source/main/windows/mainWindow/mainWindow";
 import IpcEvents from "~frontend/source/shared/types/ipcEvents/ipcEvents";
@@ -35,18 +33,8 @@ const limiter: RateLimitRequestHandler = rateLimit({
 
 const server: Express = express();
 server.use(limiter);
-server.use((Gun as any).serve);
-server.use(express.static(join(__dirname, "..", "..")));
-server.use("*", (_request, response) => {
-  response.sendFile(join(__dirname, "..", "..", "index.html"));
-});
 
 app.on(AppEvents.Ready, (): void => {
-  const httpServer = setupServerListening({ server, port: mainPort });
-  Gun({
-    file: "gun-database",
-    web: httpServer,
-  });
   Menu.setApplicationMenu(null);
   mainWindow.content = new BrowserWindow(mainWindow.settings);
   mainWindow.content.loadURL(`http://localhost:${mainPort}/cat`);
@@ -56,7 +44,7 @@ app.on(AppEvents.Ready, (): void => {
         mainWindow as ExtendedBrowserWindowWithContent;
       fromEvent(ipcMain, IpcEvents.ExtractToSeparateWindow).subscribe(
         (argument) => {
-          const [, address] = argument as [unknown, string];
+          const [, address] = argument as [IpcMainEvent, string];
           if (
             typeof address === "string" &&
             SuperExpressive()
