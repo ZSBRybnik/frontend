@@ -6,7 +6,10 @@ const listenOnPort: ListenOnPort = ({
   port,
   callback,
 }: ListenOnPortArguments): Server => {
-  return instance.listen(port, callback);
+  return instance.listen(port, callback).on("error", (): void => {
+    port++;
+    listenOnPort({ instance, port, callback });
+  });
 };
 
 export default listenOnPort;
