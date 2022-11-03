@@ -12,4 +12,5 @@ export type CreateServer = (
 export type CreateServerOutput = {
   server: Express;
   httpServer: Server;
+  port: number;
 };

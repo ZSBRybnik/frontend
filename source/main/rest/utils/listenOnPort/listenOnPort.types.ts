@@ -7,4 +7,11 @@ export type ListenOnPortArguments = {
   callback?: () => void;
 };
 
-export type ListenOnPort = (argument: ListenOnPortArguments) => Server;
+export type ListenOnPortOutput = {
+  httpServer: Server;
+  port: number;
+};
+
+export type ListenOnPort = (
+  argument: ListenOnPortArguments,
+) => ListenOnPortOutput;

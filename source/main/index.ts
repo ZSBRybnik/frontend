@@ -1,6 +1,5 @@
 /* eslint-disable max-params */
 import { app, BrowserWindow, ipcMain, Menu, IpcMainEvent } from "electron";
-import express, { Express } from "express";
 import { join } from "path";
 import { fromEvent } from "rxjs";
 import "source-map-support/register";
@@ -14,30 +13,13 @@ import toggleDevelopmentTools from "~frontend/source/main/utils/toggleDevelopmen
 import mainWindow from "~frontend/source/main/windows/mainWindow/mainWindow";
 import IpcEvents from "~frontend/source/shared/types/ipcEvents/ipcEvents";
 import getTray from "./utils/getTray/getTray";
-import rateLimit, { RateLimitRequestHandler } from "express-rate-limit";
-import { Command } from "commander";
 import SuperExpressive from "super-expressive";
-import mainPort from "./rest/constants/ports/ports";
-
-const program: Command = new Command();
-
-program.option("-rql, --remoteRequestsLimit <time in ms>", "Target device");
-program.parse(process.argv);
-
-const { remoteRequestsLimit } = program.opts();
-
-const limiter: RateLimitRequestHandler = rateLimit({
-  windowMs: 60_000,
-  max: remoteRequestsLimit || Number.MAX_SAFE_INTEGER,
-});
-
-const server: Express = express();
-server.use(limiter);
+import { port } from "~frontend/source/main/rest/index";
 
 app.on(AppEvents.Ready, (): void => {
   Menu.setApplicationMenu(null);
   mainWindow.content = new BrowserWindow(mainWindow.settings);
-  mainWindow.content.loadURL(`http://localhost:${mainPort}/cat`);
+  mainWindow.content.loadURL(`http://localhost:${port}/cat`);
   fromEvent(mainWindow.content, BrowserWindowEvent.ReadyToShow).subscribe(
     () => {
       const { content }: ExtendedBrowserWindowWithContent =
@@ -48,7 +30,7 @@ app.on(AppEvents.Ready, (): void => {
           if (
             typeof address === "string" &&
             SuperExpressive()
-              .string(`localhost:${mainPort}`)
+              .string(`localhost:${port}`)
               .toRegex()
               .test(address)
           ) {
