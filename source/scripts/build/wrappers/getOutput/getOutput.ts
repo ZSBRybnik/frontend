@@ -22,13 +22,14 @@ const getOutputPublicPath = ({
 }: GetOutputPublicPathArguments) => {
   if (extendedMode === ExtendedMode.Web) {
     return `/source/${targetToModernFolder}/`;
+  } else if (extendedMode === ExtendedMode.Renderer) {
+    const ex = upperFirst(extendedMode);
+    return `/source/${AdditionalPath[ex as never]}/`;
   } else if (
-    extendedMode === ExtendedMode.Renderer ||
     extendedMode === ExtendedMode.Main ||
     extendedMode === ExtendedMode.Preload
   ) {
-    const ex = upperFirst(extendedMode);
-    return `/source/${AdditionalPath[ex as never]}/`;
+    return "";
   } else {
     return "/source/";
   }

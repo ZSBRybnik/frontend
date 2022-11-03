@@ -14,6 +14,9 @@ const getProvidePlugin = ({ extendedMode }: GetProvidePluginArguemnts) => {
     return new ProvidePlugin({
       process: "process/browser",
     });
+  } else if (extendedMode === ExtendedMode.Main) {
+    return new ProvidePlugin({ process: "process" });
+    return;
   } else {
     return;
   }
