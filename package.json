@@ -238,6 +238,7 @@
     "npm-check": "^5.9.2",
     "npm-check-updates": "^15.0.1",
     "parse-entities": "^4.0.0",
+    "piscina": "^3.2.0",
     "prettier": "^2.7.1",
     "prettier-plugin-organize-imports": "^3.0.0",
     "prettier-plugin-prisma": "^3.14.0",

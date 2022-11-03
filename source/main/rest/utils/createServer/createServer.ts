@@ -1,6 +1,5 @@
 import type { Express } from "express";
 import express from "express";
-import type { Server } from "http";
 import applyMiddlewares from "~frontend/source/main/rest/utils/applyMiddlewares/applyMiddlewares";
 import applyRoutes from "~frontend/source/main/rest/utils/applyRoutes/applyRoutes";
 import type {

@@ -4,6 +4,7 @@ import { join } from "path";
 import { fromEvent } from "rxjs";
 import "source-map-support/register";
 import "v8-compile-cache";
+import "~frontend/source/main/clients/gunClient/gunClient";
 import AppEvents from "~frontend/source/main/types/appEvents/appEvents";
 import BrowserWindowEvent from "~frontend/source/main/types/browserWindowEvent/browserWindowEvent";
 import { ExtendedBrowserWindowWithContent } from "~frontend/source/main/types/extendedBrowserWindow/extendedBrowserWindow";
