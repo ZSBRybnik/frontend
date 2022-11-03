@@ -6,7 +6,17 @@ import { join, resolve } from "path";
 
 const getResolve = () => {
   return {
-    extensions: [".js", ".ts", ".tsx", ".jsx", ".mjs", ".wasm", ".json"],
+    extensions: [
+      ".js",
+      ".ts",
+      ".tsx",
+      ".jsx",
+      ".mjs",
+      ".wasm",
+      ".json",
+      ".svelte",
+      ".vue",
+    ],
     alias: {
       "@babel/runtime": resolve(
         process.cwd(),

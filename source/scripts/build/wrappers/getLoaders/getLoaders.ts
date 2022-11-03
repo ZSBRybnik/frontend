@@ -9,6 +9,7 @@ import Mode from "~frontend/source/scripts/build/types/mode/mode";
 import getPureScriptLoader from "~frontend/source/scripts/build/loaders/getPureScriptLoader/getPureScriptLoader";
 import getHaxeLoader from "~frontend/source/scripts/build/loaders/getHaxeLoader/getHaxeLoader";
 import getNimLoader from "~frontend/source/scripts/build/loaders/getNimLoader/getNimLoader";
+import getSvelteLoader from "~frontend/source/scripts/build/loaders/getSvelteLoader/getSvelteLoader";
 
 type GetLoaderArguments = {
   targetToModern: boolean;
@@ -30,6 +31,7 @@ const getLoaders: GetLoader = ({
     getPureScriptLoader(),
     getHaxeLoader(),
     getNimLoader(),
+    getSvelteLoader(),
     getCssLoader(),
   ];
 };
