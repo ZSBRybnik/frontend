@@ -3,9 +3,13 @@ use uint::construct_uint;
 construct_uint! {
     struct U1024(16);
 }
-// fn get_max_unsigned_integer_128_as_string(mut context: FunctionContext) -> JsResult<JsString> {
-//     Ok(context.string(std::u128::MAX.to_string()))
-// }
+fn os_version(mut context: FunctionContext) -> JsResult<JsString> {
+    use sysinfo::{System, SystemExt};
+    let sys: System = System::new_all();
+    let osv: Option<String> = sys.os_version();
+    let unwprapped_os_version: String = osv.unwrap().to_string();
+    Ok(context.string(unwprapped_os_version))
+}
 
 #[neon::main]
 fn main(mut context: ModuleContext) -> NeonResult<()> {
@@ -40,6 +44,7 @@ fn main(mut context: ModuleContext) -> NeonResult<()> {
             .to_string(),
         )
         .clone();
+    context.export_function("osVersion", os_version)?;
     context.export_value("maxUnsignedInteger128", max_unsigned_integer_128_as_string)?;
     context.export_value(
         "maxUnsignedInteger1024",
