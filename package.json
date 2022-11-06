@@ -35,7 +35,11 @@
     "package-mac": "cross-env TS_NODE_PROJECT=tsconfig.node.json ts-node ./source/scripts/runner/commands/release/release.ts --architecture x64 --platform darwin",
     "package-win-64": "cross-env TS_NODE_PROJECT=tsconfig.node.json ts-node ./source/scripts/runner/commands/release/release.ts --architecture x64 --platform win32",
     "package-win-32": "cross-env TS_NODE_PROJECT=tsconfig.node.json ts-node ./source/scripts/runner/commands/release/release.ts --architecture ia32 --platform win32",
-    "package-linux": "cross-env TS_NODE_PROJECT=tsconfig.node.json ts-node ./source/scripts/runner/commands/release/release.ts --architecture x64 --platform linux"
+    "package-linux": "cross-env TS_NODE_PROJECT=tsconfig.node.json ts-node ./source/scripts/runner/commands/release/release.ts --architecture x64 --platform linux",
+    "generate-mongodb-types": "prisma generate --schema=./source/main/prisma/mongodb.prisma",
+    "generate-postgresql-types": "prisma generate --schema=./source/main/prisma/postgresql.prisma",
+    "generate-sqlite-types": "prisma generate --schema=./source/main/prisma/sqlite.prisma",
+    "generate-types": "yarn run generate-mongodb-types && yarn run generate-postgresql-types && yarn run generate-sqlite-types"
   },
   "devDependencies": {
     "electron": "^19.0.7"
@@ -237,6 +241,7 @@
     "nodemon": "^2.0.18",
     "npm-check": "^5.9.2",
     "npm-check-updates": "^15.0.1",
+    "office-addin-dev-certs": "^1.9.3",
     "parse-entities": "^4.0.0",
     "piscina": "^3.2.0",
     "prettier": "^2.7.1",
@@ -309,6 +314,7 @@
     "webpack-dev-server": "^4.9.3",
     "webpack-license-plugin": "^4.2.2",
     "webpack-node-externals": "^3.0.0",
+    "winston": "^3.8.2",
     "workbox-webpack-plugin": "^6.5.3",
     "workbox-window": "^6.5.3",
     "yarn": "^1.22.19",

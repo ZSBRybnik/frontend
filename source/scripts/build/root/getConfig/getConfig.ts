@@ -19,13 +19,13 @@ type GetConfigArguments = {
   mode: Mode;
 };
 
-type GetConfig = (argument: GetConfigArguments) => Configuration;
+type GetConfig = (argument: GetConfigArguments) => Promise<Configuration>;
 
-const getConfig: GetConfig = ({
+const getConfig: GetConfig = async ({
   extendedMode,
   targetToModern,
   mode,
-}: GetConfigArguments): Configuration => {
+}: GetConfigArguments): Promise<Configuration> => {
   return {
     mode: mode === Mode.Development ? mode : Mode.Production,
     entry: getEntryPoint({ extendedMode }),
@@ -45,7 +45,7 @@ const getConfig: GetConfig = ({
     resolve: getResolve(),
     output: getOutput({ targetToModern, extendedMode }),
     experiments: getExperiments({ targetToModern }),
-    devServer: getDevelopmentServer({ targetToModern, extendedMode }),
+    devServer: await getDevelopmentServer({ targetToModern, extendedMode }),
   };
 };
 

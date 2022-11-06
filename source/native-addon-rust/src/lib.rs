@@ -6,9 +6,12 @@ construct_uint! {
 fn os_version(mut context: FunctionContext) -> JsResult<JsString> {
     use sysinfo::{System, SystemExt};
     let sys: System = System::new_all();
-    let osv: Option<String> = sys.os_version();
-    let unwprapped_os_version: String = osv.unwrap().to_string();
-    Ok(context.string(unwprapped_os_version))
+    let os_version: Option<String> = sys.os_version();
+    let os_version: String = match os_version {
+        Some(value) => value,
+        None => String::from("unknown"),
+    };
+    Ok(context.string(os_version))
 }
 
 #[neon::main]

@@ -1,0 +1,8 @@
+FROM sickcodes/docker-osx:auto AS build
+ADD . /home/app
+WORKDIR /home/app
+RUN apt update
+RUN apt install -y golang-go rustc cargo build-essential libpcap-dev libnss3-dev libgtk-3-0 libxss1 libasound2
+RUN yarn 
+RUN yarn run build-desktop
+CMD ["nginx", "-g", "daemon off;"]
