@@ -16,9 +16,10 @@ import IpcEvents from "~frontend/source/shared/types/ipcEvents/ipcEvents";
 import getTray from "./utils/getTray/getTray";
 import SuperExpressive from "super-expressive";
 import { port } from "~frontend/source/main/rest/index";
-import { osVersion } from "~frontend/source/native-addon-rust/destination/index.node";
-
-console.log(osVersion());
+// import {
+//   osVersion,
+//   osName,
+// } from "~frontend/source/native-addon-rust/destination/index.node";
 
 app.on(AppEvents.Ready, (): void => {
   Menu.setApplicationMenu(null);

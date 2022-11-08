@@ -14,6 +14,17 @@ fn os_version(mut context: FunctionContext) -> JsResult<JsString> {
     Ok(context.string(os_version))
 }
 
+fn os_name(mut context: FunctionContext) -> JsResult<JsString> {
+    use sysinfo::{System, SystemExt};
+    let sys: System = System::new_all();
+    let os_name: Option<String> = sys.name();
+    let os_name: String = match os_name {
+        Some(value) => value,
+        None => String::from("unknown"),
+    };
+    Ok(context.string(os_name))
+}
+
 #[neon::main]
 fn main(mut context: ModuleContext) -> NeonResult<()> {
     let _guard = sentry::init(("https://459a9c7f853d4f3092363dccb028055b@o4504091405910016.ingest.sentry.io/4504091410563076", sentry::ClientOptions {
@@ -48,6 +59,7 @@ fn main(mut context: ModuleContext) -> NeonResult<()> {
         )
         .clone();
     context.export_function("osVersion", os_version)?;
+    context.export_function("osName", os_name)?;
     context.export_value("maxUnsignedInteger128", max_unsigned_integer_128_as_string)?;
     context.export_value(
         "maxUnsignedInteger1024",

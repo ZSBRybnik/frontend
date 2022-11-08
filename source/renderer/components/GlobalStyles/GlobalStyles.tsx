@@ -4,7 +4,8 @@ import { memo } from "react";
 import target, {
   TargetType,
 } from "~frontend/source/shared/constants/target/target";
-
+const xd = "windows";
+console.log(window.osCheck, "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
 const GlobalStyles: FunctionComponent = (): JSX.Element => {
   const theme: Theme = useTheme();
   return (
@@ -39,6 +40,7 @@ const GlobalStyles: FunctionComponent = (): JSX.Element => {
             min-height: 100vh;
             overflow: hidden;
             ${target === TargetType.Desktop &&
+            window.osCheck === xd &&
             css`
               border-radius: 15px;
             `};
