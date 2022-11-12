@@ -11,6 +11,7 @@ import toggleFullscreen from "./api/toggleFullscreen/toggleFullscreen";
 import toggleMaximize from "./api/toggleMaximize/toggleMaximize";
 import extractToSeparateWindow from "./api/extractToSeparateWindow/extractToSeparateWindow";
 import getOperatingSystemInformation from "./api/getOperatingSystemInformation/getOperatingSystemInformation";
+import openExternalLink from "./api/openExternalLink/openExternalLink";
 
 const { exposeInMainWorld }: ContextBridge = contextBridge;
 
@@ -24,5 +25,6 @@ exposeInMainWorld("api", {
   toggleFullscreen,
   isElectron,
   extractToSeparateWindow,
+  openExternalLink,
   getOperatingSystemInformation,
 });
