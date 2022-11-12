@@ -1,5 +1,12 @@
 /* eslint-disable max-params */
-import { app, BrowserWindow, ipcMain, Menu, IpcMainEvent } from "electron";
+import {
+  app,
+  BrowserWindow,
+  ipcMain,
+  Menu,
+  IpcMainEvent,
+  shell,
+} from "electron";
 import { join } from "path";
 import { fromEvent } from "rxjs";
 import "source-map-support/register";
@@ -23,6 +30,10 @@ console.log(maxUnsignedInteger1024);
 app.on(AppEvents.Ready, (): void => {
   Menu.setApplicationMenu(null);
   mainWindow.content = new BrowserWindow(mainWindow.settings);
+  mainWindow.webContents.setWindowOpenHandler(({ url }) => {
+    shell.openExternal(url);
+    return { action: "deny" };
+  });
   mainWindow.content.loadURL(`http://localhost:${port}/cat`);
   fromEvent(mainWindow.content, BrowserWindowEvent.ReadyToShow).subscribe(
     () => {
