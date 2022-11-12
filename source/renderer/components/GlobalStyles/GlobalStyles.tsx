@@ -1,13 +1,12 @@
 import { css, Global, Theme, useTheme } from "@emotion/react";
 import type { FunctionComponent } from "react";
 import { memo } from "react";
-import target, {
-  TargetType,
-} from "~frontend/source/shared/constants/target/target";
-const xd = "windows";
-console.log(window.osCheck, "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
+
+import useOperatingSystemViewportAdjustments from "../../hooks/useOperatingSystemViewportAdjustments/useOperatingSystemViewportAdjustments";
+
 const GlobalStyles: FunctionComponent = (): JSX.Element => {
   const theme: Theme = useTheme();
+  const { rounded } = useOperatingSystemViewportAdjustments();
   return (
     <Global
       styles={css`
@@ -39,8 +38,7 @@ const GlobalStyles: FunctionComponent = (): JSX.Element => {
             flex-direction: column;
             min-height: 100vh;
             overflow: hidden;
-            ${target === TargetType.Desktop &&
-            window.osCheck === xd &&
+            ${rounded &&
             css`
               border-radius: 15px;
             `};
