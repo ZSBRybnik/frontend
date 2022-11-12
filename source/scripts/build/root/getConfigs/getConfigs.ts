@@ -6,7 +6,7 @@ import Mode from "~frontend/source/scripts/build/types/mode/mode";
 import { TargetType } from "~frontend/source/shared/constants/target/target";
 
 export type ConfigsMapper = {
-  [key in TargetType]: () => Configuration[];
+  [key in TargetType]: () => Promise<Configuration[]>;
 };
 
 type GetConfingsArguments = {
@@ -14,68 +14,68 @@ type GetConfingsArguments = {
   mode: Mode;
 };
 
-type GetConfings = (argument: GetConfingsArguments) => Configuration[];
+type GetConfings = (argument: GetConfingsArguments) => Promise<Configuration[]>;
 
-const getConfings: GetConfings = ({
+const getConfings: GetConfings = async ({
   targetType,
   mode,
-}: GetConfingsArguments): Configuration[] => {
+}: GetConfingsArguments): Promise<Configuration[]> => {
   const configs: ConfigsMapper = {
-    [TargetType.Web]: () => {
+    [TargetType.Web]: async () => {
       return [
-        getConfig({
+        await getConfig({
           mode,
           targetToModern: true,
           extendedMode: ExtendedMode.Web,
         }),
-        getConfig({
+        await getConfig({
           mode,
           targetToModern: false,
           extendedMode: ExtendedMode.Web,
         }),
       ];
     },
-    [TargetType.Desktop]: () => {
+    [TargetType.Desktop]: async () => {
       return [
-        getConfig({
+        await getConfig({
           mode,
           targetToModern: true,
           extendedMode: ExtendedMode.Main,
         }),
-        getConfig({
+        await getConfig({
           mode,
           targetToModern: true,
           extendedMode: ExtendedMode.Renderer,
         }),
-        getConfig({
+        await getConfig({
           mode,
           targetToModern: true,
           extendedMode: ExtendedMode.Preload,
         }),
       ];
     },
-    [TargetType.Mobile]: () => {
+    [TargetType.Mobile]: async () => {
       return [
-        getConfig({
+        await getConfig({
           mode,
           targetToModern: true,
           extendedMode: ExtendedMode.Mobile,
         }),
       ];
     },
-    [TargetType.OSFree]: () => {
+    [TargetType.OSFree]: async () => {
       return [
-        getConfig({
+        await getConfig({
           mode,
           targetToModern: true,
           extendedMode: ExtendedMode.Main,
         }),
-        getConfig({
+        await getConfig({
           mode,
           targetToModern: true,
           extendedMode: ExtendedMode.Renderer,
         }),
-        getConfig({
+        await getConfig({
           mode,
           targetToModern: true,
           extendedMode: ExtendedMode.Preload,

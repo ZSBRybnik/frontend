@@ -23,9 +23,11 @@ import IpcEvents from "~frontend/source/shared/types/ipcEvents/ipcEvents";
 import getTray from "./utils/getTray/getTray";
 import SuperExpressive from "super-expressive";
 import { port } from "~frontend/source/main/rest/index";
-import { maxUnsignedInteger1024 } from "~frontend/source/native-addon-rust/destination/index.node";
+import { osInfo } from "systeminformation";
 
-console.log(maxUnsignedInteger1024);
+ipcMain.handle(IpcEvents.GetOperatingSystemInformation, async () => {
+  return await osInfo();
+});
 
 app.on(AppEvents.Ready, (): void => {
   Menu.setApplicationMenu(null);

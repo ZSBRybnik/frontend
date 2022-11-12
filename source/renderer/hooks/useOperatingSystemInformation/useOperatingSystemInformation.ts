@@ -1,0 +1,24 @@
+import { useEffect } from "react";
+import ExtendedWindow from "~frontend/source/shared/types/extendedWindow/extendedWindow";
+import useState from "../useState/useState";
+import { Systeminformation } from "systeminformation";
+
+const useOperatingSystemInformation = () => {
+  const { value, setValue } = useState<{
+    value: null | Systeminformation.OsData;
+  }>({
+    value: null,
+  });
+  useEffect(() => {
+    (async () => {
+      setValue(
+        (await (
+          window as ExtendedWindow
+        ).api?.getOperatingSystemInformation()) ?? null,
+      );
+    })();
+  }, []);
+  return { value };
+};
+
+export default useOperatingSystemInformation;

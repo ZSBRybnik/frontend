@@ -3,9 +3,6 @@ use uint::construct_uint;
 construct_uint! {
     struct U1024(16);
 }
-// fn get_max_unsigned_integer_128_as_string(mut context: FunctionContext) -> JsResult<JsString> {
-//     Ok(context.string(std::u128::MAX.to_string()))
-// }
 
 #[neon::main]
 fn main(mut context: ModuleContext) -> NeonResult<()> {

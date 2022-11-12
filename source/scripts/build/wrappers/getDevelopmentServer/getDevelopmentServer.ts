@@ -3,6 +3,7 @@ import { Configuration } from "webpack-dev-server";
 import destination from "~frontend/source/scripts/build/constants/destination/destination";
 import source from "~frontend/source/scripts/build/constants/source/source";
 import ExtendedMode from "~frontend/source/scripts/build/types/extendedMode/extendedMode";
+import { getHttpsServerOptions } from "office-addin-dev-certs";
 
 type GetDevelopmentServerArguments = {
   targetToModern: boolean;
@@ -11,7 +12,7 @@ type GetDevelopmentServerArguments = {
 
 type GetDevelopmentServer = (
   argument: GetDevelopmentServerArguments,
-) => Configuration | undefined;
+) => Promise<Configuration | undefined>;
 
 /**
  * Function to get customized `devServer` property.
@@ -28,10 +29,10 @@ type GetDevelopmentServer = (
  * @param {ExtendedMode} argument.extendedMode Determines target.
  * @returns {Configuration | undefined} Webpack devServer property.
  */
-const getDevelopmentServer: GetDevelopmentServer = ({
+const getDevelopmentServer: GetDevelopmentServer = async ({
   targetToModern,
   extendedMode,
-}: GetDevelopmentServerArguments): Configuration | undefined => {
+}: GetDevelopmentServerArguments): Promise<Configuration | undefined> => {
   return targetToModern
     ? {
         host: "0.0.0.0",
@@ -55,7 +56,9 @@ const getDevelopmentServer: GetDevelopmentServer = ({
             "X-Requested-With, content-type, Authorization",
         },
         watchFiles: [join(".", source), join(".", destination)],
-        https: extendedMode !== ExtendedMode.Mobile,
+        https:
+          extendedMode !== ExtendedMode.Mobile &&
+          (await getHttpsServerOptions()),
       }
     : undefined;
 };

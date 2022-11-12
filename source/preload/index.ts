@@ -10,6 +10,7 @@ import toggleDevelopmentTools from "~frontend/source/preload/api/toggleDevelopme
 import toggleFullscreen from "./api/toggleFullscreen/toggleFullscreen";
 import toggleMaximize from "./api/toggleMaximize/toggleMaximize";
 import extractToSeparateWindow from "./api/extractToSeparateWindow/extractToSeparateWindow";
+import getOperatingSystemInformation from "./api/getOperatingSystemInformation/getOperatingSystemInformation";
 
 const { exposeInMainWorld }: ContextBridge = contextBridge;
 
@@ -23,4 +24,5 @@ exposeInMainWorld("api", {
   toggleFullscreen,
   isElectron,
   extractToSeparateWindow,
+  getOperatingSystemInformation,
 });

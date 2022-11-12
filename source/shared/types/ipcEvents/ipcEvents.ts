@@ -7,6 +7,7 @@ enum IpcEvents {
   ToggleMaximize = "toggleMaximize",
   ToggleFullscreen = "toggleFullscreen",
   ExtractToSeparateWindow = "extractToSeparateWindow",
+  GetOperatingSystemInformation = "getOperatingSystemInformation",
 }
 
 export default IpcEvents;

@@ -15,14 +15,14 @@ interface WebpackArguments {
 type SetupConfig = (
   environmentArguments: EnvironmentArguments,
   webpackArguments: WebpackArguments,
-) => Configuration[];
+) => Promise<Configuration[]>;
 
-const setupConfig: SetupConfig = (
+const setupConfig: SetupConfig = async (
   { target }: EnvironmentArguments,
   { mode }: WebpackArguments,
 ): // eslint-disable-next-line max-params
-Configuration[] => {
-  return getConfigs({ targetType: target, mode });
+Promise<Configuration[]> => {
+  return await getConfigs({ targetType: target, mode });
 };
 
 export default setupConfig;
