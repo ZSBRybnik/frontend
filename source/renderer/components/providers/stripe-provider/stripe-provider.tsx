@@ -5,9 +5,7 @@ import {
   StripeProviderComponent,
 } from "./stripe-provider.types";
 
-const stripe: Stripe | null = await loadStripe(
-  "pk_test_51AROWSJX9HHJ5bycpEUP9dK39tXufyuWogSUdeweyZEXy3LC7M8yc5d9NlQ96fRCVL0BlAu7Nqt4V7N5xZjJnrkp005fDiTMIr",
-);
+const stripe: Stripe | null = await loadStripe(process.env.STRIPE_KEY || "");
 
 const StripeProvider: StripeProviderComponent = ({
   children,

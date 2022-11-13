@@ -49,6 +49,7 @@ const getDefinePlugin: GetDefinePlugin = ({
     "process.env.GOOGLE_ANALYTICS_ID": JSON.stringify(
       process.env.GOOGLE_ANALYTICS_ID,
     ),
+    "process.env.STRIPE_KEY": JSON.stringify(process.env.STRIPE_KEY),
     "process.env.STRIPE_PUBLISH_KEY": JSON.stringify(
       process.env.STRIPE_PUBLISH_KEY,
     ),
