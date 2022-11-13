@@ -1,12 +1,24 @@
-FROM node:latest AS build
-ADD . /home/website
-WORKDIR /home/website
+FROM node:16 AS build
 RUN apt update
-RUN apt install -y golang-go rustc cargo build-essential libpcap-dev
-RUN yarn 
-RUN yarn run test
+RUN apt install -y cargo build-essential libpcap-dev curl
+RUN apt-get update
+COPY --from=golang:latest /usr/local/go/ /usr/local/go/
+ENV PATH="/usr/local/go/bin:${PATH}"
+RUN curl https://sh.rustup.rs -sSf | bash -s -- -y
+RUN echo 'source $HOME/.cargo/env' >> $HOME/.bashrc
+ENV PATH="/root/.cargo/bin:${PATH}"
+RUN yarn config set network-timeout 1000000000 -g
+ADD ./backend /home/zsb/backend
+WORKDIR /home/zsb/backend
+RUN yarn --ignore-engines
+RUN yarn run generate-types
+ADD ./frontend /home/zsb/frontend
+WORKDIR /home/zsb/frontend
+RUN yarn --ignore-engines
+RUN yarn run generate-types
 RUN yarn run build-web
 FROM nginx:alpine
-COPY --from=build /home/website/destination /home/website
+COPY --from=build /home/zsb/frontend/destination /etc/nginx/html
+COPY ./frontend/nginx.conf /etc/nginx/nginx.conf
 EXPOSE 80 443
 CMD ["nginx", "-g", "daemon off;"]

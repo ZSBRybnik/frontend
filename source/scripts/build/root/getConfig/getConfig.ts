@@ -45,7 +45,10 @@ const getConfig: GetConfig = async ({
     resolve: getResolve(),
     output: getOutput({ targetToModern, extendedMode }),
     experiments: getExperiments({ targetToModern }),
-    devServer: await getDevelopmentServer({ targetToModern, extendedMode }),
+    devServer:
+      mode === Mode.Development
+        ? await getDevelopmentServer({ targetToModern, extendedMode })
+        : undefined,
   };
 };
 
