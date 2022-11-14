@@ -76,7 +76,7 @@
     "@memlab/core": "^1.1.11",
     "@microsoft/tsdoc": "^0.14.1",
     "@nativescript/types": "^8.2.0",
-    "@pmmmwh/react-refresh-webpack-plugin": "^0.5.7",
+    "@pmmmwh/react-refresh-webpack-plugin": "^0.5.9",
     "@prettier/plugin-pug": "^2.1.1",
     "@prisma/client": "^4.0.0",
     "@sentry/browser": "^7.17.3",
