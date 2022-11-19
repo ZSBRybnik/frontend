@@ -1,9 +1,7 @@
 /* eslint-disable max-params */
-import { evaluate, EvaluateOptions } from "@mdx-js/mdx";
-import * as provider from "@mdx-js/react";
+import { EvaluateOptions } from "@mdx-js/mdx";
 import { useMDXComponents } from "@mdx-js/react";
 import { useParams } from "react-router-dom";
-import reactRuntime from "react/jsx-runtime.js";
 import {
   Post as PostType,
   User,
@@ -14,8 +12,7 @@ import Page from "../../components/Page/Page";
 import useCallAPI from "../../hooks/useCallAPI/useCallAPI";
 import useState from "~frontend/source/renderer/hooks/useState/useState";
 import { useEffect } from "react";
-import { compiler } from "markdown-to-jsx";
-import mdxLegacyComponentMapper from "../../constants/mdxLegacyComponentMapper/mdxLegacyComponentMapper";
+import reactRuntime from "react/jsx-runtime.js";
 
 const Post = () => {
   const { id = "0" } = useParams();
@@ -52,6 +49,16 @@ const Post = () => {
         const transformedContentPromises = content.map(
           async ({ content, runtime, id: contentId }, index) => {
             if (runtime === "classic") {
+              const mdxImportPromise = import(
+                /* webpackChunkName: "classic-runtime" */ "@mdx-js/mdx"
+              );
+              const mdxProviderImportPromise = import(
+                /* webpackChunkName: "classic-runtime" */ "@mdx-js/react"
+              );
+              const [{ evaluate }, provider] = await Promise.all([
+                mdxImportPromise,
+                mdxProviderImportPromise,
+              ]);
               const { default: Component } = await evaluate(content, {
                 ...provider,
                 ...reactRuntime,
@@ -64,6 +71,18 @@ const Post = () => {
               );
             }
             if (runtime === "legacy") {
+              const compilerImportPromise = import(
+                /* webpackChunkName: "legacy-runtime" */ "markdown-to-jsx"
+              );
+              const mdxLegacyComponentMapperImportPromise = import(
+                /* webpackChunkName: "legacy-runtime" */
+                "../../constants/mdxLegacyComponentMapper/mdxLegacyComponentMapper"
+              );
+              const [{ compiler }, { default: mdxLegacyComponentMapper }] =
+                await Promise.all([
+                  compilerImportPromise,
+                  mdxLegacyComponentMapperImportPromise,
+                ]);
               return compiler(content, mdxLegacyComponentMapper);
             }
             return <></>;
