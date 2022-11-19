@@ -1,13 +1,13 @@
 datasource db {
-    provider = "sqlite"
-    url      = "file:./database.db"
+  provider = "sqlite"
+  url      = "file:./database.db"
 }
 
 generator client {
-    provider = "prisma-client-js"
-    output   = "../../../node_modules/@prisma/sqlite"
+  provider = "prisma-client-js"
+  output   = "../../../node_modules/@prisma/sqlite"
 }
 
 model Logs {
-    id Int @id @default(autoincrement())
+  id Int @id @default(autoincrement())
 }

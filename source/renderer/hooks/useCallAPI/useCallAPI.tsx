@@ -91,7 +91,7 @@ const useCallAPI = <T,>({
   }, []);
   const data: T = useMemo(() => {
     return gunResponse || trpcData || ipfsResponse;
-  }, [gunResponse, ipfsResponse]);
+  }, [gunResponse, ipfsResponse, trpcData]);
   return {
     data,
   };
