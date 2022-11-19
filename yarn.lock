@@ -25277,10 +25277,10 @@ sumchecker@^3.0.1:
   dependencies:
     debug "^4.1.0"
 
-super-expressive@^1.4.1:
-  version "1.4.1"
-  resolved "https://registry.yarnpkg.com/super-expressive/-/super-expressive-1.4.1.tgz#4366b32bf2d72e802a0e54312028469bbfeac3bd"
-  integrity sha512-0DwnPZXF5+MQcYzmZc1GsXpj5i3SumqztwGIXtnKMIb9Yj6i0Ua9+86c37wLuWJjuABGLZpWxkYD/57tZW7jmQ==
+super-expressive@^1.4.2:
+  version "1.4.2"
+  resolved "https://registry.yarnpkg.com/super-expressive/-/super-expressive-1.4.2.tgz#ed7fa5f73290e1f9f5ff5e828348ccb2972389d6"
+  integrity sha512-voUaVDV4ty6q4t1TtVCg/BOQ1aIk2l62MwR/4lkFUt//bOs7N2ZgFJf892CVnF4WhnObghCC/f6qALCn1DIPYw==
 
 super-regex@^0.2.0:
   version "0.2.0"
