@@ -3161,10 +3161,10 @@
     util.promisify "^1.1.1"
     xvfb "^0.4.0"
 
-"@memlab/core@^1.1.10", "@memlab/core@^1.1.11":
-  version "1.1.11"
-  resolved "https://registry.yarnpkg.com/@memlab/core/-/core-1.1.11.tgz#be1852e24413a24fd07d337364cf67a56546ba6d"
-  integrity sha512-XAfhgRgWcHvu5x4p8M/WHKTRX+LBCQCWznccxmj+vy5Lk118kq0gWBZs+BlPbfWG8GmowoiNNyULyJGa2OWOtA==
+"@memlab/core@^1.1.10", "@memlab/core@^1.1.17":
+  version "1.1.17"
+  resolved "https://registry.yarnpkg.com/@memlab/core/-/core-1.1.17.tgz#a6aaaf507efecf64d586f6ef737294a8e1071f6a"
+  integrity sha512-yeffjfa9eGr5yP1B/RaePYeHRgSrjolJOTWGIiHrQOt6Z5GKsj/ynj5x/35ajcII38rBM7B0MvPo5lQ78eeNZg==
   dependencies:
     ansi "^0.3.1"
     babar "^0.2.0"
