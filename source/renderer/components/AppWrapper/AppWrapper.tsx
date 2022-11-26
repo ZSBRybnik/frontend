@@ -21,6 +21,9 @@ import PrivateRoute, {
 import useErrorBoundary from "use-error-boundary";
 import Buffet from "../../pages/Buffet/Buffet";
 import Roles from "~backend/source/server/constants/roles/Roles";
+import Overlay from "../Overlay/Overlay";
+import SlideOutMenu from "../SlideOutMenu/SlideOutMenu";
+import useWindowDimensionsListener from "../../hooks/useWindowDimensionsListener/useWindowDimensionsListener";
 
 const Homepage: LazyExoticComponent<FunctionComponent> = lazy(
   (): Promise<typeof import("~frontend/source/renderer/pages/Homepage")> => {
@@ -46,6 +49,14 @@ const Post: LazyExoticComponent<FunctionComponent> = lazy(
   },
 );
 
+const Panel: LazyExoticComponent<FunctionComponent> = lazy(
+  (): Promise<typeof import("~frontend/source/renderer/pages/Panel/Panel")> => {
+    return new Promise((resolve) => {
+      resolve(import("~frontend/source/renderer/pages/Panel/Panel"));
+    });
+  },
+);
+
 const AppWrapper: FunctionComponent = () => {
   const { ErrorBoundary } = useErrorBoundary();
   useCopy();
@@ -55,11 +66,14 @@ const AppWrapper: FunctionComponent = () => {
   useToggleMaximizeShortcut();
   useToggleFullscreenShortcut();
   useIpfs();
+  useWindowDimensionsListener();
   return (
     <ErrorBoundary>
       <GlobalStyle />
       <Suspense fallback={<Loader />}>
+        <Overlay />
         <NavBar />
+        <SlideOutMenu />
         <MainSection>
           <MainSectionContent>
             <Routes>
@@ -80,6 +94,18 @@ const AppWrapper: FunctionComponent = () => {
                       ])
                     }
                     element={<Buffet />}
+                  />
+                }
+              />
+              <Route
+                path="/panel"
+                element={
+                  <PrivateRoute
+                    noAccessAction={
+                      PrivateRouteRedirectActions.RedirectToPageNotFound
+                    }
+                    whitelist={new Set([Roles.Administrator])}
+                    element={<Panel />}
                   />
                 }
               />

@@ -11,6 +11,8 @@ const StyledNavbar = styled.nav`
   width: 100%;
   background-color: ${({ theme: { accent } }) => accent};
   -webkit-app-region: ${target === TargetType.Desktop ? "drag" : "no-drag"};
+  display: relative;
+  z-index: 2;
 `;
 
 export const StyledNavbarLeft = styled.div`

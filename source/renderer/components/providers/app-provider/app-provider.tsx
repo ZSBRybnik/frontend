@@ -14,6 +14,14 @@ import {
   AppProviderComponent,
   AppProviderProperties,
 } from "./app-provider.types";
+import { hotjar } from "react-hotjar";
+
+hotjar.initialize(
+  parseInt(process.env.HOTJAR_ID || "0"),
+  parseInt(process.env.HOTJAR_SNIPPET_VERSION || "0"),
+);
+
+hotjar.identify("USER_ID", { userProperty: "value" });
 
 /*Sentry.init({
   dsn: "https://46b3ca414ef642a09aa604e4878d3396@o4504091405910016.ingest.sentry.io/4504091410563075",

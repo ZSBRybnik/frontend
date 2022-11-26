@@ -39,7 +39,7 @@
     "generate-mongodb-types": "prisma generate --schema=./source/main/prisma/mongodb.prisma",
     "generate-postgresql-types": "prisma generate --schema=./source/main/prisma/postgresql.prisma",
     "generate-sqlite-types": "prisma generate --schema=./source/main/prisma/sqlite.prisma",
-    "generate-types": "yarn run generate-mongodb-types && yarn run generate-postgresql-types && yarn run generate-sqlite-types"
+    "generate-types": "cross-env TS_NODE_PROJECT=tsconfig.node.json ts-node ./source/scripts/runner/commands/generateTypes/generateTypes.ts"
   },
   "devDependencies": {
     "electron": "^19.0.7"
@@ -249,6 +249,7 @@
     "prettier-plugin-organize-imports": "^3.0.0",
     "prettier-plugin-prisma": "^3.14.0",
     "prisma": "^4.0.0",
+    "prisma-uml": "^1.1.18",
     "process": "^0.11.10",
     "prop-types": "^15.8.1",
     "property-information": "^6.1.1",
@@ -265,6 +266,7 @@
     "react-hotjar": "^5.1.0",
     "react-i18next": "^11.17.4",
     "react-query": "^3.39.1",
+    "react-query-devtools": "^2.6.3",
     "react-refresh": "^0.14.0",
     "react-router-dom": "^6.3.0",
     "react-syntax-highlighter": "^15.5.0",

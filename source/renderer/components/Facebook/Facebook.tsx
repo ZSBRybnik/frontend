@@ -1,18 +1,17 @@
 import { FC } from "react";
-import { Iframe } from "./Albicla.styles";
+import { Iframe } from "./Facebook.styles";
 
-type AlbiclaProperties = {
+type FacebookProperties = {
   url: string;
 };
 
-const Albicla: FC<AlbiclaProperties> = ({
+const Facebook: FC<FacebookProperties> = ({
   url,
-}: AlbiclaProperties): JSX.Element => {
+}: FacebookProperties): JSX.Element => {
   return (
     <Iframe
       src={url}
-      title={url}
-      height="301"
+      height="781"
       scrolling="no"
       frameBorder="0"
       allowFullScreen
@@ -21,4 +20,4 @@ const Albicla: FC<AlbiclaProperties> = ({
   );
 };
 
-export default Albicla;
+export default Facebook;

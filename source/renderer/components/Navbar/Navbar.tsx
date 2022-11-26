@@ -1,7 +1,6 @@
 import { FunctionComponent } from "react";
 import Icon from "~frontend/source/renderer/components/Icon/Icon";
 import NavbarButton from "~frontend/source/renderer/components/NavbarButton/NavbarButton";
-import NavbarMenu from "~frontend/source/renderer/components/NavbarMenu/NavbarMenu";
 import target, {
   TargetType,
 } from "~frontend/source/shared/constants/target/target";
@@ -11,61 +10,56 @@ import StyledNavbar, {
   StyledNavbarLeft,
   StyledNavbarRight,
 } from "./Navbar.styles";
-import useState from "~frontend/source/renderer/hooks/useState/useState";
+import useIsSlideOutMenuOpenStore from "../../stores/isSlideOutMenuOpenStore/isSlideOutMenuOpenStore";
 
 const NavBar: FunctionComponent = (): JSX.Element => {
-  const { value: isOpen, setValue: setIsOpen } = useState<{
-    value: boolean;
-  }>({ value: false });
-
+  const { value: isSlideOutMenuOpen, setValue: setIsSlideOutMenuOpen } =
+    useIsSlideOutMenuOpenStore();
   const toggleIsOpen = () => {
-    setIsOpen(!isOpen);
+    setIsSlideOutMenuOpen(!isSlideOutMenuOpen);
   };
 
   return (
-    <>
-      <StyledNavbar>
-        <StyledNavbarLeft>
-          <NavbarButton onClick={toggleIsOpen}>
-            <Icon>&#xE700;</Icon>
+    <StyledNavbar>
+      <StyledNavbarLeft>
+        <NavbarButton onClick={toggleIsOpen}>
+          <Icon>&#xE700;</Icon>
+        </NavbarButton>
+        <NavbarButton>
+          <Icon>&#xE77B;</Icon>
+        </NavbarButton>
+      </StyledNavbarLeft>
+      <StyledNavbarCenter>
+        <NavbarButton>
+          <Icon>&#xE77B;</Icon>
+        </NavbarButton>
+      </StyledNavbarCenter>
+      {target === TargetType.Desktop && (
+        <StyledNavbarRight>
+          <NavbarButton
+            onClick={() => {
+              (window as ExtendedWindow).api?.minimize();
+            }}
+          >
+            <Icon>&#xE16A;</Icon>
           </NavbarButton>
-          <NavbarButton>
-            <Icon>&#xE77B;</Icon>
+          <NavbarButton
+            onClick={() => {
+              (window as ExtendedWindow).api?.toggleMaximize();
+            }}
+          >
+            <Icon>&#xE158;</Icon>
           </NavbarButton>
-        </StyledNavbarLeft>
-        <StyledNavbarCenter>
-          <NavbarButton>
-            <Icon>&#xE77B;</Icon>
+          <NavbarButton
+            onClick={() => {
+              (window as ExtendedWindow).api?.close();
+            }}
+          >
+            <Icon>&#xE10A;</Icon>
           </NavbarButton>
-        </StyledNavbarCenter>
-        {target === TargetType.Desktop && (
-          <StyledNavbarRight>
-            <NavbarButton
-              onClick={() => {
-                (window as ExtendedWindow).api?.minimize();
-              }}
-            >
-              <Icon>&#xE16A;</Icon>
-            </NavbarButton>
-            <NavbarButton
-              onClick={() => {
-                (window as ExtendedWindow).api?.toggleMaximize();
-              }}
-            >
-              <Icon>&#xE158;</Icon>
-            </NavbarButton>
-            <NavbarButton
-              onClick={() => {
-                (window as ExtendedWindow).api?.close();
-              }}
-            >
-              <Icon>&#xE10A;</Icon>
-            </NavbarButton>
-          </StyledNavbarRight>
-        )}
-      </StyledNavbar>
-      <NavbarMenu isOpen={isOpen} />
-    </>
+        </StyledNavbarRight>
+      )}
+    </StyledNavbar>
   );
 };
 

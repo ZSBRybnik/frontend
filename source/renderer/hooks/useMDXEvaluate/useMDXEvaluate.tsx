@@ -1,31 +1,76 @@
-import { evaluate } from "@mdx-js/mdx";
-import { VFileCompatible } from "@mdx-js/mdx/lib/evaluate";
 import { useMDXComponents } from "@mdx-js/react";
-import runtime from "react/jsx-runtime.js";
-import * as provider from "@mdx-js/react";
-import { MDXContent, MDXComponents } from "mdx/types";
 import { useEffect } from "react";
+import { EvaluateOptions } from "@mdx-js/mdx";
+import {
+  PostContentItem,
+  PageContentItem,
+} from "~backend/node_modules/@prisma/postgresql";
+import reactRuntime from "react/jsx-runtime.js";
 
 type OnEvaluateArguments = {
-  component: MDXContent;
-  mdxComponents: MDXComponents;
+  content: JSX.Element[];
 };
 
 type UseMDXEvaluateArguments = {
-  content?: VFileCompatible;
+  content?: Pick<
+    PostContentItem | PageContentItem,
+    "content" | "runtime" | "id"
+  >[];
   onEvaluate?: (argument: OnEvaluateArguments) => void;
 };
 
 const useMDXEvaluate = ({ content, onEvaluate }: UseMDXEvaluateArguments) => {
   const mdxComponents = useMDXComponents();
   useEffect(() => {
-    if (content) {
+    if (content?.length) {
       (async () => {
-        const { default: Component } = await evaluate(content, {
-          ...provider,
-          ...runtime,
-        } as any);
-        onEvaluate && onEvaluate({ component: Component, mdxComponents });
+        const transformedContentPromises = content.map(
+          // eslint-disable-next-line max-params
+          async ({ content, runtime, id: contentId }, index) => {
+            if (runtime === "classic") {
+              const mdxImportPromise = import(
+                /* webpackChunkName: "classic-runtime" */ "@mdx-js/mdx"
+              );
+              const mdxProviderImportPromise = import(
+                /* webpackChunkName: "classic-runtime" */ "@mdx-js/react"
+              );
+              const [{ evaluate }, provider] = await Promise.all([
+                mdxImportPromise,
+                mdxProviderImportPromise,
+              ]);
+              const { default: Component } = await evaluate(content, {
+                ...provider,
+                ...reactRuntime,
+              } as unknown as EvaluateOptions);
+              return (
+                <Component
+                  key={`${contentId}-${index}`}
+                  components={mdxComponents}
+                />
+              );
+            }
+            if (runtime === "legacy") {
+              const compilerImportPromise = import(
+                /* webpackChunkName: "legacy-runtime" */ "markdown-to-jsx"
+              );
+              const mdxLegacyComponentMapperImportPromise = import(
+                /* webpackChunkName: "legacy-runtime" */
+                "../../constants/mdxLegacyComponentMapper/mdxLegacyComponentMapper"
+              );
+              const [{ compiler }, { default: mdxLegacyComponentMapper }] =
+                await Promise.all([
+                  compilerImportPromise,
+                  mdxLegacyComponentMapperImportPromise,
+                ]);
+              return compiler(content, mdxLegacyComponentMapper);
+            }
+            return <></>;
+          },
+        );
+        const transformedContent = await Promise.all(
+          transformedContentPromises,
+        );
+        onEvaluate && onEvaluate({ content: transformedContent });
       })();
     }
   }, [content]);

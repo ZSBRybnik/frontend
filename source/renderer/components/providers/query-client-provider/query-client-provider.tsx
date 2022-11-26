@@ -4,12 +4,14 @@ import {
   QueryClientProviderComponent,
   QueryClientProviderProperties,
 } from "./query-client-provider.types";
+import { ReactQueryDevtools } from "react-query/devtools";
 
 const QueryClientProvider: QueryClientProviderComponent = ({
   children,
 }: QueryClientProviderProperties): JSX.Element => {
   return (
     <QueryClientProviderBase client={queryClient}>
+      <ReactQueryDevtools />
       {children}
     </QueryClientProviderBase>
   );
