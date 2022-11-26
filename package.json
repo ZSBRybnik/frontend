@@ -252,7 +252,7 @@
     "prisma-uml": "^1.1.18",
     "process": "^0.11.10",
     "prop-types": "^15.8.1",
-    "property-information": "^6.1.1",
+    "property-information": "^6.2.0",
     "pug-html-loader": "^1.1.5",
     "puppeteer": "^15.3.0",
     "purs-loader": "^4.0.0",
