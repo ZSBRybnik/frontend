@@ -240,7 +240,7 @@
     "lodash": "^4.17.21",
     "lookpath": "^1.2.2",
     "markdown-to-jsx": "^7.1.7",
-    "memlab": "^1.1.28",
+    "memlab": "^1.1.35",
     "mousetrap": "^1.6.5",
     "move-file-cli": "^3.0.0",
     "neon-cli": "^0.10.1",
