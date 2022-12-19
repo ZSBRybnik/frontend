@@ -1797,10 +1797,10 @@
   resolved "https://registry.yarnpkg.com/@capacitor/android/-/android-3.7.0.tgz#6685390caf4afc821e0e24ee728fac8e6bf1572d"
   integrity sha512-SF06sqvEKvRnev+T+k4jjfDIdsqcDiGnzGld7oTtJipiO16xVkKPG0kEbFZEWkrMvhqRn6jNyl+ZHn5/9JR7nA==
 
-"@capacitor/app@^1.1.1":
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/@capacitor/app/-/app-1.1.1.tgz#bde7202faad1b47c4ae2c4a622285d7569384c5e"
-  integrity sha512-8ADkldHnoE1xkWvPUsGlERVGm6/Zvcxy6hCI80AxydIKyaCG7kbDAvUclebbnw/eFRxj2zBoVatGLjmJNvTbYw==
+"@capacitor/app@^4.1.1":
+  version "4.1.1"
+  resolved "https://registry.yarnpkg.com/@capacitor/app/-/app-4.1.1.tgz#47329e19ecc080bc2934be86566a7673e0f94e5c"
+  integrity sha512-SJcJA1rhFQyeH6eLfUEbdKkHzAwzahJNVPNXmU88fdmXpMgM2dJGzZj1vrm6e21aQq+Z4aBVLJ2RCdj92zD7wg==
 
 "@capacitor/cli@^3.6.0":
   version "3.7.0"
