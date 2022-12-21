@@ -201,7 +201,7 @@
     "faunadb": "^4.6.0",
     "ffi-napi": "^4.0.3",
     "formik": "^2.2.9",
-    "framer-motion": "^6.5.1",
+    "framer-motion": "^7.10.3",
     "frontend-native-addon-go": "file:./source/native-addon-go",
     "frontend-native-addon-rust": "file:./source/native-addon-rust",
     "fslightbox-react": "^1.6.2-2",
