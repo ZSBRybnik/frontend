@@ -292,7 +292,7 @@
     "script-ext-html-webpack-plugin": "^2.1.5",
     "serve": "^13.0.2",
     "sitemap-webpack-plugin": "^1.1.1",
-    "snyk": "^1.961.0",
+    "snyk": "^1.1073.0",
     "socket.io-client": "^4.5.1",
     "sort-package-json": "^1.57.0",
     "source-map-loader": "^4.0.0",
