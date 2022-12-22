@@ -20,7 +20,7 @@ import PrivateRoute, {
 } from "../private-route/private-route";
 import useErrorBoundary from "use-error-boundary";
 import Buffet from "../../pages/Buffet/Buffet";
-import Roles from "~backend/source/server/constants/roles/Roles";
+import Roles from "~backend/source/server/constants/roles/roles";
 import Overlay from "../Overlay/Overlay";
 import SlideOutMenu from "../SlideOutMenu/SlideOutMenu";
 import useWindowDimensionsListener from "../../hooks/useWindowDimensionsListener/useWindowDimensionsListener";

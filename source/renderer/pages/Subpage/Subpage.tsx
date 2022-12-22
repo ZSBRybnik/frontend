@@ -5,8 +5,8 @@ import {
 } from "react";
 import { useParams } from "react-router-dom";
 import {
-  Page as PageType,
-  PageContentItem,
+  Subpage as SubpageType,
+  ContentItem,
 } from "~backend/node_modules/@prisma/postgresql";
 import Routes from "~backend/source/server/trpc/constants/routes/routes";
 import Page from "../../components/Page/Page";
@@ -21,7 +21,7 @@ const Subpage: FunctionComponent = () => {
   }: Readonly<{
     name?: string;
   }> = useParams();
-  const { data }: UseCallAPIReturn<PageType> = useCallAPI<PageType>({
+  const { data }: UseCallAPIReturn<SubpageType> = useCallAPI<SubpageType>({
     indexName: "pages_by_name",
     indexValue: name,
     gunKey: "pages",
@@ -32,11 +32,11 @@ const Subpage: FunctionComponent = () => {
   });
   const [content, setContent] = useState<JSX.Element[]>([]);
   const {
-    title,
+    //title,
     content: dataContent,
-  }: Partial<PageType> &
+  }: Partial<SubpageType> &
     Partial<{
-      content: PageContentItem[];
+      content: ContentItem[];
     }> = Object(data);
   useMDXEvaluate({
     content: dataContent,
@@ -44,7 +44,7 @@ const Subpage: FunctionComponent = () => {
       setContent(content);
     },
   });
-  return <Page title={title}>{content}</Page>;
+  return <Page title={""}>{content}</Page>;
 };
 
 export default Subpage;

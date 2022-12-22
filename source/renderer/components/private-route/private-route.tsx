@@ -1,5 +1,5 @@
 import create from "zustand";
-import Roles from "~backend/source/server/constants/roles/Roles";
+import Roles from "~backend/source/server/constants/roles/roles";
 import { Navigate } from "react-router-dom";
 import Routes from "~backend/source/server/trpc/constants/routes/routes";
 import getDataFromStorage from "../../utils/getDataFromStorage/getDataFromStorage";

@@ -1,10 +1,7 @@
 import { useMDXComponents } from "@mdx-js/react";
 import { useEffect } from "react";
 import { EvaluateOptions } from "@mdx-js/mdx";
-import {
-  PostContentItem,
-  PageContentItem,
-} from "~backend/node_modules/@prisma/postgresql";
+import { ContentItem } from "~backend/node_modules/@prisma/postgresql";
 import reactRuntime from "react/jsx-runtime.js";
 
 type OnEvaluateArguments = {
@@ -12,10 +9,7 @@ type OnEvaluateArguments = {
 };
 
 type UseMDXEvaluateArguments = {
-  content?: Pick<
-    PostContentItem | PageContentItem,
-    "content" | "runtime" | "id"
-  >[];
+  content?: Pick<ContentItem, "content" | "runtime" | "id">[];
   onEvaluate?: (argument: OnEvaluateArguments) => void;
 };
 
