@@ -6,11 +6,13 @@ import getTargetVersion from "~frontend/source/scripts/build/utils/getTargetVers
 type GetTypeScriptLoaderArguments = {
   targetToModern: boolean;
   mode: Mode;
+  withESBuild?: boolean;
 };
 
 const getTypeScriptLoader = ({
   targetToModern,
   mode,
+  withESBuild,
 }: GetTypeScriptLoaderArguments) => {
   return {
     test: /\.(ts|tsx|js|jsx)$/,
@@ -26,40 +28,49 @@ const getTypeScriptLoader = ({
         },
       },
       {
-        loader: "babel-loader",
-        options: {
-          presets: [
-            [
-              "@babel/env",
-              {
-                targets: getTargetVersion({ targetToModern }),
-                bugfixes: true,
-                useBuiltIns: "usage",
-                corejs: "3",
+        loader:
+          mode === Mode.Development && withESBuild
+            ? "esbuild-loader"
+            : "babel-loader",
+        options:
+          withESBuild && mode === Mode.Development
+            ? {
+                loader: "tsx",
+                target: "esnext",
+              }
+            : {
+                presets: [
+                  [
+                    "@babel/env",
+                    {
+                      targets: getTargetVersion({ targetToModern }),
+                      bugfixes: true,
+                      useBuiltIns: "usage",
+                      corejs: "3",
+                    },
+                  ],
+                  "@babel/preset-typescript",
+                  [
+                    "@babel/preset-react",
+                    {
+                      runtime: "automatic",
+                      development: mode === Mode.Development,
+                      importSource:
+                        mode === Mode.Development
+                          ? "@welldone-software/why-did-you-render"
+                          : undefined,
+                    },
+                  ],
+                ],
+                plugins: [
+                  "vuera/babel",
+                  "inline-react-svg",
+                  "@emotion",
+                  targetToModern &&
+                    mode === "development" &&
+                    require.resolve("react-refresh/babel"),
+                ].filter(Boolean),
               },
-            ],
-            "@babel/preset-typescript",
-            [
-              "@babel/preset-react",
-              {
-                runtime: "automatic",
-                development: mode === Mode.Development,
-                importSource:
-                  mode === Mode.Development
-                    ? "@welldone-software/why-did-you-render"
-                    : undefined,
-              },
-            ],
-          ],
-          plugins: [
-            "vuera/babel",
-            "inline-react-svg",
-            "@emotion",
-            targetToModern &&
-              mode === "development" &&
-              require.resolve("react-refresh/babel"),
-          ].filter(Boolean),
-        },
       },
     ],
   };

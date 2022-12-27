@@ -28,12 +28,13 @@ const getConfings: GetConfings = async ({
           targetToModern: true,
           extendedMode: ExtendedMode.Web,
         }),
-        await getConfig({
-          mode,
-          targetToModern: false,
-          extendedMode: ExtendedMode.Web,
-        }),
-      ];
+        mode !== Mode.Development &&
+          (await getConfig({
+            mode,
+            targetToModern: false,
+            extendedMode: ExtendedMode.Web,
+          })),
+      ].filter(Boolean) as unknown as Promise<Configuration[]>;
     },
     [TargetType.Desktop]: async () => {
       return [

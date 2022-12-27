@@ -25,7 +25,7 @@ const getLoaders: GetLoader = ({
   return [
     getSourceMapLoader(),
     getPugLoader(),
-    getTypeScriptLoader({ targetToModern, mode }),
+    getTypeScriptLoader({ targetToModern, mode, withESBuild: true }),
     getNodeLoader(),
     getJavaScriptModuleLoader(),
     getPureScriptLoader(),
