@@ -27,9 +27,28 @@ export type LinkPropertiesExternal = Omit<LinkPropertiesExternalBase, "to"> & {
   href: LinkPropertiesInternal["href"];
 };
 
+export type LinkPropertiesExternalWithInternalUnion =
+  | LinkPropertiesExternal
+  | LinkPropertiesInternal;
+
+export type LinkPropertiesWithBox = LinkPropertiesExternalWithInternalUnion & {
+  box: true;
+  title: string;
+  toDownload?: boolean;
+  icon?: string;
+};
+
+export type LinkPropertiesWithoutBox =
+  LinkPropertiesExternalWithInternalUnion & {
+    box?: false;
+    title?: never;
+    toDownload?: never;
+    icon?: never;
+  };
+
 type LinkProperties = PropsWithChildren<{
   insecure?: boolean;
 }> &
-  (LinkPropertiesExternal | LinkPropertiesInternal);
+  (LinkPropertiesWithBox | LinkPropertiesWithoutBox);
 
 export default LinkProperties;

@@ -10,7 +10,7 @@ const useIsSlideOutMenuOpenStore: UseBoundStore<
   StoreApi<IsSlideOutMenuOpenState>
 > = create<IsSlideOutMenuOpenState>((set) => {
   return {
-    value: true,
+    value: false,
     setValue: (value: boolean) => {
       set(() => {
         return { value };
