@@ -24,6 +24,7 @@ import Roles from "~backend/source/server/constants/roles/roles";
 import Overlay from "../Overlay/Overlay";
 import SlideOutMenu from "../SlideOutMenu/SlideOutMenu";
 import useWindowDimensionsListener from "../../hooks/useWindowDimensionsListener/useWindowDimensionsListener";
+import useJwtDecodeTokenOnChange from "../../hooks/useJwtDecodeTokenOnChange/useJwtDecodeTokenOnChange";
 
 const Homepage: LazyExoticComponent<FunctionComponent> = lazy(
   (): Promise<typeof import("~frontend/source/renderer/pages/Homepage")> => {
@@ -57,6 +58,20 @@ const Panel: LazyExoticComponent<FunctionComponent> = lazy(
   },
 );
 
+const AdministrateUsers: LazyExoticComponent<FunctionComponent> = lazy(
+  (): Promise<
+    typeof import("~frontend/source/renderer/pages/AdministrateUsers/AdministrateUsers")
+  > => {
+    return new Promise((resolve) => {
+      resolve(
+        import(
+          "~frontend/source/renderer/pages/AdministrateUsers/AdministrateUsers"
+        ),
+      );
+    });
+  },
+);
+
 const AppWrapper: FunctionComponent = () => {
   const { ErrorBoundary } = useErrorBoundary();
   useCopy();
@@ -67,6 +82,7 @@ const AppWrapper: FunctionComponent = () => {
   useToggleFullscreenShortcut();
   useIpfs();
   useWindowDimensionsListener();
+  useJwtDecodeTokenOnChange();
   return (
     <ErrorBoundary>
       <GlobalStyle />
@@ -100,13 +116,27 @@ const AppWrapper: FunctionComponent = () => {
               <Route
                 path="/panel"
                 element={
-                  <PrivateRoute
+                  /*<PrivateRoute
                     noAccessAction={
                       PrivateRouteRedirectActions.RedirectToPageNotFound
                     }
                     whitelist={new Set([Roles.Administrator])}
                     element={<Panel />}
-                  />
+                  />*/
+                  <Panel />
+                }
+              />
+              <Route
+                path="/panel/administrate-users"
+                element={
+                  /*<PrivateRoute
+                    noAccessAction={
+                      PrivateRouteRedirectActions.RedirectToPageNotFound
+                    }
+                    whitelist={new Set([Roles.Administrator])}
+                    element={<Panel />}
+                  />*/
+                  <AdministrateUsers />
                 }
               />
               <Route path="/:name" element={<Subpage />} />

@@ -1,15 +1,14 @@
 import Link from "../../components/Link/Link";
 import Page from "../../components/Page/Page";
 import useJwtStore from "../../stores/jwtStore/jwtStore";
-import jwtDecode from "jwt-decode";
 import { useMemo } from "react";
 import Roles from "~backend/source/server/constants/roles/roles";
 
 const Panel = () => {
-  const { value: jwtToken } = useJwtStore();
-  const { role }: any = useMemo(() => {
-    return jwtToken ? jwtDecode(jwtToken) : {};
-  }, [jwtToken]);
+  const { jwtPayload } = useJwtStore();
+  const { role } = useMemo(() => {
+    return Object(jwtPayload);
+  }, [jwtPayload]);
   return (
     <Page title="Panel">
       <Link

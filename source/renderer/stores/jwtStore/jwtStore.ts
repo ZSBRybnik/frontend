@@ -1,21 +1,30 @@
 import create, { StoreApi, UseBoundStore } from "zustand";
 
-export type JwtStore = {
-  value: string | null;
-  setValue: (state: string | null) => void;
+export type JwtStore<T extends Record<string, unknown>> = {
+  jwtKey: string | null;
+  setJwtKey: (state: JwtStore<T>["jwtKey"]) => void;
+  jwtPayload: T | null;
+  setJwtPayload: (state: JwtStore<T>["jwtPayload"]) => void;
 };
 
-const useJwtStore: UseBoundStore<StoreApi<JwtStore>> = create<JwtStore>(
-  (set) => {
+const useJwtStore: UseBoundStore<StoreApi<JwtStore<Record<string, unknown>>>> =
+  create<JwtStore<Record<string, unknown>>>((set) => {
     return {
-      value: null,
-      setValue: (value: JwtStore["value"]) => {
+      jwtKey: null,
+      jwtPayload: null,
+      setJwtKey: (value: JwtStore<Record<string, unknown>>["jwtKey"]): void => {
         set(() => {
-          return { value };
+          return { jwtKey: value };
+        });
+      },
+      setJwtPayload: (
+        value: JwtStore<Record<string, unknown>>["jwtPayload"],
+      ): void => {
+        set(() => {
+          return { jwtPayload: value };
         });
       },
     };
-  },
-);
+  });
 
 export default useJwtStore;
