@@ -1,8 +1,8 @@
-import Link from "../../components/Link/Link";
-import Page from "../../components/Page/Page";
-import useJwtStore from "../../stores/jwtStore/jwtStore";
 import { useMemo } from "react";
 import Roles from "~backend/source/server/constants/roles/roles";
+import useJwtStore from "~frontend/source/renderer/stores/jwtStore/jwtStore";
+import Link from "../../Link/Link";
+import Page from "../../Page/Page";
 
 const Panel = () => {
   const { jwtPayload } = useJwtStore();

@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import ExternalLink from "../ExternalLink/ExternalLink";
 import { BottomNavbarWrapper } from "./BottomNavbar.styles";
 import { mdiTableSearch, mdiHome, mdiBookOpenPageVariant } from "@mdi/js";
@@ -10,10 +10,10 @@ const BottomNavbar = () => {
       <ExternalLink href="https://uonetplus.vulcan.net.pl/rybnik">
         <Icon path={mdiBookOpenPageVariant} size={1.5} color="#fff" />
       </ExternalLink>
-      <Link to="/">
+      <Link href="/">
         <Icon path={mdiHome} size={1.5} color="#fff" />
       </Link>
-      <Link to="/lesson-plan">
+      <Link href="/lesson-plan">
         <Icon path={mdiTableSearch} size={1.5} color="#fff" />
       </Link>
     </BottomNavbarWrapper>

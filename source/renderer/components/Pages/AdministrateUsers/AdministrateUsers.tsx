@@ -1,7 +1,7 @@
-import useCSVToJson from "../../hooks/useCSVToJson/useCSVToJson";
+import useCSVToJson from "../../../hooks/useCSVToJson/useCSVToJson";
 
 const AdministrateUsers = () => {
-  const { value } = useCSVToJson({
+  useCSVToJson({
     content: "",
   });
   return (

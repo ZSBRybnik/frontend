@@ -1,8 +1,8 @@
-import FeedView from "../../components/FeedView/FeedView";
-import Page from "../../components/Page/Page";
-import PostsView from "../../components/PostsView/PostsView";
-import Switch from "../../components/Switch/Switch";
-import useState from "../../hooks/useState/useState";
+import useState from "../../../hooks/useState/useState";
+import FeedView from "../../FeedView/FeedView";
+import Page from "../../Page/Page";
+import PostsView from "../../PostsView/PostsView";
+import Switch from "../../Switch/Switch";
 import { HomepageComponent } from "./Homepage.types";
 
 const Homepage: HomepageComponent = () => {

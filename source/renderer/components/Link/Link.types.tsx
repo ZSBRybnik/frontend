@@ -2,19 +2,17 @@ import type {
   AnchorHTMLAttributes,
   DetailedHTMLProps,
   PropsWithChildren,
-  RefAttributes,
+  ComponentProps,
 } from "react";
-import type { LinkProps } from "react-router-dom";
+import Link from "next/link";
 
-export type LinkPropertiesInternalBase = LinkProps &
-  RefAttributes<HTMLAnchorElement>;
+type NextLinkProperties = ComponentProps<typeof Link>;
 
-export type LinkPropertiesInternal = Omit<
-  LinkPropertiesInternalBase,
-  "href"
-> & {
+export type LinkPropertiesInternalBase = NextLinkProperties &
+  DetailedHTMLProps<AnchorHTMLAttributes<HTMLAnchorElement>, HTMLAnchorElement>;
+
+export type LinkPropertiesInternal = LinkPropertiesInternalBase & {
   external?: boolean;
-  href: string;
 };
 
 export type LinkPropertiesExternalBase = DetailedHTMLProps<
@@ -22,9 +20,8 @@ export type LinkPropertiesExternalBase = DetailedHTMLProps<
   HTMLAnchorElement
 >;
 
-export type LinkPropertiesExternal = Omit<LinkPropertiesExternalBase, "to"> & {
+export type LinkPropertiesExternal = LinkPropertiesExternalBase & {
   external: true;
-  href: LinkPropertiesInternal["href"];
 };
 
 export type LinkPropertiesExternalWithInternalUnion =

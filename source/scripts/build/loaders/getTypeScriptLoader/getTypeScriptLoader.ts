@@ -40,6 +40,7 @@ const getTypeScriptLoader = ({
               }
             : {
                 presets: [
+                  "next/babel",
                   [
                     "@babel/env",
                     {
@@ -71,6 +72,12 @@ const getTypeScriptLoader = ({
                     require.resolve("react-refresh/babel"),
                 ].filter(Boolean),
               },
+      },
+      {
+        loader: "ts-loader",
+        options: {
+          configFile: join(process.cwd(), "tsconfig.json"),
+        },
       },
     ],
   };

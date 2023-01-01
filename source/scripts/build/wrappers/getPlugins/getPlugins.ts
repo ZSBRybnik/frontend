@@ -22,6 +22,7 @@ import getSitemapPlugin from "~frontend/source/scripts/build/plugins/getSitemapP
 import getUnusedWebpackPlugin from "~frontend/source/scripts/build/plugins/getUnusedWebpackPlugin/getUnusedWebpackPlugin";
 import ExtendedMode from "~frontend/source/scripts/build/types/extendedMode/extendedMode";
 import Mode from "~frontend/source/scripts/build/types/mode/mode";
+import extendedModesWithNextJSCompilation from "../../constants/extendedModesWithNextJSCompilation/extendedModesWithNextJSCompilation";
 
 type GetPluginsArguments = {
   targetToModern: boolean;
@@ -34,9 +35,10 @@ const getPlugins = ({
   mode,
   extendedMode,
 }: GetPluginsArguments) => {
+  const usingNextJS = extendedModesWithNextJSCompilation.has(extendedMode);
   return [
     getProvidePlugin({ extendedMode }),
-    getUnusedWebpackPlugin({ extendedMode }),
+    !usingNextJS && getUnusedWebpackPlugin({ extendedMode }),
     getDuplicatePackageCheckerPlugin(),
     getInterpolateHtmlPlugin(),
     getScriptExtensionHtmlWebpackPlugin(),
@@ -50,7 +52,7 @@ const getPlugins = ({
     getCleanWebpackPlugin(),
     getBrotliCompressionPlugin({ targetToModern, extendedMode }),
     getGzipCompressionPlugin({ targetToModern, extendedMode }),
-    getPreloadWebpackPlugin({ targetToModern }),
+    !usingNextJS && getPreloadWebpackPlugin({ targetToModern }),
     getHtmlWebpackPlugin({ mode, extendedMode, targetToModern }),
     getHtmWebpackPlugin({ mode, extendedMode, targetToModern }),
     getESLintPlugin(),
@@ -64,7 +66,7 @@ const getPlugins = ({
     getNodePolyfillPlugin(),
     getSitemapPlugin({ extendedMode }),
     getCopyWebpackPlugin({ extendedMode }),
-    getHotModuleReplacementPlugin({ mode }),
+    !usingNextJS && getHotModuleReplacementPlugin({ mode }),
   ].filter(Boolean);
 };
 

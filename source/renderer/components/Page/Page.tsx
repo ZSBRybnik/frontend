@@ -1,4 +1,4 @@
-import { Helmet } from "react-helmet-async";
+import Head from "next/head";
 import { PageWrapper } from "~frontend/source/renderer/components/Page/Page.styles";
 import propTypes from "prop-types";
 import {
@@ -14,10 +14,10 @@ const Page: PageComponent = ({
   const fixedTitle: string = `ZSB Rybnik${title ? titleWithDash : ""}`;
   return (
     <>
-      <Helmet>
+      <Head>
         <title>{fixedTitle}</title>
         <meta name="og:title" content={fixedTitle} />
-      </Helmet>
+      </Head>
       <PageWrapper {...rest} />
     </>
   );

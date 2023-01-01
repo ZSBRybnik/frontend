@@ -42,6 +42,7 @@ const getOutput = ({ targetToModern, extendedMode }: GetOutputArguments) => {
     extendedMode,
   });
   return {
+    globalObject: "this",
     path: join(
       process.cwd(),
       destination,
