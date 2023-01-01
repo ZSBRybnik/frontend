@@ -86,7 +86,7 @@
     "@next/font": "^13.1.1",
     "@pmmmwh/react-refresh-webpack-plugin": "^0.5.7",
     "@prettier/plugin-pug": "^2.1.1",
-    "@prisma/client": "^4.0.0",
+    "@prisma/client": "^4.8.0",
     "@sentry/browser": "^7.17.3",
     "@sentry/electron": "^4.1.0",
     "@sentry/node": "^7.17.3",
