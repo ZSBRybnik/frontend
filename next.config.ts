@@ -5,17 +5,34 @@ import Mode from "./source/scripts/build/types/mode/mode";
 import getConfig from "./source/scripts/build/root/getConfig/getConfig";
 import { Configuration, WebpackPluginInstance, RuleSetRule } from "webpack";
 import { join } from "path";
+import "dotenv/config";
+
+type ExtendedModeToTargetMapper = { [key: string]: ExtendedMode };
+
+const extendedModeToTargetMapper: ExtendedModeToTargetMapper = {
+  desktop: ExtendedMode.Renderer,
+  web: ExtendedMode.Web,
+  mobile: ExtendedMode.Mobile,
+};
 
 const config: NextConfig = async () => {
   const ownWebpackConfig = await getConfig({
-    extendedMode: ExtendedMode.Web,
+    extendedMode:
+      extendedModeToTargetMapper[
+        (process.env.NEXTJS_TARGET as string) || "web"
+      ],
     targetToModern: true,
     mode: Mode.Production,
   });
   return {
     reactStrictMode: true,
     productionBrowserSourceMaps: true,
-    distDir: join("..", "..", "destination"),
+    distDir: join(
+      "..",
+      "..",
+      "destination",
+      process.env.NEXTJS_TARGET === "mobile" ? "next" : "",
+    ),
     experimental: {
       externalDir: true,
     },
