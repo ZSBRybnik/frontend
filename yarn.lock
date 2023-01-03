@@ -8034,10 +8034,12 @@
     tapable "^2.2.0"
     webpack "^5"
 
-"@types/workbox-webpack-plugin@^5.1.8":
-  version "5.1.8"
-  resolved "https://registry.yarnpkg.com/@types/workbox-webpack-plugin/-/workbox-webpack-plugin-5.1.8.tgz#8c014df34877b6fab0c7d4aa85698445e1e0f64b"
-  integrity sha512-1RKsHinzZMDmMNS0OouyMQPEfL2oJr4oXPTGI3YwEuCOsIKDSce+l3KW1qY5IufXs3W2g/ZFlWD2X9SkmaSiZA==
+"@types/workbox-webpack-plugin@^6.0.0":
+  version "6.0.0"
+  resolved "https://registry.yarnpkg.com/@types/workbox-webpack-plugin/-/workbox-webpack-plugin-6.0.0.tgz#2a6590e439beb9d2935c178c05d6eb250bbe8142"
+  integrity sha512-DJUT0zLU0sSLWBqIQH8eUAymqjvDj+uxvvEuRtT5wKY4wjdG71hfnUu5DSyoV1rdhE2OmA/dMhxA238NqYrVTw==
+  dependencies:
+    workbox-webpack-plugin "*"
 
 "@types/ws@^7.4.4":
   version "7.4.7"
@@ -31412,7 +31414,7 @@ workbox-sw@6.5.4:
   resolved "https://registry.yarnpkg.com/workbox-sw/-/workbox-sw-6.5.4.tgz#d93e9c67924dd153a61367a4656ff4d2ae2ed736"
   integrity sha512-vo2RQo7DILVRoH5LjGqw3nphavEjK4Qk+FenXeUsknKn14eCNedHOXWbmnvP4ipKhlE35pvJ4yl4YYf6YsJArA==
 
-workbox-webpack-plugin@^6.5.3:
+workbox-webpack-plugin@*, workbox-webpack-plugin@^6.5.3:
   version "6.5.4"
   resolved "https://registry.yarnpkg.com/workbox-webpack-plugin/-/workbox-webpack-plugin-6.5.4.tgz#baf2d3f4b8f435f3469887cf4fba2b7fac3d0fd7"
   integrity sha512-LmWm/zoaahe0EGmMTrSLUi+BjyR3cdGEfU3fS6PN1zKFYbqAKuQ+Oy/27e4VSXsyIwAw8+QDfk1XHNGtZu9nQg==
