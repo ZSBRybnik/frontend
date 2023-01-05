@@ -31,7 +31,11 @@ const config: NextConfig = async () => {
       "..",
       "..",
       "destination",
-      process.env.NEXTJS_TARGET === "mobile" ? ".next" : "",
+      process.env.NEXTJS_TARGET === ExtendedMode.Mobile
+        ? ".next"
+        : process.env.NEXTJS_TARGET === "desktop"
+        ? join("source", "renderer")
+        : "",
     ),
     experimental: {
       externalDir: true,

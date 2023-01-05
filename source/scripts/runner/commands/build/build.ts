@@ -68,6 +68,8 @@ const moveFiles: MoveFiles = async (extension: string): Promise<void> => {
     } else if (target === ExtendedMode.Web) {
       await moveFiles("br");
       await moveFiles("gz");
+    } else if (target === "desktop") {
+      await $`${Programs.CrossEnvironment} TS_NODE_PROJECT=tsconfig.node.json ${Programs.Webpack} --env target=${target} --mode production`;
     }
   }
 })();

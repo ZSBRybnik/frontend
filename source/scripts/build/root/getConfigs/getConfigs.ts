@@ -43,11 +43,11 @@ const getConfings: GetConfings = async ({
           targetToModern: true,
           extendedMode: ExtendedMode.Main,
         }),
-        await getConfig({
+        /*await getConfig({
           mode,
           targetToModern: true,
           extendedMode: ExtendedMode.Renderer,
-        }),
+        }),*/
         await getConfig({
           mode,
           targetToModern: true,
