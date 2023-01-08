@@ -4323,23 +4323,23 @@
   resolved "https://registry.yarnpkg.com/@n1ru4l/graphql-live-query/-/graphql-live-query-0.10.0.tgz#2306151630b0e74b017cc1067ebbea351acf56f8"
   integrity sha512-qZ7OHH/NB0NcG/Xa7irzgjE63UH0CkofZT0Bw4Ko6iRFagPRHBM8RgFXwTt/6JbFGIEUS4STRtaFoc/Eq/ZtzQ==
 
-"@nativescript/types-android@~8.3.0":
-  version "8.3.1"
-  resolved "https://registry.yarnpkg.com/@nativescript/types-android/-/types-android-8.3.1.tgz#9cd4d5dc360e8901233e5ab943f3c1b1d446ffab"
-  integrity sha512-4BEThu0ROtUYEOEf3Zbadlsml0ir8aFuPCmUjyyrjpPCIZKl+TtBQ7z79/wdHz1+5VxUS0RtIYoensRY5FxQRw==
+"@nativescript/types-android@~8.4.0":
+  version "8.4.0"
+  resolved "https://registry.yarnpkg.com/@nativescript/types-android/-/types-android-8.4.0.tgz#2fa1325f43cd1343e53ddc51ef0ad1b42297c433"
+  integrity sha512-WmDVH72ZeBlxy7k5OAJFk7wPSW9K2xjRzFwHAkQ1mjKr7k+UcFzGkpbAXjtgQZ5SybBPCzYGLGcvv7kJDNJ/mQ==
 
-"@nativescript/types-ios@~8.3.0":
-  version "8.3.1"
-  resolved "https://registry.yarnpkg.com/@nativescript/types-ios/-/types-ios-8.3.1.tgz#9e67de4c7303ef0ad180f7ceb599cbf1a9e40ebc"
-  integrity sha512-gb7e1vtQjD90nb84VQw9lrBoGV48ikiKi7EqvHT8fmURqeFJ+g1feC9+vYEEoWkNJGWx2VhSUCjQVPWr5uUahA==
+"@nativescript/types-ios@~8.4.0":
+  version "8.4.0"
+  resolved "https://registry.yarnpkg.com/@nativescript/types-ios/-/types-ios-8.4.0.tgz#4c0a0ee1d4f5e9ce237a768a6f8797a24723b13f"
+  integrity sha512-6Sx4yuSar2qk4UpYtZCs9B53Jv0wLRGvrg6Vsg5tC8mdYeQOKsizNxPa625pHbFrNjTF8NkdoGOGZiFM/XkiOQ==
 
-"@nativescript/types@^8.2.0":
-  version "8.3.1"
-  resolved "https://registry.yarnpkg.com/@nativescript/types/-/types-8.3.1.tgz#ab4aa32ed1a76857b42cb1ed14a529c05ec4cfd9"
-  integrity sha512-ouHerFdjVOAjgYoKFs54jwQeWoOdCf3SAmaUPF1lNnS9s2UU4hNECesB5RrDh5YvziC84810kjcBwlARY1wNbw==
+"@nativescript/types@^8.4.0":
+  version "8.4.0"
+  resolved "https://registry.yarnpkg.com/@nativescript/types/-/types-8.4.0.tgz#7b68c25ce1971b5ad37004c250d648bf9ef4a764"
+  integrity sha512-AsHLbzYi/3rNAQYxG5etVlTiq96KG+RHJ+UgZ3zynER4vw+mLN6TkVJ9hR6ciKMfFhQBM0JZvxBuHqm3xmlRzw==
   dependencies:
-    "@nativescript/types-android" "~8.3.0"
-    "@nativescript/types-ios" "~8.3.0"
+    "@nativescript/types-android" "~8.4.0"
+    "@nativescript/types-ios" "~8.4.0"
 
 "@ngraveio/bc-ur@^1.0.0", "@ngraveio/bc-ur@^1.1.5":
   version "1.1.6"
