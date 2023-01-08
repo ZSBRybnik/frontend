@@ -40,7 +40,6 @@ const getTypeScriptLoader = ({
               }
             : {
                 presets: [
-                  "next/babel",
                   [
                     "@babel/env",
                     {
