@@ -4160,10 +4160,10 @@
     util.promisify "^1.1.1"
     xvfb "^0.4.0"
 
-"@memlab/core@^1.1.10", "@memlab/core@^1.1.11":
-  version "1.1.11"
-  resolved "https://registry.yarnpkg.com/@memlab/core/-/core-1.1.11.tgz#be1852e24413a24fd07d337364cf67a56546ba6d"
-  integrity sha512-XAfhgRgWcHvu5x4p8M/WHKTRX+LBCQCWznccxmj+vy5Lk118kq0gWBZs+BlPbfWG8GmowoiNNyULyJGa2OWOtA==
+"@memlab/core@^1.1.10", "@memlab/core@^1.1.19":
+  version "1.1.19"
+  resolved "https://registry.yarnpkg.com/@memlab/core/-/core-1.1.19.tgz#a33cdba9da8fe05844c37b5d2a5822d21cd43427"
+  integrity sha512-JxpSdrsxkVf0gLtwSfR6/FJkoZ22zBg/eapJIOTt7goFLKbRkK49AlJztSpLjc/Kr1OJO8KjvcDVBci3g6uVgA==
   dependencies:
     ansi "^0.3.1"
     babar "^0.2.0"
