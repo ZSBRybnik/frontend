@@ -1,13 +1,11 @@
-import type { FunctionComponent, PropsWithChildren } from "react";
-import AppWrapper from "../AppWrapper/AppWrapper";
-import AppProvider from "../providers/app-provider/app-provider";
+import type { FunctionComponent } from "react";
+import AppProvider from "~frontend/source/renderer/components/providers/app-provider/app-provider";
+import AppWrapper from "~frontend/source/renderer/components/AppWrapper/AppWrapper";
 
-const App: FunctionComponent<PropsWithChildren> = ({
-  children,
-}: PropsWithChildren): JSX.Element => {
+const App: FunctionComponent = (): JSX.Element => {
   return (
     <AppProvider>
-      <AppWrapper>{children}</AppWrapper>
+      <AppWrapper />
     </AppProvider>
   );
 };

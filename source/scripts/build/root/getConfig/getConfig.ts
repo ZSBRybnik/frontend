@@ -33,7 +33,7 @@ const getConfig: GetConfig = async ({
     target: getTarget({ extendedMode }),
     optimization: getOptimization({ mode }),
     module: {
-      rules: getLoaders({ targetToModern, mode, extendedMode }),
+      rules: getLoaders({ targetToModern, mode }),
     },
     node: getNode(),
     externals: getExternals({ extendedMode }),

@@ -1,7 +1,7 @@
 import Routes from "~backend/source/server/trpc/constants/routes/routes";
+import Page from "../../components/Page/Page";
+import useCallAPI from "../../hooks/useCallAPI/useCallAPI";
 import { useParams } from "react-router-dom";
-import useCallAPI from "~frontend/source/renderer/hooks/useCallAPI/useCallAPI";
-import Page from "../../Page/Page";
 
 const Profile = () => {
   const {
@@ -18,6 +18,6 @@ const Profile = () => {
     },
     gunKey: "profiles",
   });
-  return <Page />;
+  return <Page></Page>;
 };
 export default Profile;

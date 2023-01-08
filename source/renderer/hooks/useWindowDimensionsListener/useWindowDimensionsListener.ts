@@ -16,9 +16,7 @@ const useWindowDimensionsListener = () => {
             : "desktop",
         );
       });
-    return () => {
-      subscription.unsubscribe();
-    };
+    return subscription.unsubscribe;
   }, []);
 };
 export default useWindowDimensionsListener;

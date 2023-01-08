@@ -1,4 +1,3 @@
-/* eslint-disable max-params */
 import type { Express } from "express";
 import express from "express";
 import applyMiddlewares from "~frontend/source/main/rest/utils/applyMiddlewares/applyMiddlewares";
@@ -9,26 +8,17 @@ import type {
   CreateServerOutput,
 } from "~frontend/source/main/rest/utils/createServer/createServer.types";
 import listenOnPort from "~frontend/source/main/rest/utils/listenOnPort/listenOnPort";
-import next from "next";
 
-const createServer: CreateServer = async ({
+const createServer: CreateServer = ({
   port,
-}: CreateServerArguments): Promise<CreateServerOutput> => {
-  const nextServer = next({});
-  const handle = nextServer.getRequestHandler();
-  await nextServer.prepare();
-  const backendServer: Express = express();
-  const nextServerExpress: Express = express();
-  nextServerExpress.get("*", (req, res) => {
-    return handle(req, res);
-  });
-  nextServerExpress.listen(2137);
-  applyMiddlewares({ instance: backendServer });
-  applyRoutes({ instance: backendServer });
+}: CreateServerArguments): CreateServerOutput => {
+  const server: Express = express();
+  applyMiddlewares({ instance: server });
+  applyRoutes({ instance: server });
   const { httpServer, port: outputPort } = listenOnPort({
-    instance: backendServer,
+    instance: server,
     port,
   });
-  return { server: backendServer, httpServer, port: outputPort };
+  return { server, httpServer, port: outputPort };
 };
 export default createServer;

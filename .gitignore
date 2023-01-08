@@ -44,4 +44,3 @@ release-builds
 .webpackCache
 uml
 .vagrant
-tsconfig.noemit.tsbuildinfo

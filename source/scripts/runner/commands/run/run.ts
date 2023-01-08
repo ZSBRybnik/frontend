@@ -26,6 +26,6 @@ type ProgramOptions = {
   } else if (target === "desktop") {
     await $`${Programs.CrossEnvironment} electron .`;
   } else if (target === "web") {
-    await $`next start ./source/renderer`;
+    await $`${Programs.Serve} -s destination`;
   }
 })();

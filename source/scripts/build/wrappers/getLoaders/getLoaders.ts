@@ -10,13 +10,10 @@ import getPureScriptLoader from "~frontend/source/scripts/build/loaders/getPureS
 import getHaxeLoader from "~frontend/source/scripts/build/loaders/getHaxeLoader/getHaxeLoader";
 import getNimLoader from "~frontend/source/scripts/build/loaders/getNimLoader/getNimLoader";
 import getSvelteLoader from "~frontend/source/scripts/build/loaders/getSvelteLoader/getSvelteLoader";
-import ExtendedMode from "~frontend/source/scripts/build/types/extendedMode/extendedMode";
-import extendedModesWithNextJSCompilation from "../../constants/extendedModesWithNextJSCompilation/extendedModesWithNextJSCompilation";
 
 type GetLoaderArguments = {
   targetToModern: boolean;
   mode: Mode;
-  extendedMode: ExtendedMode;
 };
 
 type GetLoader = (argument: GetLoaderArguments) => RuleSetRule[];
@@ -24,21 +21,19 @@ type GetLoader = (argument: GetLoaderArguments) => RuleSetRule[];
 const getLoaders: GetLoader = ({
   targetToModern,
   mode,
-  extendedMode,
 }: GetLoaderArguments): RuleSetRule[] => {
-  const usingNextJS = extendedModesWithNextJSCompilation.has(extendedMode);
   return [
     getSourceMapLoader(),
     getPugLoader(),
-    getTypeScriptLoader({ targetToModern, mode, withESBuild: false }),
+    getTypeScriptLoader({ targetToModern, mode, withESBuild: true }),
     getNodeLoader(),
     getJavaScriptModuleLoader(),
     getPureScriptLoader(),
     getHaxeLoader(),
     getNimLoader(),
     getSvelteLoader(),
-    !usingNextJS && getCssLoader(),
-  ].filter(Boolean) as RuleSetRule[];
+    getCssLoader(),
+  ];
 };
 
 export default getLoaders;

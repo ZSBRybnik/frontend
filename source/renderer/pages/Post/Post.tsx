@@ -1,18 +1,18 @@
 /* eslint-disable max-params */
-/*import { useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import {
   Post as PostType,
   User,
   ContentItem,
 } from "~backend/node_modules/@prisma/postgresql";
 import Routes from "~backend/source/server/trpc/constants/routes/routes";
-import useCallAPI from "~frontend/source/renderer/hooks/useCallAPI/useCallAPI";
-import useMDXEvaluate from "~frontend/source/renderer/hooks/useMDXEvaluate/useMDXEvaluate";
+import Page from "../../components/Page/Page";
+import useCallAPI from "../../hooks/useCallAPI/useCallAPI";
 import useState from "~frontend/source/renderer/hooks/useState/useState";
-import Page from "../../Page/Page";
-*/
+import useMDXEvaluate from "../../hooks/useMDXEvaluate/useMDXEvaluate";
+
 const Post = () => {
-  /*const { id = "0" } = useParams();
+  const { id = "0" } = useParams();
   const { value: content, setValue: setContent } = useState<{
     value: JSX.Element[];
   }>({ value: [] });
@@ -50,8 +50,7 @@ const Post = () => {
         </>
       )}
     </Page>
-  );*/
-  return <>123</>;
+  );
 };
 
 export default Post;

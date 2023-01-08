@@ -11,7 +11,6 @@ const getExternals = ({ extendedMode }: GetExternalsArguments) => {
       nodeExternals({
         allowlist: [/^(?!(^(ffi-napi)$)).*$/i],
       }),
-      "next",
     ];
   } else {
     return;

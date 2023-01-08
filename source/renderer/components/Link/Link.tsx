@@ -1,6 +1,6 @@
 import type { FunctionComponent } from "react";
 import { useMemo } from "react";
-import LinkBase from "next/link";
+import { Link as LinkBase } from "react-router-dom";
 import type LinkProperties from "~frontend/source/renderer/components/Link/Link.types";
 import type {
   LinkPropertiesExternal,
@@ -18,6 +18,7 @@ import { mdiDownload, mdiShare } from "@mdi/js";
 const Link: FunctionComponent<LinkProperties> = ({
   external,
   children,
+  href,
   rel = "noopener noreferrer",
   insecure,
   box,
@@ -41,15 +42,17 @@ const Link: FunctionComponent<LinkProperties> = ({
   return box ? (
     external ? (
       <LinkWrapperExternal
-        {...(rest as Omit<LinkPropertiesExternal, "rel" | "children">)}
+        {...(rest as Omit<LinkPropertiesExternal, "rel" | "children" | "href">)}
         rel={fixedRel}
+        href={href}
       >
         {BoxChildrenComponent}
       </LinkWrapperExternal>
     ) : (
       <LinkWrapperInternal
-        {...(rest as Omit<LinkPropertiesInternal, "rel" | "children">)}
+        {...(rest as Omit<LinkPropertiesInternal, "rel" | "to" | "children">)}
         rel={fixedRel}
+        to={href}
       >
         {BoxChildrenComponent}
       </LinkWrapperInternal>
@@ -58,13 +61,15 @@ const Link: FunctionComponent<LinkProperties> = ({
     <a
       {...(rest as Omit<LinkPropertiesExternal, "rel" | "children">)}
       rel={fixedRel}
+      href={href}
     >
       {children}
     </a>
   ) : (
     <LinkBase
-      {...(rest as Omit<LinkPropertiesInternal, "rel" | "children">)}
+      {...(rest as Omit<LinkPropertiesInternal, "rel" | "to" | "children">)}
       rel={fixedRel}
+      to={href}
     >
       {children}
     </LinkBase>

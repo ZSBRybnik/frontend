@@ -7,7 +7,7 @@ export type CreateServerArguments = {
 
 export type CreateServer = (
   argument: CreateServerArguments,
-) => Promise<CreateServerOutput>;
+) => CreateServerOutput;
 
 export type CreateServerOutput = {
   server: Express;

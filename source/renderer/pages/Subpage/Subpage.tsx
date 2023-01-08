@@ -9,11 +9,11 @@ import {
   ContentItem,
 } from "~backend/node_modules/@prisma/postgresql";
 import Routes from "~backend/source/server/trpc/constants/routes/routes";
+import Page from "../../components/Page/Page";
 import useCallAPI, {
   UseCallAPIReturn,
-} from "~frontend/source/renderer/hooks/useCallAPI/useCallAPI";
-import useMDXEvaluate from "~frontend/source/renderer/hooks/useMDXEvaluate/useMDXEvaluate";
-import Page from "../../Page/Page";
+} from "../../hooks/useCallAPI/useCallAPI";
+import useMDXEvaluate from "../../hooks/useMDXEvaluate/useMDXEvaluate";
 
 const Subpage: FunctionComponent = () => {
   const {
