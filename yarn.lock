@@ -28520,10 +28520,10 @@ synchronous-promise@^2.0.15:
   resolved "https://registry.yarnpkg.com/synchronous-promise/-/synchronous-promise-2.0.16.tgz#669b75e86b4295fdcc1bb0498de9ac1af6fd51a9"
   integrity sha512-qImOD23aDfnIDNqlG1NOehdB9IYsn1V9oByPjKY1nakv2MQYCEMyX033/q+aEtYCpmYK1cv2+NTmlH+ra6GA5A==
 
-systeminformation@^5.12.14:
-  version "5.12.14"
-  resolved "https://registry.yarnpkg.com/systeminformation/-/systeminformation-5.12.14.tgz#f9563673a42831adc2b95b3c1acce5741a44e3e5"
-  integrity sha512-POlTQg4Oalbsk4JQqHNQlIeX4qZlzatVjgxZqX3FSsWNSjaRqFI+Fy0Da6/kZF36bgMRyQwBc8niA9ll+eMQhA==
+systeminformation@^5.17.1:
+  version "5.17.1"
+  resolved "https://registry.yarnpkg.com/systeminformation/-/systeminformation-5.17.1.tgz#0cb2c718579792666fed6eff4010f7ba2b9aed5a"
+  integrity sha512-NX/EjbKznOTgt2pfCzZb5bPj5YJOO9mCUrRXquGMtmlfs+BowVaMsJSUUCvqOm9wexx4/F+ng4JQp6I4sG+SyA==
 
 table-layout@^1.0.2:
   version "1.0.2"
