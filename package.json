@@ -347,5 +347,8 @@
     "zlib": "^1.0.5",
     "zustand": "^4.1.1",
     "zx": "4.2.0"
+  },
+  "resolutions": {
+    "nan": "github:jkleinsc/nan#remove_accessor_signature"
   }
 }
