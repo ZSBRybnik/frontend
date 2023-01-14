@@ -10,6 +10,7 @@ import getPureScriptLoader from "~frontend/source/scripts/build/loaders/getPureS
 import getHaxeLoader from "~frontend/source/scripts/build/loaders/getHaxeLoader/getHaxeLoader";
 import getNimLoader from "~frontend/source/scripts/build/loaders/getNimLoader/getNimLoader";
 import getSvelteLoader from "~frontend/source/scripts/build/loaders/getSvelteLoader/getSvelteLoader";
+//import getAstroLoader from "../../loaders/getAstroLoader/getAstroLoader";
 
 type GetLoaderArguments = {
   targetToModern: boolean;
@@ -23,6 +24,7 @@ const getLoaders: GetLoader = ({
   mode,
 }: GetLoaderArguments): RuleSetRule[] => {
   return [
+    // getAstroLoader(),
     getSourceMapLoader(),
     getPugLoader(),
     getTypeScriptLoader({ targetToModern, mode, withESBuild: true }),

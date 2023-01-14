@@ -1,9 +1,20 @@
-import { resolve } from "path";
+import { join } from "path";
 
 const getAstroLoader = () => {
   return {
     test: /\.(astro)$/,
-    use: [resolve("../../customLoaders/astroLoader")],
+    enforce: "pre",
+    use: [
+      join(
+        process.cwd(),
+        "source",
+        "scripts",
+        "build",
+        "customLoaders",
+        "astroLoader",
+        "astroLoader.js",
+      ),
+    ],
   };
 };
 

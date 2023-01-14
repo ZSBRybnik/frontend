@@ -1,16 +1,19 @@
 import { basename } from "path";
-import { transform } from "@astrojs/compiler";
 import createLoader from "../../utils/createLoader/createLoader";
+import dynamicImport from "./helper";
 
 const astroLoader = createLoader({
-  rawLoader: async ({ source, callback, resourcePath }) => {
+  async: true,
+  rawLoader: async ({ source, callback, resourcePath, meta, map }) => {
+    const { transform } = await dynamicImport();
     const filename: string = basename(resourcePath);
     const result = await transform(source, {
       filename,
       sourcemap: "both",
-      internalURL: "astro/dist/runtime/server/index.js",
+      //internalURL: "astro/dist/runtime/server/index.js",
     });
-    callback && callback(undefined, result.code);
+    console.log(result.code);
+    callback && callback(null, result.code, map, meta);
   },
 });
 

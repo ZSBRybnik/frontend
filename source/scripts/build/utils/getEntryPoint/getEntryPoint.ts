@@ -30,6 +30,7 @@ const getEntryPoint = ({ extendedMode }: GetEntryPointArguments): string => {
         ? "x"
         : ""
     }`,
+    //"index.astro",
   );
 };
 
