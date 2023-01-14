@@ -28,6 +28,6 @@ task clean(type: Delete) {
     delete rootProject.buildDir
 }
 
-plugins {
+/*plugins {
   id "com.osacky.doctor" version "0.8.1"
-}
+}*/

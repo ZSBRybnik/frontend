@@ -13,3 +13,4 @@ declare module "~frontend/source/native-addon-rust/destination/index.node";
 declare module "robotstxt-webpack-plugin";
 declare module "@vue/preload-webpack-plugin";
 declare module "*.svg";
+declare module "*.pug";

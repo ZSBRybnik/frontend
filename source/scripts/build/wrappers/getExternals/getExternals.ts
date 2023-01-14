@@ -5,7 +5,7 @@ type GetExternalsArguments = {
   extendedMode: ExtendedMode;
 };
 
-const getExternals = ({ extendedMode }: GetExternalsArguments) => {
+const getExternals = ({ extendedMode }: GetExternalsArguments): any => {
   if (extendedMode === ExtendedMode.Main) {
     return [
       nodeExternals({

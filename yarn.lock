@@ -9591,6 +9591,13 @@ babel-plugin-syntax-jsx@^6.18.0:
   resolved "https://registry.yarnpkg.com/babel-plugin-syntax-jsx/-/babel-plugin-syntax-jsx-6.18.0.tgz#0af32a9a6e13ca7a3fd5069e62d7b0f58d0d8946"
   integrity sha512-qrPaCSo9c8RHNRHIotaufGbuOBN8rtdC4QrrFFc43vyWCCz7Kl7GL1PGaXtMGQZUXrkCjNEgxDfmAuAabr/rlw==
 
+babel-plugin-universal-import@^3.1.3:
+  version "3.1.3"
+  resolved "https://registry.yarnpkg.com/babel-plugin-universal-import/-/babel-plugin-universal-import-3.1.3.tgz#00307511c0e94eea122339b8b8f7a0db4f1192fa"
+  integrity sha512-bb4snq4HzVhBVxugbWpWw4J+LLDaJ1mT3QPmbi3zpcsHLEXdCKLGQFGO2Xjwk4F+d76XwQ0xYa8PzZjogDldfQ==
+  dependencies:
+    "@babel/helper-module-imports" "^7.0.0"
+
 babel-preset-current-node-syntax@^1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/babel-preset-current-node-syntax/-/babel-preset-current-node-syntax-1.0.1.tgz#b4399239b89b2a011f9ddbe3e4f401fc40cff73b"
@@ -15436,28 +15443,6 @@ from@^0.1.7, from@~0:
   version "0.1.7"
   resolved "https://registry.yarnpkg.com/from/-/from-0.1.7.tgz#83c60afc58b9c56997007ed1a768b3ab303a44fe"
   integrity sha512-twe20eF1OxVxp/ML/kq2p1uc6KvFK/+vs8WjEbeKmV2He22MKm7YF2ANIt+EOqhJ5L3K/SuuPhk0hWQDjOM23g==
-
-"frontend-native-addon-go@file:./source/native-addon-go":
-  version "1.0.0"
-  dependencies:
-    "@types/node" "^17.0.8"
-    cross-env "^7.0.3"
-    prettier "^2.5.1"
-    rimraf "^3.0.2"
-    ts-essentials "^9.1.2"
-    ts-jest "^27.1.2"
-    ts-node "^10.4.0"
-    tslint "^6.1.3"
-    typescript "^4.5.4"
-    typescript-transform-paths "^3.3.1"
-    yarn "^1.22.17"
-    zx "^4.2.0"
-
-"frontend-native-addon-rust@file:./source/native-addon-rust":
-  version "0.1.0"
-  dependencies:
-    cargo-cp-artifact "^0.1"
-    yarn "^1.22.19"
 
 fs-constants@^1.0.0:
   version "1.0.0"
@@ -25549,6 +25534,14 @@ react-textarea-autosize@^8.3.2:
     "@babel/runtime" "^7.10.2"
     use-composed-ref "^1.3.0"
     use-latest "^1.2.1"
+
+react-universal-component@^4.5.0:
+  version "4.5.0"
+  resolved "https://registry.yarnpkg.com/react-universal-component/-/react-universal-component-4.5.0.tgz#8722db134e0297bca879321df9d76ce0b2d830b4"
+  integrity sha512-dBUC6afvSAQhDcE4oh1eTmfU29W0O2eZhcGXnfGUTulXkU8ejuWqlJWXXrSMx5iV1H6LNgj2NJMj3BtBMfBNhA==
+  dependencies:
+    hoist-non-react-statics "^3.3.0"
+    prop-types "^15.7.2"
 
 react-universal-interface@^0.6.2:
   version "0.6.2"
