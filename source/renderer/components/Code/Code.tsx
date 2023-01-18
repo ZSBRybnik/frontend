@@ -1,5 +1,5 @@
-import { Prism } from "react-syntax-highlighter";
 import propTypes from "prop-types";
+import { Prism } from "react-syntax-highlighter";
 import {
   CodeComponent,
   CodeProperties,

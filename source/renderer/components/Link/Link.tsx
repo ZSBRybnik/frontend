@@ -1,3 +1,5 @@
+import { mdiDownload, mdiShare } from "@mdi/js";
+import Icon from "@mdi/react";
 import type { FunctionComponent } from "react";
 import { useMemo } from "react";
 import { Link as LinkBase } from "react-router-dom";
@@ -12,8 +14,6 @@ import {
   LinkWrapperExternal,
   LinkWrapperInternal,
 } from "./Link.styles";
-import Icon from "@mdi/react";
-import { mdiDownload, mdiShare } from "@mdi/js";
 
 const Link: FunctionComponent<LinkProperties> = ({
   external,

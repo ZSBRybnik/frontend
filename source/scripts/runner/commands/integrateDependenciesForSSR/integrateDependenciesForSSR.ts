@@ -1,5 +1,5 @@
-import { $ } from "zx";
 import { platform } from "os";
+import { $ } from "zx";
 import { dependencies } from "~frontend/package.json";
 import blackListedPackagesToSSR from "../../constants/blackListedPackagesToSSR/blackListedPackagesToSSR";
 

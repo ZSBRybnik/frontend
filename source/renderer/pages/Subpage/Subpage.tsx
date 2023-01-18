@@ -5,8 +5,8 @@ import {
 } from "react";
 import { useParams } from "react-router-dom";
 import {
-  Subpage as SubpageType,
   ContentItem,
+  Subpage as SubpageType,
 } from "~backend/node_modules/@prisma/postgresql";
 import Routes from "~backend/source/server/trpc/constants/routes/routes";
 import Page from "../../components/Page/Page";

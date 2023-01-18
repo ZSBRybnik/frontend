@@ -1,9 +1,9 @@
 import { useMemo } from "react";
 import SuperExpressive from "super-expressive";
-import useOperatingSystemInformation from "../useOperatingSystemInformation/useOperatingSystemInformation";
 import target, {
   TargetType,
 } from "~frontend/source/shared/constants/target/target";
+import useOperatingSystemInformation from "../useOperatingSystemInformation/useOperatingSystemInformation";
 
 const useOperatingSystemViewportAdjustments = () => {
   const { value } = useOperatingSystemInformation();

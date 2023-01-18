@@ -1,8 +1,8 @@
-import { loadStripe, Stripe } from "@stripe/stripe-js";
 import { Elements } from "@stripe/react-stripe-js";
+import { loadStripe, Stripe } from "@stripe/stripe-js";
 import {
-  StripeProviderProperties,
   StripeProviderComponent,
+  StripeProviderProperties,
 } from "./stripe-provider.types";
 
 const stripe: Stripe | null = await loadStripe(process.env.STRIPE_KEY || "");

@@ -1,15 +1,15 @@
-import { clusterApiUrl } from "@solana/web3.js";
-import {
-  SolanaProviderProperties,
-  SolanaProviderComponent,
-} from "./solana-provider.types";
-import { useMemo } from "react";
 import { WalletAdapterNetwork } from "@solana/wallet-adapter-base";
 import {
   ConnectionProvider,
   WalletProvider,
 } from "@solana/wallet-adapter-react";
+import { clusterApiUrl } from "@solana/web3.js";
+import { useMemo } from "react";
 import useSolanaWallets from "~frontend/source/renderer/hooks/useSolanaWallets/useSolanaWallets";
+import {
+  SolanaProviderComponent,
+  SolanaProviderProperties,
+} from "./solana-provider.types";
 
 const SolanaProvider: SolanaProviderComponent = ({
   children,

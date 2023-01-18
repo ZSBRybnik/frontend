@@ -1,4 +1,4 @@
-import { PropsWithChildren, FunctionComponent } from "react";
+import { FunctionComponent, PropsWithChildren } from "react";
 
 export type ThemeProviderProperties = PropsWithChildren;
 

@@ -1,8 +1,8 @@
+import { EvaluateOptions } from "@mdx-js/mdx";
 import { useMDXComponents } from "@mdx-js/react";
 import { useEffect } from "react";
-import { EvaluateOptions } from "@mdx-js/mdx";
-import { ContentItem } from "~backend/node_modules/@prisma/postgresql";
 import reactRuntime from "react/jsx-runtime.js";
+import { ContentItem } from "~backend/node_modules/@prisma/postgresql";
 
 type OnEvaluateArguments = {
   content: JSX.Element[];

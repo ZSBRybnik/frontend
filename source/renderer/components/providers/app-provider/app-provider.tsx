@@ -10,11 +10,11 @@ import ThemeProvider from "../theme-provider/theme-provider";
 import TRPCProvider from "../trpc-provider/trpc-provider";
 // import * as Sentry from "@sentry/browser";
 // import { BrowserTracing } from "@sentry/tracing";
+import { hotjar } from "react-hotjar";
 import {
   AppProviderComponent,
   AppProviderProperties,
 } from "./app-provider.types";
-import { hotjar } from "react-hotjar";
 
 hotjar.initialize(
   parseInt(process.env.HOTJAR_ID || "0"),

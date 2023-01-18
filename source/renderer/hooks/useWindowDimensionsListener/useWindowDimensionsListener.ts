@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { fromEvent, debounceTime } from "rxjs";
+import { debounceTime, fromEvent } from "rxjs";
 import useDeviceBreakpointsStore from "../../stores/deviceBreakpointsStore/deviceBreakpointsStore";
 
 const useWindowDimensionsListener = () => {

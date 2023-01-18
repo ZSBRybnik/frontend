@@ -1,6 +1,6 @@
+import jwtDecode from "jwt-decode";
 import { useEffect } from "react";
 import useJwtStore, { JwtStore } from "../../stores/jwtStore/jwtStore";
-import jwtDecode from "jwt-decode";
 import { UseJwtDecodeTokenOnChange } from "./useJwtDecodeTokenOnChange.types";
 
 const useJwtDecodeTokenOnChange: UseJwtDecodeTokenOnChange = (): void => {

@@ -1,11 +1,11 @@
 import { sync } from "glob";
 import { join } from "path";
 import { DefinePlugin } from "webpack";
-import { TargetType } from "~frontend/source/shared/constants/target/target";
 import projectDependencies from "~frontend/source/scripts/build/constants/projectDependencies/projectDependencies";
 import projectsDependenciesVersions from "~frontend/source/scripts/build/constants/projectsDependenciesVersions/projectsDependenciesVersions";
 import ExtendedMode from "~frontend/source/scripts/build/types/extendedMode/extendedMode";
 import Mode from "~frontend/source/scripts/build/types/mode/mode";
+import { TargetType } from "~frontend/source/shared/constants/target/target";
 
 type GetLocalizedLanguages = () => string[];
 

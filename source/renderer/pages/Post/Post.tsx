@@ -1,14 +1,14 @@
 /* eslint-disable max-params */
 import { useParams } from "react-router-dom";
 import {
+  ContentItem,
   Post as PostType,
   User,
-  ContentItem,
 } from "~backend/node_modules/@prisma/postgresql";
 import Routes from "~backend/source/server/trpc/constants/routes/routes";
+import useState from "~frontend/source/renderer/hooks/useState/useState";
 import Page from "../../components/Page/Page";
 import useCallAPI from "../../hooks/useCallAPI/useCallAPI";
-import useState from "~frontend/source/renderer/hooks/useState/useState";
 import useMDXEvaluate from "../../hooks/useMDXEvaluate/useMDXEvaluate";
 
 const Post = () => {
