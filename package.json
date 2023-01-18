@@ -329,7 +329,7 @@
     "url-loader": "^4.1.1",
     "use-error-boundary": "^2.0.6",
     "v8-compile-cache": "^2.3.0",
-    "vite": "^2.9.13",
+    "vite": "^4.0.4",
     "vuera": "^0.2.7",
     "web-vitals": "^2.1.4",
     "webpack": "^5.73.0",
