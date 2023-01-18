@@ -247,10 +247,10 @@
   resolved "https://registry.yarnpkg.com/@astrojs/compiler/-/compiler-0.31.4.tgz#fa5aaeb3e6f3640f6f7625849b724a4d28d662e4"
   integrity sha512-6bBFeDTtPOn4jZaiD3p0f05MEGQL9pw2Zbfj546oFETNmjJFWO3nzHz6/m+P53calknCvyVzZ5YhoBLIvzn5iw==
 
-"@astrojs/compiler@^0.32.0":
-  version "0.32.0"
-  resolved "https://registry.yarnpkg.com/@astrojs/compiler/-/compiler-0.32.0.tgz#b97275d8ec0baa707be8cb99c82f9ff905a61cf4"
-  integrity sha512-QL5qMGkfsC1/kDjJF4RRagz8/hACBUb19cHWrQ8AROphS42qXM6JhoO1Og5FohV3p2VfT5CdEJspn4uNsgZvmw==
+"@astrojs/compiler@^0.33.0":
+  version "0.33.0"
+  resolved "https://registry.yarnpkg.com/@astrojs/compiler/-/compiler-0.33.0.tgz#1ca5ff640fd0e18fe41b9d6ad0246e7b99e68c5e"
+  integrity sha512-REr2QpGR8+/ZccMFBcKqg5+cveuGG5C9b80XQn7ZCBkYDUJM+Yb2fC9koiWcK73ODXXDW14Ro+8+c58Q45lqRA==
 
 "@astrojs/language-server@^0.28.3":
   version "0.28.3"
