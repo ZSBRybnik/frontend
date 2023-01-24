@@ -155,7 +155,7 @@
     "@welldone-software/why-did-you-render": "^7.0.1",
     "acorn": "^8.8.0",
     "astro": "^1.9.2",
-    "audit-ci": "^6.3.0",
+    "audit-ci": "^6.6.1",
     "babel-loader": "^8.2.5",
     "babel-plugin-inline-react-svg": "^2.0.1",
     "babel-plugin-universal-import": "^3.1.3",
