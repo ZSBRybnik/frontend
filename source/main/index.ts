@@ -1,10 +1,13 @@
 /* eslint-disable max-params */
-import { app, BrowserWindow, ipcMain, Menu, IpcMainEvent } from "electron";
+import { app, BrowserWindow, ipcMain, IpcMainEvent, Menu } from "electron";
 import { join } from "path";
 import { fromEvent } from "rxjs";
 import "source-map-support/register";
+import SuperExpressive from "super-expressive";
+import { osInfo } from "systeminformation";
 import "v8-compile-cache";
 import "~frontend/source/main/clients/gunClient/gunClient";
+import { port } from "~frontend/source/main/rest/index";
 import AppEvents from "~frontend/source/main/types/appEvents/appEvents";
 import BrowserWindowEvent from "~frontend/source/main/types/browserWindowEvent/browserWindowEvent";
 import { ExtendedBrowserWindowWithContent } from "~frontend/source/main/types/extendedBrowserWindow/extendedBrowserWindow";
@@ -14,9 +17,6 @@ import toggleDevelopmentTools from "~frontend/source/main/utils/toggleDevelopmen
 import mainWindow from "~frontend/source/main/windows/mainWindow/mainWindow";
 import IpcEvents from "~frontend/source/shared/types/ipcEvents/ipcEvents";
 import getTray from "./utils/getTray/getTray";
-import SuperExpressive from "super-expressive";
-import { port } from "~frontend/source/main/rest/index";
-import { osInfo } from "systeminformation";
 
 ipcMain.handle(IpcEvents.GetOperatingSystemInformation, async () => {
   return await osInfo();

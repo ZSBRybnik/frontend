@@ -1,7 +1,7 @@
+import { useParams } from "react-router-dom";
 import Routes from "~backend/source/server/trpc/constants/routes/routes";
 import Page from "../../components/Page/Page";
 import useCallAPI from "../../hooks/useCallAPI/useCallAPI";
-import { useParams } from "react-router-dom";
 
 const Profile = () => {
   const {

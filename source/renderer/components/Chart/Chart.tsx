@@ -1,7 +1,7 @@
 import { FunctionComponent } from "react";
 import {
-  ChartProps as ChartComponentProperties,
   Chart as ChartComponent,
+  ChartProps as ChartComponentProperties,
 } from "react-chartjs-2";
 import { ChartWrapper } from "./Chart.styles";
 

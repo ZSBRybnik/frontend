@@ -1,30 +1,30 @@
 import type { FunctionComponent, LazyExoticComponent } from "react";
 import { lazy, Suspense } from "react";
 import { Route, Routes } from "react-router-dom";
+import useErrorBoundary from "use-error-boundary";
+import Roles from "~backend/source/server/constants/roles/Roles";
 import GlobalStyle from "~frontend/source/renderer/components/GlobalStyles/GlobalStyles";
 import Loader from "~frontend/source/renderer/components/Loader/Loader";
 import NavBar from "~frontend/source/renderer/components/Navbar/Navbar";
 import useCopy from "../../hooks/useCopy/useCopy";
+import useIpfs from "../../hooks/useIpfs/useIpfs";
+import useJwtDecodeTokenOnChange from "../../hooks/useJwtDecodeTokenOnChange/useJwtDecodeTokenOnChange";
 import useMinimizeShortcut from "../../hooks/useMinimizeShortcut/useMinimizeShortcut";
 import useNetwork from "../../hooks/useNetwork/useNetwork";
 import useQuitShortcut from "../../hooks/useQuitShortcut/useQuitShortcut";
-import Presentation from "../Presentation/Presentation";
-import { MainSection, MainSectionContent } from "./AppWrapper.styles";
 import useToggleFullscreenShortcut from "../../hooks/useToggleFullscreenShortcut/useToggleFullscreenShortcut";
 import useToggleMaximizeShortcut from "../../hooks/useToggleMaximizeShortcut/useToggleMaximizeShortcut";
+import useWindowDimensionsListener from "../../hooks/useWindowDimensionsListener/useWindowDimensionsListener";
+import Buffet from "../../pages/Buffet/Buffet";
 import BottomNavbar from "../BottomNavbar/BottomNavbar";
 import BottomSpacer from "../BottomSpacer/BottomSpacer";
-import useIpfs from "../../hooks/useIpfs/useIpfs";
+import Overlay from "../Overlay/Overlay";
+import Presentation from "../Presentation/Presentation";
 import PrivateRoute, {
   PrivateRouteRedirectActions,
 } from "../private-route/private-route";
-import useErrorBoundary from "use-error-boundary";
-import Buffet from "../../pages/Buffet/Buffet";
-import Roles from "~backend/source/server/constants/roles/roles";
-import Overlay from "../Overlay/Overlay";
 import SlideOutMenu from "../SlideOutMenu/SlideOutMenu";
-import useWindowDimensionsListener from "../../hooks/useWindowDimensionsListener/useWindowDimensionsListener";
-import useJwtDecodeTokenOnChange from "../../hooks/useJwtDecodeTokenOnChange/useJwtDecodeTokenOnChange";
+import { MainSection, MainSectionContent } from "./AppWrapper.styles";
 
 const Homepage: LazyExoticComponent<FunctionComponent> = lazy(
   (): Promise<typeof import("~frontend/source/renderer/pages/Homepage")> => {

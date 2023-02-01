@@ -1,27 +1,27 @@
-import { useMemo } from "react";
+import { WalletAdapterNetwork } from "@solana/wallet-adapter-base";
 import {
   AlphaWalletAdapter,
-  PhantomWalletAdapter,
-  LedgerWalletAdapter,
-  SlopeWalletAdapter,
-  SolflareWalletAdapter,
-  SolletWalletAdapter,
-  SolletExtensionWalletAdapter,
-  BackpackWalletAdapter,
-  WalletConnectWalletAdapter,
   AvanaWalletAdapter,
-  TrustWalletAdapter,
-  TorusWalletAdapter,
-  TokenPocketWalletAdapter,
-  TokenaryWalletAdapter,
-  StrikeWalletAdapter,
+  BackpackWalletAdapter,
   BitKeepWalletAdapter,
   BitpieWalletAdapter,
-  SpotWalletAdapter,
-  SolongWalletAdapter,
+  LedgerWalletAdapter,
+  PhantomWalletAdapter,
   SkyWalletAdapter,
+  SlopeWalletAdapter,
+  SolflareWalletAdapter,
+  SolletExtensionWalletAdapter,
+  SolletWalletAdapter,
+  SolongWalletAdapter,
+  SpotWalletAdapter,
+  StrikeWalletAdapter,
+  TokenaryWalletAdapter,
+  TokenPocketWalletAdapter,
+  TorusWalletAdapter,
+  TrustWalletAdapter,
+  WalletConnectWalletAdapter,
 } from "@solana/wallet-adapter-wallets";
-import { WalletAdapterNetwork } from "@solana/wallet-adapter-base";
+import { useMemo } from "react";
 
 const useSolanaWallets = () => {
   const { wallets } = useMemo(() => {

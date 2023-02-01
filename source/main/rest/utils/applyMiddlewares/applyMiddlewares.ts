@@ -4,16 +4,18 @@ import getJsonRedisClientMiddleware from "../../middlewares/getJsonRedisClientMi
 import getRedisClientMiddleware from "../../middlewares/getRedisClientMiddleware/getRedisClientMiddleware";
 import getSendWithValidFormatMiddleware from "../../middlewares/getSendWithValidFormatMiddleware/getSendWithValidFormatMiddleware";*/
 //import getSQLiteClientMiddleware from "~frontend/source/main/rest/middlewares/getSQLiteClientMiddleware/getSQLiteClientMiddleware";
-import getRateLimitMiddleware from "~frontend/source/main/rest/middlewares/getRateLimitMiddleware/getRateLimitMiddleware";
-import { join } from "path";
 import { static as staticServe } from "express";
+import { join } from "path";
+import getRateLimitMiddleware from "~frontend/source/main/rest/middlewares/getRateLimitMiddleware/getRateLimitMiddleware";
 
+import {
+  default as getMongoDBClientMiddleware,
+  default as getPostgreSQLClientMiddleware,
+} from "../../middlewares/getPostgreSQLClientMiddleware/getPostgreSQLClientMiddleware";
 import type {
   ApplyMiddlewares,
   ApplyMiddlewaresArguments,
 } from "./applyMiddlewares.types";
-import getPostgreSQLClientMiddleware from "../../middlewares/getPostgreSQLClientMiddleware/getPostgreSQLClientMiddleware";
-import getMongoDBClientMiddleware from "../../middlewares/getPostgreSQLClientMiddleware/getPostgreSQLClientMiddleware";
 
 const applyMiddlewares: ApplyMiddlewares = ({
   instance,

@@ -5,12 +5,12 @@ import target, {
   TargetType,
 } from "~frontend/source/shared/constants/target/target";
 import ExtendedWindow from "~frontend/source/shared/types/extendedWindow/extendedWindow";
+import useIsSlideOutMenuOpenStore from "../../stores/isSlideOutMenuOpenStore/isSlideOutMenuOpenStore";
 import StyledNavbar, {
   StyledNavbarCenter,
   StyledNavbarLeft,
   StyledNavbarRight,
 } from "./Navbar.styles";
-import useIsSlideOutMenuOpenStore from "../../stores/isSlideOutMenuOpenStore/isSlideOutMenuOpenStore";
 
 const NavBar: FunctionComponent = (): JSX.Element => {
   const { value: isSlideOutMenuOpen, setValue: setIsSlideOutMenuOpen } =

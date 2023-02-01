@@ -1,5 +1,5 @@
-import { $ } from "zx";
 import { platform } from "os";
+import { $ } from "zx";
 
 (async (): Promise<void> => {
   const os: NodeJS.Platform = platform();

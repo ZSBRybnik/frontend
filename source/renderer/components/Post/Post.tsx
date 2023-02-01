@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import {
-  PostImage,
   PostBrief,
+  PostImage,
   PostTextWrapper,
   PostTitle,
   PostWrapper,

@@ -1,6 +1,6 @@
 /* eslint-disable no-restricted-imports */
 import { create, IPFS } from "ipfs-core";
-import { useEffect, useCallback } from "react";
+import { useCallback, useEffect } from "react";
 import useIpfsStore, { IpfsStoreState } from "../../stores/ipfsStore/ipfsStore";
 
 const useIpfs: () => Pick<IpfsStoreState, "value"> = (): Pick<

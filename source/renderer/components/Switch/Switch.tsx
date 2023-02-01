@@ -1,6 +1,6 @@
 /* eslint-disable max-params */
 import { DetailedHTMLProps, HTMLAttributes } from "react";
-import { SwitchWrapper, SwitchButton } from "./Switch.styles";
+import { SwitchButton, SwitchWrapper } from "./Switch.styles";
 
 type SwitchProperties = {
   options: ({

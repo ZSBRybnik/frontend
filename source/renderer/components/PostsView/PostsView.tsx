@@ -1,10 +1,10 @@
 /* eslint-disable max-params */
-import useState from "~frontend/source/renderer/hooks/useState/useState";
 import { FunctionComponent, useEffect } from "react";
 import VisibilitySensor from "react-visibility-sensor";
+import { Post as PostType } from "~backend/node_modules/@prisma/postgresql";
+import useState from "~frontend/source/renderer/hooks/useState/useState";
 import { useQuery } from "../../utils/trpc-utilities/trpc-utilities";
 import Post from "../Post/Post";
-import { Post as PostType } from "~backend/node_modules/@prisma/postgresql";
 
 const PostsView: FunctionComponent = () => {
   const { value: shouldFetch, setValue: setShouldFetch } = useState<{

@@ -1,6 +1,6 @@
 /* eslint-disable max-params */
-import useState from "~frontend/source/renderer/hooks/useState/useState";
 import { useQuery } from "react-query";
+import useState from "~frontend/source/renderer/hooks/useState/useState";
 
 type Activities = {
   title: string;

@@ -1,9 +1,9 @@
-import { $ } from "zx";
-import { platform } from "os";
-import { join } from "path";
 import { Command } from "commander";
 import packager from "electron-packager";
+import { platform } from "os";
+import { join } from "path";
 import SuperExpressive from "super-expressive";
+import { $ } from "zx";
 
 type BuildFlagsOptions = {
   platform: string;

@@ -50,7 +50,7 @@ const moveFiles: MoveFiles = async (extension: string): Promise<void> => {
       await $`cd ./${source}/native-addon-go && ${Programs.CrossEnvironment} ${Programs.ElectronBuildEnvironment} ${Programs.Yarn} run build && cd .. && cd ..`;
       await $`cd ./${source}/native-addon-rust && ${Programs.CrossEnvironment} ${Programs.ElectronBuildEnvironment} ${Programs.Yarn} run build && cd .. && cd ..`;
     }
-    await $`${Programs.Yarn} run ${scriptsKeys["remove-build"]} && ${Programs.CrossEnvironment} ${Programs.TypeScriptCompiler} && ${Programs.CrossEnvironment} TS_NODE_PROJECT=tsconfig.node.json ${Programs.Webpack} --env target=${target} --mode production`;
+    await $`${Programs.Yarn} run ${scriptsKeys["remove-build"]} && ${Programs.CrossEnvironment} ${Programs.TypeScriptCompiler} --project tsconfig.noemit.json && ${Programs.CrossEnvironment} NODE_OPTIONS="--max-old-space-size=8192" TS_NODE_PROJECT=tsconfig.node.json ${Programs.Webpack} --env target=${target} --mode production`;
     if (target === ExtendedMode.Mobile) {
       await $`${Programs.Cap} sync`;
     } else if (target === ExtendedMode.Web) {

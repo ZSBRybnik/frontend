@@ -1,9 +1,9 @@
+import propTypes from "prop-types";
 import { Helmet } from "react-helmet-async";
 import { PageWrapper } from "~frontend/source/renderer/components/Page/Page.styles";
-import propTypes from "prop-types";
 import {
-  PageProperties,
   PageComponent,
+  PageProperties,
 } from "~frontend/source/renderer/components/Page/Page.types";
 
 const Page: PageComponent = ({

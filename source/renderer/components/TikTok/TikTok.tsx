@@ -1,4 +1,4 @@
-import { ReactNode, FC } from "react";
+import { FC, ReactNode } from "react";
 import { Helmet } from "react-helmet-async";
 import { TikTokWrapper } from "./TikTok.styles";
 

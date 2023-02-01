@@ -1,8 +1,8 @@
+import { mdiBookOpenPageVariant, mdiHome, mdiTableSearch } from "@mdi/js";
+import Icon from "@mdi/react";
 import { Link } from "react-router-dom";
 import ExternalLink from "../ExternalLink/ExternalLink";
 import { BottomNavbarWrapper } from "./BottomNavbar.styles";
-import { mdiTableSearch, mdiHome, mdiBookOpenPageVariant } from "@mdi/js";
-import Icon from "@mdi/react";
 
 const BottomNavbar = () => {
   return (

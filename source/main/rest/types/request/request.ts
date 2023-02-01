@@ -1,9 +1,5 @@
 import { PrismaClientOptions } from "@prisma/client/runtime";
 import {
-  Prisma as PrismaSqlite,
-  PrismaClient as PrismaClientSqlite,
-} from "@prisma/sqlite";
-import {
   Prisma as PrismaMongoDB,
   PrismaClient as PrismaClientMongoDB,
 } from "@prisma/mongodb";
@@ -11,6 +7,10 @@ import {
   Prisma as PrismaPostgreSQL,
   PrismaClient as PrismaClientPostgreSQL,
 } from "@prisma/postgresql";
+import {
+  Prisma as PrismaSqlite,
+  PrismaClient as PrismaClientSqlite,
+} from "@prisma/sqlite";
 import { Request as RequestBase } from "express";
 import Redis from "ioredis";
 import JSONCache from "redis-json";

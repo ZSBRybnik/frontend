@@ -63,6 +63,7 @@ const getTypeScriptLoader = ({
                   ],
                 ],
                 plugins: [
+                  "universal-import",
                   "vuera/babel",
                   "inline-react-svg",
                   "@emotion",

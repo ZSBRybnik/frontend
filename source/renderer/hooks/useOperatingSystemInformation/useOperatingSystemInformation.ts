@@ -1,7 +1,7 @@
 import { useEffect } from "react";
+import { Systeminformation } from "systeminformation";
 import ExtendedWindow from "~frontend/source/shared/types/extendedWindow/extendedWindow";
 import useState from "../useState/useState";
-import { Systeminformation } from "systeminformation";
 
 const useOperatingSystemInformation = () => {
   const { value, setValue } = useState<{
