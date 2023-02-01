@@ -6,7 +6,6 @@ import getDefinePlugin from "~frontend/source/scripts/build/plugins/getDefinePlu
 import getDuplicatePackageCheckerPlugin from "~frontend/source/scripts/build/plugins/getDuplicatePackageCheckerPlugin/getDuplicatePackageCheckerPlugin";
 import getESLintPlugin from "~frontend/source/scripts/build/plugins/getEslintPlugin/getEslintPlugin";
 import getGzipCompressionPlugin from "~frontend/source/scripts/build/plugins/getGzipCompressionPlugin/getGzipCompressionPlugin";
-import getHotModuleReplacementPlugin from "~frontend/source/scripts/build/plugins/getHotModuleReplacementPlugin/getHotModuleReplacementPlugin";
 import getHtmlWebpackPlugin from "~frontend/source/scripts/build/plugins/getHtmlWebpackPlugin/getHtmlWebpackPlugin";
 import getHtmWebpackPlugin from "~frontend/source/scripts/build/plugins/getHtmWebpackPlugin/getHtmWebpackPlugin";
 import getInterpolateHtmlPlugin from "~frontend/source/scripts/build/plugins/getInterpolateHtmlPlugin/getInterpolateHtmlPlugin";
@@ -64,7 +63,6 @@ const getPlugins = ({
     getNodePolyfillPlugin(),
     getSitemapPlugin({ extendedMode }),
     getCopyWebpackPlugin({ extendedMode }),
-    getHotModuleReplacementPlugin({ mode }),
   ].filter(Boolean);
 };
 

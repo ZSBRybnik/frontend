@@ -41,6 +41,7 @@ const getDevelopmentServer: GetDevelopmentServer = async ({
           overlay: false,
         },
         historyApiFallback: true,
+        liveReload: false,
         static: join(process.cwd(), destination),
         compress: true,
         hot: true,
