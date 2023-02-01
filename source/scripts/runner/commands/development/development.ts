@@ -24,7 +24,7 @@ import source from "~frontend/source/scripts/build/constants/source/source";
       $.shell = "cmd";
       $.prefix = "";
     }
-    const developmentServer = $`yarn run remove-build && cross-env tsc --project tsconfig.noemit.json && cross-env TS_NODE_PROJECT=tsconfig.node.json webpack serve --config webpack.config.ts --env target=${target} --mode development`;
+    const developmentServer = $`yarn run remove-build && cross-env tsc --project tsconfig.noemit.json && cross-env NODE_OPTIONS="--max-old-space-size=8192" TS_NODE_PROJECT=tsconfig.node.json webpack serve --config webpack.config.ts --env target=${target} --mode development`;
     let mobileLiveReload;
     if (target === "mobile") {
       setTimeout(() => {
