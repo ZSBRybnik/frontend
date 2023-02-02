@@ -4405,10 +4405,10 @@
     util.promisify "^1.1.1"
     xvfb "^0.4.0"
 
-"@memlab/core@^1.1.10", "@memlab/core@^1.1.11":
-  version "1.1.11"
-  resolved "https://registry.yarnpkg.com/@memlab/core/-/core-1.1.11.tgz#be1852e24413a24fd07d337364cf67a56546ba6d"
-  integrity sha512-XAfhgRgWcHvu5x4p8M/WHKTRX+LBCQCWznccxmj+vy5Lk118kq0gWBZs+BlPbfWG8GmowoiNNyULyJGa2OWOtA==
+"@memlab/core@^1.1.10", "@memlab/core@^1.1.20":
+  version "1.1.20"
+  resolved "https://registry.yarnpkg.com/@memlab/core/-/core-1.1.20.tgz#2c52e388648a203b69f71a4e9e815f41dd28d473"
+  integrity sha512-7DQKtZmL5CLUx3/G9zU0SJofngZUyyD/czbnIoq8EX+3zxt9+hExlktFr2D45FjfpZvzdvjN9sxYFai5nZmDhw==
   dependencies:
     ansi "^0.3.1"
     babar "^0.2.0"
@@ -11220,15 +11220,10 @@ chalk@^3.0.0:
     ansi-styles "^4.1.0"
     supports-color "^7.1.0"
 
-chalk@^5.0.0:
+chalk@^5.0.0, chalk@^5.0.1:
   version "5.2.0"
   resolved "https://registry.yarnpkg.com/chalk/-/chalk-5.2.0.tgz#249623b7d66869c673699fb66d65723e54dfcfb3"
   integrity sha512-ree3Gqw/nazQAPuJJEy+avdl7QfZMcUvmHIKgEZkGL+xOBzRvup5Hxo6LHuMceSxOabuJLJm5Yp/92R9eMmMvA==
-
-chalk@^5.0.1:
-  version "5.0.1"
-  resolved "https://registry.yarnpkg.com/chalk/-/chalk-5.0.1.tgz#ca57d71e82bb534a296df63bbacc4a1c22b2a4b6"
-  integrity sha512-Fo07WOYGqMfCWHOzSXOt2CxDbC6skS/jO9ynEcmpANMoPrD+W1r1K6Vx7iNm+AQmETU1Xr2t+n8nzkV9t6xh3w==
 
 char-regex@^1.0.2:
   version "1.0.2"
