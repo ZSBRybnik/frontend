@@ -11220,15 +11220,10 @@ chalk@^3.0.0:
     ansi-styles "^4.1.0"
     supports-color "^7.1.0"
 
-chalk@^5.0.0:
+chalk@^5.0.0, chalk@^5.0.1:
   version "5.2.0"
   resolved "https://registry.yarnpkg.com/chalk/-/chalk-5.2.0.tgz#249623b7d66869c673699fb66d65723e54dfcfb3"
   integrity sha512-ree3Gqw/nazQAPuJJEy+avdl7QfZMcUvmHIKgEZkGL+xOBzRvup5Hxo6LHuMceSxOabuJLJm5Yp/92R9eMmMvA==
-
-chalk@^5.0.1:
-  version "5.0.1"
-  resolved "https://registry.yarnpkg.com/chalk/-/chalk-5.0.1.tgz#ca57d71e82bb534a296df63bbacc4a1c22b2a4b6"
-  integrity sha512-Fo07WOYGqMfCWHOzSXOt2CxDbC6skS/jO9ynEcmpANMoPrD+W1r1K6Vx7iNm+AQmETU1Xr2t+n8nzkV9t6xh3w==
 
 char-regex@^1.0.2:
   version "1.0.2"
@@ -21869,10 +21864,10 @@ memfs@^3.1.2, memfs@^3.4.3:
   dependencies:
     fs-monkey "^1.0.3"
 
-memlab@^1.1.28:
-  version "1.1.28"
-  resolved "https://registry.yarnpkg.com/memlab/-/memlab-1.1.28.tgz#7b2fb2e94a08f2ec6a9e5a2f49ea03a0a2f8552c"
-  integrity sha512-EDn1itOWQ56W+z03GUvjKKr2p+GPyguN6CFA8RYIA02Ns+vVF4GgRo3ROl/i0/7X4Jcewnf6XjLXXvoL+og0uA==
+memlab@^1.1.37:
+  version "1.1.37"
+  resolved "https://registry.yarnpkg.com/memlab/-/memlab-1.1.37.tgz#e6d29104a11d31ff22fda4c25dee91662a353b61"
+  integrity sha512-zJj13dJFXuypodVFd21CV2qnaDfKtO8CETH9QTJmDLXk+TomPGNvt9w1kkMs973n2iRNav0bJMqUyOSE6uKCrQ==
   dependencies:
     "@memlab/api" "^1.0.11"
     "@memlab/cli" "^1.0.11"
