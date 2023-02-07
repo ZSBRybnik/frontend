@@ -16058,10 +16058,10 @@ fsevents@^2.1.2, fsevents@^2.3.2, fsevents@~2.3.2:
   resolved "https://registry.yarnpkg.com/fsevents/-/fsevents-2.3.2.tgz#8a526f78b8fdf4623b709e0b975c52c24c02fd1a"
   integrity sha512-xiqMQR4xAeHTuB9uWm+fFRcIOgKBMiOBP+eXiyT7jsgVCq1bkVygt00oASowB7EdtpOHaaPgKt812P9ab+DDKA==
 
-fslightbox-react@^1.6.2-2:
-  version "1.6.2-2"
-  resolved "https://registry.yarnpkg.com/fslightbox-react/-/fslightbox-react-1.6.2-2.tgz#8525bf1d5a36d608b7917a032f1c35c88b1a87a9"
-  integrity sha512-7jpiU6AiQkauIhKhN9ko3UIZ9GY4SUO1AoMzOypUFnmfH0+UgPgPeShJFN+B70bZHhmFjjH7r7xjyPFSo4mzCQ==
+fslightbox-react@^1.7.0:
+  version "1.7.0"
+  resolved "https://registry.yarnpkg.com/fslightbox-react/-/fslightbox-react-1.7.0.tgz#44727ae93cf3dc83dc07263aee375aa2f62341b8"
+  integrity sha512-4yqEmImm31rk7C74kyJTaHf96MCUkdU2n6wHn0rrTZ9Kzlqnw/pl7mIGqzn3+jkUiG9XVM+T6ckvCOhAI16lww==
 
 ftp@^0.3.10:
   version "0.3.10"
