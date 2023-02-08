@@ -4819,12 +4819,12 @@
   dependencies:
     pug-lexer "^5.0.0"
 
-"@prisma/client@^4.0.0":
-  version "4.3.0"
-  resolved "https://registry.yarnpkg.com/@prisma/client/-/client-4.3.0.tgz#147e7d7d4f390af4810e672c11ea6a7ca72b0696"
-  integrity sha512-xCjLAOIOqVdjD+UZbUwx5dFocUmdsrMQFe0jXUswTUgc76NOQVh0L7Z+FCkNCVVZ9RSBfEFX22061Sa02OuPAQ==
+"@prisma/client@^4.10.0":
+  version "4.10.0"
+  resolved "https://registry.yarnpkg.com/@prisma/client/-/client-4.10.0.tgz#7b7cec082b7cb8885effff48ff4fff65e52dee11"
+  integrity sha512-sBmYb1S6SMKFIESaLMfKqWSalv3pH73cMCsFt9HslJvYjIIcKQCA6PDL2O4SZGWvc4JBef9cg5Gd7d9x3AtKjw==
   dependencies:
-    "@prisma/engines-version" "4.3.0-32.c875e43600dfe042452e0b868f7a48b817b9640b"
+    "@prisma/engines-version" "4.10.0-84.ca7fcef713137fa11029d519a9780db130cca91d"
 
 "@prisma/debug@3.14.0":
   version "3.14.0"
@@ -4862,10 +4862,10 @@
     strip-ansi "6.0.1"
     undici "5.1.1"
 
-"@prisma/engines-version@4.3.0-32.c875e43600dfe042452e0b868f7a48b817b9640b":
-  version "4.3.0-32.c875e43600dfe042452e0b868f7a48b817b9640b"
-  resolved "https://registry.yarnpkg.com/@prisma/engines-version/-/engines-version-4.3.0-32.c875e43600dfe042452e0b868f7a48b817b9640b.tgz#a564dd6fb6f25405fe06164989ebd8a1e4bb3508"
-  integrity sha512-8yWpXkQRmiSfsi2Wb/ZS5D3RFbeu/btL9Pm/gdF4phB0Lo5KGsDFMxFMgaD64mwED2nHc8ZaEJg/+4Jymb9Znw==
+"@prisma/engines-version@4.10.0-84.ca7fcef713137fa11029d519a9780db130cca91d":
+  version "4.10.0-84.ca7fcef713137fa11029d519a9780db130cca91d"
+  resolved "https://registry.yarnpkg.com/@prisma/engines-version/-/engines-version-4.10.0-84.ca7fcef713137fa11029d519a9780db130cca91d.tgz#db646ab604b5dc3529080b8fe900240c73e3a71a"
+  integrity sha512-UVpmVlvSaGfY4ue+hh8CTkIesbuXCFUfrr8zk//+u85WwkKfWMtt6nLB2tNSzR1YO8eAA8+HqNf8LM7mnXIq5w==
 
 "@prisma/engines@3.15.1-1.461d6a05159055555eb7dfb337c9fb271cbd4d7e":
   version "3.15.1-1.461d6a05159055555eb7dfb337c9fb271cbd4d7e"
