@@ -78,7 +78,7 @@
     "@ionic/storage": "^3.0.6",
     "@mdi/js": "^6.9.96",
     "@mdi/react": "^1.6.0",
-    "@mdx-js/loader": "^2.1.2",
+    "@mdx-js/loader": "^2.3.0",
     "@mdx-js/mdx": "^2.1.2",
     "@mdx-js/react": "^2.1.2",
     "@mdx-js/runtime": "^1.6.22",
