@@ -259,7 +259,7 @@
     "npm-check": "^5.9.2",
     "npm-check-updates": "^15.0.1",
     "office-addin-dev-certs": "^1.9.3",
-    "parse-entities": "^4.0.0",
+    "parse-entities": "^4.0.1",
     "piscina": "^3.2.0",
     "plugin-image-zoom": "^1.1.0",
     "prettier": "^2.7.1",
