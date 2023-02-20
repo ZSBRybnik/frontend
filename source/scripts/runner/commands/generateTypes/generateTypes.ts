@@ -11,9 +11,8 @@ const umlFolderPath = join(process.cwd(), "uml");
     $.shell = "cmd";
     $.prefix = "";
   }
-  const generatePostgreSQLTypesPromise = $`yarn run generate-postgresql-types`;
-  const generateMongoDBTypesPromise = $`yarn run generate-mongodb-types`;
-  const generateSqliteTypesPromise = $`yarn run generate-sqlite-types`;
+  /** These commands can't be split, because they are blocking access to prisma engine in the file system */
+  await $`yarn run generate-postgresql-types && yarn run generate-mongodb-types && yarn run generate-sqlite-types`;
   if (!existsSync(umlFolderPath)) {
     mkdirSync(umlFolderPath);
   }
@@ -21,9 +20,6 @@ const umlFolderPath = join(process.cwd(), "uml");
   const generateMongoSQLUMLPromise = $`prisma-uml ./source/main/prisma/mongodb.prisma -o png -f ./uml/mongodb.png`;
   const generateSqliteUMLPromise = $`prisma-uml ./source/main/prisma/sqlite.prisma -o png -f ./uml/sqlite.png`;
   await Promise.all([
-    generatePostgreSQLTypesPromise,
-    generateMongoDBTypesPromise,
-    generateSqliteTypesPromise,
     generatePostgreSQLUMLPromise,
     generateMongoSQLUMLPromise,
     generateSqliteUMLPromise,
