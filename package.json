@@ -228,7 +228,7 @@
     "interpolate-html-plugin": "^4.0.0",
     "ioredis": "^5.2.3",
     "ip": "^1.1.8",
-    "ipfs-core": "^0.15.4",
+    "ipfs-core": "^0.18.0",
     "is-alphanumerical": "^2.0.1",
     "is-decimal": "^2.0.1",
     "is-electron": "^2.2.1",
