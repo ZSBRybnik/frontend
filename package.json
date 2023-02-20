@@ -234,7 +234,7 @@
     "is-electron": "^2.2.1",
     "is-hexadecimal": "^2.0.1",
     "jest": "^28.1.2",
-    "jest-environment-jsdom": "^28.1.2",
+    "jest-environment-jsdom": "^29.4.3",
     "jest-extended": "^2.0.0",
     "jest-puppeteer": "^6.1.0",
     "jsdoc": "^3.6.10",
