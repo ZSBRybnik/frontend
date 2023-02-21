@@ -40,6 +40,7 @@ const getDevelopmentServer: GetDevelopmentServer = async ({
         client: {
           overlay: false,
         },
+        liveReload: false,
         historyApiFallback: true,
         static: join(process.cwd(), destination),
         compress: true,
@@ -55,10 +56,14 @@ const getDevelopmentServer: GetDevelopmentServer = async ({
           "Access-Control-Allow-Headers":
             "X-Requested-With, content-type, Authorization",
         },
-        watchFiles: [join(".", source), join(".", destination)],
-        https:
-          extendedMode !== ExtendedMode.Mobile &&
-          (await getHttpsServerOptions()),
+        watchFiles: [join(".", source)],
+        server:
+          extendedMode !== ExtendedMode.Mobile
+            ? {
+                type: "https",
+                options: await getHttpsServerOptions(),
+              }
+            : undefined,
       }
     : undefined;
 };
