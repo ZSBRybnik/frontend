@@ -9,17 +9,17 @@ export type ConfigsMapper = {
   [key in TargetType]: () => Promise<Configuration[]>;
 };
 
-type GetConfingsArguments = {
+type GetConfigsArguments = {
   targetType: TargetType;
   mode: Mode;
 };
 
-type GetConfings = (argument: GetConfingsArguments) => Promise<Configuration[]>;
+type GetConfigs = (argument: GetConfigsArguments) => Promise<Configuration[]>;
 
-const getConfings: GetConfings = async ({
+const getConfigs: GetConfigs = async ({
   targetType,
   mode,
-}: GetConfingsArguments): Promise<Configuration[]> => {
+}: GetConfigsArguments): Promise<Configuration[]> => {
   const configs: ConfigsMapper = {
     [TargetType.Web]: async () => {
       return [
@@ -87,4 +87,4 @@ const getConfings: GetConfings = async ({
   return configs[targetType]();
 };
 
-export default getConfings;
+export default getConfigs;
