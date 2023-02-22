@@ -18289,10 +18289,10 @@ is-domain-name@^1.0.1:
   resolved "https://registry.yarnpkg.com/is-domain-name/-/is-domain-name-1.0.1.tgz#f6eb33b14a497541dca58335137d4466e0c20da1"
   integrity sha512-52ToNggHmkZGPl8yLFNrk+cKHUUnkhS0l2jh+yMLq6kj9C5IMLSztvJsW5WO5eMy0OS0jdu4o2tptT9dN0hAFg==
 
-is-electron@^2.2.0, is-electron@^2.2.1:
-  version "2.2.1"
-  resolved "https://registry.yarnpkg.com/is-electron/-/is-electron-2.2.1.tgz#751b1dd8a74907422faa5c35aaa0cf66d98086e9"
-  integrity sha512-r8EEQQsqT+Gn0aXFx7lTFygYQhILLCB+wn0WCDL5LZRINeLH/Rvw1j2oKodELLXYNImQ3CRlVsY8wW4cGOsyuw==
+is-electron@^2.2.0, is-electron@^2.2.2:
+  version "2.2.2"
+  resolved "https://registry.yarnpkg.com/is-electron/-/is-electron-2.2.2.tgz#3778902a2044d76de98036f5dc58089ac4d80bb9"
+  integrity sha512-FO/Rhvz5tuw4MCWkpMzHFKWD2LsfHzIb7i6MdPYZ/KW7AlxawyLkqdy+jPZP1WubqEADE3O4FUENlJHDfQASRg==
 
 is-es2016-keyword@^1.0.0:
   version "1.0.0"
