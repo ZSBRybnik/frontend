@@ -167,7 +167,7 @@
     "case-sensitive-paths-webpack-plugin": "^2.4.0",
     "character-entities-legacy": "^3.0.0",
     "character-reference-invalid": "^2.0.1",
-    "chart.js": "^3.8.0",
+    "chart.js": "^4.2.1",
     "clean-webpack-plugin": "^4.0.0",
     "comma-separated-tokens": "^2.0.2",
     "command-exists": "^1.2.9",
