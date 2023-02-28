@@ -3,6 +3,8 @@ import { join } from "path";
 import { pathsToModuleNameMapper } from "ts-jest";
 import source from "~frontend/source/scripts/build/constants/source/source";
 import { compilerOptions } from "~frontend/tsconfig.json";
+import getBabelLoader from "./source/scripts/build/subloaders/getBabelLoader/getBabelLoader";
+import Mode from "./source/scripts/build/types/mode/mode";
 
 const config: Config.InitialOptions = {
   preset: "ts-jest",
@@ -15,6 +17,17 @@ const config: Config.InitialOptions = {
     prefix: join(process.cwd(), "."),
   }),
   modulePathIgnorePatterns: [join(process.cwd(), source, "e2e")],
+  transform: {
+    ".(ts|tsx)$": [
+      "ts-jest",
+      {
+        babelConfig: getBabelLoader({
+          targetToModern: true,
+          mode: Mode.Production,
+        }),
+      },
+    ],
+  },
 };
 
 export default config;
