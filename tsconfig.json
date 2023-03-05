@@ -42,9 +42,11 @@
       "~frontend/*": ["*"],
       "~backend/*": ["../backend/*"]
     },
-    "plugins": [{
-      "transform": "typescript-transform-paths"
-    }]
+    "plugins": [
+      {
+        "transform": "typescript-transform-paths"
+      }
+    ]
   },
   "include": [".", "../backend"],
   "exclude": [
@@ -55,6 +57,6 @@
     "destination",
     "../backend/destination",
     "../backend/coverage",
-    "../backend/node_modules",
+    "../backend/node_modules"
   ]
 }

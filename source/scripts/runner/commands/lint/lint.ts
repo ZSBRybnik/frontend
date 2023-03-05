@@ -7,5 +7,5 @@ import { $ } from "zx";
     $.shell = "cmd";
     $.prefix = "";
   }
-  await $`eslint --fix -f unix "./**/*.{js,jsx,ts,tsx,json}" && prettier --write "./**/*.{js,jsx,ts,tsx,json,prisma,yaml,yml,pug}"`;
+  await $`eslint --fix -f unix "./**/*.{ts,tsx}" && prettier --write "./**/*.{js,jsx,ts,tsx,json,prisma,yaml,yml,pug}"`;
 })();
