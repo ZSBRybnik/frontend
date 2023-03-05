@@ -42,7 +42,7 @@ const useCallAPI = <T,>({
     value: boolean;
   }>({ value: false });
   const { data: trpcData, isError } = useQuery(
-    [trpcRoute as any, trpcPayload],
+    [trpcRoute as "getPost" | "getPage" | "getPosts", trpcPayload],
     {
       enabled: gunHasChecked && !gunResponse,
     },

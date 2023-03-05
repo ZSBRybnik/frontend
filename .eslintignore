@@ -5,3 +5,4 @@ ios/
 node_modules/
 target/
 yarn.lock
+./webpackCache/

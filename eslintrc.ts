@@ -17,6 +17,7 @@ const config: Linter.Config = {
     "plugin:jsx-a11y/recommended",
     "prettier",
     "plugin:sonarjs/recommended",
+    "plugin:node/recommended",
   ],
   parser: "@typescript-eslint/parser",
   parserOptions: {
@@ -24,6 +25,7 @@ const config: Linter.Config = {
       jsx: true,
     },
     ecmaVersion: "latest",
+    project: "./tsconfig.json",
     sourceType: "module",
   },
   plugins: [
@@ -36,6 +38,7 @@ const config: Linter.Config = {
     "prettier",
     "sonarjs",
     "@emotion",
+    "deprecation",
   ],
   settings: {
     react: {
@@ -74,6 +77,12 @@ const config: Linter.Config = {
     "no-console": "warn",
     "react-hooks/exhaustive-deps": "off",
     "no-nested-ternary": "off",
+    "deprecation/deprecation": "warn",
+    "node/no-unsupported-features/es-syntax": "off",
+    "node/no-missing-require": "off",
+    "node/no-missing-import": "off",
+    "node/no-extraneous-import": "off",
+    "node/no-unsupported-features/es-builtins": "off",
   },
   overrides: [
     {

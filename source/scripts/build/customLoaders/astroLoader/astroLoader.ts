@@ -12,7 +12,6 @@ const astroLoader = createLoader({
       sourcemap: "both",
       //internalURL: "astro/dist/runtime/server/index.js",
     });
-    console.log(result.code);
     callback && callback(null, result.code, map, meta);
   },
 });

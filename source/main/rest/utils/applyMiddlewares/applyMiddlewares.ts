@@ -7,7 +7,6 @@ import getSendWithValidFormatMiddleware from "../../middlewares/getSendWithValid
 import { static as staticServe } from "express";
 import { join } from "path";
 import getRateLimitMiddleware from "~frontend/source/main/rest/middlewares/getRateLimitMiddleware/getRateLimitMiddleware";
-
 import {
   default as getMongoDBClientMiddleware,
   default as getPostgreSQLClientMiddleware,
@@ -36,7 +35,9 @@ const applyMiddlewares: ApplyMiddlewares = ({
   instance.use(getRedisClientMiddleware());
   instance.use(getJsonRedisClientMiddleware());
   instance.use(getSendWithValidFormatMiddleware());*/
-  instance.use((Gun as any).serve);
+  instance.use(
+    (Gun as unknown as { serve: Parameters<typeof instance.use>[0] }).serve,
+  );
 };
 
 export default applyMiddlewares;

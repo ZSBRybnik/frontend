@@ -14,6 +14,7 @@ const FeedView = () => {
   const { data } = useQuery(["getFeed"], {
     enabled: shouldFetch,
   });
+  // eslint-disable-next-line no-console
   console.log(data);
   return (
     <>

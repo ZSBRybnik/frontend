@@ -1,4 +1,4 @@
-import create, { StoreApi, UseBoundStore } from "zustand";
+import { create, StoreApi, UseBoundStore } from "zustand";
 
 export type JwtStore<T extends Record<string, unknown>> = {
   jwtKey: string | null;

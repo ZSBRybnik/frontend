@@ -1,5 +1,5 @@
 import { useMemo } from "react";
-import zustand, { StoreApi, UseBoundStore } from "zustand";
+import { create, StoreApi, UseBoundStore } from "zustand";
 
 type UseStateArguments<
   T extends {
@@ -24,7 +24,7 @@ const useState = <
 }: UseStateArguments<T>): ZustandArguments<T> => {
   const useCommonState: UseBoundStore<StoreApi<ZustandArguments<T>>> =
     useMemo(() => {
-      return zustand<ZustandArguments<T>>((set): ZustandArguments<T> => {
+      return create<ZustandArguments<T>>((set): ZustandArguments<T> => {
         return {
           value,
           setValue: (newValue: T["value"]): void => {

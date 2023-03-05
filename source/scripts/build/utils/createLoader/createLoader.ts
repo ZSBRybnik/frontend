@@ -2,8 +2,8 @@ export type RawLoader = (
   argument: Omit<ThisObject, "async"> & {
     callback: null | Callback;
     source: string;
-    meta: any;
-    map: any;
+    meta: unknown;
+    map: unknown;
   },
 ) => void;
 
@@ -15,8 +15,8 @@ type CreateLoaderArguments = {
 type Callback = (
   error?: Error | null,
   result?: unknown,
-  map?: any,
-  meta?: any,
+  map?: unknown,
+  meta?: unknown,
 ) => void;
 
 type ThisObject = {
@@ -34,8 +34,8 @@ const createLoader: CreateLoader = ({
   return function (
     this: { async: () => Callback; resourcePath: string },
     source: string,
-    map: any,
-    meta: any,
+    map: unknown,
+    meta: unknown,
   ) {
     const { async: callbackFunction, resourcePath } =
       // eslint-disable-next-line no-invalid-this

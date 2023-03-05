@@ -1,5 +1,5 @@
 import { IPFS } from "ipfs-core";
-import create, { StoreApi, UseBoundStore } from "zustand";
+import { create, StoreApi, UseBoundStore } from "zustand";
 
 export type IpfsStoreState = {
   value: null | IPFS;

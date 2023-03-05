@@ -7,6 +7,7 @@ type ApplyRoutesArguments = {
 type ApplyRoutes = (argument: ApplyRoutesArguments) => void;
 
 const applyRoutes: ApplyRoutes = ({ instance }: ApplyRoutesArguments): void => {
+  // eslint-disable-next-line no-console
   console.log(instance);
 };
 

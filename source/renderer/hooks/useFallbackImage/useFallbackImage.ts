@@ -1,5 +1,5 @@
 import { useCallback } from "react";
-import create, { StoreApi, UseBoundStore } from "zustand";
+import { create, StoreApi, UseBoundStore } from "zustand";
 
 type UseFallbackImageArguments = {
   source: string;

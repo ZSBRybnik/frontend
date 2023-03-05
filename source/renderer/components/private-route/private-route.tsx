@@ -1,6 +1,6 @@
 import { decode } from "jsonwebtoken";
 import { Navigate } from "react-router-dom";
-import create from "zustand";
+import { create } from "zustand";
 import Roles from "~backend/source/server/constants/roles/Roles";
 import Routes from "~backend/source/server/trpc/constants/routes/routes";
 import getDataFromStorage from "../../utils/getDataFromStorage/getDataFromStorage";
