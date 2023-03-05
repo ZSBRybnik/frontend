@@ -92,6 +92,12 @@ const config: Linter.Config = {
         "@typescript-eslint/no-var-requires": "off",
       },
     },
+    {
+      files: ["**/*.json"],
+      rules: {
+        "sonarjs/no-duplicate-string": "off",
+      },
+    },
   ],
 };
 

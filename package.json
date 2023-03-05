@@ -20,33 +20,33 @@
     "dev-desktop": "cross-env TS_NODE_PROJECT=tsconfig.node.json ts-node ./source/scripts/runner/commands/development/development.ts --target desktop",
     "dev-ios": "cross-env TS_NODE_PROJECT=tsconfig.node.json ts-node ./source/scripts/runner/commands/development/development.ts --target mobile --device ios",
     "dev-web": "cross-env TS_NODE_PROJECT=tsconfig.node.json ts-node ./source/scripts/runner/commands/development/development.ts --target web",
+    "documentation-build": "cd documentation && docusaurus build",
+    "documentation-serve": "cd documentation && docusaurus serve",
+    "documentation-start": "cd documentation && cross-env NODE_OPTIONS=--max-old-space-size=8192 docusaurus start",
+    "generate-mongodb-types": "prisma generate --schema=./source/main/prisma/mongodb.prisma",
+    "generate-postgresql-types": "prisma generate --schema=./source/main/prisma/postgresql.prisma",
+    "generate-sqlite-types": "prisma generate --schema=./source/main/prisma/sqlite.prisma",
+    "generate-types": "cross-env TS_NODE_PROJECT=tsconfig.node.json ts-node ./source/scripts/runner/commands/generateTypes/generateTypes.ts",
     "postinstall": "cross-env TS_NODE_PROJECT=tsconfig.node.json ts-node ./source/scripts/runner/commands/postInstall/postInstall.ts",
+    "integrate-dependencies-for-ssr": "cross-env TS_NODE_PROJECT=tsconfig.node.json ts-node ./source/scripts/runner/commands/integrateDependenciesForSSR/integrateDependenciesForSSR.ts",
     "licence-checker": "cross-env TS_NODE_PROJECT=tsconfig.node.json ts-node ./source/scripts/runner/commands/licenceChecker/licenceChecker.ts",
     "lint": "cross-env TS_NODE_PROJECT=tsconfig.node.json ts-node ./source/scripts/runner/commands/lint/lint.ts",
+    "package-linux": "cross-env TS_NODE_PROJECT=tsconfig.node.json ts-node ./source/scripts/runner/commands/release/release.ts --architecture x64 --platform linux",
+    "package-mac": "cross-env TS_NODE_PROJECT=tsconfig.node.json ts-node ./source/scripts/runner/commands/release/release.ts --architecture x64 --platform darwin",
+    "package-win-32": "cross-env TS_NODE_PROJECT=tsconfig.node.json ts-node ./source/scripts/runner/commands/release/release.ts --architecture ia32 --platform win32",
+    "package-win-64": "cross-env TS_NODE_PROJECT=tsconfig.node.json ts-node ./source/scripts/runner/commands/release/release.ts --architecture x64 --platform win32",
     "remove-build": "cross-env TS_NODE_PROJECT=tsconfig.node.json ts-node ./source/scripts/runner/commands/removeBuild/removeBuild.ts",
     "run-android": "cross-env TS_NODE_PROJECT=tsconfig.node.json ts-node ./source/scripts/runner/commands/run/run.ts --target mobile --device android",
     "run-desktop": "cross-env TS_NODE_PROJECT=tsconfig.node.json ts-node ./source/scripts/runner/commands/run/run.ts --target desktop",
     "run-ios": "cross-env TS_NODE_PROJECT=tsconfig.node.json ts-node ./source/scripts/runner/commands/run/run.ts --target mobile --device ios",
     "run-web": "cross-env TS_NODE_PROJECT=tsconfig.node.json ts-node ./source/scripts/runner/commands/run/run.ts --target web",
     "setup-husky": "cross-env TS_NODE_PROJECT=tsconfig.node.json ts-node ./source/scripts/runner/commands/setupHusky/setupHusky.ts",
-    "test": "cross-env TS_NODE_PROJECT=tsconfig.node.json ts-node ./source/scripts/runner/commands/runTests/runTests.ts",
-    "update-dependencies": "cross-env TS_NODE_PROJECT=tsconfig.node.json ts-node ./source/scripts/runner/commands/updateDependencies/updateDependencies.ts",
-    "integrate-dependencies-for-ssr": "cross-env TS_NODE_PROJECT=tsconfig.node.json ts-node ./source/scripts/runner/commands/integrateDependenciesForSSR/integrateDependenciesForSSR.ts",
     "storybook": "start-storybook -p 6006",
-    "package-mac": "cross-env TS_NODE_PROJECT=tsconfig.node.json ts-node ./source/scripts/runner/commands/release/release.ts --architecture x64 --platform darwin",
-    "package-win-64": "cross-env TS_NODE_PROJECT=tsconfig.node.json ts-node ./source/scripts/runner/commands/release/release.ts --architecture x64 --platform win32",
-    "package-win-32": "cross-env TS_NODE_PROJECT=tsconfig.node.json ts-node ./source/scripts/runner/commands/release/release.ts --architecture ia32 --platform win32",
-    "package-linux": "cross-env TS_NODE_PROJECT=tsconfig.node.json ts-node ./source/scripts/runner/commands/release/release.ts --architecture x64 --platform linux",
-    "generate-mongodb-types": "prisma generate --schema=./source/main/prisma/mongodb.prisma",
-    "generate-postgresql-types": "prisma generate --schema=./source/main/prisma/postgresql.prisma",
-    "generate-sqlite-types": "prisma generate --schema=./source/main/prisma/sqlite.prisma",
-    "generate-types": "cross-env TS_NODE_PROJECT=tsconfig.node.json ts-node ./source/scripts/runner/commands/generateTypes/generateTypes.ts",
-    "documentation-start": "cd documentation && cross-env NODE_OPTIONS=--max-old-space-size=8192 docusaurus start",
-    "documentation-build": "cd documentation && docusaurus build",
-    "documentation-serve": "cd documentation && docusaurus serve"
+    "test": "cross-env TS_NODE_PROJECT=tsconfig.node.json ts-node ./source/scripts/runner/commands/runTests/runTests.ts",
+    "update-dependencies": "cross-env TS_NODE_PROJECT=tsconfig.node.json ts-node ./source/scripts/runner/commands/updateDependencies/updateDependencies.ts"
   },
-  "devDependencies": {
-    "electron": "^19.0.7"
+  "resolutions": {
+    "nan": "github:jkleinsc/nan#remove_accessor_signature"
   },
   "dependencies": {
     "@astrojs/compiler": "^0.32.0",
@@ -350,7 +350,7 @@
     "zustand": "^4.1.1",
     "zx": "4.2.0"
   },
-  "resolutions": {
-    "nan": "github:jkleinsc/nan#remove_accessor_signature"
+  "devDependencies": {
+    "electron": "^19.0.7"
   }
 }
