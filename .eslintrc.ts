@@ -35,6 +35,7 @@ const config: Linter.Config = {
     "jest",
     "prettier",
     "sonarjs",
+    "@emotion",
   ],
   settings: {
     react: {
