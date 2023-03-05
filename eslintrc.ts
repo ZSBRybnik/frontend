@@ -24,6 +24,7 @@ const config: Linter.Config = {
     ecmaFeatures: {
       jsx: true,
     },
+    tsconfigRootDir: __dirname,
     ecmaVersion: "latest",
     project: "./tsconfig.json",
     sourceType: "module",
