@@ -1,10 +1,16 @@
 /* eslint-disable sonarjs/cognitive-complexity */
 import { Client, query } from "faunadb";
+
 import { useEffect, useMemo } from "react";
+
 import Routes from "~backend/source/server/trpc/constants/routes/routes";
+
 import useState from "~frontend/source/renderer/hooks/useState/useState";
+
 import { gun } from "../..";
+
 import { useQuery } from "../../utils/trpc-utilities/trpc-utilities";
+
 import useIpfs from "../useIpfs/useIpfs";
 
 const { Get, Match, Index } = query;
@@ -70,6 +76,7 @@ const useCallAPI = <T,>({
         if (ipfs && requestCid) {
           const ipfsResponse = ipfs?.cat(requestCid);
           if (ipfs.isOnline() && ipfsResponse) {
+            // eslint-disable-next-line no-loops/no-loops
             for await (const iterator of ipfsResponse) {
               setIpfsResponse(JSON.parse(iterator.toString()));
             }

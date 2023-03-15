@@ -349,7 +349,16 @@
     "yup": "^0.32.11",
     "zlib": "^1.0.5",
     "zustand": "^4.1.1",
-    "zx": "4.2.0"
+    "zx": "4.2.0",
+    "eslint-plugin-html": "^7.1.0",
+    "eslint-plugin-json": "^3.1.0",
+    "eslint-plugin-lodash": "^7.4.0",
+    "eslint-plugin-no-loops": "^0.3.0",
+    "eslint-plugin-no-unsanitized": "^4.0.2",
+    "eslint-plugin-toml": "^0.4.0",
+    "eslint-plugin-xss": "^0.1.12",
+    "eslint-plugin-yml": "^1.5.0",
+    "@html-eslint/eslint-plugin": "^0.17.1"
   },
   "devDependencies": {
     "electron": "^19.0.7"
