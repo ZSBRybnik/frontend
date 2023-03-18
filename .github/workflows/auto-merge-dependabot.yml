@@ -3,11 +3,11 @@ on:
   pull_request:
 jobs:
   auto-merge:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     steps:
       - uses: actions/checkout@v3
       - run: sudo apt-get update
-      - run: sudo apt-get install build-essential libpcap-dev
+      - run: sudo apt-get install build-essential libpcap-dev -y
       - uses: actions/setup-node@v2
         with:
           node-version: "lts/*"
@@ -19,6 +19,7 @@ jobs:
       - uses: actions/setup-go@v2
         with:
           go-version: "1.18"
+      - run: npm install -g yarn
       - run: yarn --ignore-engines
       - run: yarn run test
       - uses: ahmadnassri/action-dependabot-auto-merge@v2
