@@ -1,3 +1,4 @@
+import commandExists from "command-exists";
 import { platform } from "os";
 import { $ } from "zx";
 
@@ -7,5 +8,11 @@ import { $ } from "zx";
     $.shell = "cmd";
     $.prefix = "";
   }
+  try {
+    await commandExists("zsh");
+    if (os === "linux") {
+      $.shell = "zsh";
+    }
+  } catch {}
   await $`cross-env TS_NODE_PROJECT=tsconfig.node.json jest --coverage && cross-env TS_NODE_PROJECT=tsconfig.node.json jest --config=jest.integration.config.ts --runInBand --forceExit`;
 })();
