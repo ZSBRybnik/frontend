@@ -348,7 +348,7 @@
     "yarn": "^1.22.19",
     "yup": "^0.32.11",
     "zlib": "^1.0.5",
-    "zustand": "^4.1.1",
+    "zustand": "^4.3.6",
     "zx": "4.2.0",
     "eslint-plugin-html": "^7.1.0",
     "eslint-plugin-json": "^3.1.0",
