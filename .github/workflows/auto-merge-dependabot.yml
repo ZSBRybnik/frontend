@@ -6,7 +6,8 @@ jobs:
     if: github.actor == 'dependabot[bot]'
     runs-on: self-hosted
     steps:
-      - run: git clone https://github.com/ZSBRybnik/backend
+      - run: mkdir ../backend
+      - run: git clone https://github.com/ZSBRybnik/backend .
         working-directory: ../backend
       - uses: actions/checkout@v3
       - run: sudo apt-get update
