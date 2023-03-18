@@ -10,7 +10,7 @@ env:
   IMAGE_NAME: zsb-frontend
 jobs:
   push:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     if: github.event_name == 'push'
     steps:
       - uses: actions/checkout@v3
