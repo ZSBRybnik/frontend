@@ -20,7 +20,8 @@ jobs:
           go-version: "1.18"
       - uses: actions/checkout@v3
         with:
-          repository: "ZSBRybnik/backend"
+          repository: ZSBRybnik/backend
+          path: backend
       - run: yarn --ignore-engines
       - uses: actions/checkout@v3
       - run: sudo apt-get update
