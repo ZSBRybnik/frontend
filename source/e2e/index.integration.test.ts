@@ -5,7 +5,9 @@ import Programs from "~frontend/source/scripts/runner/types/programs/programs";
 
 beforeAll((): Promise<void> => {
   return new Promise<void>((resolve): void => {
-    execSync(`${Programs.Yarn} run ${scriptsKeys["build-web"]}`);
+    execSync(
+      `cross-env NODE_OPTIONS="--max-old-space-size=8192" ${Programs.Yarn} run ${scriptsKeys["build-web"]}`,
+    );
     exec(`${Programs.Serve} -s ${destination}`);
     resolve();
   });
