@@ -6,12 +6,6 @@ jobs:
     if: github.actor == 'dependabot[bot]'
     runs-on: self-hosted
     steps:
-      - uses: actions/checkout@v3
-        with:
-          repository: "https://github.com/ZSBRybnik/backend"
-      - uses: actions/checkout@v3
-      - run: sudo apt-get update
-      - run: sudo apt-get install build-essential libpcap-dev -y
       - uses: actions/setup-node@v2
         with:
           node-version: "lts/*"
@@ -23,10 +17,15 @@ jobs:
       - uses: actions/setup-go@v2
         with:
           go-version: "1.18"
+      - uses: actions/checkout@v3
+      - run: yarn --ignore-engines
+        with:
+          repository: "https://github.com/ZSBRybnik/backend"
+      - uses: actions/checkout@v3
+      - run: sudo apt-get update
+      - run: sudo apt-get install build-essential libpcap-dev -y
       - run: npm install -g yarn
       - run: yarn --ignore-engines
-      - run: yarn --ignore-engines
-        working-directory: ../backend
       - run: yarn run build-web
       - run: yarn run test
       - uses: ahmadnassri/action-dependabot-auto-merge@v2
