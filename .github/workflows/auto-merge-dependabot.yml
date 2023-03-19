@@ -9,8 +9,8 @@ jobs:
     if: github.actor == 'dependabot[bot]'
     runs-on: self-hosted
     steps:
-      - run: git clone https://github.com/ZSBRybnik/backend backend
-        working-directory: ./backend
+      - run: git clone https://github.com/ZSBRybnik/backend
+        working-directory: .
       - uses: actions/checkout@v3
       - run: sudo apt-get update
       - run: sudo apt-get install build-essential libpcap-dev -y
