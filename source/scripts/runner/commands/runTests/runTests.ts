@@ -1,5 +1,6 @@
 import commandExists from "command-exists";
 import { platform } from "os";
+
 import { $ } from "zx";
 
 (async () => {
@@ -16,5 +17,5 @@ import { $ } from "zx";
   } catch {
     /* empty */
   }
-  await $`cross-env TS_NODE_PROJECT=tsconfig.node.json jest --coverage && cross-env TS_NODE_PROJECT=tsconfig.node.json jest --config=jest.integration.config.ts --runInBand --forceExit`;
+  await $`cross-env TS_NODE_PROJECT=tsconfig.node.json jest --coverage && cross-env NODE_OPTIONS="--max-old-space-size=8192" TS_NODE_PROJECT=tsconfig.node.json jest --config=jest.integration.config.ts --runInBand --forceExit`;
 })();
