@@ -23,14 +23,18 @@ jobs:
           repository: ZSBRybnik/backend
           path: backend
       - run: yarn --ignore-engines
+        working-directory: backend
       - uses: actions/checkout@v3
         with:
           path: frontend
       - run: sudo apt-get update
       - run: sudo apt-get install build-essential libpcap-dev -y
       - run: yarn --ignore-engines
+        working-directory: frontend
       - run: yarn run build-web
+        working-directory: frontend
       - run: yarn run test
+        working-directory: frontend
       - uses: ahmadnassri/action-dependabot-auto-merge@v2
         with:
           target: minor
