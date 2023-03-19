@@ -8,7 +8,7 @@ beforeAll((): Promise<void> => {
     execSync(
       `cross-env NODE_OPTIONS="--max-old-space-size=8192" ${Programs.Yarn} run ${scriptsKeys["build-web"]}`,
     );
-    exec(`${Programs.Serve} -s ${destination}`);
+    exec(`yarn run ${Programs.Serve} -s ${destination}`);
     resolve();
   });
 });
