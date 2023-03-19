@@ -27,7 +27,7 @@ jobs:
       - run: npm install -g yarn
       - run: yarn --ignore-engines
       - run: yarn --ignore-engines
-        working-directory: backend
+        working-directory: ../backend
       - run: yarn run build-web
       - run: yarn run test
       - uses: ahmadnassri/action-dependabot-auto-merge@v2
