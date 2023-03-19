@@ -9,6 +9,8 @@ jobs:
     if: github.actor == 'dependabot[bot]'
     runs-on: self-hosted
     steps:
+      - run: mkdir frontend
+        working-directory: .
       - run: git clone https://github.com/ZSBRybnik/backend
         working-directory: .
       - uses: actions/checkout@v3
