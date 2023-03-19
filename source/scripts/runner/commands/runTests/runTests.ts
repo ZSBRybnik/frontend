@@ -13,6 +13,8 @@ import { $ } from "zx";
     if (os === "linux") {
       $.shell = "zsh";
     }
-  } catch {}
+  } catch {
+    /* empty */
+  }
   await $`cross-env TS_NODE_PROJECT=tsconfig.node.json jest --coverage && cross-env TS_NODE_PROJECT=tsconfig.node.json jest --config=jest.integration.config.ts --runInBand --forceExit`;
 })();
