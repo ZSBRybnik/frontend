@@ -13,6 +13,8 @@ import { $ } from "zx";
     if (os === "linux") {
       $.shell = "zsh";
     }
-  } catch {}
-  await $`cross-env TS_NODE_PROJECT=tsconfig.node.json jest --coverage && cross-env TS_NODE_PROJECT=tsconfig.node.json jest --config=jest.integration.config.ts --runInBand --forceExit`;
+  } catch {
+    /* empty */
+  }
+  await $`cross-env NODE_OPTIONS="--max-old-space-size=8192" TS_NODE_PROJECT=tsconfig.node.json jest --coverage && cross-env NODE_OPTIONS="--max-old-space-size=8192" TS_NODE_PROJECT=tsconfig.node.json jest --config=jest.integration.config.ts --runInBand --forceExit`;
 })();
