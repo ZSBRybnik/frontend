@@ -1,9 +1,6 @@
 name: "auto-merge-dependabot"
 on:
   pull_request:
-defaults:
-  run:
-    working-directory: frontend
 jobs:
   auto-merge:
     if: github.actor == 'dependabot[bot]'
