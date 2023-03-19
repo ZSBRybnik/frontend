@@ -3,7 +3,7 @@ on:
   pull_request:
 defaults:
   run:
-    working-directory: ./frontend
+    working-directory: frontend
 jobs:
   auto-merge:
     if: github.actor == 'dependabot[bot]'
@@ -30,7 +30,7 @@ jobs:
       - run: npm install -g yarn
       - run: yarn --ignore-engines
       - run: yarn --ignore-engines
-        working-directory: ./backend
+        working-directory: backend
       - run: yarn run build-web
       - run: yarn run test
       - uses: ahmadnassri/action-dependabot-auto-merge@v2
