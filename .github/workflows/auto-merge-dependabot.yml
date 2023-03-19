@@ -21,9 +21,11 @@ jobs:
       - uses: actions/checkout@v3
         with:
           repository: ZSBRybnik/backend
-          path: ../backend
+          path: backend
       - run: yarn --ignore-engines
       - uses: actions/checkout@v3
+        with:
+          path: frontend
       - run: sudo apt-get update
       - run: sudo apt-get install build-essential libpcap-dev -y
       - run: yarn --ignore-engines
