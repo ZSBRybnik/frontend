@@ -88,7 +88,7 @@
     "@pmmmwh/react-refresh-webpack-plugin": "^0.5.7",
     "@prettier/plugin-pug": "^2.1.1",
     "@prisma/client": "^4.0.0",
-    "@sentry/browser": "^7.17.3",
+    "@sentry/browser": "^7.44.1",
     "@sentry/electron": "^4.1.0",
     "@sentry/node": "^7.17.3",
     "@sentry/tracing": "^7.17.3",
