@@ -6,7 +6,6 @@ jobs:
     if: github.actor == 'dependabot[bot]'
     runs-on: self-hosted
     steps:
-      - run: rm -rf .*
       - uses: actions/setup-node@v2
         with:
           node-version: "lts/*"
