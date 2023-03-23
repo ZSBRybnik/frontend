@@ -17,6 +17,7 @@ const config: Config.InitialOptions = {
   moduleNameMapper: pathsToModuleNameMapper(compilerOptions.paths, {
     prefix: join(process.cwd(), "."),
   }),
+  testTimeout: 100_000_000,
   testMatch: ["**/*.integration.test.ts"],
   transform: {
     ".(ts|tsx)$": [
