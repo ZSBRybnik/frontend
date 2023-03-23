@@ -64,7 +64,7 @@
     "@capacitor/splash-screen": "^1.2.2",
     "@capacitor/status-bar": "^1.0.8",
     "@cmfcmf/docusaurus-search-local": "^0.11.0",
-    "@docusaurus/core": "^2.2.0",
+    "@docusaurus/core": "^2.4.0",
     "@docusaurus/module-type-aliases": "^2.2.0",
     "@docusaurus/preset-classic": "^2.2.0",
     "@emotion/babel-plugin": "^11.9.2",
