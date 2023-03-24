@@ -284,7 +284,7 @@
     "prop-types": "^15.8.1",
     "property-information": "^6.1.1",
     "pug-html-loader": "^1.1.5",
-    "puppeteer": "^15.3.0",
+    "puppeteer": "^19.8.0",
     "purs-loader": "^4.0.0",
     "push.js": "^1.0.12",
     "react": "^18.2.0",
