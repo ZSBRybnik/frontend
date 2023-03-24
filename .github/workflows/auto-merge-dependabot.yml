@@ -10,7 +10,7 @@ jobs:
         with:
           node-version: "lts/*"
           cache: "yarn"
-      - run: npm install -g yarn
+      - run: npm install -g yarn ts-node
       - uses: actions-rs/toolchain@v1
         with:
           toolchain: nightly
