@@ -1,12 +1,20 @@
 import { Command } from "commander";
 import { sync } from "glob";
+
 import { platform } from "os";
+
 import { basename } from "path";
+
 import { $ } from "zx";
+
 import destination from "~frontend/source/scripts/build/constants/destination/destination";
+
 import scriptsKeys from "~frontend/source/scripts/build/constants/scriptsKeys/scriptsKeys";
+
 import source from "~frontend/source/scripts/build/constants/source/source";
+
 import ExtendedMode from "~frontend/source/scripts/build/types/extendedMode/extendedMode";
+
 import Programs from "~frontend/source/scripts/runner/types/programs/programs";
 
 type BuildFlagsOptions = {
@@ -16,16 +24,17 @@ type BuildFlagsOptions = {
 type MoveFiles = (extension: string) => Promise<void>;
 
 const moveFiles: MoveFiles = async (extension: string): Promise<void> => {
-  const brotliFiles: string[] = await sync(
+  const compressedFiles: string[] = await sync(
     `./${destination}/source/modern/${extension}/**.*.${extension}`,
   );
-  brotliFiles.forEach(async (file: string): Promise<void> => {
-    const filename: string = basename(file);
-    await $`${Programs.MoveFile} ${file} ./${destination}/${source}/modern/${filename}`;
-  });
-  setTimeout(async (): Promise<void> => {
-    await $`${Programs.RimRaf} ./${destination}/${source}/modern/${extension}`;
-  }, 5000);
+  const compressedFilesMoveOperations = compressedFiles.map(
+    async (file: string) => {
+      const filename: string = basename(file);
+      return $`${Programs.MoveFile} ${file} ./${destination}/${source}/modern/${filename}`;
+    },
+  );
+  await Promise.all(compressedFilesMoveOperations);
+  await $`${Programs.RimRaf} ./${destination}/${source}/modern/${extension}`;
 };
 
 (async (): Promise<void> => {
