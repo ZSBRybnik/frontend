@@ -247,7 +247,7 @@
     "jest": "^28.1.2",
     "jest-environment-jsdom": "^28.1.2",
     "jest-extended": "^2.0.0",
-    "jest-puppeteer": "^6.1.0",
+    "jest-puppeteer": "^8.0.6",
     "jsdoc": "^3.6.10",
     "json-minimizer-webpack-plugin": "^4.0.0",
     "jsonwebtoken": "^8.5.1",
