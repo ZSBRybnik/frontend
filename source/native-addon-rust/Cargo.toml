@@ -10,7 +10,7 @@ crate-type = ["cdylib"]
 
 [dependencies]
 sentry = "0.27.0"
-uint = "0.9.4"
+uint = "0.9.5"
 sysinfo = "0.26.7"
 
 [dependencies.neon]
