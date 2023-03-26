@@ -22,6 +22,7 @@ jobs:
         with:
           repository: ZSBRybnik/backend
           path: ./backend
+      - uses: c-hive/gha-yarn-cache@v2
       - run: yarn --ignore-engines
         working-directory: backend
       - uses: actions/checkout@v3
@@ -29,6 +30,7 @@ jobs:
           path: ./frontend
       - run: sudo apt-get update
       - run: sudo apt-get install build-essential libpcap-dev -y
+      - uses: c-hive/gha-yarn-cache@v2
       - run: yarn --ignore-engines
         working-directory: ./frontend
       - run: yarn run test
