@@ -6,9 +6,20 @@ jobs:
     if: github.actor == 'dependabot[bot]'
     runs-on: self-hosted
     steps:
+      - uses: actions/checkout@v3
+        with:
+          repository: ZSBRybnik/backend
+          path: ./backend
+      - uses: actions/checkout@v3
+        with:
+          path: ./frontend
       - uses: actions/setup-node@v2
         with:
           node-version: "lts/*"
+          cache: "yarn"
+          cache-dependency-path: |
+            ./backend/yarn.lock
+            ./frontend/yarn.lock
       - run: npm install -g yarn ts-node
       - uses: actions-rs/toolchain@v1
         with:
@@ -18,19 +29,10 @@ jobs:
       - uses: actions/setup-go@v2
         with:
           go-version: "1.18"
-      - uses: actions/checkout@v3
-        with:
-          repository: ZSBRybnik/backend
-          path: ./backend
-      - uses: c-hive/gha-yarn-cache@v2
       - run: yarn --ignore-engines
-        working-directory: backend
-      - uses: actions/checkout@v3
-        with:
-          path: ./frontend
+        working-directory: ./backend
       - run: sudo apt-get update
       - run: sudo apt-get install build-essential libpcap-dev -y
-      - uses: c-hive/gha-yarn-cache@v2
       - run: yarn --ignore-engines
         working-directory: ./frontend
       - run: yarn run test
