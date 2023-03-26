@@ -21,6 +21,11 @@ jobs:
             ./backend/yarn.lock
             ./frontend/yarn.lock
       - run: npm install -g yarn ts-node
+      - uses: actions/setup-python@v4
+        with:
+          python-version: "3.x"
+          cache: "pip"
+          cache-dependency-path: "./frontend/source/native-addon-python/requirements.txt"
       - uses: actions-rs/toolchain@v1
         with:
           toolchain: nightly
