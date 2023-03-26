@@ -33,7 +33,9 @@ jobs:
           components: rustfmt, clippy
       - uses: actions/setup-go@v2
         with:
-          go-version: "1.18"
+          go-version: "stable"
+          check-latest: true
+          cache-dependency-path: "./frontend/source/native-addon-go/go.sum"
       - run: yarn --ignore-engines
         working-directory: ./backend
       - run: sudo apt-get update
