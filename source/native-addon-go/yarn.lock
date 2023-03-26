@@ -816,10 +816,10 @@ tr46@~0.0.3:
   resolved "https://registry.yarnpkg.com/tr46/-/tr46-0.0.3.tgz#8184fd347dac9cdc185992f3a6622e14b9d9ab6a"
   integrity sha512-N3WMsuqV66lT30CrXNbEjx4GEwlow3v6rr4mCcv6prnfwhS01rkgyFdjPNBYd9br7LpXV1+Emh01fHnq2Gdgrw==
 
-ts-essentials@^9.1.2:
-  version "9.1.2"
-  resolved "https://registry.yarnpkg.com/ts-essentials/-/ts-essentials-9.1.2.tgz#46db6944b73b4cd603f3d959ef1123c16ba56f59"
-  integrity sha512-EaSmXsAhEiirrTY1Oaa7TSpei9dzuCuFPmjKRJRPamERYtfaGS8/KpOSbjergLz/Y76/aZlV9i/krgzsuWEBbg==
+ts-essentials@^9.3.1:
+  version "9.3.1"
+  resolved "https://registry.yarnpkg.com/ts-essentials/-/ts-essentials-9.3.1.tgz#f2d1e1584ef53c0251012258338421d7cf78a4d0"
+  integrity sha512-9CChSvQMyVRo29Vb1A2jbs+LKo3d/bAf+ndSaX0T8cEiy/HChVaRN/HY5DqUryZ8hZ6uol9bEgCnGmnDbwBR9Q==
 
 ts-jest@^27.1.2:
   version "27.1.5"
