@@ -298,7 +298,7 @@
     "react-query": "^3.39.1",
     "react-query-devtools": "^2.6.3",
     "react-refresh": "^0.14.0",
-    "react-router-dom": "^6.3.0",
+    "react-router-dom": "^6.10.0",
     "react-syntax-highlighter": "^15.5.0",
     "react-universal-component": "^4.5.0",
     "react-use": "^17.4.0",
