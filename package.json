@@ -99,7 +99,7 @@
     "@solana/wallet-adapter-wallets": "^0.18.7",
     "@solana/web3.js": "^1.62.0",
     "@storybook/addon-a11y": "^6.5.9",
-    "@storybook/addon-actions": "^6.5.9",
+    "@storybook/addon-actions": "^7.0.3",
     "@storybook/addon-console": "^1.2.3",
     "@storybook/addon-essentials": "^6.5.9",
     "@storybook/addon-links": "^6.5.9",
