@@ -72,6 +72,16 @@ const AdministrateUsers: LazyExoticComponent<FunctionComponent> = lazy(
   },
 );
 
+const Profile: LazyExoticComponent<FunctionComponent> = lazy(
+  (): Promise<
+    typeof import("~frontend/source/renderer/pages/Profile/Profile")
+  > => {
+    return new Promise((resolve) => {
+      resolve(import("~frontend/source/renderer/pages/Profile/Profile"));
+    });
+  },
+);
+
 const AppWrapper: FunctionComponent = () => {
   const { ErrorBoundary } = useErrorBoundary();
   useCopy();
@@ -95,6 +105,7 @@ const AppWrapper: FunctionComponent = () => {
             <Routes>
               <Route path="/" element={<Homepage />} />
               <Route path="/post/:id" element={<Post />} />
+              <Route path="/profile/:name" element={<Profile />} />
               <Route
                 path="/buffet"
                 element={
