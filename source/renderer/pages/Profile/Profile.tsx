@@ -5,6 +5,7 @@ import {
   ProfilePictureWrapper,
   Username,
 } from "~frontend/source/renderer/pages/Profile/Profile.styles";
+import Collapse from "../../components/Collapse/Collapse";
 import Page from "../../components/Page/Page";
 import useCallAPI from "../../hooks/useCallAPI/useCallAPI";
 
@@ -33,6 +34,7 @@ const Profile = () => {
         />
       </ProfilePictureWrapper>
       <Username>{name}</Username>
+      <Collapse collapseText="test" />
     </Page>
   );
 };
