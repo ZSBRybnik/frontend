@@ -1,22 +1,21 @@
 import { Row } from "~frontend/source/renderer/pages/Settings/Settings.styles";
+import useUserSettingsStore from "~frontend/source/renderer/stores/userSettingsStore/userSettingsStore";
 import Page from "../../components/Page/Page";
 import Switch from "../../components/Switch/Switch";
-import useState from "../../hooks/useState/useState";
 
 const Settings = () => {
-  const { value, setValue } = useState<{
-    value: boolean;
-  }>({
-    value: false,
-  });
+  const {
+    settings: { enableBroadcastCenter },
+    setSettings,
+  } = useUserSettingsStore();
   return (
     <Page>
       <Row>
         Enable Broadcasting Center
         <Switch
-          checked={value}
+          checked={enableBroadcastCenter}
           onClick={() => {
-            setValue(!value);
+            setSettings({ enableBroadcastCenter: !enableBroadcastCenter });
           }}
         />
       </Row>

@@ -1,3 +1,5 @@
+import { mdiRadio } from "@mdi/js";
+import MdiIcon from "@mdi/react";
 import { FunctionComponent } from "react";
 import Icon from "~frontend/source/renderer/components/Icon/Icon";
 import NavbarButton from "~frontend/source/renderer/components/NavbarButton/NavbarButton";
@@ -6,8 +8,8 @@ import target, {
 } from "~frontend/source/shared/constants/target/target";
 import ExtendedWindow from "~frontend/source/shared/types/extendedWindow/extendedWindow";
 import useIsSlideOutMenuOpenStore from "../../stores/isSlideOutMenuOpenStore/isSlideOutMenuOpenStore";
+import useUserSettingsStore from "../../stores/userSettingsStore/userSettingsStore";
 import StyledNavbar, {
-  StyledNavbarCenter,
   StyledNavbarLeft,
   StyledNavbarRight,
 } from "./Navbar.styles";
@@ -18,7 +20,9 @@ const NavBar: FunctionComponent = (): JSX.Element => {
   const toggleIsOpen = () => {
     setIsSlideOutMenuOpen(!isSlideOutMenuOpen);
   };
-
+  const {
+    settings: { enableBroadcastCenter },
+  } = useUserSettingsStore();
   return (
     <StyledNavbar>
       <StyledNavbarLeft>
@@ -29,36 +33,38 @@ const NavBar: FunctionComponent = (): JSX.Element => {
           <Icon>&#xE77B;</Icon>
         </NavbarButton>
       </StyledNavbarLeft>
-      <StyledNavbarCenter>
-        <NavbarButton>
-          <Icon>&#xE77B;</Icon>
-        </NavbarButton>
-      </StyledNavbarCenter>
-      {target === TargetType.Desktop && (
-        <StyledNavbarRight>
-          <NavbarButton
-            onClick={() => {
-              (window as ExtendedWindow).api?.minimize();
-            }}
-          >
-            <Icon>&#xE16A;</Icon>
+      <StyledNavbarRight>
+        {enableBroadcastCenter && (
+          <NavbarButton>
+            <MdiIcon color="#fff" path={mdiRadio} size={1} />
           </NavbarButton>
-          <NavbarButton
-            onClick={() => {
-              (window as ExtendedWindow).api?.toggleMaximize();
-            }}
-          >
-            <Icon>&#xE158;</Icon>
-          </NavbarButton>
-          <NavbarButton
-            onClick={() => {
-              (window as ExtendedWindow).api?.close();
-            }}
-          >
-            <Icon>&#xE10A;</Icon>
-          </NavbarButton>
-        </StyledNavbarRight>
-      )}
+        )}
+        {target === TargetType.Desktop && (
+          <>
+            <NavbarButton
+              onClick={() => {
+                (window as ExtendedWindow).api?.minimize();
+              }}
+            >
+              <Icon>&#xE16A;</Icon>
+            </NavbarButton>
+            <NavbarButton
+              onClick={() => {
+                (window as ExtendedWindow).api?.toggleMaximize();
+              }}
+            >
+              <Icon>&#xE158;</Icon>
+            </NavbarButton>
+            <NavbarButton
+              onClick={() => {
+                (window as ExtendedWindow).api?.close();
+              }}
+            >
+              <Icon>&#xE10A;</Icon>
+            </NavbarButton>
+          </>
+        )}
+      </StyledNavbarRight>
     </StyledNavbar>
   );
 };
