@@ -1,7 +1,7 @@
 import type { FunctionComponent, LazyExoticComponent } from "react";
 import { lazy, Suspense } from "react";
 import { Route, Routes } from "react-router-dom";
-import useErrorBoundary from "use-error-boundary";
+import useErrorBoundary, { UseErrorBoundaryState } from "use-error-boundary";
 import Roles from "~backend/source/server/constants/roles/Roles";
 import GlobalStyle from "~frontend/source/renderer/components/GlobalStyles/GlobalStyles";
 import Loader from "~frontend/source/renderer/components/Loader/Loader";
@@ -15,7 +15,6 @@ import useQuitShortcut from "../../hooks/useQuitShortcut/useQuitShortcut";
 import useToggleFullscreenShortcut from "../../hooks/useToggleFullscreenShortcut/useToggleFullscreenShortcut";
 import useToggleMaximizeShortcut from "../../hooks/useToggleMaximizeShortcut/useToggleMaximizeShortcut";
 import useWindowDimensionsListener from "../../hooks/useWindowDimensionsListener/useWindowDimensionsListener";
-import Buffet from "../../pages/Buffet/Buffet";
 import BottomNavbar from "../BottomNavbar/BottomNavbar";
 import BottomSpacer from "../BottomSpacer/BottomSpacer";
 import Overlay from "../Overlay/Overlay";
@@ -82,8 +81,36 @@ const Profile: LazyExoticComponent<FunctionComponent> = lazy(
   },
 );
 
+const Settings: LazyExoticComponent<FunctionComponent> = lazy(
+  (): Promise<
+    typeof import("~frontend/source/renderer/pages/Settings/Settings")
+  > => {
+    return new Promise((resolve) => {
+      resolve(import("~frontend/source/renderer/pages/Settings/Settings"));
+    });
+  },
+);
+
+const Buffet: LazyExoticComponent<FunctionComponent> = lazy(
+  (): Promise<
+    typeof import("~frontend/source/renderer/pages/Buffet/Buffet")
+  > => {
+    return new Promise((resolve) => {
+      resolve(import("~frontend/source/renderer/pages/Buffet/Buffet"));
+    });
+  },
+);
+
+/*<PrivateRoute
+                    noAccessAction={
+                      PrivateRouteRedirectActions.RedirectToLoginPage
+                    }
+                    whitelist={new Set(Object.values(Roles))}
+                    element={}
+                  />*/
+
 const AppWrapper: FunctionComponent = () => {
-  const { ErrorBoundary } = useErrorBoundary();
+  const { ErrorBoundary }: UseErrorBoundaryState = useErrorBoundary();
   useCopy();
   useNetwork();
   useQuitShortcut();
@@ -106,6 +133,7 @@ const AppWrapper: FunctionComponent = () => {
               <Route path="/" element={<Homepage />} />
               <Route path="/post/:id" element={<Post />} />
               <Route path="/profile/:name" element={<Profile />} />
+              <Route path="/settings" element={<Settings />} />
               <Route
                 path="/buffet"
                 element={
@@ -113,13 +141,7 @@ const AppWrapper: FunctionComponent = () => {
                     noAccessAction={
                       PrivateRouteRedirectActions.RedirectToLoginPage
                     }
-                    whitelist={
-                      new Set([
-                        Roles.Administrator,
-                        Roles.BuffetOwner,
-                        Roles.Student,
-                      ])
-                    }
+                    whitelist={new Set(Object.values(Roles))}
                     element={<Buffet />}
                   />
                 }

@@ -1,27 +1,22 @@
-/* eslint-disable max-params */
-import { DetailedHTMLProps, HTMLAttributes } from "react";
-import { SwitchButton, SwitchWrapper } from "./Switch.styles";
+import { DetailedHTMLProps, InputHTMLAttributes } from "react";
+import {
+  SwitchInput,
+  SwitchSlider,
+  SwitchWrapper,
+} from "~frontend/source/renderer/components/Switch/Switch.styles";
 
-type SwitchProperties = {
-  options: ({
-    value: string;
-  } & Pick<
-    DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>,
-    "onClick"
-  >)[];
-};
+type SwitchProperties = Omit<
+  DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>,
+  "defaultChecked" | "type"
+>;
 
-const Switch = ({ options }: SwitchProperties) => {
+const Switch = ({ onClick, ...rest }: SwitchProperties) => {
   return (
-    <SwitchWrapper>
-      {options.map(({ value, onClick }, index) => {
-        return (
-          <SwitchButton key={`switch-${value}-${index}`} onClick={onClick}>
-            {value}
-          </SwitchButton>
-        );
-      })}
+    <SwitchWrapper onClick={onClick}>
+      <SwitchInput {...rest} type="checkbox" />
+      <SwitchSlider />
     </SwitchWrapper>
   );
 };
+
 export default Switch;

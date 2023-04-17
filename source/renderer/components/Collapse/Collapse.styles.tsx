@@ -1,20 +1,42 @@
+import { css } from "@emotion/react";
 import styled from "@emotion/styled";
 import { motion } from "framer-motion";
 
-export const CollapseTopWrapper = styled.div`
+type CollapseTopWrapperProperties = {
+  isOpen: boolean;
+};
+
+export const CollapseTopWrapper = styled.div<CollapseTopWrapperProperties>`
   display: flex;
   justify-content: space-between;
   align-items: center;
   border: 1px solid #ddd;
+  ${({ isOpen }) => {
+    return (
+      isOpen &&
+      css`
+        border-bottom: none;
+      `
+    );
+  }}
   padding: 5px;
 `;
 
 export const CollapseWrapper = styled.div``;
 
-export const CollapseContent = styled(motion.div)`
+type CollapseContentProperties = {
+  isOpen: boolean;
+};
+
+export const CollapseContent = styled(motion.div)<CollapseContentProperties>`
   overflow-y: hidden;
   display: flex;
-  border: 1px solid #ddd;
-  border-top: none;
-  //padding: 5px;
+  ${({ isOpen }) => {
+    return (
+      isOpen &&
+      css`
+        border: 1px solid #ddd;
+      `
+    );
+  }}//padding: 5px;
 `;

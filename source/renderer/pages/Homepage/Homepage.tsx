@@ -1,7 +1,7 @@
+import Switch from "../../components/ExtendedSwitch/ExtendedSwitch";
 import FeedView from "../../components/FeedView/FeedView";
 import Page from "../../components/Page/Page";
 import PostsView from "../../components/PostsView/PostsView";
-import Switch from "../../components/Switch/Switch";
 import useState from "../../hooks/useState/useState";
 import { HomepageComponent } from "./Homepage.types";
 

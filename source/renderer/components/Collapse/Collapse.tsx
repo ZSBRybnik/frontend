@@ -12,12 +12,13 @@ import useState from "../../hooks/useState/useState";
 const Collapse: FC<CollapseProperties> = ({
   collapseText,
 }: CollapseProperties): JSX.Element => {
-  const { value: isOpen, setValue: setIsOpen } = useState({
+  const { value: isOpen, setValue: setIsOpen } = useState<{ value: boolean }>({
     value: false,
   });
   return (
     <CollapseWrapper>
       <CollapseTopWrapper
+        isOpen={isOpen}
         onClick={() => {
           setIsOpen(!isOpen);
         }}
@@ -30,6 +31,7 @@ const Collapse: FC<CollapseProperties> = ({
         />
       </CollapseTopWrapper>
       <CollapseContent
+        isOpen={isOpen}
         animate={isOpen ? "open" : "closed"}
         variants={{
           open: {
@@ -40,8 +42,7 @@ const Collapse: FC<CollapseProperties> = ({
           },
         }}
         transition={{
-          type: "spring",
-          duration: 5,
+          duration: 0.8,
         }}
       >
         content
