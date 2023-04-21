@@ -7493,10 +7493,10 @@
   dependencies:
     "@types/node" "*"
 
-"@types/fslightbox-react@^1.4.2":
-  version "1.4.2"
-  resolved "https://registry.yarnpkg.com/@types/fslightbox-react/-/fslightbox-react-1.4.2.tgz#7507611bdbc7820c150967cf882d4bc359b13dc3"
-  integrity sha512-Bj+1xmiCKGgqiCL7MGv6UKCoIs7Cw8SWfV9gEPtNQGdXzYURLXVEdJsjSVDLuq4DpkvO4UixlbhOvZmp7+QJSA==
+"@types/fslightbox-react@^1.7.2":
+  version "1.7.2"
+  resolved "https://registry.yarnpkg.com/@types/fslightbox-react/-/fslightbox-react-1.7.2.tgz#39cb1fac1c894dadef46ea896abf38097d30746c"
+  integrity sha512-GQ840LNNgOyP48qhB1VOV5ljr8wue2ymu0VLPLT7eBmPFb2ND6zWWJcZsXDbMCS21aP+VbmjY4PKK8N11oeZrQ==
   dependencies:
     "@types/react" "*"
 
@@ -16087,10 +16087,10 @@ fsevents@^2.1.2, fsevents@^2.3.2, fsevents@~2.3.2:
   resolved "https://registry.yarnpkg.com/fsevents/-/fsevents-2.3.2.tgz#8a526f78b8fdf4623b709e0b975c52c24c02fd1a"
   integrity sha512-xiqMQR4xAeHTuB9uWm+fFRcIOgKBMiOBP+eXiyT7jsgVCq1bkVygt00oASowB7EdtpOHaaPgKt812P9ab+DDKA==
 
-fslightbox-react@^1.6.2-2:
-  version "1.7.2"
-  resolved "https://registry.yarnpkg.com/fslightbox-react/-/fslightbox-react-1.7.2.tgz#a7dc25f23439a1b522a7844c4064f1db825c4569"
-  integrity sha512-al1WiKKZVlk+9hP3I++GWgAka4mUKS6A/PpaCGTC2U0EN3g52q/CelwTjMhmFjHTxU8mSTKGEorClDMT9/O4yw==
+fslightbox-react@^1.7.4:
+  version "1.7.4"
+  resolved "https://registry.yarnpkg.com/fslightbox-react/-/fslightbox-react-1.7.4.tgz#d1824928d3b969a07baccd02a04285b97c6c51b2"
+  integrity sha512-dmHoxfdvf2TP78jv7qPLvd/cbQOIl2P8CBapLYpcoIigDV0bAcNkx3Tav6Isjruv2bXwWoXZY1C9+A5xTd3ZFQ==
 
 ftp@^0.3.10:
   version "0.3.10"
