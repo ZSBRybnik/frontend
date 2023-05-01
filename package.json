@@ -54,7 +54,7 @@
     "@babel/preset-env": "^7.18.6",
     "@babel/preset-react": "^7.18.6",
     "@babel/preset-typescript": "^7.18.6",
-    "@capacitor/android": "^3.6.0",
+    "@capacitor/android": "^4.8.0",
     "@capacitor/app": "^1.1.1",
     "@capacitor/cli": "^3.6.0",
     "@capacitor/core": "^3.6.0",
