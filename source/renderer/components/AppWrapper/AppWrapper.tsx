@@ -1,7 +1,9 @@
 import type { FunctionComponent, LazyExoticComponent } from "react";
 import { lazy, Suspense } from "react";
 import { Route, Routes } from "react-router-dom";
-import useErrorBoundary, { UseErrorBoundaryState } from "use-error-boundary";
+import useErrorBoundary, {
+  type UseErrorBoundaryState,
+} from "use-error-boundary";
 import Roles from "~backend/source/server/constants/roles/Roles";
 import GlobalStyle from "~frontend/source/renderer/components/GlobalStyles/GlobalStyles";
 import Loader from "~frontend/source/renderer/components/Loader/Loader";
