@@ -14586,10 +14586,10 @@ eslint-plugin-testing-library@^5.5.1:
   dependencies:
     "@typescript-eslint/utils" "^5.43.0"
 
-eslint-plugin-toml@^0.4.0:
-  version "0.4.0"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-toml/-/eslint-plugin-toml-0.4.0.tgz#68a7c2223b14e9bd19d11aab5a9de929c43a30c7"
-  integrity sha512-z9LaGc7hRl+TDOUhqep7NPOe4mXev4Kime9cgoo82aTSAeK7RxR1ihHApCWeQVh7QKvZH1tkKnbErgWPw4Ol0A==
+eslint-plugin-toml@^0.4.1:
+  version "0.4.1"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-toml/-/eslint-plugin-toml-0.4.1.tgz#6230fd9038fae1a62aa9f2210c7d4df91071dcf3"
+  integrity sha512-LwCqnJivFklySwJBck5KHnwQyGSy3bC3qSDkfOoCyR4iC4W3GtTslFKODNUKZp2Pvd+mbL48tMDD/g4h/q9fdg==
   dependencies:
     debug "^4.1.1"
     lodash "^4.17.19"
