@@ -87,7 +87,7 @@
     "@microsoft/tsdoc": "^0.14.1",
     "@nativescript/types": "^8.2.0",
     "@pmmmwh/react-refresh-webpack-plugin": "^0.5.7",
-    "@prettier/plugin-pug": "^2.1.1",
+    "@prettier/plugin-pug": "^2.5.0",
     "@prisma/client": "^4.0.0",
     "@sentry/browser": "^7.17.3",
     "@sentry/electron": "^4.1.0",
