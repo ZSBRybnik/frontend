@@ -212,7 +212,7 @@
     "eslint-plugin-tsdoc": "^0.2.16",
     "eslint-plugin-unicorn": "^43.0.0",
     "eslint-plugin-xss": "^0.1.12",
-    "eslint-plugin-yml": "^1.5.0",
+    "eslint-plugin-yml": "^1.7.0",
     "eslint-webpack-plugin": "^3.2.0",
     "expect-puppeteer": "^6.1.0",
     "express": "^4.18.1",
