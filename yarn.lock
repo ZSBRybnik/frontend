@@ -14586,14 +14586,14 @@ eslint-plugin-testing-library@^5.5.1:
   dependencies:
     "@typescript-eslint/utils" "^5.43.0"
 
-eslint-plugin-toml@^0.4.0:
-  version "0.4.0"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-toml/-/eslint-plugin-toml-0.4.0.tgz#68a7c2223b14e9bd19d11aab5a9de929c43a30c7"
-  integrity sha512-z9LaGc7hRl+TDOUhqep7NPOe4mXev4Kime9cgoo82aTSAeK7RxR1ihHApCWeQVh7QKvZH1tkKnbErgWPw4Ol0A==
+eslint-plugin-toml@^0.5.0:
+  version "0.5.0"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-toml/-/eslint-plugin-toml-0.5.0.tgz#c4c4d8bc1e2fe09327a40df8586d13a0c7dcffd3"
+  integrity sha512-EnnC+/PEdaScDmQWrJeQlOFSLdulyVkRAbWX4X97Tju7Y2W/2pT6f1BVqEAjHAMjl9daRh+cS2U3Ik6i5E+C5Q==
   dependencies:
     debug "^4.1.1"
     lodash "^4.17.19"
-    toml-eslint-parser "^0.5.0"
+    toml-eslint-parser "^0.6.0"
 
 eslint-plugin-tsdoc@^0.2.16:
   version "0.2.17"
@@ -30040,10 +30040,10 @@ token-stream@0.0.1:
   resolved "https://registry.yarnpkg.com/token-stream/-/token-stream-0.0.1.tgz#ceeefc717a76c4316f126d0b9dbaa55d7e7df01a"
   integrity sha512-nfjOAu/zAWmX9tgwi5NRp7O7zTDUD1miHiB40klUnAh9qnL1iXdgzcz/i5dMaL5jahcBAaSfmNOBBJBLJW8TEg==
 
-toml-eslint-parser@^0.5.0:
-  version "0.5.0"
-  resolved "https://registry.yarnpkg.com/toml-eslint-parser/-/toml-eslint-parser-0.5.0.tgz#db95b86ce8c59ae7743ba6beef75a73d11c1aab9"
-  integrity sha512-SrneDiwkE/iQ3ndP/TkPN6Thfgd+ZGbtm7tV8WXlmVzUP2DIYXSCporm0Rgy/C40h7r9ANZfIW9YwQMUepqAmw==
+toml-eslint-parser@^0.6.0:
+  version "0.6.0"
+  resolved "https://registry.yarnpkg.com/toml-eslint-parser/-/toml-eslint-parser-0.6.0.tgz#aaf394f2efd94d84d881113479d57d7597dc5d47"
+  integrity sha512-aTmQa0RFb+2URe8IZOfo/oxt3b5rlXlpG9xE+6FmeI8immCGLnZYvKVxbnCYJx4bIKIaEwl0BnCDhwO70yeWSA==
   dependencies:
     eslint-visitor-keys "^3.0.0"
 
