@@ -21884,10 +21884,10 @@ memfs@^3.1.2, memfs@^3.4.3:
   dependencies:
     fs-monkey "^1.0.3"
 
-memlab@^1.1.28:
-  version "1.1.37"
-  resolved "https://registry.yarnpkg.com/memlab/-/memlab-1.1.37.tgz#e6d29104a11d31ff22fda4c25dee91662a353b61"
-  integrity sha512-zJj13dJFXuypodVFd21CV2qnaDfKtO8CETH9QTJmDLXk+TomPGNvt9w1kkMs973n2iRNav0bJMqUyOSE6uKCrQ==
+memlab@^1.1.39:
+  version "1.1.39"
+  resolved "https://registry.yarnpkg.com/memlab/-/memlab-1.1.39.tgz#16fd6ae1400d4e9dd0d3294dedb5862db501425a"
+  integrity sha512-oXcOwjyXk81N87zLMYPp/3TFs3wa0BC0Q9Ut1EAUQDiSjgcEZZ4JTToy1CLV3K14Yc19hM9rfJEpneaU3NICXg==
   dependencies:
     "@memlab/api" "^1.0.11"
     "@memlab/cli" "^1.0.11"
