@@ -111,6 +111,7 @@
     "@testing-library/react": "^13.3.0",
     "@testing-library/react-hooks": "^8.0.1",
     "@testing-library/user-event": "^14.2.1",
+    "@total-typescript/ts-reset": "^0.4.2",
     "@trpc/client": "^9.27.0",
     "@trpc/react": "^9.27.0",
     "@types/case-sensitive-paths-webpack-plugin": "^2.1.6",
