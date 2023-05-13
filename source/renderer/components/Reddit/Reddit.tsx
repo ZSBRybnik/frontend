@@ -1,13 +1,13 @@
 import { FC } from "react";
 import { Iframe } from "./Reddit.styles";
 
-type FacebookProperties = {
+type RedditProperties = {
   url: string;
 };
 
-const Reddit: FC<FacebookProperties> = ({
+const Reddit: FC<RedditProperties> = ({
   url,
-}: FacebookProperties): JSX.Element => {
+}: RedditProperties): JSX.Element => {
   return (
     <Iframe
       src={url}
