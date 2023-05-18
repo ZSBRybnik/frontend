@@ -49,7 +49,7 @@
     "nan": "github:jkleinsc/nan#remove_accessor_signature"
   },
   "dependencies": {
-    "@astrojs/compiler": "^0.32.0",
+    "@astrojs/compiler": "^1.4.2",
     "@babel/core": "^7.18.6",
     "@babel/preset-env": "^7.18.6",
     "@babel/preset-react": "^7.18.6",
