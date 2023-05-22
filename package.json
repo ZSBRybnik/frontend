@@ -272,7 +272,7 @@
     "nodemon": "^2.0.18",
     "npm-check": "^5.9.2",
     "npm-check-updates": "^15.0.1",
-    "office-addin-dev-certs": "^1.11.3",
+    "office-addin-dev-certs": "^1.11.4",
     "parse-entities": "^4.0.0",
     "piscina": "^3.2.0",
     "plugin-image-zoom": "^1.1.0",
