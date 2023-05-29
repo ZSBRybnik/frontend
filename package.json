@@ -354,7 +354,7 @@
     "webpack-dev-server": "^4.11.1",
     "webpack-license-plugin": "^4.2.2",
     "webpack-node-externals": "^3.0.0",
-    "winston": "^3.8.2",
+    "winston": "^3.9.0",
     "workbox-webpack-plugin": "^6.5.3",
     "workbox-window": "^6.5.3",
     "xlsx": "^0.18.5",
