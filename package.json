@@ -356,7 +356,7 @@
     "webpack-node-externals": "^3.0.0",
     "winston": "^3.8.2",
     "workbox-webpack-plugin": "^6.5.3",
-    "workbox-window": "^6.5.3",
+    "workbox-window": "^6.6.0",
     "xlsx": "^0.18.5",
     "yarn": "^1.22.19",
     "yup": "^0.32.11",
