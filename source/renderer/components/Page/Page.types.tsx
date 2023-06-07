@@ -11,3 +11,5 @@ export type PageComponent = {
   (properties: PageProperties): JSX.Element;
   propTypes: WeakValidationMap<PageProperties>;
 };
+
+export default PageProperties;
