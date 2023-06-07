@@ -9,3 +9,5 @@ export type CodeComponent = {
   (properties: CodeProperties): JSX.Element;
   propTypes: WeakValidationMap<CodeProperties>;
 };
+
+export default CodeProperties;
