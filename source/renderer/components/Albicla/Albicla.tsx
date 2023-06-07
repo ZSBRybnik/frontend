@@ -1,3 +1,4 @@
+import propTypes from "prop-types";
 import { FC } from "react";
 import { Iframe } from "./Albicla.styles";
 
@@ -19,6 +20,10 @@ const Albicla: FC<AlbiclaProperties> = ({
       allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
     />
   );
+};
+
+Albicla.propTypes = {
+  url: propTypes.string.isRequired,
 };
 
 export default Albicla;
