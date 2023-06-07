@@ -1,3 +1,4 @@
+import type { FunctionComponent } from "react";
 import { Link } from "react-router-dom";
 import {
   PostBrief,
@@ -6,16 +7,15 @@ import {
   PostTitle,
   PostWrapper,
 } from "./Post.styles";
+import type PostProperties from "./Post.types";
 
-type PostProperties = {
-  id: number;
-  title: string;
-  brief: string;
-  src?: string;
-  alt?: string;
-};
-
-const Post = ({ id, alt, src, title, brief }: PostProperties) => {
+const Post: FunctionComponent<PostProperties> = ({
+  id,
+  alt,
+  src,
+  title,
+  brief,
+}: PostProperties): JSX.Element => {
   const path: string = `/post/${id}`;
   return (
     <Link to={path}>
@@ -29,4 +29,5 @@ const Post = ({ id, alt, src, title, brief }: PostProperties) => {
     </Link>
   );
 };
+
 export default Post;

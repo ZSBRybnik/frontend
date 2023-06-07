@@ -14,3 +14,4 @@ declare module "robotstxt-webpack-plugin";
 declare module "@vue/preload-webpack-plugin";
 declare module "*.svg";
 declare module "*.pug";
+declare module "process/browser";

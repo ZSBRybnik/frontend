@@ -16,4 +16,5 @@ export type LoaderWrapperComponent = StyledComponent<
   DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>,
   Record<string, unknown>
 >;
+
 export type StyledLoaderComponent = LoaderWrapperComponent;
