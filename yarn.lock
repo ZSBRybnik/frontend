@@ -29611,10 +29611,10 @@ synckit@^0.8.4:
     "@pkgr/utils" "^2.3.1"
     tslib "^2.5.0"
 
-systeminformation@^5.12.14:
-  version "5.17.9"
-  resolved "https://registry.yarnpkg.com/systeminformation/-/systeminformation-5.17.9.tgz#8a47bc84f076982734d7b7a0c71371d23bbbfd52"
-  integrity sha512-inxwRLI/4qpx4o85R54/zdhNagdBGBgs0la7Vl3qBorRVKRDk0nNsDTCGzG4lOITsw1gl7LRWeG4Zsp1pC8nfg==
+systeminformation@^5.18.1:
+  version "5.18.1"
+  resolved "https://registry.yarnpkg.com/systeminformation/-/systeminformation-5.18.1.tgz#225a219b5c8a0e53c0e291d390309f53607f9a40"
+  integrity sha512-+4JZcjsYKh8J9fAQ6l0tT8TBck6mbm69+csfZbCUQvCcnCKID9l2JRMQ2ERZ7fznys12go1I9o7AnrLUkjFGeQ==
 
 table-layout@^1.0.2:
   version "1.0.2"
