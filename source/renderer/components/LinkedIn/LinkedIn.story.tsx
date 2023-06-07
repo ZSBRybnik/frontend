@@ -1,5 +1,6 @@
 import type { Meta, StoryFn } from "@storybook/react";
 import type { FunctionComponent } from "react";
+import GlobalStyle from "~frontend/source/renderer/components/GlobalStyles/GlobalStyles";
 import LinkedIn from "~frontend/source/renderer/components/LinkedIn/LinkedIn";
 import type CodeProperties from "~frontend/source/renderer/components/LinkedIn/LinkedIn.types";
 
@@ -11,7 +12,12 @@ export default {
 const Template: StoryFn<FunctionComponent<CodeProperties>> = ({
   ...rest
 }: CodeProperties): JSX.Element => {
-  return <LinkedIn {...rest} />;
+  return (
+    <>
+      <GlobalStyle isStorybook />
+      <LinkedIn {...rest} />
+    </>
+  );
 };
 
 export const LinkedInExample: StoryFn<typeof LinkedIn> = Template.bind({});

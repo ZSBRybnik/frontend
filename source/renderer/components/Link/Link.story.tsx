@@ -1,6 +1,7 @@
 import type { Meta, StoryFn } from "@storybook/react";
 import type { FunctionComponent } from "react";
 import { BrowserRouter } from "react-router-dom";
+import GlobalStyle from "~frontend/source/renderer/components/GlobalStyles/GlobalStyles";
 import Link from "~frontend/source/renderer/components/Link/Link";
 import type LinkProperties from "~frontend/source/renderer/components/Link/Link.types";
 
@@ -15,6 +16,7 @@ const Template: StoryFn<FunctionComponent<LinkProperties>> = ({
 }: LinkProperties): JSX.Element => {
   return (
     <BrowserRouter>
+      <GlobalStyle isStorybook />
       <Link {...rest}>{children}</Link>
     </BrowserRouter>
   );

@@ -2,6 +2,7 @@ import type { Meta, StoryFn } from "@storybook/react";
 import type { FunctionComponent } from "react";
 import Albicla from "~frontend/source/renderer/components/Albicla/Albicla";
 import type AlbiclaProperties from "~frontend/source/renderer/components/Albicla/Albicla.types";
+import GlobalStyle from "~frontend/source/renderer/components/GlobalStyles/GlobalStyles";
 
 export default {
   title: "Albicla",
@@ -11,7 +12,12 @@ export default {
 const Template: StoryFn<FunctionComponent<AlbiclaProperties>> = ({
   ...rest
 }: AlbiclaProperties): JSX.Element => {
-  return <Albicla {...rest} />;
+  return (
+    <>
+      <GlobalStyle isStorybook />
+      <Albicla {...rest} />
+    </>
+  );
 };
 
 export const AlbiclaExample: StoryFn<typeof Albicla> = Template.bind({});
