@@ -1,17 +1,19 @@
-const { join } = require("path");
+import type { StorybookConfig } from "@storybook/react-vite";
 
-module.exports = {
-  stories: ["../**/*.story.@(js|jsx|ts|tsx|mdx)"],
+const config: StorybookConfig = {
+  stories: ["../source/**/*.story.@(js|jsx|ts|tsx|mdx)"],
   addons: [
     "@storybook/addon-links",
     "@storybook/addon-essentials",
     "@storybook/addon-interactions",
   ],
-  framework: "@storybook/react",
-  core: {
-    builder: "@storybook/builder-vite",
+  framework: {
+    name: "@storybook/react-vite",
+    options: {},
   },
-  features: {
-    storyStoreV7: true,
+  docs: {
+    autodocs: "tag",
   },
 };
+
+export default config;

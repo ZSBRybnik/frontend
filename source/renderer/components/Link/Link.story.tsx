@@ -1,30 +1,33 @@
-import type { ComponentMeta, ComponentStory } from "@storybook/react";
+import type { Meta, StoryFn } from "@storybook/react";
 import type { FunctionComponent } from "react";
+import { BrowserRouter } from "react-router-dom";
 import Link from "~frontend/source/renderer/components/Link/Link";
 import type LinkProperties from "~frontend/source/renderer/components/Link/Link.types";
 
 export default {
   title: "Link",
   component: Link,
-} as ComponentMeta<typeof Link>;
+} as Meta<typeof Link>;
 
-const Template: ComponentStory<FunctionComponent<LinkProperties>> = ({
+const Template: StoryFn<FunctionComponent<LinkProperties>> = ({
   children,
   ...rest
 }: LinkProperties): JSX.Element => {
-  return <Link {...rest}>{children}</Link>;
+  return (
+    <BrowserRouter>
+      <Link {...rest}>{children}</Link>
+    </BrowserRouter>
+  );
 };
 
-export const LinkExample: ComponentStory<typeof Link> = Template.bind({});
+export const LinkExample: StoryFn<typeof Link> = Template.bind({});
 
 LinkExample.args = {
   children: "Google.com",
   href: "https://google.com",
 };
 
-export const InsecureLinkExample: ComponentStory<typeof Link> = Template.bind(
-  {},
-);
+export const InsecureLinkExample: StoryFn<typeof Link> = Template.bind({});
 
 InsecureLinkExample.args = {
   children: "Google.com",
