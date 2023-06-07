@@ -1,16 +1,20 @@
-import katex, { type KatexOptions } from "katex";
-import { FC, useEffect, useRef } from "react";
+import katex from "katex";
+import propTypes from "prop-types";
+import {
+  useEffect,
+  useRef,
+  type FunctionComponent,
+  type MutableRefObject,
+} from "react";
+import type KatexProperties from "./Katex.types";
 
-type KatexProperties = {
-  children: string;
-} & Omit<KatexOptions, "throwOnError" | "macros">;
-
-const Katex: FC<KatexProperties> = ({
+const Katex: FunctionComponent<KatexProperties> = ({
   children,
   ...rest
 }: KatexProperties): JSX.Element => {
-  const elementReference = useRef<null | HTMLDivElement>(null);
-  useEffect(() => {
+  const elementReference: MutableRefObject<HTMLDivElement | null> =
+    useRef<null | HTMLDivElement>(null);
+  useEffect((): void => {
     elementReference.current &&
       katex.render(children, elementReference.current, {
         throwOnError: false,
@@ -18,6 +22,10 @@ const Katex: FC<KatexProperties> = ({
       });
   }, [children]);
   return <div ref={elementReference} />;
+};
+
+Katex.propTypes = {
+  children: propTypes.string.isRequired,
 };
 
 export default Katex;
