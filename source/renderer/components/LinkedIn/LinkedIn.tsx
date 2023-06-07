@@ -1,9 +1,7 @@
+import propTypes from "prop-types";
 import { FC } from "react";
 import { Iframe } from "./LinkedIn.styles";
-
-type LinkedInProperties = {
-  url: string;
-};
+import LinkedInProperties from "./LinkedIn.types";
 
 const LinkedIn: FC<LinkedInProperties> = ({
   url,
@@ -19,6 +17,10 @@ const LinkedIn: FC<LinkedInProperties> = ({
       allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
     />
   );
+};
+
+LinkedIn.propTypes = {
+  url: propTypes.string.isRequired,
 };
 
 export default LinkedIn;
