@@ -331,7 +331,7 @@
     "space-separated-tokens": "^2.0.1",
     "sqlite3": "^5.0.8",
     "store2": "^2.13.2",
-    "storybook": "^7.0.6",
+    "storybook": "^7.0.20",
     "storybook-addon-designs": "^6.3.1",
     "storybook-dark-mode": "^1.1.0",
     "style-loader": "^3.3.1",
