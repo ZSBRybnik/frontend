@@ -2075,10 +2075,10 @@
     core-js-pure "^3.25.1"
     regenerator-runtime "^0.13.11"
 
-"@babel/runtime@^7.0.0", "@babel/runtime@^7.1.2", "@babel/runtime@^7.10.2", "@babel/runtime@^7.10.3", "@babel/runtime@^7.10.5", "@babel/runtime@^7.11.2", "@babel/runtime@^7.12.13", "@babel/runtime@^7.12.5", "@babel/runtime@^7.14.5", "@babel/runtime@^7.14.6", "@babel/runtime@^7.15.4", "@babel/runtime@^7.17.2", "@babel/runtime@^7.17.8", "@babel/runtime@^7.18.3", "@babel/runtime@^7.18.6", "@babel/runtime@^7.18.9", "@babel/runtime@^7.19.0", "@babel/runtime@^7.19.4", "@babel/runtime@^7.20.7", "@babel/runtime@^7.3.1", "@babel/runtime@^7.5.5", "@babel/runtime@^7.6.2", "@babel/runtime@^7.7.2", "@babel/runtime@^7.7.6", "@babel/runtime@^7.8.4", "@babel/runtime@^7.9.0", "@babel/runtime@^7.9.2":
-  version "7.21.0"
-  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.21.0.tgz#5b55c9d394e5fcf304909a8b00c07dc217b56673"
-  integrity sha512-xwII0//EObnq89Ji5AKYQaRYiW/nZ3llSv29d49IuxPhKbtJoLP+9QUUZ4nVragQVtaVGeZrpB+ZtG/Pdy/POw==
+"@babel/runtime@^7.0.0", "@babel/runtime@^7.1.2", "@babel/runtime@^7.10.2", "@babel/runtime@^7.10.3", "@babel/runtime@^7.10.5", "@babel/runtime@^7.11.2", "@babel/runtime@^7.12.13", "@babel/runtime@^7.12.5", "@babel/runtime@^7.14.5", "@babel/runtime@^7.14.6", "@babel/runtime@^7.15.4", "@babel/runtime@^7.17.2", "@babel/runtime@^7.17.8", "@babel/runtime@^7.18.3", "@babel/runtime@^7.18.6", "@babel/runtime@^7.19.0", "@babel/runtime@^7.19.4", "@babel/runtime@^7.20.7", "@babel/runtime@^7.21.5", "@babel/runtime@^7.22.3", "@babel/runtime@^7.3.1", "@babel/runtime@^7.5.5", "@babel/runtime@^7.6.2", "@babel/runtime@^7.7.2", "@babel/runtime@^7.7.6", "@babel/runtime@^7.8.4", "@babel/runtime@^7.9.0", "@babel/runtime@^7.9.2":
+  version "7.22.5"
+  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.22.5.tgz#8564dd588182ce0047d55d7a75e93921107b57ec"
+  integrity sha512-ecjvYlnAaZ/KVneE/OdKYBYfgXV3Ptu6zQWmgEF7vwKhQnvVS6bjMD2XYgj+SNvQ1GfK/pjgokfPkC/2CO8CuA==
   dependencies:
     regenerator-runtime "^0.13.11"
 
@@ -17923,12 +17923,13 @@ i18next-browser-languagedetector@^6.1.4:
   dependencies:
     "@babel/runtime" "^7.19.0"
 
-i18next-chained-backend@^3.0.2:
-  version "3.1.0"
-  resolved "https://registry.yarnpkg.com/i18next-chained-backend/-/i18next-chained-backend-3.1.0.tgz#b37d2980598deb8ec5656eba0df8fe15d3d62f1f"
-  integrity sha512-ltWy0fPMrtXjq0rSLo7s4ZF92LGvVsO47hhV3czaZXzMzhpFva6LVKMyDT7x82R8vAyB7VAeyGLBvMiW4W543A==
+i18next-chained-backend@^4.3.0:
+  version "4.3.0"
+  resolved "https://registry.yarnpkg.com/i18next-chained-backend/-/i18next-chained-backend-4.3.0.tgz#467637458de3abc9125c5e3bca631d9c3f51144e"
+  integrity sha512-XcmWLREHY2h6Y0mEhDqypSH2kLzaD0IVUF4D1UtMiyTbaJN82bnXjz9HGDzkHTUrzG8vMK7FjDyguYry1dO25A==
   dependencies:
-    "@babel/runtime" "^7.18.9"
+    "@babel/runtime" "^7.22.3"
+    i18next-resources-to-backend "1.1.4"
 
 i18next-http-backend@^1.4.1:
   version "1.4.5"
@@ -17943,6 +17944,13 @@ i18next-localstorage-backend@^3.1.3:
   integrity sha512-tx8dxQTEsTnRC654IrXPFr94c3NH7bIVHGKHnGvbgefpLz13/uFT5ITsmhqhg/gOza0TIj8e5jTsGnQytIhh+A==
   dependencies:
     "@babel/runtime" "^7.14.6"
+
+i18next-resources-to-backend@1.1.4:
+  version "1.1.4"
+  resolved "https://registry.yarnpkg.com/i18next-resources-to-backend/-/i18next-resources-to-backend-1.1.4.tgz#d139ca0cacc270dcc90b7926e192f4cd5aa4db60"
+  integrity sha512-hMyr9AOmIea17AOaVe1srNxK/l3mbk81P7Uf3fdcjlw3ehZy3UNTd0OP3EEi6yu4J02kf9jzhCcjokz6AFlEOg==
+  dependencies:
+    "@babel/runtime" "^7.21.5"
 
 i18next-xhr-backend@*:
   version "3.2.2"
