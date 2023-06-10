@@ -8,14 +8,7 @@ const useIpfs: () => Pick<IpfsStoreState, "value"> = (): Pick<
   "value"
 > => {
   const { setValue, value }: Pick<IpfsStoreState, "value" | "setValue"> =
-    useIpfsStore(
-      ({
-        value,
-        setValue,
-      }: IpfsStoreState): Pick<IpfsStoreState, "value" | "setValue"> => {
-        return { setValue, value };
-      },
-    );
+    useIpfsStore();
   const createIpfsConnection: () => Promise<void> = useCallback(async () => {
     if (!value) {
       try {
