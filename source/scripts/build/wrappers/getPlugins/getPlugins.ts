@@ -1,3 +1,4 @@
+import { webpack } from "million/compiler";
 import getBrotliCompressionPlugin from "~frontend/source/scripts/build/plugins/getBrotliCompressionPlugin/getBrotliCompressionPlugin";
 import getBundleAnalyzerPlugin from "~frontend/source/scripts/build/plugins/getBundleAnalyzerPlugin/getBundleAnalyzerPlugin";
 import getCleanWebpackPlugin from "~frontend/source/scripts/build/plugins/getCleanWebpackPlugin/getCleanWebpackPlugin";
@@ -63,6 +64,7 @@ const getPlugins = ({
     getNodePolyfillPlugin(),
     getSitemapPlugin({ extendedMode }),
     getCopyWebpackPlugin({ extendedMode }),
+    webpack(),
   ].filter(Boolean);
 };
 
