@@ -27,7 +27,7 @@ const getBabelLoader = ({ targetToModern, mode }: GetBabelLoaderArguments) => {
           importSource:
             mode === Mode.Development
               ? "@welldone-software/why-did-you-render"
-              : undefined,
+              : "@emotion/react",
         },
       ],
     ],
