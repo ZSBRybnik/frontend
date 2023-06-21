@@ -12131,10 +12131,10 @@ caniuse-api@^3.0.0:
     lodash.memoize "^4.1.2"
     lodash.uniq "^4.5.0"
 
-caniuse-lite@^1.0.0, caniuse-lite@^1.0.30001426, caniuse-lite@^1.0.30001449, caniuse-lite@^1.0.30001470:
-  version "1.0.30001470"
-  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001470.tgz#09c8e87c711f75ff5d39804db2613dd593feeb10"
-  integrity sha512-065uNwY6QtHCBOExzbV6m236DDhYCCtPmQUCoQtwkVqzud8v5QPidoMr6CoMkC2nfp6nksjttqWQRRh75LqUmA==
+caniuse-lite@^1.0.0, caniuse-lite@^1.0.30001426, caniuse-lite@^1.0.30001449, caniuse-lite@^1.0.30001505:
+  version "1.0.30001505"
+  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001505.tgz#10a343e49d31cbbfdae298ef73cb0a9f46670dc5"
+  integrity sha512-jaAOR5zVtxHfL0NjZyflVTtXm3D3J9P15zSJ7HmQF8dSKGA6tqzQq+0ZI3xkjyQj46I4/M0K2GbMpcAFOcbr3A==
 
 cap@^0.2.1:
   version "0.2.1"
