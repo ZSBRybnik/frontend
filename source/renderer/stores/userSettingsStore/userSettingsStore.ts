@@ -13,9 +13,9 @@ const useUserSettingsStore: UseBoundStore<StoreApi<UserSettingsState>> =
       settings: {
         enableBroadcastCenter: false,
       },
-      setSettings: (settings: any) => {
-        set(() => {
-          return { settings };
+      setSettings: (settings: Partial<UserSettingsState["settings"]>) => {
+        set(({ settings: oldSettings }) => {
+          return { settings: { ...oldSettings, ...settings } };
         });
       },
     };
