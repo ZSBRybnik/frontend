@@ -9,6 +9,7 @@
   "compilerOptions": {
     "incremental": true,
     "jsx": "react-jsx",
+    "verbatimModuleSyntax": true,
     "target": "esnext",
     "lib": ["esnext", "dom", "dom.iterable"],
     "esModuleInterop": true,
@@ -42,11 +43,9 @@
       "~frontend/*": ["*"],
       "~backend/*": ["../backend/*"]
     },
-    "plugins": [
-      {
-        "transform": "typescript-transform-paths"
-      }
-    ]
+    "plugins": [{
+      "transform": "typescript-transform-paths"
+    }]
   },
   "include": [".", "../backend"],
   "exclude": [
