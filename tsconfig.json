@@ -9,7 +9,6 @@
   "compilerOptions": {
     "incremental": true,
     "jsx": "react-jsx",
-    "verbatimModuleSyntax": true,
     "target": "esnext",
     "lib": ["esnext", "dom", "dom.iterable"],
     "esModuleInterop": true,
@@ -54,6 +53,7 @@
     "android",
     "ios",
     "destination",
+    "../backend/source/wasm-assemblyscript",
     "../backend/destination",
     "../backend/coverage",
     "../backend/node_modules"
