@@ -1,5 +1,5 @@
 /* eslint-disable sonarjs/no-identical-functions */
-import { Configuration } from "webpack";
+import type { Configuration } from "webpack";
 import getConfig from "~frontend/source/scripts/build/root/getConfig/getConfig";
 import ExtendedMode from "~frontend/source/scripts/build/types/extendedMode/extendedMode";
 import Mode from "~frontend/source/scripts/build/types/mode/mode";

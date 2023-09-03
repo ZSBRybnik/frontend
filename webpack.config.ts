@@ -1,5 +1,5 @@
 import "dotenv/config";
-import { Configuration } from "webpack";
+import type { Configuration } from "webpack";
 import getConfigs from "~frontend/source/scripts/build/root/getConfigs/getConfigs";
 import Mode from "~frontend/source/scripts/build/types/mode/mode";
 import { TargetType } from "~frontend/source/shared/constants/target/target";

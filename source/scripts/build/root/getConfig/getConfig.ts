@@ -1,4 +1,4 @@
-import Configuration from "~frontend/source/scripts/build/types/configuration/configuration";
+import type Configuration from "~frontend/source/scripts/build/types/configuration/configuration";
 import ExtendedMode from "~frontend/source/scripts/build/types/extendedMode/extendedMode";
 import Mode from "~frontend/source/scripts/build/types/mode/mode";
 import getEntryPoint from "~frontend/source/scripts/build/utils/getEntryPoint/getEntryPoint";
