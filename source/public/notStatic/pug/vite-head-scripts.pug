@@ -1,0 +1,8 @@
+script.
+  window.global = globalThis;
+script(type="module").
+  import process from "process";
+  import { Buffer } from "buffer";
+  window.global = window;
+  window.Buffer = Buffer;
+  window.process = process;

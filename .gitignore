@@ -45,3 +45,4 @@ release-builds
 uml
 .vagrant
 tsconfig.noemit.tsbuildinfo
+index.html
