@@ -6,13 +6,19 @@ import { writeFileSync } from "fs";
 import { join } from "path";
 import process from "process/browser";
 import { compileFile } from "pug";
+import { visualizer } from "rollup-plugin-visualizer";
 import { defineConfig } from "vite";
 import tsconfigPaths from "vite-tsconfig-paths";
 import getTargetVersion from "./source/scripts/build/utils/getTargetVersion/getTargetVersion";
 
 export default defineConfig(({ mode }) => {
   const result = compileFile(
-    join("source", "public", "notStatic", "indexWebVite.pug"),
+    join(
+      "source",
+      "public",
+      "notStatic",
+      `indexWebVite${mode === "development" ? "Dev" : ""}.pug`,
+    ),
     {
       filename: "indexWebVite.pug",
       basedir: join("source", "public", "notStatic"),
@@ -39,6 +45,10 @@ export default defineConfig(({ mode }) => {
     },
     publicDir: join("source", "public", "static"),
     plugins: [
+      visualizer({
+        emitFile: true,
+        filename: join("bundle-analyzes", "vite-analyzer-report.html"),
+      }),
       legacy({
         targets: getTargetVersion({ targetToModern: false }).split(","),
       }),
