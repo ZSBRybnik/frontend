@@ -7,7 +7,7 @@ import { join } from "path";
 import process from "process/browser";
 import { compileFile } from "pug";
 import { visualizer } from "rollup-plugin-visualizer";
-import { defineConfig } from "vite";
+import { defineConfig, type PluginOption } from "vite";
 import tsconfigPaths from "vite-tsconfig-paths";
 import getTargetVersion from "./source/scripts/build/utils/getTargetVersion/getTargetVersion";
 
@@ -54,7 +54,7 @@ export default defineConfig(({ mode }) => {
       }),
       mode === "development" ? reactPluginSWC() : reactPluginBabel(),
       tsconfigPaths(),
-    ],
+    ] as PluginOption[],
     resolve: {
       alias: {
         "react/jsx-runtime.js": "react/jsx-runtime",

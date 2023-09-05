@@ -42,7 +42,6 @@
       "~frontend/*": ["*"],
       "~backend/*": ["../backend/*"]
     },
-    "types": ["vite/client"],
     "plugins": [{
       "transform": "typescript-transform-paths"
     }]
