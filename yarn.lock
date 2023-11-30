@@ -13177,10 +13177,10 @@ chalk@^3.0.0:
     ansi-styles "^4.1.0"
     supports-color "^7.1.0"
 
-chalk@^5.0.0, chalk@^5.0.1:
-  version "5.2.0"
-  resolved "https://registry.yarnpkg.com/chalk/-/chalk-5.2.0.tgz#249623b7d66869c673699fb66d65723e54dfcfb3"
-  integrity sha512-ree3Gqw/nazQAPuJJEy+avdl7QfZMcUvmHIKgEZkGL+xOBzRvup5Hxo6LHuMceSxOabuJLJm5Yp/92R9eMmMvA==
+chalk@^5.0.0, chalk@^5.0.1, chalk@^5.3.0:
+  version "5.3.0"
+  resolved "https://registry.yarnpkg.com/chalk/-/chalk-5.3.0.tgz#67c20a7ebef70e7f3970a01f90fa210cb6860385"
+  integrity sha512-dLitG79d+GV1Nb/VYcCDFivJeK1hiukt9QjRNVOsUtTy1rR1YJsmpGGTZ3qJos+uw7WmWF4wUwBd9jxjocFC2w==
 
 char-regex@^1.0.2:
   version "1.0.2"
@@ -17718,7 +17718,7 @@ get-iterator@^2.0.0:
   resolved "https://registry.yarnpkg.com/get-iterator/-/get-iterator-2.0.0.tgz#c9ac9f8002e5d8d6b4dc9dae07c30945022a58c1"
   integrity sha512-BDJawD5PU2gZv6Vlp8O28H4GnZcsr3h9gZUvnAP5xXP3WOy/QAoOsyMepSkw21jur+4t5Vppde72ChjhTIzxzg==
 
-get-npm-tarball-url@^2.0.1, get-npm-tarball-url@^2.0.3:
+get-npm-tarball-url@^2.0.3:
   version "2.0.3"
   resolved "https://registry.yarnpkg.com/get-npm-tarball-url/-/get-npm-tarball-url-2.0.3.tgz#67dff908d699e9e2182530ae6e939a93e5f8dfdb"
   integrity sha512-R/PW6RqyaBQNWYaSyfrh54/qtcnOp22FHCCiRhSSZj0FP3KQWCsxxt0DzIdVTbwTqe9CtQfvl/FPD4UIPt4pqw==
@@ -19072,7 +19072,7 @@ i18next@^21.8.11:
   dependencies:
     "@babel/runtime" "^7.17.2"
 
-iconv-lite@0.4.24, iconv-lite@^0.4.24, iconv-lite@^0.4.4:
+iconv-lite@0.4.24, iconv-lite@^0.4.24:
   version "0.4.24"
   resolved "https://registry.yarnpkg.com/iconv-lite/-/iconv-lite-0.4.24.tgz#2022b4b25fbddc21d2f524974a474aafe733908b"
   integrity sha512-v3MXnZAcvnywkTUEZomIActle7RXXeedOR31wwl7VlyoXO4Qi9arvSenNQWne1TcRwhCL1HwLI21bEqdpj8/rA==
@@ -24336,13 +24336,13 @@ natural-compare@^1.4.0:
   resolved "https://registry.yarnpkg.com/natural-compare/-/natural-compare-1.4.0.tgz#4abebfeed7541f2c27acfb29bdbbd15c8d5ba4f7"
   integrity sha512-OWND8ei3VtNC9h7V60qff3SVobHr996CTwgxubgyQYEpg290h9J0buyECNNJexkFm5sOajh5G116RYA1c8ZMSw==
 
-needle@^2.2.4:
-  version "2.9.1"
-  resolved "https://registry.yarnpkg.com/needle/-/needle-2.9.1.tgz#22d1dffbe3490c2b83e301f7709b6736cd8f2684"
-  integrity sha512-6R9fqJ5Zcmf+uYaFgdIHmLwNldn5HbK8L5ybn7Uz+ylX/rnOsSp1AHcvQSrCaFN+qNM1wpymHqD7mVasEOlHGQ==
+needle@^3.2.0:
+  version "3.2.0"
+  resolved "https://registry.yarnpkg.com/needle/-/needle-3.2.0.tgz#07d240ebcabfd65c76c03afae7f6defe6469df44"
+  integrity sha512-oUvzXnyLiVyVGoianLijF9O/RecZUf7TkBfimjGrLM4eQhXyeJwM6GeAWccwfQ9aa4gMCZKqhAOuLaMIcQxajQ==
   dependencies:
     debug "^3.2.6"
-    iconv-lite "^0.4.4"
+    iconv-lite "^0.6.3"
     sax "^1.2.4"
 
 negotiator@0.6.3, negotiator@^0.6.2, negotiator@^0.6.3:
@@ -32895,17 +32895,16 @@ webpack-dev-server@*, webpack-dev-server@^4.11.1, webpack-dev-server@^4.9.3:
     webpack-dev-middleware "^5.3.1"
     ws "^8.4.2"
 
-webpack-license-plugin@^4.2.2:
-  version "4.2.2"
-  resolved "https://registry.yarnpkg.com/webpack-license-plugin/-/webpack-license-plugin-4.2.2.tgz#22a1171717cee770718e0d2c28e93a4b07d19bec"
-  integrity sha512-OfIdm659IKurEInKlBN6Sfzrh+MNKIWkChKKg+aDCoPf3Ok1OSXBDd2RKSbuUAtxjmdW2j6LUVZWnRYRnVdOxA==
+webpack-license-plugin@^4.4.2:
+  version "4.4.2"
+  resolved "https://registry.yarnpkg.com/webpack-license-plugin/-/webpack-license-plugin-4.4.2.tgz#a22c446b028fbba837e8636f5d917a3ad9f763ed"
+  integrity sha512-n6BWea7g/ogWF/Nd3eOXVj9NLThaa5XYUNENNu4/0kPzxU6kPAKBe5XtQ2uKrrzM6OBOAyjkzzorZ8dAjHOycw==
   dependencies:
-    chalk "^5.0.1"
-    get-npm-tarball-url "^2.0.1"
-    lodash "^4.17.20"
-    needle "^2.2.4"
+    chalk "^5.3.0"
+    lodash "^4.17.21"
+    needle "^3.2.0"
     spdx-expression-validate "^2.0.0"
-    webpack-sources "^3.2.1"
+    webpack-sources "^3.2.3"
 
 webpack-merge@^5.7.3, webpack-merge@^5.8.0:
   version "5.8.0"
@@ -32928,7 +32927,7 @@ webpack-sources@^1.4.3:
     source-list-map "^2.0.0"
     source-map "~0.6.1"
 
-webpack-sources@^3.2.1, webpack-sources@^3.2.2, webpack-sources@^3.2.3:
+webpack-sources@^3.2.2, webpack-sources@^3.2.3:
   version "3.2.3"
   resolved "https://registry.yarnpkg.com/webpack-sources/-/webpack-sources-3.2.3.tgz#2d4daab8451fd4b240cc27055ff6a0c2ccea0cde"
   integrity sha512-/DyMEOrDgLKKIG0fmvtz+4dUX/3Ghozwgm6iPp8KRhvn+eQf9+Q7GWxVNMk3+uCPWfdXYC4ExGBckIXdFEfH1w==
