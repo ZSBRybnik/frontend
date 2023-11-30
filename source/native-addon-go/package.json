@@ -19,6 +19,6 @@
     "typescript": "^4.5.4",
     "typescript-transform-paths": "^3.3.1",
     "yarn": "^1.22.17",
-    "zx": "^4.2.0"
+    "zx": "^7.2.3"
   }
 }
