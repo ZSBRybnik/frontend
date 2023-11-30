@@ -9,7 +9,7 @@ exclude = ["./destination/index.node"]
 crate-type = ["cdylib"]
 
 [dependencies]
-sentry = "0.27.0"
+sentry = "0.32.0"
 uint = "0.9.4"
 sysinfo = "0.26.7"
 
