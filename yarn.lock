@@ -10160,10 +10160,10 @@
   resolved "https://registry.yarnpkg.com/@types/unist/-/unist-2.0.6.tgz#250a7b16c3b91f672a24552ec64678eeb1d3a08d"
   integrity sha512-PBjIUxZHOuj0R15/xuwJYjFi+KZdNFrehocChv4g5hu6aFroHue8m0lBP0POdK2nKzbw0cgV1mws8+V/JAcEkQ==
 
-"@types/unused-webpack-plugin@^2.4.2":
-  version "2.4.2"
-  resolved "https://registry.yarnpkg.com/@types/unused-webpack-plugin/-/unused-webpack-plugin-2.4.2.tgz#92eba22c0439c655a4052db96b75ef14228c45ee"
-  integrity sha512-eYsP0Um4V8SVSIUSINkstCL6e8yOwUTXn/YOwBZ3Td1wd7EOhw4Hbt6+UTJHAnwJlj94sR77TK4SGzGyq/uhwA==
+"@types/unused-webpack-plugin@^2.4.5":
+  version "2.4.5"
+  resolved "https://registry.yarnpkg.com/@types/unused-webpack-plugin/-/unused-webpack-plugin-2.4.5.tgz#11aaaabe9013b2a9184072cd30bda2af529bf988"
+  integrity sha512-1c7uJgedT4rIN0yIP5SpNLJxtEglupZE9dVJzVUtHQiL0+KjPoUuDC39j9Tixbmn6ZNgSrcyMbJrNBtlE/YOIQ==
   dependencies:
     "@types/webpack" "^4"
 
