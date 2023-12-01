@@ -9333,10 +9333,10 @@
     "@types/node" "*"
     "@types/responselike" "^1.0.0"
 
-"@types/case-sensitive-paths-webpack-plugin@^2.1.6":
-  version "2.1.6"
-  resolved "https://registry.yarnpkg.com/@types/case-sensitive-paths-webpack-plugin/-/case-sensitive-paths-webpack-plugin-2.1.6.tgz#dece04d6c9ac2209f12b357b8290c8a294e31ef3"
-  integrity sha512-1bk/krfgJ2bVPUusnmvWHg8Xwr/4I29yFxvZBFi5FZOshQzfcZ7XdutFHpYMs1w5RD319pjJbDk7J2ibWSW6QQ==
+"@types/case-sensitive-paths-webpack-plugin@^2.1.9":
+  version "2.1.9"
+  resolved "https://registry.yarnpkg.com/@types/case-sensitive-paths-webpack-plugin/-/case-sensitive-paths-webpack-plugin-2.1.9.tgz#fdde9c2e9ef3fe3fa42721199711fc1c7dff7192"
+  integrity sha512-PgzPEjX7lmqJh4m717reml5Lkabnxxu4k7EQc78h0zmgoZINbFtM3lPyR6HKr8j+bbWbhZ29ZezH2ICLSHPVzw==
   dependencies:
     "@types/webpack" "^4"
 
