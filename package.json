@@ -210,7 +210,7 @@
     "eslint-plugin-jest": "^26.5.3",
     "eslint-plugin-jsdoc": "^39.3.3",
     "eslint-plugin-json": "^3.1.0",
-    "eslint-plugin-jsx-a11y": "^6.6.0",
+    "eslint-plugin-jsx-a11y": "^6.8.0",
     "eslint-plugin-lodash": "^7.4.0",
     "eslint-plugin-markdown": "^3.0.0",
     "eslint-plugin-no-loops": "^0.3.0",
