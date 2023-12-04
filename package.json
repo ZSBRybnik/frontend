@@ -265,7 +265,7 @@
     "jsdoc": "^3.6.10",
     "json-minimizer-webpack-plugin": "^4.0.0",
     "jsonwebtoken": "^8.5.1",
-    "jwt-decode": "^3.1.2",
+    "jwt-decode": "^4.0.0",
     "katex": "^0.16.3",
     "license-checker": "^25.0.1",
     "lighthouse": "^9.6.3",
