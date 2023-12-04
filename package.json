@@ -379,7 +379,7 @@
     "workbox-webpack-plugin": "^6.5.3",
     "workbox-window": "^6.5.3",
     "xlsx": "^0.18.5",
-    "yarn": "^1.22.19",
+    "yarn": "^1.22.21",
     "yup": "^0.32.11",
     "zlib": "^1.0.5",
     "zustand": "^4.1.1",
