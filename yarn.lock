@@ -9417,10 +9417,10 @@
   resolved "https://registry.yarnpkg.com/@types/doctrine/-/doctrine-0.0.3.tgz#e892d293c92c9c1d3f9af72c15a554fbc7e0895a"
   integrity sha512-w5jZ0ee+HaPOaX25X2/2oGR/7rgAQSYII7X7pp0m9KgBfMP7uKfMfTvcpl5Dj+eDBbpxKGiqE+flqDr6XTd2RA==
 
-"@types/duplicate-package-checker-webpack-plugin@^2.1.2":
-  version "2.1.2"
-  resolved "https://registry.yarnpkg.com/@types/duplicate-package-checker-webpack-plugin/-/duplicate-package-checker-webpack-plugin-2.1.2.tgz#935fb9f99fcb0350d1c36cbf7fe6701eb6dc4193"
-  integrity sha512-k77j1ncCNg6uiuTdsWwHOg2ezpFyxuF/H4YT2oSrTjkdm1UZfA0JJ7sQ5NrbdKEfROR2oBM9HcPjkcq9Dcx/+g==
+"@types/duplicate-package-checker-webpack-plugin@^2.1.5":
+  version "2.1.5"
+  resolved "https://registry.yarnpkg.com/@types/duplicate-package-checker-webpack-plugin/-/duplicate-package-checker-webpack-plugin-2.1.5.tgz#f972aa87869a59e8c2d77b1bdbfeadc96d793456"
+  integrity sha512-CBgb8TkQkmpYsvgfZexsO82vnX3H7qyV1JPIQbz1u+BRcRe7kzoV2Pj39EggRTxIpBq3THXVNyvFHK4jZcrENg==
   dependencies:
     "@types/webpack" "^4"
 
