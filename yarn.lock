@@ -6221,23 +6221,23 @@
     multiformats "^9.5.4"
     murmurhash3js-revisited "^3.0.0"
 
-"@nativescript/types-android@~8.4.0":
-  version "8.4.0"
-  resolved "https://registry.yarnpkg.com/@nativescript/types-android/-/types-android-8.4.0.tgz#2fa1325f43cd1343e53ddc51ef0ad1b42297c433"
-  integrity sha512-WmDVH72ZeBlxy7k5OAJFk7wPSW9K2xjRzFwHAkQ1mjKr7k+UcFzGkpbAXjtgQZ5SybBPCzYGLGcvv7kJDNJ/mQ==
+"@nativescript/types-android@~8.6.0":
+  version "8.6.1"
+  resolved "https://registry.yarnpkg.com/@nativescript/types-android/-/types-android-8.6.1.tgz#b114e1cd15b8af2627289f2ba42304507d889caf"
+  integrity sha512-h9wI+XLKOz7gyTkXVXFy33jaIG7DZ97wkLJr8rj66DZXTeTukcbex9NKlfn4OLWCmDK6GF+ec9X4POJW18935Q==
 
-"@nativescript/types-ios@~8.4.0":
-  version "8.4.0"
-  resolved "https://registry.yarnpkg.com/@nativescript/types-ios/-/types-ios-8.4.0.tgz#4c0a0ee1d4f5e9ce237a768a6f8797a24723b13f"
-  integrity sha512-6Sx4yuSar2qk4UpYtZCs9B53Jv0wLRGvrg6Vsg5tC8mdYeQOKsizNxPa625pHbFrNjTF8NkdoGOGZiFM/XkiOQ==
+"@nativescript/types-ios@~8.6.0":
+  version "8.6.1"
+  resolved "https://registry.yarnpkg.com/@nativescript/types-ios/-/types-ios-8.6.1.tgz#4686427923552a978a1deb374dfc14cb585c1f97"
+  integrity sha512-g2NsJbqy72+HlPsczUp1oE+PPXgAZh8/Ww7uc6qoCt2w2fvyfHx18hMPdcICnzclRZ7Cn7Ekf8HrWSaJFbfqiA==
 
-"@nativescript/types@^8.2.0":
-  version "8.4.0"
-  resolved "https://registry.yarnpkg.com/@nativescript/types/-/types-8.4.0.tgz#7b68c25ce1971b5ad37004c250d648bf9ef4a764"
-  integrity sha512-AsHLbzYi/3rNAQYxG5etVlTiq96KG+RHJ+UgZ3zynER4vw+mLN6TkVJ9hR6ciKMfFhQBM0JZvxBuHqm3xmlRzw==
+"@nativescript/types@^8.6.1":
+  version "8.6.1"
+  resolved "https://registry.yarnpkg.com/@nativescript/types/-/types-8.6.1.tgz#40a2318ecf6c44d97e1062dd7712ec2e7d5ef280"
+  integrity sha512-G5QI4tW2XCF8ux4zlBmcbmyi0piCNZTXEKfA2UHqWWRDH1J8fRvgAdRhahT9bBO5aO53TsCkcgvB7qpWD6yVFg==
   dependencies:
-    "@nativescript/types-android" "~8.4.0"
-    "@nativescript/types-ios" "~8.4.0"
+    "@nativescript/types-android" "~8.6.0"
+    "@nativescript/types-ios" "~8.6.0"
 
 "@ndelangen/get-tarball@^3.0.7":
   version "3.0.9"
