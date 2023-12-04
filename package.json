@@ -284,7 +284,7 @@
     "node-jq": "^2.3.3",
     "node-loader": "^2.0.0",
     "node-polyfill-webpack-plugin": "^2.0.0",
-    "nodemon": "^2.0.18",
+    "nodemon": "^3.0.2",
     "npm-check": "^5.9.2",
     "npm-check-updates": "^15.0.1",
     "office-addin-dev-certs": "^1.11.3",
