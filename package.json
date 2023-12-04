@@ -320,7 +320,7 @@
     "react-router-dom": "^6.3.0",
     "react-syntax-highlighter": "^15.5.0",
     "react-universal-component": "^4.5.0",
-    "react-use": "^17.4.0",
+    "react-use": "^17.4.2",
     "react-visibility-sensor": "^5.1.1",
     "redis-json": "^6.0.3",
     "rimraf": "^3.0.2",
