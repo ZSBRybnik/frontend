@@ -93,7 +93,7 @@
     "@sentry/browser": "^7.17.3",
     "@sentry/electron": "^4.1.0",
     "@sentry/node": "^7.17.3",
-    "@sentry/tracing": "^7.45.0",
+    "@sentry/tracing": "^7.85.0",
     "@solana/pay": "^0.2.5",
     "@solana/wallet-adapter-base": "^0.9.16",
     "@solana/wallet-adapter-react": "^0.15.18",
