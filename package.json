@@ -188,7 +188,7 @@
     "commander": "^9.3.0",
     "compression-webpack-plugin": "^10.0.0",
     "copy-webpack-plugin": "^11.0.0",
-    "core-js": "^3.23.3",
+    "core-js": "^3.34.0",
     "cross-env": "^7.0.3",
     "css-loader": "^6.7.1",
     "csvtojson": "^2.0.10",
