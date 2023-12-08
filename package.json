@@ -100,7 +100,7 @@
     "@solana/wallet-adapter-react-ui": "^0.9.16",
     "@solana/wallet-adapter-wallets": "^0.18.7",
     "@solana/web3.js": "^1.62.0",
-    "@storybook/addon-a11y": "^6.5.9",
+    "@storybook/addon-a11y": "^7.6.4",
     "@storybook/addon-actions": "^6.5.9",
     "@storybook/addon-console": "^1.2.3",
     "@storybook/addon-essentials": "^7.0.6",
