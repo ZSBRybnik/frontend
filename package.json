@@ -325,7 +325,7 @@
     "redis-json": "^6.0.3",
     "rimraf": "^3.0.2",
     "robotstxt-webpack-plugin": "^7.0.0",
-    "rollup-plugin-visualizer": "^5.9.2",
+    "rollup-plugin-visualizer": "^5.11.0",
     "rxjs": "^7.5.5",
     "sass": "^1.53.0",
     "sass-loader": "^13.2.1",
