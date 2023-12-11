@@ -75,7 +75,7 @@
     "@esbuild-plugins/node-globals-polyfill": "^0.2.3",
     "@fluentui/svg-icons": "^1.1.198",
     "@geometricpanda/storybook-addon-badges": "^0.2.1",
-    "@html-eslint/eslint-plugin": "^0.17.1",
+    "@html-eslint/eslint-plugin": "^0.22.0",
     "@ionic/cli": "^6.20.1",
     "@ionic/storage": "^3.0.6",
     "@mdi/js": "^6.9.96",
