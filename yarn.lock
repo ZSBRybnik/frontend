@@ -7804,27 +7804,13 @@
     "@stablelib/random" "^1.0.2"
     "@stablelib/wipe" "^1.0.1"
 
-"@storybook/addon-a11y@^6.5.9":
-  version "6.5.16"
-  resolved "https://registry.yarnpkg.com/@storybook/addon-a11y/-/addon-a11y-6.5.16.tgz#9288a6c1d111fa4ec501d213100ffff91757d3fc"
-  integrity sha512-/e9s34o+TmEhy+Q3/YzbRJ5AJ/Sy0gjZXlvsCrcRpiQLdt5JRbN8s+Lbn/FWxy8U1Tb1wlLYlqjJ+fYi5RrS3A==
+"@storybook/addon-a11y@^7.6.5":
+  version "7.6.5"
+  resolved "https://registry.yarnpkg.com/@storybook/addon-a11y/-/addon-a11y-7.6.5.tgz#73c8fba2e7169e0e61304953e73e8b428db71742"
+  integrity sha512-mbwjgdlNDcp0nL29s9FoF+HEFmWn0fMXfTcgMNjQWHs+sfmOy6w3llk0n0RJeDjc+x2Y8Oj2c+JwLU1hhJBnag==
   dependencies:
-    "@storybook/addons" "6.5.16"
-    "@storybook/api" "6.5.16"
-    "@storybook/channels" "6.5.16"
-    "@storybook/client-logger" "6.5.16"
-    "@storybook/components" "6.5.16"
-    "@storybook/core-events" "6.5.16"
-    "@storybook/csf" "0.0.2--canary.4566f4d.1"
-    "@storybook/theming" "6.5.16"
+    "@storybook/addon-highlight" "7.6.5"
     axe-core "^4.2.0"
-    core-js "^3.8.2"
-    global "^4.4.0"
-    lodash "^4.17.21"
-    react-sizeme "^3.0.1"
-    regenerator-runtime "^0.13.7"
-    ts-dedent "^2.0.0"
-    util-deprecate "^1.0.2"
 
 "@storybook/addon-actions@7.0.18":
   version "7.0.18"
@@ -7968,6 +7954,13 @@
     "@storybook/core-events" "7.0.18"
     "@storybook/global" "^5.0.0"
     "@storybook/preview-api" "7.0.18"
+
+"@storybook/addon-highlight@7.6.5":
+  version "7.6.5"
+  resolved "https://registry.yarnpkg.com/@storybook/addon-highlight/-/addon-highlight-7.6.5.tgz#588818963c48cc1d0f06a20323e72e3f0077b7c4"
+  integrity sha512-CxzmIb30F9nLPQwT0lCPYhOAwGlGF4IkgkO8hYA7VfGCGUkJZEyyN/YkP/ZCUSdCIRChDBouR3KiFFd4mDFKzg==
+  dependencies:
+    "@storybook/global" "^5.0.0"
 
 "@storybook/addon-interactions@^7.0.6":
   version "7.0.18"
@@ -12166,11 +12159,6 @@ base64url@^3.0.1:
   resolved "https://registry.yarnpkg.com/base64url/-/base64url-3.0.1.tgz#6399d572e2bc3f90a9a8b22d5dbb0a32d33f788d"
   integrity sha512-ir1UPr3dkwexU7FdV8qBBbNDRUhMmIekYMFZfi+C/sLNnRESKPl23nB9b2pltqfOQNnGzsDdId90AEtG5tCx4A==
 
-batch-processor@1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/batch-processor/-/batch-processor-1.0.0.tgz#75c95c32b748e0850d10c2b168f6bdbe9891ace8"
-  integrity sha512-xoLQD8gmmR32MeuBHgH0Tzd5PuSZx71ZsbhVxOCRbgktZEPe4SQy7s9Z50uPp0F/f7iw2XmkHN2xkgbMfckMDA==
-
 batch@0.6.1:
   version "0.6.1"
   resolved "https://registry.yarnpkg.com/batch/-/batch-0.6.1.tgz#dc34314f4e679318093fc760272525f94bf25c16"
@@ -15559,13 +15547,6 @@ electron@^19.0.7:
     "@electron/get" "^1.14.1"
     "@types/node" "^16.11.26"
     extract-zip "^1.0.3"
-
-element-resize-detector@^1.2.2:
-  version "1.2.4"
-  resolved "https://registry.yarnpkg.com/element-resize-detector/-/element-resize-detector-1.2.4.tgz#3e6c5982dd77508b5fa7e6d5c02170e26325c9b1"
-  integrity sha512-Fl5Ftk6WwXE0wqCgNoseKWndjzZlDCwuPTcoVZfCP9R3EHQF8qUtr3YUPNETegRBOKqQKPW3n4kiIWngGi8tKg==
-  dependencies:
-    batch-processor "1.0.0"
 
 elementtree@^0.1.7:
   version "0.1.7"
@@ -27763,16 +27744,6 @@ react-simple-player@^1.1.0:
   dependencies:
     p4-css "*"
     react-use "*"
-
-react-sizeme@^3.0.1:
-  version "3.0.2"
-  resolved "https://registry.yarnpkg.com/react-sizeme/-/react-sizeme-3.0.2.tgz#4a2f167905ba8f8b8d932a9e35164e459f9020e4"
-  integrity sha512-xOIAOqqSSmKlKFJLO3inBQBdymzDuXx4iuwkNcJmC96jeiOg5ojByvL+g3MW9LPEsojLbC6pf68zOfobK8IPlw==
-  dependencies:
-    element-resize-detector "^1.2.2"
-    invariant "^2.2.4"
-    shallowequal "^1.1.0"
-    throttle-debounce "^3.0.1"
 
 react-syntax-highlighter@^15.4.5, react-syntax-highlighter@^15.5.0:
   version "15.5.0"
