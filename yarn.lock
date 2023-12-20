@@ -27567,10 +27567,10 @@ react-helmet-async@*, react-helmet-async@^1.3.0:
     react-fast-compare "^3.2.0"
     shallowequal "^1.1.0"
 
-react-hotjar@^5.1.0:
-  version "5.4.1"
-  resolved "https://registry.yarnpkg.com/react-hotjar/-/react-hotjar-5.4.1.tgz#9729e30c57a5a01417f46f578791e6ad1e7cb869"
-  integrity sha512-2205ONuPZzAFAQaIG2BQf/l8nePf5ir16vF7S/RT937JYvw3c7WSH65XRnL3sT4GMpU4eDzesB964xNE5wjGPQ==
+react-hotjar@^6.2.0:
+  version "6.2.0"
+  resolved "https://registry.yarnpkg.com/react-hotjar/-/react-hotjar-6.2.0.tgz#a5db97a6d17dc69f1e45caa872e195a04e8a16af"
+  integrity sha512-uMX2IS5IKt1VkhHPwl2QEAEUmmm6VyxfzlwHLUKTQGZoE/0HWD71iGA7T31PO3KeN9+XUsTJS2P3zHva6TyhrQ==
 
 react-i18next@^11.17.4:
   version "11.18.6"
