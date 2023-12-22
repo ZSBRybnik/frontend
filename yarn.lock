@@ -30765,10 +30765,10 @@ synckit@^0.8.4:
     "@pkgr/utils" "^2.3.1"
     tslib "^2.5.0"
 
-systeminformation@^5.12.14:
-  version "5.17.9"
-  resolved "https://registry.yarnpkg.com/systeminformation/-/systeminformation-5.17.9.tgz#8a47bc84f076982734d7b7a0c71371d23bbbfd52"
-  integrity sha512-inxwRLI/4qpx4o85R54/zdhNagdBGBgs0la7Vl3qBorRVKRDk0nNsDTCGzG4lOITsw1gl7LRWeG4Zsp1pC8nfg==
+systeminformation@^5.21.21:
+  version "5.21.21"
+  resolved "https://registry.yarnpkg.com/systeminformation/-/systeminformation-5.21.21.tgz#f34bd4a7188a633e2aa1e9258a58a330d43abc99"
+  integrity sha512-BTQ4+smD8lfh2C0nCRm59Ne1apKYMPhvU1bbE6NIoOroQgZBegnfXE7fQ66/5C1NZtep8cc7XAf/7qYJz1BWVQ==
 
 systemjs@^6.14.1:
   version "6.14.2"
