@@ -165,7 +165,7 @@
     "@vitejs/plugin-react-swc": "^3.3.2",
     "@vue/preload-webpack-plugin": "^2.0.0",
     "@wasm-tool/wasm-pack-plugin": "^1.6.0",
-    "@welldone-software/why-did-you-render": "^7.0.1",
+    "@welldone-software/why-did-you-render": "^8.0.1",
     "acorn": "^8.8.0",
     "astro": "^2.1.7",
     "audit-ci": "^6.3.0",
