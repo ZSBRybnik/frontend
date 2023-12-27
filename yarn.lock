@@ -5900,10 +5900,10 @@
     semver "^7.3.5"
     tar "^6.1.11"
 
-"@mdi/js@^6.9.96":
-  version "6.9.96"
-  resolved "https://registry.yarnpkg.com/@mdi/js/-/js-6.9.96.tgz#90e8fadef05a975df384f0505b2100a795881873"
-  integrity sha512-rK0/vLFaiItYS2W7uVmaKPKnhNQE4XVkylpk5njtVwENnp8elwY5uRL6qvdj2esuvUHG7DwygE4Qu3eKxxuJiQ==
+"@mdi/js@^7.4.47":
+  version "7.4.47"
+  resolved "https://registry.yarnpkg.com/@mdi/js/-/js-7.4.47.tgz#7d8a4edc9631bffeed80d1ec784f9beae559a76a"
+  integrity sha512-KPnNOtm5i2pMabqZxpUz7iQf+mfrYZyKCZ8QNz85czgEt7cuHcGorWfdzUMWYA0SD+a6Hn4FmJ+YhzzzjkTZrQ==
 
 "@mdi/react@^1.6.0":
   version "1.6.1"
