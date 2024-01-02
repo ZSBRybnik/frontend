@@ -22972,15 +22972,10 @@ markdown-table@^3.0.0:
   resolved "https://registry.yarnpkg.com/markdown-table/-/markdown-table-3.0.3.tgz#e6331d30e493127e031dd385488b5bd326e4a6bd"
   integrity sha512-Z1NL3Tb1M9wH4XESsCDEksWoKTdlUafKc4pt0GRwjUyXaCFZ+dc3g2erqB6zm3szA2IUSi7VnPI+o/9jnxh9hw==
 
-markdown-to-jsx@^7.1.7:
-  version "7.1.9"
-  resolved "https://registry.yarnpkg.com/markdown-to-jsx/-/markdown-to-jsx-7.1.9.tgz#1ffae0cda07c189163d273bd57a5b8f8f8745586"
-  integrity sha512-x4STVIKIJR0mGgZIZ5RyAeQD7FEZd5tS8m/htbcVGlex32J+hlSLj+ExrHCxP6nRKF1EKbcO7i6WhC1GtOpBlA==
-
-markdown-to-jsx@^7.1.8:
-  version "7.2.1"
-  resolved "https://registry.yarnpkg.com/markdown-to-jsx/-/markdown-to-jsx-7.2.1.tgz#87061fd3176ad926ef3d99493e5c57f6335e0c51"
-  integrity sha512-9HrdzBAo0+sFz9ZYAGT5fB8ilzTW+q6lPocRxrIesMO+aB40V9MgFfbfMXxlGjf22OpRy+IXlvVaQenicdpgbg==
+markdown-to-jsx@^7.1.8, markdown-to-jsx@^7.4.0:
+  version "7.4.0"
+  resolved "https://registry.yarnpkg.com/markdown-to-jsx/-/markdown-to-jsx-7.4.0.tgz#4606c5c549a6f6cb87604c35f5ee4f42959ffb6b"
+  integrity sha512-zilc+MIkVVXPyTb4iIUTIz9yyqfcWjszGXnwF9K/aiBWcHXFcmdEMTkG01/oQhwSCH7SY1BnG6+ev5BzWmbPrg==
 
 marked@^4.0.10:
   version "4.2.12"
