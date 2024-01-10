@@ -140,7 +140,7 @@
     "@types/katex": "^0.16.0",
     "@types/lodash": "^4.14.182",
     "@types/mousetrap": "^1.6.9",
-    "@types/node": "^18.15.10",
+    "@types/node": "^18.19.6",
     "@types/nodemon": "^1.19.1",
     "@types/pug": "^2.0.6",
     "@types/puppeteer": "^7.0.4",
