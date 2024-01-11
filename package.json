@@ -92,7 +92,7 @@
     "@prisma/client": "^4.0.0",
     "@sentry/browser": "^7.17.3",
     "@sentry/electron": "^4.1.0",
-    "@sentry/node": "^7.17.3",
+    "@sentry/node": "^7.93.0",
     "@sentry/tracing": "^7.45.0",
     "@solana/pay": "^0.2.5",
     "@solana/wallet-adapter-base": "^0.9.16",
