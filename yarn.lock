@@ -10366,7 +10366,7 @@
     semver "^7.3.7"
     tsutils "^3.21.0"
 
-"@typescript-eslint/utils@5.52.0", "@typescript-eslint/utils@^5.10.0", "@typescript-eslint/utils@^5.43.0":
+"@typescript-eslint/utils@5.52.0":
   version "5.52.0"
   resolved "https://registry.yarnpkg.com/@typescript-eslint/utils/-/utils-5.52.0.tgz#b260bb5a8f6b00a0ed51db66bdba4ed5e4845a72"
   integrity sha512-As3lChhrbwWQLNk2HC8Ree96hldKIqk98EYvypd3It8Q1f8d5zWyIoaZEp2va5667M4ZyE7X8UUR+azXrFl+NA==
@@ -10380,7 +10380,7 @@
     eslint-utils "^3.0.0"
     semver "^7.3.7"
 
-"@typescript-eslint/utils@5.54.0":
+"@typescript-eslint/utils@5.54.0", "@typescript-eslint/utils@^5.10.0", "@typescript-eslint/utils@^5.43.0":
   version "5.54.0"
   resolved "https://registry.yarnpkg.com/@typescript-eslint/utils/-/utils-5.54.0.tgz#3db758aae078be7b54b8ea8ea4537ff6cd3fbc21"
   integrity sha512-cuwm8D/Z/7AuyAeJ+T0r4WZmlnlxQ8wt7C7fLpFlKMR+dY6QO79Cq1WpJhvZbMA4ZeZGHiRWnht7ZJ8qkdAunw==
@@ -16094,10 +16094,10 @@ eslint-plugin-html@^7.1.0:
   dependencies:
     htmlparser2 "^8.0.1"
 
-eslint-plugin-jest@^26.5.3:
-  version "26.9.0"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-jest/-/eslint-plugin-jest-26.9.0.tgz#7931c31000b1c19e57dbfb71bbf71b817d1bf949"
-  integrity sha512-TWJxWGp1J628gxh2KhaH1H1paEdgE2J61BBF1I59c6xWeL5+D1BzMxGDN/nXAfX+aSkR5u80K+XhskK6Gwq9ng==
+eslint-plugin-jest@^27.6.3:
+  version "27.6.3"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-jest/-/eslint-plugin-jest-27.6.3.tgz#8acb8b1e45597fe1f4d4cf25163d90119efc12be"
+  integrity sha512-+YsJFVH6R+tOiO3gCJon5oqn4KWc+mDq2leudk8mrp8RFubLOo9CVyi3cib4L7XMpxExmkmBZQTPDYVBzgpgOA==
   dependencies:
     "@typescript-eslint/utils" "^5.10.0"
 
