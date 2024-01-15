@@ -73,7 +73,7 @@
     "@emotion/react": "^11.9.3",
     "@emotion/styled": "^11.9.3",
     "@esbuild-plugins/node-globals-polyfill": "^0.2.3",
-    "@fluentui/svg-icons": "^1.1.198",
+    "@fluentui/svg-icons": "^1.1.225",
     "@geometricpanda/storybook-addon-badges": "^0.2.1",
     "@html-eslint/eslint-plugin": "^0.17.1",
     "@ionic/cli": "^6.20.1",
