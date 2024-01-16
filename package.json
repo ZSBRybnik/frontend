@@ -186,7 +186,7 @@
     "comma-separated-tokens": "^2.0.2",
     "command-exists": "^1.2.9",
     "commander": "^9.3.0",
-    "compression-webpack-plugin": "^10.0.0",
+    "compression-webpack-plugin": "^11.0.0",
     "copy-webpack-plugin": "^11.0.0",
     "core-js": "^3.23.3",
     "cross-env": "^7.0.3",
