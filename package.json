@@ -241,7 +241,7 @@
     "gun": "0.2020.1238",
     "hastscript": "^7.0.2",
     "haxe-loader": "^0.10.0",
-    "html-loader": "^3.1.2",
+    "html-loader": "^5.0.0",
     "html-webpack-plugin": "^5.5.0",
     "husky": "^8.0.1",
     "i18next": "^21.8.11",
