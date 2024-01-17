@@ -289,7 +289,7 @@
     "npm-check-updates": "^15.0.1",
     "office-addin-dev-certs": "^1.11.3",
     "parse-entities": "^4.0.0",
-    "piscina": "^3.2.0",
+    "piscina": "^4.3.0",
     "plugin-image-zoom": "^1.1.0",
     "prettier": "^2.7.1",
     "prettier-plugin-organize-imports": "^3.0.0",
