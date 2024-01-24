@@ -277,7 +277,7 @@
     "million": "^2.4.4",
     "mousetrap": "^1.6.5",
     "move-file-cli": "^3.0.0",
-    "msw": "^1.2.1",
+    "msw": "^2.1.4",
     "msw-storybook-addon": "^1.8.0",
     "neon-cli": "^0.10.1",
     "nim-loader": "^0.3.3",
