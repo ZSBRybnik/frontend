@@ -167,7 +167,7 @@
     "@wasm-tool/wasm-pack-plugin": "^1.6.0",
     "@welldone-software/why-did-you-render": "^7.0.1",
     "acorn": "^8.8.0",
-    "astro": "^2.1.7",
+    "astro": "^4.2.4",
     "audit-ci": "^6.3.0",
     "babel-loader": "^8.2.5",
     "babel-plugin-inline-react-svg": "^2.0.1",
