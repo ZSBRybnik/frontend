@@ -4608,10 +4608,10 @@
   dependencies:
     "@hapi/hoek" "^11.0.2"
 
-"@html-eslint/eslint-plugin@^0.17.1":
-  version "0.17.1"
-  resolved "https://registry.yarnpkg.com/@html-eslint/eslint-plugin/-/eslint-plugin-0.17.1.tgz#e818d5069c3ae6687b82c233893c587aaf760160"
-  integrity sha512-HaNUb1UuF5lw+l814GtxSB3bG/OG6dbFoDPkHe56hwl2IKacj9KewD+tIkZB46W7ILYt9QbvR9EnY6g0//zrnA==
+"@html-eslint/eslint-plugin@^0.23.1":
+  version "0.23.1"
+  resolved "https://registry.yarnpkg.com/@html-eslint/eslint-plugin/-/eslint-plugin-0.23.1.tgz#158c11069ee74734ea4daf8e0354fb6ab18ec4d3"
+  integrity sha512-2AU58FZSPPHjNJzuv08GfgU/nfrVgNI4Uj9y6KOaU5egzAf1DO5x6HeZwvS0MPBAduqoC0i1RqHNSQrzCcmB7A==
 
 "@humanwhocodes/config-array@^0.11.8":
   version "0.11.8"
