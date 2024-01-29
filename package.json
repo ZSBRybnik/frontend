@@ -281,7 +281,7 @@
     "msw-storybook-addon": "^1.8.0",
     "neon-cli": "^0.10.1",
     "nim-loader": "^0.3.3",
-    "node-jq": "^2.3.3",
+    "node-jq": "^4.3.0",
     "node-loader": "^2.0.0",
     "node-polyfill-webpack-plugin": "^2.0.0",
     "nodemon": "^2.0.18",
