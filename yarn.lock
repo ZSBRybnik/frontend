@@ -3117,15 +3117,15 @@
     eip1193-provider "^1.0.1"
     js-sha3 "^0.8.0"
 
-"@capacitor/android@^3.6.0":
-  version "3.9.0"
-  resolved "https://registry.yarnpkg.com/@capacitor/android/-/android-3.9.0.tgz#73032c49e0d6cdb4bdd1c01565e28f3913f25fee"
-  integrity sha512-YTPyrh1NozEuYXWGtfqN27TLXUrLbZX9fggyd4JQ1yMaUZTmLPm5dCuznONhQ49aPkJnUJB02JfpHy/qGwa2Lw==
+"@capacitor/android@^5.7.0":
+  version "5.7.0"
+  resolved "https://registry.yarnpkg.com/@capacitor/android/-/android-5.7.0.tgz#d67e0432c60e115672007e18a8492b0e7d2aa9ea"
+  integrity sha512-0bnG1dqfT/nTjzMeHF/a5kF8mqGjHrPLADNqn41seWDfb2ch6AMiKUHsmHpEOWmGIrWOM25qNTrTOytoCSpuXg==
 
-"@capacitor/app@^1.1.1":
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/@capacitor/app/-/app-1.1.1.tgz#bde7202faad1b47c4ae2c4a622285d7569384c5e"
-  integrity sha512-8ADkldHnoE1xkWvPUsGlERVGm6/Zvcxy6hCI80AxydIKyaCG7kbDAvUclebbnw/eFRxj2zBoVatGLjmJNvTbYw==
+"@capacitor/app@^5.0.7":
+  version "5.0.7"
+  resolved "https://registry.yarnpkg.com/@capacitor/app/-/app-5.0.7.tgz#f71e81320bcd504c400c1f503ba43a88ccac96e8"
+  integrity sha512-oad0jwQu+vgQDukeS9UV56yG10dlxkAGGl26IQpZlTmg3dTI9qSJtvhmlLfkF0nEtoj5IsVQUPE+NLH1oZkgGQ==
 
 "@capacitor/cli@^3.6.0":
   version "3.9.0"
@@ -3149,37 +3149,37 @@
     tslib "^2.1.0"
     xml2js "^0.4.23"
 
-"@capacitor/core@^3.6.0":
-  version "3.9.0"
-  resolved "https://registry.yarnpkg.com/@capacitor/core/-/core-3.9.0.tgz#ab5eccbeb02e140382e983b794ead296f1db7e6d"
-  integrity sha512-j1lL0+/7stY8YhIq1Lm6xixvUqIn89vtyH5ZpJNNmcZ0kwz6K9eLkcG6fvq1UWMDgSVZg9JrRGSFhb4LLoYOsw==
+"@capacitor/core@^5.7.0":
+  version "5.7.0"
+  resolved "https://registry.yarnpkg.com/@capacitor/core/-/core-5.7.0.tgz#ef376ce975634bb5031eedd52a15d6f14e4beb67"
+  integrity sha512-wa9Fao+Axa1t2ZERMyQD9r0xyfglQyC4DHQKintzKaIqcRuVe9J31TmfD3IxROYi9LGpY4X8cq4m4bjb0W94Qg==
   dependencies:
     tslib "^2.1.0"
 
-"@capacitor/haptics@^1.1.4":
-  version "1.1.4"
-  resolved "https://registry.yarnpkg.com/@capacitor/haptics/-/haptics-1.1.4.tgz#80d5bc4776740a227a8cb83c85fac4db1316db8e"
-  integrity sha512-+pJIb5X7xAcbrWj6rJaV+cwBlv8aFwB1/Ob6EV4atydThuuVSSsAL4hI4ZYlPNOxM6H5s+ZDLj7Pa2os4eFmtg==
+"@capacitor/haptics@^5.0.7":
+  version "5.0.7"
+  resolved "https://registry.yarnpkg.com/@capacitor/haptics/-/haptics-5.0.7.tgz#7ae294b7180f08c27f9c8af12f3c5f2a8057d5ba"
+  integrity sha512-/j+7Qa4BxQA5aOU43cwXuiudfSXfoHFsAVfcehH5DkSjxLykZKWHEuE4uFJXqdkSIbAHjS37D0Sde6ENP6G/MA==
 
-"@capacitor/ios@^3.6.0":
-  version "3.9.0"
-  resolved "https://registry.yarnpkg.com/@capacitor/ios/-/ios-3.9.0.tgz#5e31b88701fe355cacf0c9790b319731d8b85b04"
-  integrity sha512-GezPCJIujRHnF4wbrKJx6Q/mgFz0f9rmh/steTTXQZI+nEl6mHk6NWh8235p7YbhonYi5WD0rFNirrjGg1EaGw==
+"@capacitor/ios@^5.7.0":
+  version "5.7.0"
+  resolved "https://registry.yarnpkg.com/@capacitor/ios/-/ios-5.7.0.tgz#b92021e0b2009f5a6f510439c2782ed73273ecf2"
+  integrity sha512-zoEdsYQHI1zz2vjKsTpu5bSfxQQ5jrk3Qs6Op9MYcckZZ2QWIs0YpL99p+zODXNpkkyLG73NXEIrOjvyI9jx8A==
 
-"@capacitor/keyboard@^1.2.3":
-  version "1.2.3"
-  resolved "https://registry.yarnpkg.com/@capacitor/keyboard/-/keyboard-1.2.3.tgz#8046d8256e1c72ed3a2dad6ff01dc37a0c415077"
-  integrity sha512-KTSzJkMa6CrmDIDhWfswNPqS7gvYlL25E1gqXbY7w/EhyBjJhEdF0bc6QUFufS+ZVMlcPafc0/E5P+pTfLnKiA==
+"@capacitor/keyboard@^5.0.8":
+  version "5.0.8"
+  resolved "https://registry.yarnpkg.com/@capacitor/keyboard/-/keyboard-5.0.8.tgz#b8cc21bd6e06273ec61974be9d7f4d8c421a63a4"
+  integrity sha512-XYyBzGlzjgLPqyPVdu5McGLYV6+G2efVR4I3l5cF1B27M6U/oFqv9CQU74WNG08nee28bfccboNpv6eWCLYn1A==
 
-"@capacitor/splash-screen@^1.2.2":
-  version "1.2.2"
-  resolved "https://registry.yarnpkg.com/@capacitor/splash-screen/-/splash-screen-1.2.2.tgz#fabd52ffbb922c38e2b3ef605332f29c830bd508"
-  integrity sha512-iGh9gc0rdS3R+Wr+bD/+tJl3qbmJZ5xVQAP5UsD6U6Y3ydCBo9KpA8DEqxaBZVsCDaLt67009hK5nxKBwjRn7Q==
+"@capacitor/splash-screen@^5.0.7":
+  version "5.0.7"
+  resolved "https://registry.yarnpkg.com/@capacitor/splash-screen/-/splash-screen-5.0.7.tgz#edefca896365cac83c351f1ffc82d9d2f99d6661"
+  integrity sha512-2aAhhZPi7GU8DDs9dhH4OnMJ3rTscPS/TYKzm03fzhBby6ykSXY6HqKgaWdhfCR4TvLsHf0VKpWZu4ZHD0S7iQ==
 
-"@capacitor/status-bar@^1.0.8":
-  version "1.0.8"
-  resolved "https://registry.yarnpkg.com/@capacitor/status-bar/-/status-bar-1.0.8.tgz#a783561fb5815b30f3e75dd95c87e00aaff5450b"
-  integrity sha512-lhxa70K6vg0QjdddbT9RqFLfQ9a0Fk1OVE54MhUH30DWymv4h2LrC+mJgH6JS46WQbR2UCHRymfmVCq1PS2Qiw==
+"@capacitor/status-bar@^5.0.7":
+  version "5.0.7"
+  resolved "https://registry.yarnpkg.com/@capacitor/status-bar/-/status-bar-5.0.7.tgz#a341e8dec9f93769bed4a42e8ad397e5df1b5287"
+  integrity sha512-KblB3gV2LDMEjx3fQoNBAzxb+Tr+2mv68SfFLLDCMiMUD3Eile2TAWRWd1yxy496pDFTOs2BJtup8++iuuuJ/w==
 
 "@chainsafe/is-ip@^2.0.1":
   version "2.0.1"
