@@ -195,7 +195,7 @@
     "date-fns": "^2.28.0",
     "depcheck": "^1.4.3",
     "docusaurus-prince-pdf": "^1.1.1",
-    "dotenv": "^16.0.1",
+    "dotenv": "^16.4.3",
     "duplicate-package-checker-webpack-plugin": "^3.0.0",
     "electron": "^19.0.7",
     "electron-build-env": "^0.2.0",
