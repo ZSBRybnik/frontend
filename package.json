@@ -234,7 +234,7 @@
     "faunadb": "^4.6.0",
     "ffi-napi": "^4.0.3",
     "formik": "^2.2.9",
-    "framer-motion": "^6.5.1",
+    "framer-motion": "^11.0.5",
     "fslightbox-react": "^1.6.2-2",
     "glob": "^8.0.3",
     "graphql-config": "^4.3.1",
