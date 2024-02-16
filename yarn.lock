@@ -6779,6 +6779,15 @@
     estree-walker "^2.0.1"
     picomatch "^2.2.2"
 
+"@sentry-internal/tracing@7.101.1":
+  version "7.101.1"
+  resolved "https://registry.yarnpkg.com/@sentry-internal/tracing/-/tracing-7.101.1.tgz#9504e29c3c2c3ef5f652777e487b596cf8f78e1a"
+  integrity sha512-ihjWG8x4x0ozx6t+EHoXLKbsPrgzYLCpeBLWyS+M6n3hn6cmHM76c8nZw3ldhUQi5UYL3LFC/JZ50b4oSxtlrg==
+  dependencies:
+    "@sentry/core" "7.101.1"
+    "@sentry/types" "7.101.1"
+    "@sentry/utils" "7.101.1"
+
 "@sentry-internal/tracing@7.45.0":
   version "7.45.0"
   resolved "https://registry.yarnpkg.com/@sentry-internal/tracing/-/tracing-7.45.0.tgz#01f347d0d1b42451b340b32b12923dc22e042d27"
@@ -6821,6 +6830,14 @@
     "@sentry/types" "6.19.7"
     "@sentry/utils" "6.19.7"
     tslib "^1.9.3"
+
+"@sentry/core@7.101.1":
+  version "7.101.1"
+  resolved "https://registry.yarnpkg.com/@sentry/core/-/core-7.101.1.tgz#929841b7734129803b6dcd4d16bf0d3f53af4657"
+  integrity sha512-XSmXXeYT1d4O14eDF3OXPJFUgaN2qYEeIGUztqPX9nBs9/ij8y/kZOayFqlIMnfGvjOUM+63sy/2xDBOpFn6ug==
+  dependencies:
+    "@sentry/types" "7.101.1"
+    "@sentry/utils" "7.101.1"
 
 "@sentry/core@7.37.1":
   version "7.37.1"
@@ -6907,18 +6924,15 @@
     lru_map "^0.3.3"
     tslib "^1.9.3"
 
-"@sentry/node@^7.17.3":
-  version "7.38.0"
-  resolved "https://registry.yarnpkg.com/@sentry/node/-/node-7.38.0.tgz#957524fa4764dc19ef970ccdffb802d62e0db3ae"
-  integrity sha512-jNIN6NZvgzn/oms8RQzffjX8Z0LQDTN6N28nnhzqGCvnfmS1QtTt0FlU+pTuFXZNNSjfGy4XMXMYvLlbvhm2bg==
+"@sentry/node@^7.17.3", "@sentry/node@^7.36.0":
+  version "7.101.1"
+  resolved "https://registry.yarnpkg.com/@sentry/node/-/node-7.101.1.tgz#d652503002be921be5ca042a3ef7457d309cdfa9"
+  integrity sha512-iXSxUT6Zbt/KUY0+fRcW5II6Tgp2zdTfhBW+fQuDt/UUZt7Ypvb+6n4U2oom3LJfttmD7mdjQuT4+vsNImDjTQ==
   dependencies:
-    "@sentry/core" "7.38.0"
-    "@sentry/types" "7.38.0"
-    "@sentry/utils" "7.38.0"
-    cookie "^0.4.1"
-    https-proxy-agent "^5.0.0"
-    lru_map "^0.3.3"
-    tslib "^1.9.3"
+    "@sentry-internal/tracing" "7.101.1"
+    "@sentry/core" "7.101.1"
+    "@sentry/types" "7.101.1"
+    "@sentry/utils" "7.101.1"
 
 "@sentry/replay@7.37.1":
   version "7.37.1"
@@ -6950,6 +6964,11 @@
   resolved "https://registry.yarnpkg.com/@sentry/types/-/types-6.19.7.tgz#c6b337912e588083fc2896eb012526cf7cfec7c7"
   integrity sha512-jH84pDYE+hHIbVnab3Hr+ZXr1v8QABfhx39KknxqKWr2l0oEItzepV0URvbEhB446lk/S/59230dlUUIBGsXbg==
 
+"@sentry/types@7.101.1":
+  version "7.101.1"
+  resolved "https://registry.yarnpkg.com/@sentry/types/-/types-7.101.1.tgz#7f936022d9b373f85ebf357634bf03a9e433a3d0"
+  integrity sha512-bwtkQvrCZ6JGc7vqX7TEAKBgkbQFORt84FFS3JQQb8G3efTt9fZd2ReY4buteKQdlALl8h1QWVngTLmI+kyUuw==
+
 "@sentry/types@7.37.1":
   version "7.37.1"
   resolved "https://registry.yarnpkg.com/@sentry/types/-/types-7.37.1.tgz#269da7da39c1a5243bf5f9a35370291b5cc205bb"
@@ -6972,6 +6991,13 @@
   dependencies:
     "@sentry/types" "6.19.7"
     tslib "^1.9.3"
+
+"@sentry/utils@7.101.1":
+  version "7.101.1"
+  resolved "https://registry.yarnpkg.com/@sentry/utils/-/utils-7.101.1.tgz#97399b1e6a63a15e8f9fec5112ac4834239f1db6"
+  integrity sha512-Nrg0nrEI3nrOCd9SLJ/WGzxS5KMQE4cryLOvrDcHJRWpsSyGBF1hLLerk84Nsw/0myMsn7zTYU+xoq7idNsX5A==
+  dependencies:
+    "@sentry/types" "7.101.1"
 
 "@sentry/utils@7.37.1":
   version "7.37.1"
@@ -29701,10 +29727,13 @@ smart-buffer@^4.2.0:
   resolved "https://registry.yarnpkg.com/smart-buffer/-/smart-buffer-4.2.0.tgz#6e1d71fa4f18c05f7d0ff216dd16a481d0e8d9ae"
   integrity sha512-94hK0Hh8rPqQl2xXc3HsaBoOXKV20MToPkcXvwbISWLEs+64sBq5kFgn2kJDHb1Pry9yrP0dxrCI9RRci7RXKg==
 
-snyk@^1.961.0:
-  version "1.1105.0"
-  resolved "https://registry.yarnpkg.com/snyk/-/snyk-1.1105.0.tgz#163011374b36508782a939271fff0ba0ddd97f28"
-  integrity sha512-/6udYGBIp6jfAIfyMEdEO8Nl2UDhFa+1KwgI6cEPmwOswn7Be9b0ax0buw8x7TWuG6NfjioXddgssdAoiz2nbg==
+snyk@^1.1280.0:
+  version "1.1280.0"
+  resolved "https://registry.yarnpkg.com/snyk/-/snyk-1.1280.0.tgz#0135cd7d7c7f19f7b23c91f6863b7c5b908697d8"
+  integrity sha512-eZg86zvbNZ9t7bFGQszVqbzIjs72qMee7jPd49812uih+L+d5gPARRwUs7woU4ZDDvolwlxnnOiURWpw0q/Eqw==
+  dependencies:
+    "@sentry/node" "^7.36.0"
+    global-agent "^3.0.0"
 
 socket.io-client@*, socket.io-client@^4.1.2, socket.io-client@^4.5.1, socket.io-client@^4.5.3:
   version "4.6.0"
