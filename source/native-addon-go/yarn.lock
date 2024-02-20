@@ -885,10 +885,10 @@ tsutils@^2.29.0:
   dependencies:
     tslib "^1.8.1"
 
-typescript-transform-paths@^3.3.1:
-  version "3.3.1"
-  resolved "https://registry.yarnpkg.com/typescript-transform-paths/-/typescript-transform-paths-3.3.1.tgz#74526bc1b6dc575ffe269cc81833db7bd81763e1"
-  integrity sha512-c+8Cqd2rsRtTU68rJI0NX/OtqgBDddNs1fIxm1nCNyhn0WpoyqtpUxc1w9Ke5c5kgE4/OT5xYbKf2cf694RYEg==
+typescript-transform-paths@^3.4.7:
+  version "3.4.7"
+  resolved "https://registry.yarnpkg.com/typescript-transform-paths/-/typescript-transform-paths-3.4.7.tgz#1deaf976fb1b7a70fb26b541356017057c0c17a5"
+  integrity sha512-1Us1kdkdfKd2unbkBAOV2HHRmbRBYpSuk9nJ7cLD2hP4QmfToiM/VpxNlhJc1eezVwVqSKSBjNSzZsK/fWR/9A==
   dependencies:
     minimatch "^3.0.4"
 
