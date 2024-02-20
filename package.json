@@ -252,7 +252,7 @@
     "immutable": "^4.1.0",
     "interpolate-html-plugin": "^4.0.0",
     "ioredis": "^5.2.3",
-    "ip": "^1.1.8",
+    "ip": "^2.0.1",
     "ipfs-core": "^0.15.4",
     "is-alphanumerical": "^2.0.1",
     "is-decimal": "^2.0.1",
