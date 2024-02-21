@@ -4360,10 +4360,10 @@
     "@figspec/components" "^1.0.1"
     "@lit-labs/react" "^1.0.2"
 
-"@fluentui/svg-icons@^1.1.198":
-  version "1.1.198"
-  resolved "https://registry.yarnpkg.com/@fluentui/svg-icons/-/svg-icons-1.1.198.tgz#9f73e6bd46db1a48b0be7cb724493191a3fb0900"
-  integrity sha512-mjbHwrosuWyFG3NWYLKXCK9FcXv4GCQYY1yELgg1a8yc3vcaslD9lvjXJM5qO7ht6q0zV9JyrCS2hA4hjTKhqw==
+"@fluentui/svg-icons@^1.1.228":
+  version "1.1.228"
+  resolved "https://registry.yarnpkg.com/@fluentui/svg-icons/-/svg-icons-1.1.228.tgz#ab4abc1f6ab77f77158f450dbb5f82c52b43d74c"
+  integrity sha512-WGweGmiys589LO4X8cDiXOwaSDuryJ2uQYMoYW/DYxfXod+yZEUMXqulUfSy1cF/azRp4bJQ5127hIyXCWQb3g==
 
 "@gar/promisify@^1.0.1", "@gar/promisify@^1.1.3":
   version "1.1.3"
