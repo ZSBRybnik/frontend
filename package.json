@@ -302,7 +302,7 @@
     "property-information": "^6.1.1",
     "pug": "^3.0.2",
     "pug-html-loader": "^1.1.5",
-    "puppeteer": "^19.8.0",
+    "puppeteer": "^22.2.0",
     "purs-loader": "^4.0.0",
     "push.js": "^1.0.12",
     "pyscript-react": "^0.0.2",
