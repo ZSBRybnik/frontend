@@ -8744,10 +8744,10 @@
     eventemitter3 "^4.0.7"
     uuid "^8.3.2"
 
-"@stripe/react-stripe-js@^1.12.0":
-  version "1.16.4"
-  resolved "https://registry.yarnpkg.com/@stripe/react-stripe-js/-/react-stripe-js-1.16.4.tgz#d25c9bb93ae2d21d1d5a2d8a275e1e4e2732ba73"
-  integrity sha512-x+Zstd3mHctNbSATOdbA2rOVXqGhbLU1ziNgcWqYCaFXj2dPKzjkBiUJfDhoARJVXVGOts0oZ8teTkOFY/ZRzQ==
+"@stripe/react-stripe-js@^2.5.1":
+  version "2.5.1"
+  resolved "https://registry.yarnpkg.com/@stripe/react-stripe-js/-/react-stripe-js-2.5.1.tgz#48604b2b00a1eff1e3f17e4b00762df5f5fdea1f"
+  integrity sha512-95BwDhOkl1TwIn5sldWW35GYt6wx+uYuwGjebaMOpOdHGyBKcDnBhTjIww+bUdmA2oCmpUqKnoB4OZJuqK8tJA==
   dependencies:
     prop-types "^15.7.2"
 
